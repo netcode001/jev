@@ -1,0 +1,37 @@
+name: daily-update
+
+on:
+  schedule:
+    - cron: '0 2 * * *'   # UTC 02:00 = 北京时间 10:00
+  workflow_dispatch: {}    # 手动触发入口
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Fetch latest Jev news & pricing
+        run: python update_news.py
+        env:
+          # 内置 token，让 GitHub topic:jev 信源不受匿名限流
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit & push new data (triggers Cloudflare Pages rebuild)
+        run: |
+          git config user.name  "jev-bot"
+          git config user.email "bot@jev-ai.live"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "No new data today."
+          else
+            git commit -m "chore: daily Jev news update ($(date -u +%F))"
+            git push
+          fi
