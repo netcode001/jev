@@ -30,6 +30,15 @@ FONT_LINKS = ('  <link rel="preconnect" href="https://fonts.googleapis.com"/>\n'
               '  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>\n'
               '  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"/>\n')
 
+GA_ID = "G-W8YTRRNG9P"
+GA_SNIPPET = ('  <script async src="https://www.googletagmanager.com/gtag/js?id=' + GA_ID + '"></script>\n'
+              '  <script>\n'
+              '    window.dataLayer = window.dataLayer || [];\n'
+              '    function gtag(){dataLayer.push(arguments);}\n'
+              "    gtag('js', new Date());\n"
+              "    gtag('config', '" + GA_ID + "');\n"
+              '  </script>\n')
+
 with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets", "style.css"), encoding="utf-8") as _f:
     CSS_CONTENT = _f.read()
 
@@ -160,7 +169,7 @@ def render_page(lang, slug, page, all_pages):
   <meta name="twitter:image" content="{og_image}"/>
   <link rel="alternate" type="application/rss+xml" title="Jev Hub — Jev news &amp; updates" href="{SITE_URL}/feed.xml"/>
   <link rel="icon" href="{FAVICON}"/>
-{FONT_LINKS}  <style>
+{FONT_LINKS}{GA_SNIPPET}  <style>
 {CSS_CONTENT}
   </style>
 {ld}</head>
