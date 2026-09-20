@@ -330,7 +330,7 @@ def build():
     notfound = PAGES_EN["index"]
     html404 = render_page("en", "index", dict(notfound, title="404 — Page not found | Jev Hub",
                               body="<div class='hero'><h1>404</h1><p class='sub'>This page does not exist. <a href='/'>Back to Jev Hub</a></p></div>"),
-                          PAGES_EN)
+                          PAGES_EN).replace("https://jevhub.ai", SITE_URL)
     write(os.path.join(BUILD_DIR, "404.html"), rewrite_internal_links(html404, ""))
 
     # sitemap.xml with hreflang alternates
