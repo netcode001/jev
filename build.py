@@ -6,6 +6,7 @@ import json
 import os
 import shutil
 import sys
+from datetime import date
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from content_en import PAGES as PAGES_EN
@@ -13,6 +14,9 @@ from content_zh import PAGES as PAGES_ZH
 
 # TODO: replace with the real domain after registration
 SITE_URL = "https://jev-ai.live"
+TODAY = date.today().isoformat()
+# IndexNow key (Bing/Seznam/Yandex instant indexing). File served at /{KEY}.txt
+INDEXNOW_KEY = "a3f8c2e91b7d4f6e8c5a2d7b9e4f1c38"
 BUILD_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "site")
 ASSETS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets")
 OG_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "og")
@@ -278,6 +282,8 @@ def build():
     # OG share images (PNG, generated separately by gen_og.py)
     if os.path.isdir(OG_DIR):
         shutil.copytree(OG_DIR, os.path.join(BUILD_DIR, "og"))
+    # IndexNow key file (site ownership proof for Bing/Seznam/Yandex)
+    write(os.path.join(BUILD_DIR, f"{INDEXNOW_KEY}.txt"), INDEXNOW_KEY)
 
     # cost calculator script — injected into both pricing pages
     calc_js = """
@@ -310,6 +316,8 @@ def build():
     for lang, pages in (("en", PAGES_EN), ("zh", PAGES_ZH)):
         for slug, page in pages.items():
             html = render_page(lang, slug, page, pages)
+            # safety net: any hardcoded legacy domain in content falls back to SITE_URL
+            html = html.replace("https://jevhub.ai", SITE_URL)
             rel = "index.html" if slug == "index" else f"{slug}/index.html"
             if lang == "zh":
                 rel = f"zh/{rel}"
@@ -334,8 +342,8 @@ def build():
             f'<xhtml:link rel="alternate" hreflang="zh" href="{zh_url}"/>'
             f'<xhtml:link rel="alternate" hreflang="x-default" href="{en_url}"/>'
         )
-        urls.append(f"  <url><loc>{en_url}</loc><lastmod>2026-09-20</lastmod><xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"{en_url}\"/>{alt}</url>")
-        urls.append(f"  <url><loc>{zh_url}</loc><lastmod>2026-09-20</lastmod>{alt}</url>")
+        urls.append(f"  <url><loc>{en_url}</loc><lastmod>{TODAY}</lastmod><xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"{en_url}\"/>{alt}</url>")
+        urls.append(f"  <url><loc>{zh_url}</loc><lastmod>{TODAY}</lastmod>{alt}</url>")
     sitemap = ('<?xml version="1.0" encoding="UTF-8"?>\n'
                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
                'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + "\n".join(urls) + "\n</urlset>\n")

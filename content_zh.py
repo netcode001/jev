@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Chinese (Simplified) page content for Jev Hub."""
 
+from datetime import date
+
 CRUMB_HOME = [("首页", "/zh/")]
 
 
@@ -91,6 +93,9 @@ PAGES["index"] = {
     "schema": [
         {"@context": "https://schema.org", "@type": "WebSite", "name": "Jev Hub", "url": "https://jevhub.ai/zh/",
          "description": "Jev（TypeSafe AI System One 模型）非官方中文追踪站。", "inLanguage": "zh"},
+        {"@context": "https://schema.org", "@type": "Organization", "name": "Jev Hub",
+         "url": "https://jev-ai.live/zh/", "logo": "https://jev-ai.live/og/zh-index.png",
+         "slogan": "把 Jev AI 讲清楚：价格、接入、评测与动态，一站看完"},
     ],
     "body": """
 <div class="hero">
@@ -176,7 +181,7 @@ PAGES["what-is-jev"] = {
     "schema": [{
         "@context": "https://schema.org", "@type": "Article",
         "headline": "Jev 是什么？TypeSafe System One 模型完整解读",
-        "datePublished": "2026-09-20", "dateModified": "2026-09-20",
+        "datePublished": "2026-09-20", "dateModified": date.today().isoformat(),
         "author": {"@type": "Organization", "name": "Jev Hub"},
         "publisher": {"@type": "Organization", "name": "Jev Hub"},
         "about": {"@type": "SoftwareApplication", "name": "Jev", "applicationCategory": "AI Model"},
@@ -652,6 +657,18 @@ if _os.path.exists(_news_file):
     from datetime import date as _date
     PAGES["news"]["body"] = PAGES["news"]["body"].replace(
         "最后更新：2026-09-20", f"最后更新：{_date.today().isoformat()}")
+
+# news 页 ItemList schema：给 Google 富数据 + 新鲜度信号
+if _os.path.exists(_news_file):
+  PAGES["news"]["schema"] = [{
+    "@context": "https://schema.org", "@type": "ItemList",
+    "name": "Jev news timeline",
+    "itemListElement": [
+        {"@type": "ListItem", "position": i + 1,
+         "name": i2["title"], "url": i2.get("url") or "https://jev-ai.live/news/"}
+          for i, i2 in enumerate(_live[:20])
+      ],
+  }]
 
 NEWS_PREVIEW = "".join(
     f'<div class="tl-item"><div class="date">{d}</div><h3>{t}</h3><p>{s}</p><div class="src">来源：{src}</div></div>'

@@ -34,4 +34,7 @@ jobs:
           else
             git commit -m "chore: daily Jev news update ($(date -u +%F))"
             git push
+            # notify Bing/Yandex/Seznam (IndexNow) about updated pages
+            sleep 60
+            curl -s "https://api.indexnow.org/indexnow?url=https%3A%2F%2Fjev-ai.live%2Fnews%2F&key=a3f8c2e91b7d4f6e8c5a2d7b9e4f1c38" || true
           fi

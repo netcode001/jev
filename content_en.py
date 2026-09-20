@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """English page content for Jev Hub."""
 
+from datetime import date
+
 CRUMB_HOME = [("Home", "/")]
 
 import json as _json
@@ -113,6 +115,9 @@ PAGES["index"] = {
         {"@context": "https://schema.org", "@type": "WebSite", "name": "Jev Hub", "url": "https://jevhub.ai/",
          "description": "Unofficial tracker for Jev, the System One model by TypeSafe AI.",
          "inLanguage": ["en", "zh"]},
+        {"@context": "https://schema.org", "@type": "Organization", "name": "Jev Hub",
+         "url": "https://jev-ai.live/", "logo": "https://jev-ai.live/og/en-index.png",
+         "slogan": "Jev AI, decoded — pricing, access, benchmarks & news in one place"},
     ],
     "body": """
 <div class="hero">
@@ -198,7 +203,7 @@ PAGES["what-is-jev"] = {
     "schema": [{
         "@context": "https://schema.org", "@type": "Article",
         "headline": "What Is Jev? TypeSafe's System One Model Explained",
-        "datePublished": "2026-09-20", "dateModified": "2026-09-20",
+        "datePublished": "2026-09-20", "dateModified": date.today().isoformat(),
         "author": {"@type": "Organization", "name": "Jev Hub"},
         "publisher": {"@type": "Organization", "name": "Jev Hub"},
         "about": {"@type": "SoftwareApplication", "name": "Jev", "applicationCategory": "AI Model"},
@@ -675,6 +680,18 @@ if _os.path.exists(_news_file):
     from datetime import date as _date
     PAGES["news"]["body"] = PAGES["news"]["body"].replace(
         "Last updated: 2026-09-20", f"Last updated: {_date.today().isoformat()}")
+
+# news 页 ItemList schema：给 Google 富数据 + 新鲜度信号
+if _os.path.exists(_news_file):
+  PAGES["news"]["schema"] = [{
+    "@context": "https://schema.org", "@type": "ItemList",
+    "name": "Jev news timeline",
+    "itemListElement": [
+        {"@type": "ListItem", "position": i + 1,
+         "name": i2["title"], "url": i2.get("url") or "https://jev-ai.live/news/"}
+          for i, i2 in enumerate(_live[:20])
+      ],
+  }]
 
 # inject news into home + news page
 NEWS_PREVIEW = "".join(
