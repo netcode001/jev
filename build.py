@@ -51,7 +51,7 @@ LOCALES = {
             "news": "News", "ecosystem": "Ecosystem", "faq": "FAQ",
         },
         "home_label": "Home", "nav_cta": "Get API Key",
-        "footer_about": ("Jev Hub is an independent, unofficial information hub for Jev, the System One "
+        "footer_about": ("Jev Hub is an independent information hub for Jev, the System One "
                          "model by TypeSafe AI. We track pricing, benchmarks, access paths, ecosystem "
                          "projects and news — updated automatically."),
         "footer_cols": [

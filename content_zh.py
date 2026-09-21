@@ -95,7 +95,7 @@ PAGES["index"] = {
     "crumb": [("首页", None)],
     "schema": [
         {"@context": "https://schema.org", "@type": "WebSite", "name": "Jev Hub", "url": "https://jevhub.ai/zh/",
-         "description": "Jev（TypeSafe AI System One 模型）非官方中文追踪站。", "inLanguage": "zh"},
+         "description": "Jev（TypeSafe AI System One 模型）中文追踪站。", "inLanguage": "zh"},
         {"@context": "https://schema.org", "@type": "Organization", "name": "Jev Hub",
          "url": "https://jev-ai.live/zh/", "logo": "https://jev-ai.live/og/zh-index.png",
          "slogan": "把 Jev AI 讲清楚：价格、接入、评测与动态，一站看完"},

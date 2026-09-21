@@ -26,7 +26,7 @@ DATA_DIR = os.path.join(BASE, "data")
 NEWS_FILE = os.path.join(DATA_DIR, "news.json")
 PRICE_FILE = os.path.join(DATA_DIR, "price.json")
 TODAY = date.today().isoformat()
-UA = {"User-Agent": "jevhub-tracker/1.0 (unofficial Jev news tracker)"}
+UA = {"User-Agent": "jev-hub/1.0 (Jev news tracker)"}
 
 
 def http_json(url, timeout=15, headers=None):

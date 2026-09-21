@@ -174,7 +174,7 @@ TypeSafe removed the Jev waitlist — here's the practical guide to pricing, acc
 
 **Section 5 — When NOT to use it**: anything generative, prediction, compound reasoning. Hybrid architecture: LLM generates → Jev decides.
 
-**Ending**: "I maintain an unofficial tracker at https://jev-ai.live — pricing snapshots, daily news, a cost calculator, and a ranked directory of the community projects built on Jev."
+**Ending**: "I maintain an independent tracker at https://jev-ai.live — pricing snapshots, daily news, a cost calculator, and a ranked directory of the community projects built on Jev."
 
 > dev.to 默认 dofollow，是这批里对 Google 排名真正有分量的外链。发完在 X 上转发一次（X-3 或 X-5）。
 

@@ -102,7 +102,7 @@ def main():
     for slug, page in PAGES_EN.items():
         make_card(os.path.join(OUT_DIR, f"en-{slug}.png"),
                   title=page["title"].split("—")[0].split("|")[0].strip(),
-                  subtitle="THE UNOFFICIAL JEV TRACKER",
+                  subtitle="THE JEV TRACKER",
                   site_label="jev-ai.live", is_zh=False)
         n += 1
     for slug, page in PAGES_ZH.items():

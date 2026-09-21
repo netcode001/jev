@@ -111,12 +111,12 @@ PAGES = {}
 
 # ---- index ----
 PAGES["index"] = {
-    "title": "Jev AI: Unofficial Tracker, Pricing & News | Jev Hub",
+    "title": "Jev AI: Pricing, Access & News Tracker | Jev Hub",
     "desc": "Independent hub for Jev, TypeSafe AI's System One model: what it is, pricing across providers, benchmarks with caveats, open-access paths (now with free credit), and auto-updated news.",
     "crumb": [("Home", None)],
     "schema": [
-        {"@context": "https://schema.org", "@type": "WebSite", "name": "Jev Hub", "url": "https://jevhub.ai/",
-         "description": "Unofficial tracker for Jev, the System One model by TypeSafe AI.",
+        {"@context": "https://schema.org", "@type": "WebSite", "name": "Jev Hub", "url": "https://jev-ai.live/",
+         "description": "Independent tracker for Jev, the System One model by TypeSafe AI.",
          "inLanguage": ["en", "zh"]},
         {"@context": "https://schema.org", "@type": "Organization", "name": "Jev Hub",
          "url": "https://jev-ai.live/", "logo": "https://jev-ai.live/og/en-index.png",
