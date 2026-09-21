@@ -192,7 +192,7 @@ PAGES["what-is-jev"] = {
     }],
     "body": """
 <p class="updated">最后更新：2026-09-20 · 来源：typesafe.ai、渠道商列表、独立媒体（文中附链接）</p>
-<h1>Jev 是什么？TypeSafe System One 模型完整解读</h1>
+<h1>Jev AI 是什么？TypeSafe System One 模型完整解读</h1>
 <p class="lede">Jev 是 TypeSafe AI 于 2026 年 9 月 15 日发布的全新模型品类——<strong>System One Models</strong>——的第一个成员。它不生成文本，而是针对你的输入回答带类型的问题，返回附带校准置信度的结构化决策。这篇指南讲清它的工作原理、能做什么不能做什么，以及哪些说法你应该亲自验证。</p>
 
 <div class="toc"><div class="t">本页目录</div>
@@ -307,8 +307,8 @@ PAGES["what-is-jev"] = {
 
 # ---- pricing ----
 PAGES["pricing"] = {
-    "title": "Jev 价格（2026）：每 token、每决策成本与 LLM 对比",
-    "desc": "Jev 输入 $0.042/1M tokens、输出免费。对比全部渠道（Vercel、Cloudflare、Vivgrid），看真实单决策成本，并用计算器估算你的账单。",
+    "title": "Jev AI 价格（2026）：每 token、每决策成本与 LLM 对比",
+    "desc": "Jev AI 输入 $0.042/1M tokens、输出免费。对比全部渠道（Vercel、Cloudflare、Vivgrid），看真实单决策成本，并用计算器估算你的账单。",
     "crumb": CRUMB_HOME + [("价格", None)],
     "schema": [],
     "body": """
@@ -701,7 +701,7 @@ PAGES["news"]["body"] = PAGES["news"]["body"].replace("{NEWS_FULL}", NEWS_FULL)
 
 # ---- playground (BYOK interactive tool) ----
 PAGES["playground"] = {
-    "title": "Jev Playground — 在线试玩 Jev 模型（自带 API Key）| Jev Hub",
+    "title": "Jev AI Playground — 在线试玩 Jev 模型（自带 Key）| Jev Hub",
     "desc": "在浏览器里直接运行真实的 Jev（TypeSafe System One）决策：可视化构造 Choice / Score / Noul 三种题型，填入你自己的 TypeSafe API Key（仅存本地，不经过本站），实时查看概率、置信度、token 用量与单次成本。",
     "crumb": [("首页", "/zh/"), ("在线试玩", None)],
     "wide": True,

@@ -201,7 +201,7 @@ PAGES["index"] = {
 
 # ---- what-is-jev ----
 PAGES["what-is-jev"] = {
-    "title": "What Is Jev? TypeSafe's System One Model Explained (2026)",
+    "title": "What Is Jev AI? TypeSafe's System One Model Explained (2026)",
     "desc": "A complete 2026 guide to Jev: how System One models work, the Choice/Score/Noul primitives, RLCD training, benchmarks with honest caveats, pricing, and limitations.",
     "crumb": CRUMB_HOME + [("What is Jev", None)],
     "schema": [{
@@ -214,7 +214,7 @@ PAGES["what-is-jev"] = {
     }],
     "body": """
 <p class="updated">Last updated: 2026-09-20 · Sources: typesafe.ai, provider listings, independent write-ups (linked inline)</p>
-<h1>What Is Jev? TypeSafe's System One Model Explained</h1>
+<h1>What Is Jev AI? TypeSafe's System One Model Explained</h1>
 <p class="lede">Jev is the first of a new model class — <strong>System One Models</strong> — announced by TypeSafe AI on September 15, 2026. Instead of generating text, it answers typed questions about your input and returns structured decisions with calibrated probabilities. This guide explains how it works, what it can and cannot do, and which claims you should verify yourself.</p>
 
 <div class="toc"><div class="t">On this page</div>
@@ -330,13 +330,13 @@ PAGES["what-is-jev"] = {
 
 # ---- pricing ----
 PAGES["pricing"] = {
-    "title": "Jev Pricing 2026: Cost per Token, per Decision & vs LLMs",
-    "desc": "Jev costs $0.042 per 1M input tokens with free output. Compare every provider (Vercel, Cloudflare, Vivgrid), see real per-decision costs, and run the calculator.",
+    "title": "Jev AI Pricing 2026: Cost per Token, per Decision & vs LLMs",
+    "desc": "Jev AI costs $0.042 per 1M input tokens with free output. Compare every provider (Vercel, Cloudflare, Vivgrid), see real per-decision costs, and run the calculator.",
     "crumb": CRUMB_HOME + [("Pricing", None)],
     "schema": [],
     "body": """
 <p class="updated">Last updated: 2026-09-20 · Rates verified against provider listings on this date</p>
-<h1>Jev Pricing: What It Actually Costs (2026)</h1>
+<h1>Jev AI Pricing: What It Actually Costs (2026)</h1>
 <p class="lede">Jev's reference price is <strong>$0.042 per 1 million input tokens — about $42 per billion</strong> — and <strong>output is free</strong> on every provider, because the model returns compact typed decisions instead of generated text. This page tracks every provider's rate, translates them into real per-decision costs, and lets you compute your own bill.</p>
 
 <h2>Official pricing</h2>
@@ -407,7 +407,7 @@ PAGES["pricing"] = {
 
 # ---- use-cases ----
 PAGES["use-cases"] = {
-    "title": "10 Jev Use Cases With Real Numbers (2026)",
+    "title": "10 Jev AI Use Cases With Real Numbers (2026)",
     "desc": "Practical Jev workflows with community-reported results: agent guardrails, model routing, RAG filtering, ticket triage, moderation, LLM-as-judge, lead scoring and more.",
     "crumb": CRUMB_HOME + [("Use Cases", None)],
     "schema": [],
@@ -471,13 +471,13 @@ PAGES["use-cases"] = {
 
 # ---- get-access ----
 PAGES["get-access"] = {
-    "title": "How to Get Access to Jev (2026): Open Signup, $5 Free Credit & Gateways",
+    "title": "How to Get Access to Jev AI (2026): Open Signup, $5 Free Credit",
     "desc": "Jev is now open to everyone — no waitlist. Sign up at console.typesafe.ai with $5 in free credit, or use it via Vercel AI Gateway and Cloudflare Workers AI. 5-minute quickstart inside.",
     "crumb": CRUMB_HOME + [("Get Access", None)],
     "schema": [],
     "body": """
 <p class="updated">Last updated: 2026-09-20</p>
-<h1>How to Get Access to Jev</h1>
+<h1>How to Get Access to Jev AI</h1>
 <p class="lede"><strong>Jev opened to everyone on Sep 20, 2026 — the waitlist is gone.</strong> Sign up at console.typesafe.ai and get $5 in free credit (~120M input tokens). Prefer a gateway? Vercel and Cloudflare serve the same model. Every route ends at the same Jev.</p>
 
 <div class="pg-notice">Want to feel the model before writing code? <a href="/playground/">Open the Playground</a> — run real decisions with your key, right in the browser.</div>
@@ -540,13 +540,13 @@ PAGES["get-access"] = {
 
 # ---- vs-llm ----
 PAGES["vs-llm"] = {
-    "title": "Jev vs LLMs: When to Use Each (Honest 2026 Guide)",
+    "title": "Jev AI vs LLMs: When to Use Each (Honest 2026 Guide)",
     "desc": "Jev or a chat LLM? A decision table for routing, classification and generation workloads, a hybrid architecture pattern, and the honest limits of each side.",
     "crumb": CRUMB_HOME + [("Jev vs LLMs", None)],
     "schema": [],
     "body": """
 <p class="updated">Last updated: 2026-09-20</p>
-<h1>Jev vs LLMs: When to Use Each</h1>
+<h1>Jev AI vs LLMs: When to Use Each</h1>
 <p class="lede"><strong>The one-line answer:</strong> if the answer already exists in the input and one of a known set of options is correct, use Jev. If the answer has to be written — prose, code, a summary, a plan — use an LLM. Most real systems want both.</p>
 
 <h2>Side-by-side</h2>
@@ -616,13 +616,13 @@ PAGES["vs-llm"] = {
 
 # ---- news ----
 PAGES["news"] = {
-    "title": "Jev News & Updates — Live Tracker (2026)",
+    "title": "Jev AI News & Updates — Live Tracker (2026)",
     "desc": "Every Jev update in one timeline: launch news, access changes, provider listings, price changes, benchmark analyses and community projects — automatically tracked.",
     "crumb": CRUMB_HOME + [("News", None)],
     "schema": [],
     "body": """
 <p class="updated">Last updated: 2026-09-20 · This page is refreshed automatically as new sources appear</p>
-<h1>Jev News &amp; Updates</h1>
+<h1>Jev AI News &amp; Updates</h1>
 <p class="lede">A running timeline of everything that matters about Jev — official announcements, provider rollouts, independent analyses, and community milestones. Each item links to its source; vendor-reported figures are marked as such.</p>
 <div class="timeline">
 {NEWS_FULL}
@@ -632,13 +632,13 @@ PAGES["news"] = {
 
 # ---- ecosystem ----
 PAGES["ecosystem"] = {
-    "title": "Jev Ecosystem: Open-Source Projects & Community Tools",
+    "title": "Jev AI Ecosystem: Open-Source Projects & Community Tools",
     "desc": "The Jev project directory: openjev, jev-ultrafast, jev-guard, pg-jev, HA-Jev, jevmeter and more — what each does, and who built it.",
     "crumb": CRUMB_HOME + [("Ecosystem", None)],
     "schema": [],
     "body": """
 <p class="updated">Last updated: 2026-09-20 · Project descriptions from public demos and author posts</p>
-<h1>The Jev Ecosystem</h1>
+<h1>The Jev AI Ecosystem</h1>
 <p class="lede">Within days of launch, developers started building on Jev's typed-decision primitive — agents, guardrails, database filters, games, and even an open-source reproduction of the interface itself. This directory tracks the notable ones.</p>
 
 <h2>Open-source reproduction</h2>
@@ -672,13 +672,13 @@ PAGES["ecosystem"] = {
 # ---- faq ----
 _faq_body, _faq_schema = faq_html_and_schema()
 PAGES["faq"] = {
-    "title": "Jev FAQ: 20 Questions About TypeSafe's System One Model",
+    "title": "Jev AI FAQ: 20 Questions About TypeSafe's System One Model",
     "desc": "Straight answers about Jev: what it is, public access, pricing, rate limits, hallucination guarantees, benchmark reliability, and where the information comes from.",
     "crumb": CRUMB_HOME + [("FAQ", None)],
     "schema": [_faq_schema],
     "body": """
 <p class="updated">Last updated: 2026-09-20</p>
-<h1>Jev FAQ: 20 Questions, Straight Answers</h1>
+<h1>Jev AI FAQ: 20 Questions, Straight Answers</h1>
 <p class="lede">Everything people are actually asking about Jev, answered without marketing gloss. Where a claim is TypeSafe's own, we say so.</p>
 """ + _faq_body,
 }
@@ -725,7 +725,7 @@ PAGES["news"]["body"] = PAGES["news"]["body"].replace("{NEWS_FULL}", NEWS_FULL)
 
 # ---- playground (BYOK interactive tool) ----
 PAGES["playground"] = {
-    "title": "Jev Playground — Try the Jev Model Online With Your Own API Key | Jev Hub",
+    "title": "Jev AI Playground — Try the Jev Model Online With Your Own Key | Jev Hub",
     "desc": "Run real Jev (TypeSafe System One) decisions in your browser: build Choice, Score and Noul questions, use your own API key (stored locally, never sent to us), and see live probabilities, confidence and per-call cost.",
     "crumb": [("Home", "/"), ("Playground", None)],
     "wide": True,
@@ -738,7 +738,7 @@ PAGES["playground"] = {
     }],
     "body": """<div class="hero pg-hero">
   <div class="kicker">BYOK · Your key stays in your browser</div>
-  <h1>Jev Playground</h1>
+  <h1>Jev AI Playground</h1>
   <p class="sub">Build typed questions — <strong>Choice</strong>, <strong>Score</strong>, <strong>Noul</strong> — and run them against the live Jev API with <strong>your own API key</strong>. See exactly what your code would receive: answers, probabilities, confidence, tokens and cost. The key is stored in this browser only and sent directly to api.typesafe.ai — never to us.</p>
 </div>
 
