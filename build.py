@@ -122,7 +122,7 @@ def render_page(lang, slug, page, all_pages):
     loc = LOCALES[lang]
     crumb = page.get("crumb") or [(loc["home_label"], "/" if lang == "en" else "/zh/")]
     canonical = page_url(lang, slug)
-    og_image = f"{SITE_URL}/og/{lang}-{slug}.png"
+    og_image = f"{SITE_URL}/og/{lang}-{slug}.png?v=2"
     en_url, zh_url = page_url("en", slug), page_url("zh", slug)
     hreflang = (
         f'  <link rel="alternate" hreflang="en" href="{en_url}"/>\n'

@@ -62,16 +62,12 @@ def make_card(path, title, subtitle, site_label, is_zh):
     d.rectangle([0, 0, W, 6], fill=NAVY)
     d.rectangle([0, H - 6, W, H], fill=NAVY)
 
-    # brand row: dark "J" mark + wordmark + unofficial
+    # brand row: dark "J" mark + wordmark
     d.rounded_rectangle([72, 64, 128, 120], radius=12, fill=NAVY)
     fj = font(F_MONO, 38)
     d.text((100, 92), "J", font=fj, fill=ACCENT, anchor="mm")
     f_brand = font(F_HELV_BOLD, 34)
     d.text((148, 92), "jev.hub", font=f_brand, fill=INK, anchor="lm")
-    f_unoff = font(F_MONO, 22)
-    uw = d.textlength("unofficial", font=f_unoff)
-    d.text((156 + d.textlength("jev.hub", font=f_brand), 92), "unofficial",
-           font=f_unoff, fill=MUTED, anchor="lm")
 
     # subtitle kicker above title
     f_kick = font(F_CN if is_zh else F_MONO, 24)
@@ -108,12 +104,12 @@ def main():
     for slug, page in PAGES_ZH.items():
         make_card(os.path.join(OUT_DIR, f"zh-{slug}.png"),
                   title=page["title"].split("—")[0].split("|")[0].split("：")[0].strip(),
-                  subtitle="JEV 非官方追踪站 · 每日更新",
+                  subtitle="Jev AI 追踪站 · 每日更新",
                   site_label="jev-ai.live", is_zh=True)
         n += 1
     # fallback for any page without a dedicated image
     make_card(os.path.join(OUT_DIR, "default.png"),
-              title="Jev AI, decoded", subtitle="THE UNOFFICIAL JEV TRACKER",
+              title="Jev AI, decoded", subtitle="THE JEV AI TRACKER",
               site_label="jev-ai.live", is_zh=False)
     print(f"generated {n + 1} OG images -> {OUT_DIR}")
 
