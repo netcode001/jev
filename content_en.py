@@ -748,7 +748,6 @@ PAGES["playground"] = {
 <div class="pg-keybar">
   <label>TypeSafe API key
     <input type="password" id="pg-key" placeholder="jev_..." autocomplete="off" spellcheck="false"/>
-    <span class="pg-hintkey">Saved in localStorage on this device only. Sent only to api.typesafe.ai.</span>
   </label>
   <label>Model
     <select id="pg-model">
@@ -1063,7 +1062,12 @@ PAGES["playground"] = {
     resultsEl.hidden = false; errEl.innerHTML = "";
     var t0 = Date.now();
     var ctrl = new AbortController(), timer = setTimeout(function(){ ctrl.abort(); }, 45000);
-    fetch(API, { method: "POST", headers: { "Authorization": "Bearer " + key, "Content-Type": "application/json" }, body: JSON.stringify(payload), signal: ctrl.signal })
+    var reqOpts = { method: "POST", headers: { "Authorization": "Bearer " + key, "Content-Type": "application/json" }, body: JSON.stringify(payload), signal: ctrl.signal };
+    fetch(API, reqOpts).catch(function(err){
+      if(err && err.name === "AbortError") throw err;
+      setStatus("Direct call blocked (CORS) — retrying via site proxy…");
+      return fetch("/api/systemone", reqOpts);
+    })
     .then(function(res){ clearTimeout(timer); return res.text().then(function(text){ return { ok: res.ok, status: res.status, text: text }; }); })
     .then(function(r){
       btn.disabled = false;
@@ -1083,7 +1087,7 @@ PAGES["playground"] = {
     .catch(function(err){
       clearTimeout(timer); btn.disabled = false;
       if(err && err.name === "AbortError"){ setStatus("Timed out after 45s.", true); return; }
-      setStatus("Network error — the browser may have blocked the call (CORS).", true);
+      setStatus("Network error — both the direct call and the site proxy failed.", true);
       showError(0, String(err), "The browser could not reach api.typesafe.ai directly. If the API does not allow browser origins (CORS), run the curl command below from a terminal, or proxy the call through your own backend.");
     });
   });

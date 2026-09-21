@@ -183,7 +183,6 @@ def render_page(lang, slug, page, all_pages):
   </div>
 </header>
 <main class="{'wrap wide' if page.get('wide') else 'wrap narrow'}">
-{breadcrumb_html(crumb, loc) if len(crumb) > 1 else ""}
 <article>
   {page['body']}
 </article>

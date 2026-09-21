@@ -724,7 +724,6 @@ PAGES["playground"] = {
 <div class="pg-keybar">
   <label>TypeSafe API Key
     <input type="password" id="pg-key" placeholder="jev_..." autocomplete="off" spellcheck="false"/>
-    <span class="pg-hintkey">仅保存在本设备的 localStorage，只发送到 api.typesafe.ai。</span>
   </label>
   <label>模型
     <select id="pg-model">
@@ -1033,7 +1032,12 @@ PAGES["playground"] = {
     resultsEl.hidden = false; errEl.innerHTML = "";
     var t0 = Date.now();
     var ctrl = new AbortController(), timer = setTimeout(function(){ ctrl.abort(); }, 45000);
-    fetch(API, { method: "POST", headers: { "Authorization": "Bearer " + key, "Content-Type": "application/json" }, body: JSON.stringify(payload), signal: ctrl.signal })
+    var reqOpts = { method: "POST", headers: { "Authorization": "Bearer " + key, "Content-Type": "application/json" }, body: JSON.stringify(payload), signal: ctrl.signal };
+    fetch(API, reqOpts).catch(function(err){
+      if(err && err.name === "AbortError") throw err;
+      setStatus("直连被拦截（CORS）——自动改走本站代理重试…");
+      return fetch("/api/systemone", reqOpts);
+    })
     .then(function(res){ clearTimeout(timer); return res.text().then(function(text){ return { ok: res.ok, status: res.status, text: text }; }); })
     .then(function(r){
       btn.disabled = false;
@@ -1053,8 +1057,8 @@ PAGES["playground"] = {
     .catch(function(err){
       clearTimeout(timer); btn.disabled = false;
       if(err && err.name === "AbortError"){ setStatus("超时（45 秒）。", true); return; }
-      setStatus("网络错误——浏览器可能拦截了直连（CORS）。", true);
-      showError(0, String(err), "浏览器无法直连 api.typesafe.ai。如果该 API 不允许浏览器跨域（CORS），请在终端运行下方的 curl 命令，或通过你自己的后端代理调用。");
+      setStatus("网络错误——直连和本站代理都失败了。", true);
+      showError(0, String(err), "直连 api.typesafe.ai 和本站代理 /api/systemone 都无法完成请求。请检查网络后重试，或在终端运行下方的 curl 命令。");
     });
   });
 
