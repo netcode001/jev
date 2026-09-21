@@ -1,10 +1,90 @@
 [
   {
     "date": "2026-09-21",
+    "title": "Kev: Tiny Jev-like family of decision models built on top of Qwen3.5",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/jaredpalmer/kev/tree/main",
+    "added": "2026-09-21"
+  },
+  {
+    "date": "2026-09-21",
+    "title": "Replacing an agentic classification loop with Jev: 7x faster",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://blog.r6i.it/typesafe-jev-vs-agentic-loop.html",
+    "added": "2026-09-21"
+  },
+  {
+    "date": "2026-09-21",
+    "title": "Jev's Architecture Unmasked",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://archerhume.com/posts/jevs-architecture-unmasked/",
+    "added": "2026-09-21"
+  },
+  {
+    "date": "2026-09-21",
+    "title": "Find-jevable-code – audit a repo for Jev-replaceable decisions",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://altslate-labs.github.io/jevable-code/",
+    "added": "2026-09-21"
+  },
+  {
+    "date": "2026-09-21",
+    "title": "You could have built Jev",
+    "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://sgnt.ai/p/jev/",
+    "added": "2026-09-21"
+  },
+  {
+    "date": "2026-09-21",
+    "title": "Turn any Llama-server into a jev system one endpoint",
+    "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/khimaros/verdict",
+    "added": "2026-09-21"
+  },
+  {
+    "date": "2026-09-21",
+    "title": "Talk to Hector Salamanca, powered by Jev and a bell",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://jev-hector.vercel.app/",
+    "added": "2026-09-21"
+  },
+  {
+    "date": "2026-09-21",
+    "title": "Have a Question? Ask Jev",
+    "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://askjev.net/",
+    "added": "2026-09-21"
+  },
+  {
+    "date": "2026-09-21",
     "title": "Jev opens up: no waitlist, $5 free credit for every signup",
     "summary": "TypeSafe removed the waitlist entirely — console.typesafe.ai is now open registration, with $5 in free credit (~120M input tokens) for new users. The Vercel and Cloudflare gateway paths continue unchanged.",
     "source": "console.typesafe.ai / aicrier",
     "url": "https://console.typesafe.ai",
+    "added": "2026-09-21"
+  },
+  {
+    "date": "2026-09-20",
+    "title": "Jev is now available to everyone. No waitlist.",
+    "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://twitter.com/typesafeai/status/2101786156572823624",
+    "added": "2026-09-21"
+  },
+  {
+    "date": "2026-09-20",
+    "title": "A MySQL plugin that filters rows by meaning (built on TypeSafe Jev)",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/maayanlevy/mysql-ailike",
     "added": "2026-09-21"
   },
   {
