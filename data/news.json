@@ -1,5 +1,13 @@
 [
   {
+    "date": "2026-09-21",
+    "title": "Jev opens up: no waitlist, $5 free credit for every signup",
+    "summary": "TypeSafe removed the waitlist entirely — console.typesafe.ai is now open registration, with $5 in free credit (~120M input tokens) for new users. The Vercel and Cloudflare gateway paths continue unchanged.",
+    "source": "console.typesafe.ai / aicrier",
+    "url": "https://console.typesafe.ai",
+    "added": "2026-09-21"
+  },
+  {
     "date": "2026-09-20",
     "title": "Show HN: Will Jev pull the lever in the trolley problem?",
     "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",

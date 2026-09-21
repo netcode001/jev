@@ -22,6 +22,9 @@ def faq_html_and_schema():
 
 
 NEWS = [
+    ("2026-09-21", "Jev 全面开放：取消 waitlist，注册即送 $5 额度",
+     "TypeSafe 完全取消排队，console.typesafe.ai 开放注册，新用户送 $5 额度（约 1.2 亿输入 tokens）。Vercel、Cloudflare 渠道路径不变。",
+     "console.typesafe.ai / 36kr"),
     ("2026-09-18", "第三方分析提醒：Jev 评测数据需谨慎看待",
      "多家独立媒体（The Tech Society、DataCamp、dev.to）汇总了 Jev 的数据并指出：4 工作流基准由厂商自行设计运行，「准确率」是与 GPT-6 Astra、Claude Fable 5.1 共识标签的一致性，并非真实标准答案。所有分析都建议先在自己的业务流量上实测。",
      "digitalstrategy-ai.com"),
@@ -49,7 +52,7 @@ FAQS = [
     ("basics", "Jev 能替代 ChatGPT 或 Claude 吗？",
      "不能。Jev 不会写文章、写邮件、做摘要，也无法开放式推理。它是补充角色：接管 LLM 技术栈里的结构化判断环节，让昂贵的生成模型少被调用。"),
     ("access", "必须等 TypeSafe 官方 waitlist 吗？",
-     "不一定。官方 waitlist 在放行中——上线约 36 小时就放行了 14 万人。更快的路径：Vercel AI Gateway（typesafe-ai/jev）、Cloudflare Workers AI（typesafe/jev）、OpenRouter（typesafe/jev-1.13），都无需排队直接拿 key。"),
+     "不用了。2026 年 9 月 20 日起 Jev 全面开放、取消排队：直接在 console.typesafe.ai 注册，新用户送 $5 额度（约 1.2 亿 tokens）。Vercel AI Gateway（typesafe-ai/jev）与 Cloudflare Workers AI（typesafe/jev）也可直接调用。"),
     ("access", "有免费的网页试用吗？",
      "有。获批用户可使用 console.typesafe.ai/playground：左侧粘贴文本作为 state，用大白话写问题，选好题型，点运行——一秒内返回带置信度的结果。Choice、Score、Noul 可以混在一次运行里。"),
     ("access", "官方提供哪些 SDK？",
@@ -88,7 +91,7 @@ PAGES = {}
 # ---- index ----
 PAGES["index"] = {
     "title": "Jev AI 中文站：价格、获取方式、评测与动态追踪 | Jev Hub",
-    "desc": "关于 TypeSafe AI 旗下 System One 模型 Jev 的独立中文信息站：它是什么、各渠道价格、带保留意见的评测数据、绕开 waitlist 的接入路径，以及自动更新的最新动态。",
+    "desc": "关于 TypeSafe AI 旗下 System One 模型 Jev 的独立中文信息站：它是什么、各渠道价格、带保留意见的评测数据、开放注册与免费额度的接入路径，以及自动更新的最新动态。",
     "crumb": [("首页", None)],
     "schema": [
         {"@context": "https://schema.org", "@type": "WebSite", "name": "Jev Hub", "url": "https://jevhub.ai/zh/",
@@ -101,16 +104,16 @@ PAGES["index"] = {
 <div class="hero">
   <div class="eyebrow"><span class="dot"></span> SYSTEM ONE MODEL · BY TYPESAFE AI · 2026</div>
   <h1>Jev AI <span class="accent">一次讲清</span>：价格、接入、评测与动态。</h1>
-  <p class="lede">Jev 不写文字，它返回<strong>带校准置信度的类型化决策</strong>。2026 年 9 月 15 日发布，几天内 14 万多人挤进 waitlist。所有人都在问：它是什么、多少钱、怎么用上？这个站回答这些问题——并且持续更新答案。</p>
+  <p class="lede">Jev 不写文字，它返回<strong>带校准置信度的类型化决策</strong>。2026 年 9 月 15 日发布，几天内 14 万多人排队——9 月 20 日起全面开放：无需排队，注册送 $5 额度。这个站持续回答：它是什么、多少钱、怎么用上。</p>
   <div class="hero-cta">
-    <a class="btn btn-primary" href="/zh/get-access/">绕开 waitlist 直接接入</a>
+    <a class="btn btn-primary" href="/zh/get-access/">免费开始 — 送 $5 额度</a>
     <a class="btn btn-ghost" href="/zh/what-is-jev/">Jev 是什么？</a>
   </div>
   <div class="stat-grid">
     <div class="stat"><div class="num">193.6x</div><div class="lbl">比前沿 LLM 更快（厂商自报）</div></div>
     <div class="stat"><div class="num">444.6x</div><div class="lbl">单位工作流成本更低（厂商自报）</div></div>
     <div class="stat"><div class="num alt">$0.042</div><div class="lbl">每 100 万输入 tokens，输出免费</div></div>
-    <div class="stat"><div class="num warn">14 万+</div><div class="lbl">waitlist 用户约 36 小时内放行</div></div>
+    <div class="stat"><div class="num warn">$5</div><div class="lbl">注册即送额度 — 全面开放，无需排队</div></div>
   </div>
 </div>
 
@@ -132,12 +135,12 @@ PAGES["index"] = {
 
 <section>
   <div class="kicker">03 · 接入</div>
-  <h2>不用排队的三条接入路径</h2>
-  <p>官方 waitlist 在放行，但三家渠道商已经可以直接拿 key：</p>
+  <h2>今天就能用上 Jev</h2>
+  <p>Jev 已于 9 月 20 日全面开放、排队取消。可以直接注册，也可以走渠道商：</p>
   <div class="card-grid">
+    <a class="card" href="/zh/get-access/#console"><span class="tag">已开放</span><h2>TypeSafe 控制台</h2><p>console.typesafe.ai — 注册送 $5 额度（约 1.2 亿 tokens），含 Playground 与 API key。</p></a>
     <a class="card" href="/zh/get-access/#vercel"><span class="tag">最快</span><h2>Vercel AI Gateway</h2><p>typesafe-ai/jev — 发布当天上线，Vercel 用户无需单独注册。</p></a>
     <a class="card" href="/zh/get-access/#cloudflare"><span class="tag">边缘</span><h2>Cloudflare Workers AI</h2><p>typesafe/jev — 32K 上下文，边缘节点运行，按请求计费。</p></a>
-    <a class="card" href="/zh/get-access/#openrouter"><span class="tag">多模型</span><h2>OpenRouter</h2><p>typesafe/jev-1.13 — 64K 上下文，输入 $0.042/1M、输出免费，一个 key 管多个模型。</p></a>
   </div>
 </section>
 
@@ -209,7 +212,7 @@ PAGES["what-is-jev"] = {
   <li><strong>是什么：</strong>一个返回类型化决策（选项、评分或真/假概率）+ 置信度的模型——绝不输出自由文本。</li>
   <li><strong>为什么重要：</strong>在结构化决策工作流上比前沿 LLM 快约 193.6 倍、便宜约 444.6 倍（TypeSafe 自报数字），因为没有逐 token 的串行生成。</li>
   <li><strong>价格：</strong>输入 $0.042 / 1M tokens，输出免费。</li>
-  <li><strong>现状：</strong>早期访问——官方 waitlist，或经 Vercel / Cloudflare / OpenRouter 即时使用。</li>
+  <li><strong>现状：</strong>已全面开放（2026-09-20 起）——console.typesafe.ai 注册送 $5 额度，或经 Vercel / Cloudflare 渠道调用。</li>
   <li><strong>注意：</strong>评测为厂商自跑、无独立复现；格式正确的答案仍可能带着高置信度出错。</li>
 </ul>
 
@@ -297,14 +300,14 @@ PAGES["what-is-jev"] = {
 <p>Jev 不是更便宜的 LLM，而是<strong>一个恰好有智能的类型化函数调用</strong>：直接返回代码可用的值，附带置信度。有了它，很多只为「在字符串输出中活下来并做校验」而存在的代码就不需要存在了。发布几天内，开源项目 <a href="/zh/ecosystem/">openjev</a> 就在小开源模型上复刻了这套接口模式——说明这个原语的生命周期可能超过任何单一厂商。</p>
 
 <h2 id="access">怎么试用</h2>
-<p>从零代码到完整 API 的三条路径，我们在<a href="/zh/get-access/">获取方式指南</a>里逐步讲清——包括经 Vercel、Cloudflare、OpenRouter 的免排队路径。什么时候该用 Jev、什么时候该用前沿模型，见 <a href="/zh/vs-llm/">Jev vs 大模型</a>；具体工作流见<a href="/zh/use-cases/">使用场景</a>。</p>
+<p>从零代码到完整 API 的三条路径，我们在<a href="/zh/get-access/">获取方式指南</a>里逐步讲清——包括送 $5 额度的官方直注路径与 Vercel / Cloudflare 渠道。什么时候该用 Jev、什么时候该用前沿模型，见 <a href="/zh/vs-llm/">Jev vs 大模型</a>；具体工作流见<a href="/zh/use-cases/">使用场景</a>。</p>
 """,
 }
 
 # ---- pricing ----
 PAGES["pricing"] = {
     "title": "Jev 价格（2026）：每 token、每决策成本与 LLM 对比",
-    "desc": "Jev 输入 $0.042/1M tokens、输出免费。对比全部渠道（OpenRouter、Vercel、Cloudflare、Vivgrid），看真实单决策成本，并用计算器估算你的账单。",
+    "desc": "Jev 输入 $0.042/1M tokens、输出免费。对比全部渠道（Vercel、Cloudflare、Vivgrid），看真实单决策成本，并用计算器估算你的账单。",
     "crumb": CRUMB_HOME + [("价格", None)],
     "schema": [],
     "body": """
@@ -335,11 +338,11 @@ PAGES["pricing"] = {
   <tbody>
     <tr><td>TypeSafe 控制台</td><td class="mono">jev-latest</td><td class="mono">$0.042</td><td class="mono">$0</td><td class="mono">64K</td><td>要（早期访问）</td></tr>
     <tr><td>Vercel AI Gateway</td><td class="mono">typesafe-ai/jev</td><td class="mono">$0.042</td><td class="mono">$0</td><td class="mono">64K</td><td class="good">不用</td></tr>
-    <tr><td>OpenRouter</td><td class="mono">typesafe/jev-1.13</td><td class="mono">$0.042</td><td class="mono">$0</td><td class="mono">64K</td><td class="good">不用</td></tr>
     <tr><td>Cloudflare Workers AI</td><td class="mono">typesafe/jev</td><td class="mono">$0.042</td><td class="mono">$0</td><td class="mono">32K</td><td class="good">不用</td></tr>
     <tr><td>Vivgrid</td><td class="mono">jev</td><td class="mono">$0.042</td><td class="mono">$0</td><td class="mono">64K</td><td class="good">不用</td></tr>
   </tbody>
 </table>
+<p class="updated">注：发布周有多篇报道称 Jev 已上 OpenRouter，但目前未在其列——使用前请以渠道商自己的模型列表为准。</p>
 </div>
 
 <h2>成本计算器</h2>
@@ -421,6 +424,17 @@ PAGES["use-cases"] = {
 <h2>10. 语义搜索与语料 Map-Reduce</h2>
 <p>以「全语料覆盖」可承受的成本对文档进行过滤、打分和映射——社区演示对 1,018 篇论文完成分类，<strong>总共 $0.08</strong>，中位延迟 256ms。</p>
 
+<h2>Jev 生态：star 最多的社区项目</h2>
+<p>真实仓库，按 GitHub star 排序（截至 2026-09-21）。完整目录见<a href="/zh/ecosystem/">生态页</a>。</p>
+<div class="card-grid">
+  <a class="card gh-card" href="https://github.com/OpenByteInc/QuantDinger" rel="nofollow noopener" target="_blank"><img loading="lazy" src="https://opengraph.githubassets.com/1/OpenByteInc/QuantDinger" alt="QuantDinger on GitHub"/><span class="tag">11.8k stars</span><h3>QuantDinger</h3><p>开源 AI 交易操作系统，集成 Jev System One——Agent 循环内高频的分类/路由/评分调用由 Jev 完成。</p></a>
+  <a class="card gh-card" href="https://github.com/jaredpalmer/kev" rel="nofollow noopener" target="_blank"><img loading="lazy" src="https://opengraph.githubassets.com/1/jaredpalmer/kev" alt="kev on GitHub"/><span class="tag">1.0k stars</span><h3>kev</h3><p>基于 Qwen3.5 的迷你 Jev 类决策模型家族，可以自己训练、自己跑——System One 的开源版本。</p></a>
+  <a class="card gh-card" href="https://github.com/reticlehq/reticle" rel="nofollow noopener" target="_blank"><img loading="lazy" src="https://opengraph.githubassets.com/1/reticlehq/reticle" alt="Reticle on GitHub"/><span class="tag">776 stars</span><h3>Reticle</h3><p>AI Agent 能生成代码，却难以理解代码——Reticle 把 Jev 式类型化理解带进它们构建的东西。</p></a>
+  <a class="card gh-card" href="https://github.com/devagrawal09/jev-review" rel="nofollow noopener" target="_blank"><img loading="lazy" src="https://opengraph.githubassets.com/1/devagrawal09/jev-review" alt="jev-review on GitHub"/><span class="tag">410 stars</span><h3>jev-review</h3><p>基于 Jev 的分阶段代码评审工作流，带本地仪表盘。</p></a>
+  <a class="card gh-card" href="https://github.com/itsmostafa/typesafe-mcp" rel="nofollow noopener" target="_blank"><img loading="lazy" src="https://opengraph.githubassets.com/1/itsmostafa/typesafe-mcp" alt="typesafe-mcp on GitHub"/><span class="tag">136 stars</span><h3>typesafe-mcp</h3><p>MCP 连接器，让任意 AI Agent 直接调用 Jev。</p></a>
+  <a class="card gh-card" href="https://github.com/0xNatoshi/jev-codex-router" rel="nofollow noopener" target="_blank"><img loading="lazy" src="https://opengraph.githubassets.com/1/0xNatoshi/jev-codex-router" alt="jev-codex-router on GitHub"/><span class="tag">88 stars</span><h3>jev-codex-router</h3><p>由 Jev 驱动的 Codex 逐轮模型与推理路由。</p></a>
+</div>
+
 <h2>Jev 不适合哪里</h2>
 <ul>
   <li><strong>一切生成任务：</strong>回复、摘要、代码补丁——继续用你的 LLM。</li>
@@ -433,34 +447,35 @@ PAGES["use-cases"] = {
 
 # ---- get-access ----
 PAGES["get-access"] = {
-    "title": "如何获取 Jev 使用权限（2026）：waitlist + 3 条快速路径",
-    "desc": "拿到 Jev API key 的四种方式：TypeSafe 官方 waitlist，或经 Vercel AI Gateway、Cloudflare Workers AI、OpenRouter 即时接入——附 5 分钟快速上手。",
+    "title": "如何获取 Jev 使用权限（2026）：开放注册、$5 免费额度与渠道路径",
+    "desc": "Jev 已全面开放、无需排队。直接在 console.typesafe.ai 注册并领取 $5 免费额度，或经 Vercel AI Gateway、Cloudflare Workers AI 调用——附 5 分钟快速上手。",
     "crumb": CRUMB_HOME + [("获取方式", None)],
     "schema": [],
     "body": """
 <p class="updated">最后更新：2026-09-20</p>
 <h1>如何获取 Jev 使用权限</h1>
-<p class="lede">Jev 目前是早期访问。官方 waitlist 确实在放行——上线约 36 小时就放行了 14 万人——但如果你想今天就动手，<strong>三家渠道商已经无需排队直接提供服务</strong>。四条路的尽头是同一个模型。</p>
+<p class="lede"><strong>Jev 已于 2026 年 9 月 20 日全面开放——排队取消。</strong>在 console.typesafe.ai 注册即送 $5 额度（约 1.2 亿输入 tokens）。也可以走 Vercel、Cloudflare 渠道，调用的都是同一个模型。</p>
 
-<h2>方式一：TypeSafe 官方 waitlist</h2>
+<h2 id="console">方式一：TypeSafe 官方直注（已开放）</h2>
 <ol>
-  <li>在 <a href="https://typesafe.ai" rel="nofollow noopener" target="_blank">typesafe.ai</a> 用邮箱注册。</li>
-  <li>等待邀请——上线以来放行节奏很快（有早期用户几小时就获批，但不作保证）。</li>
-  <li>获批后获得 <span class="mono">console.typesafe.ai</span> 的密钥，含网页 Playground 和 API key 管理。</li>
+  <li>打开 <a href="https://console.typesafe.ai" rel="nofollow noopener" target="_blank">console.typesafe.ai</a> 注册——无需排队、无需邀请。</li>
+  <li>新账户赠送 <strong>$5 免费额度</strong>——按 $0.042/1M 计价约等于 1.2 亿输入 tokens。</li>
+  <li>控制台内含网页 Playground、API key 管理与用量看板。</li>
 </ol>
 
-<h2 id="vercel">方式二：Vercel AI Gateway（最快，免排队）</h2>
+<h2 id="vercel">方式二：Vercel AI Gateway（Vercel 用户免注册）</h2>
 <p>发布当天 Jev 即进入 Vercel AI Gateway，模型 ID 为 <span class="mono">typesafe-ai/jev</span>。如果你本来就在 Vercel 上开发，无需单独注册——用现有账户直接调用。价格与 TypeSafe 原生 $0.042/1M 一致。</p>
 
 <h2 id="cloudflare">方式三：Cloudflare Workers AI</h2>
 <p>Cloudflare 上线了 <span class="mono">typesafe/jev</span>，按请求在边缘计费。注意这里的上下文窗口是 <strong>32K</strong>（不是 64K）——长文本先分块。</p>
 
-<h2 id="openrouter">方式四：OpenRouter</h2>
-<p>OpenRouter 提供 <span class="mono">typesafe/jev-1.13</span>：输入 $0.042/1M、输出免费、64K 上下文。适合想用一个 key 同时管 Jev 和其他模型的团队，也方便把 Jev 和聊天模型放在一起 A/B 测决策质量。</p>
+<h2 id="openrouter">关于 OpenRouter 的说明</h2>
+<div class="callout warn"><div class="t">目前未见上架</div>
+<p>发布周有多篇报道称 Jev 已上 OpenRouter，但其公开模型 API 目前查不到任何 TypeSafe 条目。动手前请以渠道商自己的模型列表为准——当前可靠的路径是 TypeSafe 控制台、Vercel AI Gateway 与 Cloudflare Workers AI。</p></div>
 
 <h2>5 分钟快速上手</h2>
 <h3>1. 先玩 Playground（零代码）</h3>
-<p>获批用户打开 <span class="mono">console.typesafe.ai/playground</span>：粘贴文本作为 state，用大白话写问题，选题型（Choice / Score / Noul），点运行。亚秒级返回，带置信度。官方入门例：粘贴「我的 Stripe 账户连了 3 天一直失败，我正在丢单」，问「这条消息表达了紧急感吗？」</p>
+<p>打开 <span class="mono">console.typesafe.ai/playground</span>：粘贴文本作为 state，用大白话写问题，选题型（Choice / Score / Noul），点运行。亚秒级返回，带置信度。官方入门例：粘贴「我的 Stripe 账户连了 3 天一直失败，我正在丢单」，问「这条消息表达了紧急感吗？」</p>
 <h3>2. 调 API</h3>
 <pre><code>curl https://api.typesafe.ai/v1/systemone \\
   -H <span class="c-str">"Authorization: Bearer $JEV_API_KEY"</span> \\
@@ -577,7 +592,7 @@ PAGES["vs-llm"] = {
 # ---- news ----
 PAGES["news"] = {
     "title": "Jev 动态与更新——自动追踪时间线（2026）",
-    "desc": "关于 Jev 的每一条重要更新：发布新闻、waitlist 放行、渠道上架、价格变化、评测分析与社区项目——自动追踪，持续更新。",
+    "desc": "关于 Jev 的每一条重要更新：发布新闻、接入政策变化、渠道上架、价格变化、评测分析与社区项目——自动追踪，持续更新。",
     "crumb": CRUMB_HOME + [("动态", None)],
     "schema": [],
     "body": """
@@ -633,7 +648,7 @@ PAGES["ecosystem"] = {
 _faq_body, _faq_schema = faq_html_and_schema()
 PAGES["faq"] = {
     "title": "Jev 常见问题：关于 TypeSafe System One 模型的 20 个问答",
-    "desc": "关于 Jev 的直接答案：它是什么、waitlist 接入、价格、速率限制、零幻觉保证、评测可信度，以及信息来源。",
+    "desc": "关于 Jev 的直接答案：它是什么、开放接入、价格、速率限制、零幻觉保证、评测可信度，以及信息来源。",
     "crumb": CRUMB_HOME + [("常见问题", None)],
     "schema": [_faq_schema],
     "body": """

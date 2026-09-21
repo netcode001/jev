@@ -246,3 +246,6 @@ details .a p:first-child { margin-top: 0; }
   th, td { padding: 11px 14px; font-size: 13.5px; }
   .lang-switch { margin-left: auto; }
 }
+
+.gh-card img { width: 100%; aspect-ratio: 2 / 1; object-fit: cover; border-radius: 8px; border: 1px solid var(--line); margin-bottom: 12px; display: block; background: #0d1117; }
+.gh-card h3 { margin: 8px 0 4px; font-size: 17px; }

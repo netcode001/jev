@@ -176,7 +176,7 @@ def render_page(lang, slug, page, all_pages):
 <body>
 <header class="site-header">
   <div class="wrap">
-    <a class="logo" href="{lang_other if slug == 'index' else ('/' if lang == 'en' else '/zh/')}"><span class="mark">J</span>jev.hub <small>unofficial</small></a>
+    <a class="logo" href="{lang_other if slug == 'index' else ('/' if lang == 'en' else '/zh/')}"><span class="mark">J</span>jev.hub</a>
     <nav class="main-nav" aria-label="Main">{''.join(nav_links)}</nav>
     <a class="nav-cta" href="{'/get-access/' if lang == 'en' else '/zh/get-access/'}">{loc['nav_cta']}</a>
     <div class="lang-switch"><a href="{lang_other}" hreflang="{ 'zh' if lang == 'en' else 'en' }">{ '中文' if lang == 'en' else 'EN' }</a></div>
