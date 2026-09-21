@@ -252,15 +252,18 @@ details .a p:first-child { margin-top: 0; }
 
 /* ---- Playground (BYOK) ---- */
 .wrap.wide { max-width: 1060px; }
+.pg-hero { padding: 36px 0 32px; }
 .pg-hero .kicker { margin-bottom: 14px; }
+.pg-hero .sub { max-width: 800px; }
+#pg-app .pg-notice { margin-top: 0; }
 .pg-notice { background: var(--amber-bg); border: 1px solid var(--amber-line); color: var(--amber-ink); border-radius: 8px; padding: 12px 16px; font-size: 14px; margin: 18px 0; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
 .pg-notice a { font-weight: 600; }
-.pg-keybar { display: flex; gap: 14px; flex-wrap: wrap; align-items: flex-end; background: var(--dark); color: #fff; border-radius: 10px; padding: 16px 18px; margin: 18px 0 22px; }
+.pg-keybar { display: flex; gap: 14px; flex-wrap: wrap; align-items: flex-end; background: var(--dark); color: #fff; border-radius: 10px; padding: 14px 16px; margin: 0 0 16px; }
 .pg-keybar label { display: flex; flex-direction: column; gap: 5px; font-size: 12.5px; color: #B9C2CF; flex: 1 1 240px; }
 .pg-keybar input, .pg-keybar select { background: var(--dark-2); color: #fff; border: 1px solid #2A3A55; border-radius: 6px; padding: 8px 10px; font-size: 14px; font-family: var(--mono); }
 .pg-keybar input:focus, .pg-keybar select:focus { outline: 2px solid var(--accent); }
 .pg-keybar .pg-hintkey { font-size: 11.5px; color: #7E8AA0; }
-.pg-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 18px; align-items: start; }
+.pg-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 14px; align-items: start; }
 .pg-card { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; }
 .pg-card > h2 { font-size: 16px; margin-bottom: 10px; }
 .pg-label { font-size: 12.5px; font-weight: 600; color: var(--ink-2); display: block; margin: 10px 0 4px; }
@@ -281,7 +284,9 @@ details .a p:first-child { margin-top: 0; }
 .pg-optdel:hover { color: var(--accent-ink); }
 .pg-ghost { background: none; border: 1px dashed var(--line); border-radius: 6px; color: var(--ink-2); padding: 7px 12px; font-size: 13px; cursor: pointer; font-family: var(--sans); }
 .pg-ghost:hover { border-color: var(--accent); color: var(--accent-ink); }
-.pg-runrow { display: flex; align-items: center; gap: 16px; margin: 20px 0; flex-wrap: wrap; }
+.pg-runrow { display: flex; align-items: center; gap: 16px; margin: 16px 0; flex-wrap: wrap; }
+#pg-app + section { padding: 40px 0 48px; }
+.pg-empty { color: var(--ink-3); font-size: 13.5px; padding: 4px 0 12px; }
 .pg-run { background: var(--accent); color: #fff; border: none; border-radius: 8px; padding: 12px 28px; font-size: 15.5px; font-weight: 700; cursor: pointer; font-family: var(--sans); }
 .pg-run:hover { background: var(--accent-ink); }
 .pg-run[disabled] { opacity: 0.55; cursor: wait; }

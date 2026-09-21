@@ -739,12 +739,13 @@ PAGES["playground"] = {
 <div class="pg-grid">
   <section class="pg-card">
     <h2>1 · State（待判断内容）</h2>
-    <textarea id="pg-state" class="pg-textarea" rows="12" placeholder="粘贴工单、评论、文本段落或 JSON 对象——这是 Jev 要判断的内容。"></textarea>
+    <textarea id="pg-state" class="pg-textarea" rows="7" placeholder="粘贴工单、评论、文本段落或 JSON 对象——这是 Jev 要判断的内容。"></textarea>
     <p class="pg-hint">纯文本或 JSON——下方所有问题共享这份 State，在同一次调用里各自独立作答。</p>
   </section>
   <section class="pg-card">
     <h2>2 · 问题 <span class="pg-p" id="pg-count"></span></h2>
     <div id="pg-questions"></div>
+    <div class="pg-empty" id="pg-empty">还没有问题——点上方「加载示例」，或在下面自己添加。</div>
     <button class="pg-ghost" id="pg-addq">+ 添加问题（最多 8 个）</button>
   </section>
 </div>
@@ -871,6 +872,7 @@ PAGES["playground"] = {
   function renumber(){
     var cards = listEl.querySelectorAll(".pg-qcard");
     countEl.textContent = cards.length + " / 8";
+    var em = document.getElementById("pg-empty"); if(em) em.style.display = cards.length ? "none" : "";
     cards.forEach(function(card){
       if(card.querySelector(".pg-qtype").value !== "score") return;
       card.querySelectorAll(".pg-optrow").forEach(function(r, i){ r.querySelector(".pg-lvlno").textContent = i; });

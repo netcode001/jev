@@ -763,12 +763,13 @@ PAGES["playground"] = {
 <div class="pg-grid">
   <section class="pg-card">
     <h2>1 · State</h2>
-    <textarea id="pg-state" class="pg-textarea" rows="12" placeholder="Paste the ticket, review, passage or JSON object that Jev should judge."></textarea>
+    <textarea id="pg-state" class="pg-textarea" rows="7" placeholder="Paste the ticket, review, passage or JSON object that Jev should judge."></textarea>
     <p class="pg-hint">Plain text or JSON — all questions share this state and are answered independently in a single call.</p>
   </section>
   <section class="pg-card">
     <h2>2 · Questions <span class="pg-p" id="pg-count"></span></h2>
     <div id="pg-questions"></div>
+    <div class="pg-empty" id="pg-empty">No questions yet — click <strong>Load example</strong> above, or add your own below.</div>
     <button class="pg-ghost" id="pg-addq">+ Add question (max 8)</button>
   </section>
 </div>
@@ -895,6 +896,7 @@ PAGES["playground"] = {
   function renumber(){
     var cards = listEl.querySelectorAll(".pg-qcard");
     countEl.textContent = cards.length + " / 8";
+    var em = document.getElementById("pg-empty"); if(em) em.style.display = cards.length ? "none" : "";
     cards.forEach(function(card){
       if(card.querySelector(".pg-qtype").value !== "score") return;
       card.querySelectorAll(".pg-optrow").forEach(function(r, i){ r.querySelector(".pg-lvlno").textContent = i; });
