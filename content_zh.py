@@ -179,7 +179,7 @@ PAGES["index"] = {
 
 # ---- what-is-jev ----
 PAGES["what-is-jev"] = {
-    "title": "Jev 是什么？TypeSafe System One 模型完整解读（2026）",
+    "title": "Jev AI 是什么？TypeSafe System One 模型完整解读（2026）",
     "desc": "Jev 完整中文指南：System One 模型原理、Choice/Score/Noul 三种题型、RLCD 训练方法、带保留意见的评测数据、价格与局限性。",
     "crumb": CRUMB_HOME + [("Jev 是什么", None)],
     "schema": [{
@@ -384,7 +384,7 @@ PAGES["pricing"] = {
 
 # ---- use-cases ----
 PAGES["use-cases"] = {
-    "title": "Jev 的 10 个使用场景（附真实数据，2026）",
+    "title": "Jev AI 的 10 个使用场景（附真实数据，2026）",
     "desc": "Jev 实战打法与社区实测数据：agent 护栏、模型路由、RAG 过滤、工单分诊、内容审核、LLM-as-judge、线索评分等。",
     "crumb": CRUMB_HOME + [("使用场景", None)],
     "schema": [],
@@ -448,7 +448,7 @@ PAGES["use-cases"] = {
 
 # ---- get-access ----
 PAGES["get-access"] = {
-    "title": "如何获取 Jev 使用权限（2026）：开放注册、$5 免费额度与渠道路径",
+    "title": "如何获取 Jev AI 使用权限（2026）：开放注册、$5 免费额度",
     "desc": "Jev 已全面开放、无需排队。直接在 console.typesafe.ai 注册并领取 $5 免费额度，或经 Vercel AI Gateway、Cloudflare Workers AI 调用——附 5 分钟快速上手。",
     "crumb": CRUMB_HOME + [("获取方式", None)],
     "schema": [],
@@ -517,7 +517,7 @@ PAGES["get-access"] = {
 
 # ---- vs-llm ----
 PAGES["vs-llm"] = {
-    "title": "Jev vs 大模型：什么时候用哪个（2026 诚实指南）",
+    "title": "Jev AI vs 大模型：什么时候用哪个（2026 诚实指南）",
     "desc": "用 Jev 还是用聊天大模型？路由、分类、生成三类工作流的决策表，混合架构模式，以及双方诚实的局限。",
     "crumb": CRUMB_HOME + [("Jev vs 大模型", None)],
     "schema": [],
@@ -593,7 +593,7 @@ PAGES["vs-llm"] = {
 
 # ---- news ----
 PAGES["news"] = {
-    "title": "Jev 动态与更新——自动追踪时间线（2026）",
+    "title": "Jev AI 动态与更新——自动追踪时间线（2026）",
     "desc": "关于 Jev 的每一条重要更新：发布新闻、接入政策变化、渠道上架、价格变化、评测分析与社区项目——自动追踪，持续更新。",
     "crumb": CRUMB_HOME + [("动态", None)],
     "schema": [],
@@ -609,7 +609,7 @@ PAGES["news"] = {
 
 # ---- ecosystem ----
 PAGES["ecosystem"] = {
-    "title": "Jev 生态项目目录：开源项目与社区工具",
+    "title": "Jev AI 生态项目目录：开源项目与社区工具",
     "desc": "Jev 项目大全：openjev、jev-ultrafast、jev-guard、pg-jev、HA-Jev、jevmeter 等——各自做什么、谁在维护。",
     "crumb": CRUMB_HOME + [("生态项目", None)],
     "schema": [],
@@ -649,7 +649,7 @@ PAGES["ecosystem"] = {
 # ---- faq ----
 _faq_body, _faq_schema = faq_html_and_schema()
 PAGES["faq"] = {
-    "title": "Jev 常见问题：关于 TypeSafe System One 模型的 20 个问答",
+    "title": "Jev AI 常见问题：TypeSafe System One 模型 20 个问答",
     "desc": "关于 Jev 的直接答案：它是什么、开放接入、价格、速率限制、零幻觉保证、评测可信度，以及信息来源。",
     "crumb": CRUMB_HOME + [("常见问题", None)],
     "schema": [_faq_schema],
