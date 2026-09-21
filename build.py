@@ -362,7 +362,13 @@ def build():
 
     count = sum(len(p) for p in (PAGES_EN, PAGES_ZH))
     build_rss()
-    print(f"Built {count} pages + sitemap.xml + robots.txt + feed.xml -> {BUILD_DIR}")
+
+    # Cloudflare Pages advanced-mode worker: /api/systemone proxy
+    worker_src = os.path.join(os.path.dirname(os.path.abspath(__file__)), "_worker.js")
+    if os.path.exists(worker_src):
+        shutil.copyfile(worker_src, os.path.join(BUILD_DIR, "_worker.js"))
+
+    print(f"Built {count} pages + sitemap.xml + robots.txt + feed.xml + _worker.js -> {BUILD_DIR}")
 
 
 if __name__ == "__main__":
