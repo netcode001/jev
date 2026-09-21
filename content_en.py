@@ -192,6 +192,7 @@ PAGES["index"] = {
     <a class="card" href="/vs-llm/"><span class="tag">Decision</span><h2>Jev vs LLMs</h2><p>When the cheap typed model wins, and when you still need a frontier LLM.</p></a>
     <a class="card" href="/ecosystem/"><span class="tag">Build</span><h2>Ecosystem</h2><p>openjev, jev-ultrafast, pg-jev and a dozen community projects building on Jev.</p></a>
     <a class="card" href="/faq/"><span class="tag">Answers</span><h2>FAQ</h2><p>20 questions answered: access, pricing, limits, and what to distrust.</p></a>
+    <a class="card" href="/playground/"><span class="tag">Tool</span><h2>Playground</h2><p>Run real Jev decisions in your browser with your own API key — Choice, Score, Noul, live probabilities.</p></a>
     <a class="card" href="/zh/"><span class="tag">中文</span><h2>中文版</h2><p>本站的完整中文版本，内容同步更新。</p></a>
   </div>
 </section>
@@ -479,6 +480,7 @@ PAGES["get-access"] = {
 <h1>How to Get Access to Jev</h1>
 <p class="lede"><strong>Jev opened to everyone on Sep 20, 2026 — the waitlist is gone.</strong> Sign up at console.typesafe.ai and get $5 in free credit (~120M input tokens). Prefer a gateway? Vercel and Cloudflare serve the same model. Every route ends at the same Jev.</p>
 
+<div class="pg-notice">Want to feel the model before writing code? <a href="/playground/">Open the Playground</a> — run real decisions with your key, right in the browser.</div>
 <h2 id="console">Option 1: direct signup at TypeSafe (open now)</h2>
 <ol>
   <li>Go to <a href="https://console.typesafe.ai" rel="nofollow noopener" target="_blank">console.typesafe.ai</a> and register — no waitlist, no invite.</li>
@@ -720,3 +722,389 @@ NEWS_FULL = "".join(
     for d, t, s, src in NEWS
 )
 PAGES["news"]["body"] = PAGES["news"]["body"].replace("{NEWS_FULL}", NEWS_FULL)
+
+# ---- playground (BYOK interactive tool) ----
+PAGES["playground"] = {
+    "title": "Jev Playground — Try the Jev Model Online With Your Own API Key | Jev Hub",
+    "desc": "Run real Jev (TypeSafe System One) decisions in your browser: build Choice, Score and Noul questions, use your own API key (stored locally, never sent to us), and see live probabilities, confidence and per-call cost.",
+    "crumb": [("Home", "/"), ("Playground", None)],
+    "wide": True,
+    "schema": [{
+        "@context": "https://schema.org", "@type": "WebApplication",
+        "name": "Jev Playground", "url": "https://jev-ai.live/playground/",
+        "applicationCategory": "DeveloperApplication", "operatingSystem": "Web",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "description": "Browser playground for the Jev model: build typed questions and run real decisions with your own TypeSafe API key.",
+    }],
+    "body": """<div class="hero pg-hero">
+  <div class="kicker">BYOK · Your key stays in your browser</div>
+  <h1>Jev Playground</h1>
+  <p class="sub">Build typed questions — <strong>Choice</strong>, <strong>Score</strong>, <strong>Noul</strong> — and run them against the live Jev API with <strong>your own API key</strong>. See exactly what your code would receive: answers, probabilities, confidence, tokens and cost. The key is stored in this browser only and sent directly to api.typesafe.ai — never to us.</p>
+</div>
+
+<div id="pg-app">
+<div class="pg-notice" id="pg-nokey">No API key yet? TypeSafe registration is open with <strong>$5 in free credit</strong> (~120M tokens). <a href="/get-access/">Get a key here</a></div>
+
+<div class="pg-keybar">
+  <label>TypeSafe API key
+    <input type="password" id="pg-key" placeholder="jev_..." autocomplete="off" spellcheck="false"/>
+    <span class="pg-hintkey">Saved in localStorage on this device only. Sent only to api.typesafe.ai.</span>
+  </label>
+  <label>Model
+    <select id="pg-model">
+      <option value="jev-latest">jev-latest</option>
+      <option value="jev-preview">jev-preview</option>
+    </select>
+  </label>
+  <button class="pg-ghost" id="pg-example">Load example</button>
+  <button class="pg-ghost" id="pg-forget">Forget key</button>
+</div>
+
+<div class="pg-grid">
+  <section class="pg-card">
+    <h2>1 · State</h2>
+    <textarea id="pg-state" class="pg-textarea" rows="12" placeholder="Paste the ticket, review, passage or JSON object that Jev should judge."></textarea>
+    <p class="pg-hint">Plain text or JSON — all questions share this state and are answered independently in a single call.</p>
+  </section>
+  <section class="pg-card">
+    <h2>2 · Questions <span class="pg-p" id="pg-count"></span></h2>
+    <div id="pg-questions"></div>
+    <button class="pg-ghost" id="pg-addq">+ Add question (max 8)</button>
+  </section>
+</div>
+
+<div class="pg-runrow">
+  <button class="pg-run" id="pg-run">Run decision</button>
+  <span class="pg-status" id="pg-status"></span>
+</div>
+
+<section class="pg-card pg-results" id="pg-results" hidden>
+  <h2>3 · Results</h2>
+  <div id="pg-answers"></div>
+  <div class="pg-meta" id="pg-meta"></div>
+  <div id="pg-errbox"></div>
+</section>
+
+<section class="pg-card pg-curl" id="pg-curlbox" hidden>
+  <h2>Or run it from your terminal</h2>
+  <p class="pg-hint" style="margin-bottom:10px">The exact same request as a shell command — useful if the browser blocks the direct call (CORS) or you prefer the terminal:</p>
+  <pre id="pg-curl"></pre>
+  <button class="pg-ghost pg-copy" id="pg-copy">Copy curl command</button>
+</section>
+</div>
+
+<section>
+  <div class="kicker">How it works</div>
+  <h2>What just happened here</h2>
+  <p>This page is a thin client for the official <code>POST /v1/systemone</code> endpoint. You supply the key; the request goes from your browser straight to api.typesafe.ai. We never see your key, your state, or the answers. Everything you type is autosaved in your browser's localStorage so a refresh does not lose your work.</p>
+  <p>One call carries <strong>one state and all of its questions</strong> — the same pattern you would use in production. The response mirrors it: one typed answer per question, each with probabilities and a confidence value your code can gate on.</p>
+</section>
+
+<section>
+  <div class="kicker">Primitives</div>
+  <h2>The three question types</h2>
+  <h3>Choice — pick one of N options</h3>
+  <p>2–255 named options, optionally with a description each. Best for routing and classification: "which team handles this?", "is this passage relevant or not?". The answer is the winning option plus a probability for every option.</p>
+  <h3>Score — grade on an ordered scale</h3>
+  <p>2–10 levels ordered low to high, starting at 0. Best for graded judgments: frustration, urgency, quality. Write the boundary of each level into its description — that is what makes scores comparable across inputs.</p>
+  <h3>Noul — yes/no with a probability</h3>
+  <p>The cheapest primitive: a single binary judgment, returned as the probability of yes. Optionally describe what yes and no mean. Use it for guardrails: "does this need a human?", "is this request sensitive?".</p>
+</section>
+
+<section>
+  <div class="kicker">Good to know</div>
+  <h2>Limits, cost and honesty</h2>
+  <ul>
+    <li><strong>Billing is input-only</strong> at $0.042 per 1M tokens; output is free. This page shows the per-call token count and cost after every run.</li>
+    <li><strong>Limits</strong>: up to 64K tokens per request, 32K combined for state plus the longest question, ~1,200 requests/minute on direct access (subject to TypeSafe's current docs).</li>
+    <li><strong>A valid answer can still be wrong</strong> — Jev guarantees schema validity, not correctness. Gate actions on confidence bands: act automatically when high, review in the middle, escalate when low.</li>
+    <li><strong>Write atomic questions.</strong> One question = one judgment. "Score this startup" mixes market, tech and team — split it into several Score questions and combine in your code.</li>
+    <li><strong>No key yet?</strong> Registration is open with $5 in free credit — see <a href="/get-access/">Get access</a>.</li>
+  </ul>
+</section>
+
+<script>
+(function(){
+  var API = "https://api.typesafe.ai/v1/systemone";
+  var PRICE = 0.042;
+  var $ = function(s){ return document.querySelector(s); };
+  var esc = function(s){ return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); };
+  var NL = String.fromCharCode(10), BS = String.fromCharCode(92);
+  var keyEl = $("#pg-key"), modelEl = $("#pg-model"), stateEl = $("#pg-state");
+  var listEl = $("#pg-questions"), countEl = $("#pg-count"), statusEl = $("#pg-status");
+  var resultsEl = $("#pg-results"), answersEl = $("#pg-answers"), metaEl = $("#pg-meta"), errEl = $("#pg-errbox");
+  var curlBox = $("#pg-curlbox"), curlEl = $("#pg-curl");
+
+  function setStatus(msg, isErr){ statusEl.textContent = msg; statusEl.className = isErr ? "pg-status err" : "pg-status"; }
+
+  function optRow(kind, name, desc){
+    var d = document.createElement("div"); d.className = "pg-optrow";
+    if(kind === "choice"){
+      d.innerHTML = '<input class="pg-input pg-optname" placeholder="option_key" value="' + esc(name || "") + '"/><input class="pg-input pg-optdesc" placeholder="description (optional)" value="' + esc(desc || "") + '"/><button class="pg-optdel" title="remove">✕</button>';
+    } else if(kind === "score"){
+      d.innerHTML = '<span class="pg-lvlno"></span><input class="pg-input pg-optdesc" placeholder="level description (low to high)" value="' + esc(desc || "") + '"/><button class="pg-optdel" title="remove">✕</button>';
+    } else {
+      d.innerHTML = '<span class="pg-lvlno">' + (name === "true" ? "YES" : "NO") + '</span><input class="pg-input pg-optdesc" placeholder="' + (name === "true" ? "yes means..." : "no means...") + '" value="' + esc(desc || "") + '"/><span style="min-width:21px"></span>';
+    }
+    var b = d.querySelector(".pg-optdel");
+    if(b) b.addEventListener("click", function(){ d.remove(); renumber(); persist(); });
+    return d;
+  }
+
+  function qCard(q){
+    q = q || {};
+    var card = document.createElement("div"); card.className = "pg-qcard";
+    card.innerHTML = '<div class="pg-qhead"><input class="pg-input pg-qid" placeholder="question_id" value="' + esc(q.id || "") + '"/><select class="pg-select pg-qtype"><option value="choice">Choice</option><option value="score">Score</option><option value="noul">Noul (yes/no)</option></select><button class="pg-qdel" title="remove question">✕</button></div>'
+      + '<textarea class="pg-textarea pg-qinstr" rows="2" placeholder="Instructions: what exactly should Jev decide? Be specific.">' + esc(q.instructions || "") + '</textarea>'
+      + '<div class="pg-qopts"></div><button class="pg-ghost pg-addopt">+ Add option</button>';
+    var typeSel = card.querySelector(".pg-qtype"); typeSel.value = q.type || "choice";
+    var opts = card.querySelector(".pg-qopts"), addBtn = card.querySelector(".pg-addopt");
+    function rebuild(){
+      opts.innerHTML = "";
+      var t = typeSel.value;
+      if(t === "choice"){
+        var crit = (q && q.criteria && !Array.isArray(q.criteria)) ? q.criteria : null;
+        var keys = crit ? Object.keys(crit) : ["", ""];
+        if(!keys.length) keys = ["", ""];
+        keys.forEach(function(k){ opts.appendChild(optRow("choice", k, crit ? crit[k] : "")); });
+        addBtn.style.display = "";
+      } else if(t === "score"){
+        var lv = (q && Array.isArray(q.criteria) && q.criteria.length) ? q.criteria : ["", ""];
+        lv.forEach(function(v){ opts.appendChild(optRow("score", null, v)); });
+        addBtn.style.display = "";
+      } else {
+        var c = (q && q.criteria && !Array.isArray(q.criteria)) ? q.criteria : {};
+        opts.appendChild(optRow("noul", "true", c["true"] || ""));
+        opts.appendChild(optRow("noul", "false", c["false"] || ""));
+        addBtn.style.display = "none";
+      }
+      renumber();
+    }
+    typeSel.addEventListener("change", function(){ q = null; rebuild(); persist(); });
+    addBtn.addEventListener("click", function(){
+      opts.appendChild(optRow(typeSel.value === "score" ? "score" : "choice", "", ""));
+      renumber(); persist();
+    });
+    card.querySelector(".pg-qdel").addEventListener("click", function(){ card.remove(); renumber(); persist(); });
+    card.addEventListener("input", persist);
+    card._rebuild = rebuild;
+    rebuild();
+    return card;
+  }
+
+  function renumber(){
+    var cards = listEl.querySelectorAll(".pg-qcard");
+    countEl.textContent = cards.length + " / 8";
+    cards.forEach(function(card){
+      if(card.querySelector(".pg-qtype").value !== "score") return;
+      card.querySelectorAll(".pg-optrow").forEach(function(r, i){ r.querySelector(".pg-lvlno").textContent = i; });
+    });
+  }
+
+  function collect(){
+    var qs = {};
+    listEl.querySelectorAll(".pg-qcard").forEach(function(card, i){
+      var id = card.querySelector(".pg-qid").value.trim().replace(/[^a-zA-Z0-9_]/g, "_") || ("q" + (i + 1));
+      while(qs[id]) id = id + "_x";
+      var type = card.querySelector(".pg-qtype").value;
+      var q = { type: type, instructions: card.querySelector(".pg-qinstr").value.trim() };
+      var rows = card.querySelectorAll(".pg-optrow");
+      if(type === "choice"){
+        var c = {};
+        rows.forEach(function(r){
+          var n = r.querySelector(".pg-optname").value.trim();
+          if(n) c[n] = r.querySelector(".pg-optdesc").value.trim();
+        });
+        if(Object.keys(c).length) q.criteria = c;
+      } else if(type === "score"){
+        var lv = [];
+        rows.forEach(function(r){ lv.push(r.querySelector(".pg-optdesc").value.trim()); });
+        if(lv.length >= 2) q.criteria = lv;
+      } else {
+        var y = rows[0].querySelector(".pg-optdesc").value.trim();
+        var n = rows[1].querySelector(".pg-optdesc").value.trim();
+        if(y || n){ q.criteria = {}; if(y) q.criteria["true"] = y; if(n) q.criteria["false"] = n; }
+      }
+      qs[id] = q;
+    });
+    return qs;
+  }
+
+  function snapshot(){
+    var qs = [];
+    listEl.querySelectorAll(".pg-qcard").forEach(function(card){
+      var item = { id: card.querySelector(".pg-qid").value, type: card.querySelector(".pg-qtype").value, instructions: card.querySelector(".pg-qinstr").value, opts: [] };
+      card.querySelectorAll(".pg-optrow").forEach(function(r){
+        var n = r.querySelector(".pg-optname"), d = r.querySelector(".pg-optdesc");
+        item.opts.push({ name: n ? n.value : null, desc: d ? d.value : null });
+      });
+      qs.push(item);
+    });
+    return { state: stateEl.value, model: modelEl.value, questions: qs };
+  }
+  function persist(){ try{ localStorage.setItem("jev_pg_draft", JSON.stringify(snapshot())); }catch(e){} }
+
+  function restoreDraft(){
+    try{
+      var d = JSON.parse(localStorage.getItem("jev_pg_draft") || "null");
+      if(!d || !d.questions || !d.questions.length) return false;
+      if(d.model) modelEl.value = d.model;
+      if(d.state) stateEl.value = d.state;
+      listEl.innerHTML = "";
+      d.questions.forEach(function(qi){
+        var q = { id: qi.id || "", type: qi.type || "choice", instructions: qi.instructions || "" };
+        if(qi.type === "choice" && qi.opts){ q.criteria = {}; qi.opts.forEach(function(o){ if(o.name) q.criteria[o.name] = o.desc || ""; }); }
+        if(qi.type === "score" && qi.opts){ q.criteria = qi.opts.map(function(o){ return o.desc || ""; }); }
+        if(qi.type === "noul" && qi.opts){ q.criteria = { "true": (qi.opts[0] || {}).desc || "", "false": (qi.opts[1] || {}).desc || "" }; }
+        listEl.appendChild(qCard(q));
+      });
+      return true;
+    }catch(e){ return false; }
+  }
+
+  function restoreKey(){
+    try{
+      var k = localStorage.getItem("jev_pg_key");
+      if(k){ keyEl.value = k; $("#pg-nokey").style.display = "none"; }
+    }catch(e){}
+  }
+
+  $("#pg-example").addEventListener("click", function(){
+    stateEl.value = "Hi, I have been trying to connect my Stripe account for 3 days and it keeps failing. I am losing sales. Please help ASAP.";
+    listEl.innerHTML = "";
+    listEl.appendChild(qCard({ id: "department", type: "choice", instructions: "Which team should handle this ticket?", criteria: { billing: "Payments, invoicing, refunds", technical: "Bugs, outages, integrations", sales: "Pricing, upgrades, new accounts" } }));
+    listEl.appendChild(qCard({ id: "frustration", type: "score", instructions: "How frustrated is the customer?", criteria: ["Calm, just stating facts", "Frustrated but civil", "Very angry, strong language"] }));
+    listEl.appendChild(qCard({ id: "is_urgent", type: "noul", instructions: "Does this message express urgency or time-sensitivity?" }));
+    setStatus("Example loaded. Add your API key and hit Run.");
+    persist();
+  });
+
+  $("#pg-addq").addEventListener("click", function(){
+    if(listEl.querySelectorAll(".pg-qcard").length >= 8){ setStatus("Maximum 8 questions per call.", true); return; }
+    listEl.appendChild(qCard(null)); persist();
+  });
+
+  $("#pg-savekey").addEventListener("click", function(){
+    var k = keyEl.value.trim();
+    if(!k){ setStatus("Paste a key first.", true); return; }
+    try{ localStorage.setItem("jev_pg_key", k); $("#pg-nokey").style.display = "none"; setStatus("Key saved in this browser."); }
+    catch(e){ setStatus("Could not save (private mode?) — the key will be used for this session only."); }
+  });
+  $("#pg-forget").addEventListener("click", function(){
+    try{ localStorage.removeItem("jev_pg_key"); }catch(e){}
+    keyEl.value = ""; $("#pg-nokey").style.display = "flex";
+    setStatus("Key removed from this browser.");
+  });
+
+  function buildCurl(payload){
+    return 'curl -X POST https://api.typesafe.ai/v1/systemone ' + BS + NL
+      + '  -H "Authorization: Bearer $TYPESAFE_API_KEY" ' + BS + NL
+      + '  -H "Content-Type: application/json" ' + BS + NL
+      + "  -d @- <<'EOF'" + NL + JSON.stringify(payload, null, 2) + NL + "EOF";
+  }
+
+  function bars(probs, chosen){
+    if(!probs) return "";
+    var keys = Object.keys(probs).sort(function(a, b){ return probs[b] - probs[a]; });
+    if(!keys.length) return "";
+    var top = true, html = '<div class="pg-bars">';
+    keys.forEach(function(k){
+      var pct = Math.round(probs[k] * 100);
+      var on = (k === chosen) || (chosen === undefined && top);
+      html += '<div class="pg-bar' + (on ? " is-top" : "") + '"><span class="pg-barlabel' + (on ? " on" : "") + '">' + esc(k) + '</span><div class="pg-bartrack"><div class="pg-barfill" style="width:' + pct + '%"></div></div><span class="pg-barval">' + pct + '%</span></div>';
+      top = false;
+    });
+    return html + '</div>';
+  }
+
+  function showError(status, text, hint){
+    errEl.innerHTML = '<div class="pg-errbox"><strong>' + esc(String(status || "Error")) + '</strong> ' + esc(String(text || "").slice(0, 300)) + '<br/>' + esc(hint || "") + '</div>';
+    curlBox.hidden = false;
+  }
+
+  function render(data, ms){
+    var answers = data.answers || {}, html = "";
+    Object.keys(answers).forEach(function(id){
+      var a = answers[id] || {};
+      html += '<div class="pg-answer"><div class="pg-aid">' + esc(id) + (a.type ? '<span class="pg-typebadge">' + esc(a.type) + '</span>' : "") + '</div>';
+      if(a.choice !== undefined && a.choice !== null){
+        html += '<div class="pg-pick">→ ' + esc(a.choice) + '</div>' + bars(a.probabilities, a.choice);
+      } else if(a.score !== undefined && a.score !== null){
+        html += '<div class="pg-pick">→ score ' + esc(a.score) + '</div>' + bars(a.probabilities, undefined);
+      } else if(a.noul !== undefined && a.noul !== null){
+        var p = typeof a.noul === "number" ? a.noul : (a.noul ? 1 : 0);
+        html += '<div class="pg-pick">→ ' + (p >= 0.5 ? "YES" : "NO") + ' <span class="pg-p">(p(yes)=' + p.toFixed(2) + ')</span></div>';
+      } else {
+        html += '<div class="pg-pick">→ ' + esc(JSON.stringify(a)) + '</div>';
+      }
+      if(typeof a.confidence === "number") html += '<div class="pg-p">confidence ' + (a.confidence * 100).toFixed(0) + '%</div>';
+      html += '</div>';
+    });
+    answersEl.innerHTML = html;
+    var u = data.usage || {}, it = u.input_tokens || 0;
+    metaEl.textContent = (data.model || "") + " · " + it + " input tokens · " + (u.output_tokens || 0) + " output tokens · ≈ $" + (it / 1000000 * PRICE).toFixed(6) + " at $0.042/1M";
+    curlBox.hidden = true;
+  }
+
+  $("#pg-run").addEventListener("click", function(){
+    var key = keyEl.value.trim();
+    var qs = collect(), ids = Object.keys(qs);
+    if(!key){ setStatus("Enter your TypeSafe API key first (registration is open with $5 free credit — link at the top).", true); return; }
+    if(!ids.length){ setStatus("Add at least one question.", true); return; }
+    var raw = stateEl.value.trim();
+    if(!raw){ setStatus("State is empty — paste something for Jev to judge.", true); return; }
+    var state = raw;
+    if(raw.charAt(0) === "{" || raw.charAt(0) === "["){ try{ state = JSON.parse(raw); }catch(e){} }
+    var payload = { state: state, model: modelEl.value, questions: qs };
+    curlEl.textContent = buildCurl(payload);
+    var btn = this; btn.disabled = true; setStatus("Running…");
+    resultsEl.hidden = false; errEl.innerHTML = "";
+    var t0 = Date.now();
+    var ctrl = new AbortController(), timer = setTimeout(function(){ ctrl.abort(); }, 45000);
+    fetch(API, { method: "POST", headers: { "Authorization": "Bearer " + key, "Content-Type": "application/json" }, body: JSON.stringify(payload), signal: ctrl.signal })
+    .then(function(res){ clearTimeout(timer); return res.text().then(function(text){ return { ok: res.ok, status: res.status, text: text }; }); })
+    .then(function(r){
+      btn.disabled = false;
+      var ms = Date.now() - t0;
+      if(!r.ok){
+        var hint = (r.status === 401 || r.status === 403) ? "Check that the key is valid and has credits." : (r.status === 429 ? "Rate limited — wait a moment and retry." : "Check the payload (question types, option counts) and retry.");
+        showError(r.status, r.text, hint);
+        setStatus("Request failed (" + r.status + ").", true);
+        return;
+      }
+      var data;
+      try{ data = JSON.parse(r.text); }catch(e){ showError(0, "Response was not JSON.", "Try again shortly."); return; }
+      render(data, ms);
+      setStatus("Done in " + ms + " ms.");
+      persist();
+    })
+    .catch(function(err){
+      clearTimeout(timer); btn.disabled = false;
+      if(err && err.name === "AbortError"){ setStatus("Timed out after 45s.", true); return; }
+      setStatus("Network error — the browser may have blocked the call (CORS).", true);
+      showError(0, String(err), "The browser could not reach api.typesafe.ai directly. If the API does not allow browser origins (CORS), run the curl command below from a terminal, or proxy the call through your own backend.");
+    });
+  });
+
+  $("#pg-copy").addEventListener("click", function(){
+    var b = this;
+    function done(){ b.textContent = "Copied!"; setTimeout(function(){ b.textContent = "Copy curl command"; }, 1500); }
+    function fallback(){
+      var r = document.createRange(); r.selectNodeContents(curlEl);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      try{ document.execCommand("copy"); }catch(e){}
+      done();
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(curlEl.textContent).then(done, fallback); }
+    else fallback();
+  });
+
+  keyEl.addEventListener("input", function(){ if(keyEl.value.trim()) $("#pg-nokey").style.display = "none"; });
+  stateEl.addEventListener("input", persist);
+  modelEl.addEventListener("change", persist);
+
+  restoreKey();
+  if(!restoreDraft()){ $("#pg-example").click(); }
+})();
+</script>""",
+}

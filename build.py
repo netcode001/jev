@@ -47,7 +47,7 @@ LOCALES = {
         "brand": "jev<span>.hub</span>",
         "nav": {
             "what-is-jev": "What is Jev", "pricing": "Pricing",
-            "use-cases": "Use Cases", "get-access": "Get Access", "vs-llm": "Jev vs LLMs",
+            "use-cases": "Use Cases", "get-access": "Get Access", "playground": "Playground",
             "news": "News", "ecosystem": "Ecosystem", "faq": "FAQ",
         },
         "home_label": "Home", "nav_cta": "Get API Key",
@@ -57,7 +57,7 @@ LOCALES = {
         "footer_cols": [
             ("Learn", [("What is Jev", "/what-is-jev/"), ("Jev vs LLMs", "/vs-llm/"), ("Use Cases", "/use-cases/"), ("FAQ", "/faq/")]),
             ("Data", [("Pricing", "/pricing/"), ("News", "/news/"), ("Ecosystem", "/ecosystem/")]),
-            ("Access", [("Get Access", "/get-access/"), ("TypeSafe AI (official)", "https://typesafe.ai")]),
+            ("Access", [("Get Access", "/get-access/"), ("Playground", "/playground/"), ("TypeSafe AI (official)", "https://typesafe.ai")]),
         ],
         "disclaimer": ("Jev Hub is not affiliated with, endorsed by, or sponsored by TypeSafe AI. "
                        "\"Jev\" and \"TypeSafe\" are trademarks of their respective owners. Benchmark and "
@@ -70,7 +70,7 @@ LOCALES = {
         "brand": "jev<span>.hub</span>",
         "nav": {
             "what-is-jev": "Jev 是什么", "pricing": "价格",
-            "use-cases": "使用场景", "get-access": "获取方式", "vs-llm": "Jev vs 大模型",
+            "use-cases": "使用场景", "get-access": "获取方式", "playground": "在线试玩",
             "news": "动态", "ecosystem": "生态项目", "faq": "常见问题",
         },
         "home_label": "首页", "nav_cta": "获取 API Key",
@@ -79,7 +79,7 @@ LOCALES = {
         "footer_cols": [
             ("了解", [("Jev 是什么", "/zh/what-is-jev/"), ("Jev vs 大模型", "/zh/vs-llm/"), ("使用场景", "/zh/use-cases/"), ("常见问题", "/zh/faq/")]),
             ("数据", [("价格对比", "/zh/pricing/"), ("最新动态", "/zh/news/"), ("生态项目", "/zh/ecosystem/")]),
-            ("接入", [("获取方式", "/zh/get-access/"), ("TypeSafe AI 官网", "https://typesafe.ai")]),
+            ("接入", [("获取方式", "/zh/get-access/"), ("在线试玩", "/zh/playground/"), ("TypeSafe AI 官网", "https://typesafe.ai")]),
         ],
         "disclaimer": ("Jev Hub 与 TypeSafe AI 无隶属、背书或赞助关系。\"Jev\"\"TypeSafe\" 为其各自所有者的商标。"
                        "除特别注明外，评测与价格数据均为厂商自报，可能随时调整。内容仅供参考，不构成投资或采购建议。"),
@@ -182,7 +182,7 @@ def render_page(lang, slug, page, all_pages):
     <div class="lang-switch"><a href="{lang_other}" hreflang="{ 'zh' if lang == 'en' else 'en' }">{ '中文' if lang == 'en' else 'EN' }</a></div>
   </div>
 </header>
-<main class="wrap narrow">
+<main class="{'wrap wide' if page.get('wide') else 'wrap narrow'}">
 {breadcrumb_html(crumb, loc) if len(crumb) > 1 else ""}
 <article>
   {page['body']}

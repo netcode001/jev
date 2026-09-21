@@ -170,6 +170,7 @@ PAGES["index"] = {
     <a class="card" href="/zh/vs-llm/"><span class="tag">决策</span><h2>Jev vs 大模型</h2><p>什么时候便宜的类型化模型赢，什么时候仍需要前沿 LLM。</p></a>
     <a class="card" href="/zh/ecosystem/"><span class="tag">生态</span><h2>生态项目</h2><p>openjev、jev-ultrafast、pg-jev 等十余个社区项目。</p></a>
     <a class="card" href="/zh/faq/"><span class="tag">答疑</span><h2>常见问题</h2><p>20 个问题直接回答：接入、价格、限制、哪些数字别轻信。</p></a>
+    <a class="card" href="/zh/playground/"><span class="tag">工具</span><h2>在线试玩</h2><p>浏览器里跑真实 Jev 决策：自带 API Key，Choice / Score / Noul 三种题型，实时概率结果。</p></a>
     <a class="card" href="/"><span class="tag">English</span><h2>English version</h2><p>The full English edition, kept in sync with this site.</p></a>
   </div>
 </section>
@@ -456,6 +457,7 @@ PAGES["get-access"] = {
 <h1>如何获取 Jev 使用权限</h1>
 <p class="lede"><strong>Jev 已于 2026 年 9 月 20 日全面开放——排队取消。</strong>在 console.typesafe.ai 注册即送 $5 额度（约 1.2 亿输入 tokens）。也可以走 Vercel、Cloudflare 渠道，调用的都是同一个模型。</p>
 
+<div class="pg-notice">写代码之前先上手感受？<a href="/zh/playground/">打开在线试玩</a>——在浏览器里用你的 Key 直接跑真实决策。</div>
 <h2 id="console">方式一：TypeSafe 官方直注（已开放）</h2>
 <ol>
   <li>打开 <a href="https://console.typesafe.ai" rel="nofollow noopener" target="_blank">console.typesafe.ai</a> 注册——无需排队、无需邀请。</li>
@@ -696,3 +698,383 @@ NEWS_FULL = "".join(
     for d, t, s, src in NEWS
 )
 PAGES["news"]["body"] = PAGES["news"]["body"].replace("{NEWS_FULL}", NEWS_FULL)
+
+# ---- playground (BYOK interactive tool) ----
+PAGES["playground"] = {
+    "title": "Jev Playground — 在线试玩 Jev 模型（自带 API Key）| Jev Hub",
+    "desc": "在浏览器里直接运行真实的 Jev（TypeSafe System One）决策：可视化构造 Choice / Score / Noul 三种题型，填入你自己的 TypeSafe API Key（仅存本地，不经过本站），实时查看概率、置信度、token 用量与单次成本。",
+    "crumb": [("首页", "/zh/"), ("在线试玩", None)],
+    "wide": True,
+    "schema": [{
+        "@context": "https://schema.org", "@type": "WebApplication",
+        "name": "Jev Playground", "url": "https://jev-ai.live/zh/playground/",
+        "applicationCategory": "DeveloperApplication", "operatingSystem": "Web",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "description": "Jev 模型浏览器试玩工具：可视化构造类型化问题，用自己的 TypeSafe API Key 运行真实决策。",
+    }],
+    "body": """<div class="hero pg-hero">
+  <div class="kicker">BYOK · Key 只存在你的浏览器里</div>
+  <h1>Jev Playground</h1>
+  <p class="sub">可视化构造三种题型——<strong>Choice</strong>（选择）、<strong>Score</strong>（评分）、<strong>Noul</strong>（是非）——用<strong>你自己的 API Key</strong> 直接调用真实的 Jev API，看看你的代码会收到什么：答案、概率、置信度、token 用量和成本。Key 只保存在本浏览器，直连 api.typesafe.ai，不经过本站。</p>
+</div>
+
+<div id="pg-app">
+<div class="pg-notice" id="pg-nokey">还没有 API Key？TypeSafe 已开放注册，<strong>送 $5 额度</strong>（约 1.2 亿 tokens）。<a href="/zh/get-access/">去获取 Key</a></div>
+
+<div class="pg-keybar">
+  <label>TypeSafe API Key
+    <input type="password" id="pg-key" placeholder="jev_..." autocomplete="off" spellcheck="false"/>
+    <span class="pg-hintkey">仅保存在本设备的 localStorage，只发送到 api.typesafe.ai。</span>
+  </label>
+  <label>模型
+    <select id="pg-model">
+      <option value="jev-latest">jev-latest</option>
+      <option value="jev-preview">jev-preview</option>
+    </select>
+  </label>
+  <button class="pg-ghost" id="pg-example">加载示例</button>
+  <button class="pg-ghost" id="pg-forget">清除 Key</button>
+</div>
+
+<div class="pg-grid">
+  <section class="pg-card">
+    <h2>1 · State（待判断内容）</h2>
+    <textarea id="pg-state" class="pg-textarea" rows="12" placeholder="粘贴工单、评论、文本段落或 JSON 对象——这是 Jev 要判断的内容。"></textarea>
+    <p class="pg-hint">纯文本或 JSON——下方所有问题共享这份 State，在同一次调用里各自独立作答。</p>
+  </section>
+  <section class="pg-card">
+    <h2>2 · 问题 <span class="pg-p" id="pg-count"></span></h2>
+    <div id="pg-questions"></div>
+    <button class="pg-ghost" id="pg-addq">+ 添加问题（最多 8 个）</button>
+  </section>
+</div>
+
+<div class="pg-runrow">
+  <button class="pg-run" id="pg-run">运行决策</button>
+  <span class="pg-status" id="pg-status"></span>
+</div>
+
+<section class="pg-card pg-results" id="pg-results" hidden>
+  <h2>3 · 结果</h2>
+  <div id="pg-answers"></div>
+  <div class="pg-meta" id="pg-meta"></div>
+  <div id="pg-errbox"></div>
+</section>
+
+<section class="pg-card pg-curl" id="pg-curlbox" hidden>
+  <h2>或者直接在终端里跑</h2>
+  <p class="pg-hint" style="margin-bottom:10px">和页面完全相同的请求，命令行版本——如果浏览器拦截了直连（CORS），或者你更习惯终端：</p>
+  <pre id="pg-curl"></pre>
+  <button class="pg-ghost pg-copy" id="pg-copy">复制 curl 命令</button>
+</section>
+</div>
+
+<section>
+  <div class="kicker">工作原理</div>
+  <h2>这个页面在做什么</h2>
+  <p>本页是官方 <code>POST /v1/systemone</code> 接口的一个薄客户端：你提供 Key，请求从你的浏览器直连 api.typesafe.ai。你的 Key、State 和结果都不经过我们的服务器。你输入的所有内容会自动保存在浏览器 localStorage，刷新页面不丢失。</p>
+  <p>一次调用携带<strong>一份 State 和全部问题</strong>——和生产代码的模式完全一致。响应结构也是一一对应：每个问题返回一个类型化答案，附带概率和置信度，供你的代码判断下一步动作。</p>
+</section>
+
+<section>
+  <div class="kicker">题型原语</div>
+  <h2>三种题型怎么选</h2>
+  <h3>Choice（选择）—— 从 N 个选项里挑一个</h3>
+  <p>2–255 个具名选项，每个可附描述。最适合路由和分类：「该哪个团队处理？」「这段内容相关还是无关？」。返回胜出选项 + 每个选项的概率。</p>
+  <h3>Score（评分）—— 有序量表打分</h3>
+  <p>2–10 个等级，从低到高，从 0 开始。最适合分级判断：愤怒程度、紧急程度、质量好坏。把每个等级的边界写进描述——这是让分数在不同输入之间可比的关键。</p>
+  <h3>Noul（是非）—— 带概率的二元判断</h3>
+  <p>最便宜的原语：一个二元判断，返回「是」的概率。可选描述 yes / no 各代表什么。适合做护栏：「这需要人工介入吗？」「这条请求敏感吗？」。</p>
+</section>
+
+<section>
+  <div class="kicker">注意事项</div>
+  <h2>限制、成本与诚实提醒</h2>
+  <ul>
+    <li><strong>只按输入计费</strong>：$0.042 / 百万 tokens，输出免费。每次运行后页面会显示本次的 token 用量和成本。</li>
+    <li><strong>限制</strong>：单请求最多 64K tokens，State + 最长问题合计 32K，直连约 1,200 次/分钟（以 TypeSafe 当前文档为准）。</li>
+    <li><strong>答案合法不代表答案正确</strong>——Jev 保证的是 schema 合法性，不是准确性。用置信度分档决策：高置信自动执行，中档人工复核，低置信升级处理。</li>
+    <li><strong>问题要原子化</strong>。一个问题 = 一个判断。「给这个创业项目打分」混合了市场、技术、团队多个维度——拆成多个 Score，在代码里组合。</li>
+    <li><strong>还没有 Key？</strong>注册已开放并送 $5 额度——见<a href="/zh/get-access/">获取方式</a>。</li>
+  </ul>
+</section>
+
+<script>
+(function(){
+  var API = "https://api.typesafe.ai/v1/systemone";
+  var PRICE = 0.042;
+  var $ = function(s){ return document.querySelector(s); };
+  var esc = function(s){ return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); };
+  var NL = String.fromCharCode(10), BS = String.fromCharCode(92);
+  var keyEl = $("#pg-key"), modelEl = $("#pg-model"), stateEl = $("#pg-state");
+  var listEl = $("#pg-questions"), countEl = $("#pg-count"), statusEl = $("#pg-status");
+  var resultsEl = $("#pg-results"), answersEl = $("#pg-answers"), metaEl = $("#pg-meta"), errEl = $("#pg-errbox");
+  var curlBox = $("#pg-curlbox"), curlEl = $("#pg-curl");
+
+  function setStatus(msg, isErr){ statusEl.textContent = msg; statusEl.className = isErr ? "pg-status err" : "pg-status"; }
+
+  function optRow(kind, name, desc){
+    var d = document.createElement("div"); d.className = "pg-optrow";
+    if(kind === "choice"){
+      d.innerHTML = '<input class="pg-input pg-optname" placeholder="选项 key" value="' + esc(name || "") + '"/><input class="pg-input pg-optdesc" placeholder="描述（可选）" value="' + esc(desc || "") + '"/><button class="pg-optdel" title="删除">✕</button>';
+    } else if(kind === "score"){
+      d.innerHTML = '<span class="pg-lvlno"></span><input class="pg-input pg-optdesc" placeholder="等级描述（从低到高）" value="' + esc(desc || "") + '"/><button class="pg-optdel" title="删除">✕</button>';
+    } else {
+      d.innerHTML = '<span class="pg-lvlno">' + (name === "true" ? "YES" : "NO") + '</span><input class="pg-input pg-optdesc" placeholder="' + (name === "true" ? "yes 代表…" : "no 代表…") + '" value="' + esc(desc || "") + '"/><span style="min-width:21px"></span>';
+    }
+    var b = d.querySelector(".pg-optdel");
+    if(b) b.addEventListener("click", function(){ d.remove(); renumber(); persist(); });
+    return d;
+  }
+
+  function qCard(q){
+    q = q || {};
+    var card = document.createElement("div"); card.className = "pg-qcard";
+    card.innerHTML = '<div class="pg-qhead"><input class="pg-input pg-qid" placeholder="问题 ID（英文）" value="' + esc(q.id || "") + '"/><select class="pg-select pg-qtype"><option value="choice">Choice 选择</option><option value="score">Score 评分</option><option value="noul">Noul 是非</option></select><button class="pg-qdel" title="删除问题">✕</button></div>'
+      + '<textarea class="pg-textarea pg-qinstr" rows="2" placeholder="指令：让 Jev 具体判断什么？越具体越好。">' + esc(q.instructions || "") + '</textarea>'
+      + '<div class="pg-qopts"></div><button class="pg-ghost pg-addopt">+ 添加选项</button>';
+    var typeSel = card.querySelector(".pg-qtype"); typeSel.value = q.type || "choice";
+    var opts = card.querySelector(".pg-qopts"), addBtn = card.querySelector(".pg-addopt");
+    function rebuild(){
+      opts.innerHTML = "";
+      var t = typeSel.value;
+      if(t === "choice"){
+        var crit = (q && q.criteria && !Array.isArray(q.criteria)) ? q.criteria : null;
+        var keys = crit ? Object.keys(crit) : ["", ""];
+        if(!keys.length) keys = ["", ""];
+        keys.forEach(function(k){ opts.appendChild(optRow("choice", k, crit ? crit[k] : "")); });
+        addBtn.style.display = "";
+      } else if(t === "score"){
+        var lv = (q && Array.isArray(q.criteria) && q.criteria.length) ? q.criteria : ["", ""];
+        lv.forEach(function(v){ opts.appendChild(optRow("score", null, v)); });
+        addBtn.style.display = "";
+      } else {
+        var c = (q && q.criteria && !Array.isArray(q.criteria)) ? q.criteria : {};
+        opts.appendChild(optRow("noul", "true", c["true"] || ""));
+        opts.appendChild(optRow("noul", "false", c["false"] || ""));
+        addBtn.style.display = "none";
+      }
+      renumber();
+    }
+    typeSel.addEventListener("change", function(){ q = null; rebuild(); persist(); });
+    addBtn.addEventListener("click", function(){
+      opts.appendChild(optRow(typeSel.value === "score" ? "score" : "choice", "", ""));
+      renumber(); persist();
+    });
+    card.querySelector(".pg-qdel").addEventListener("click", function(){ card.remove(); renumber(); persist(); });
+    card.addEventListener("input", persist);
+    card._rebuild = rebuild;
+    rebuild();
+    return card;
+  }
+
+  function renumber(){
+    var cards = listEl.querySelectorAll(".pg-qcard");
+    countEl.textContent = cards.length + " / 8";
+    cards.forEach(function(card){
+      if(card.querySelector(".pg-qtype").value !== "score") return;
+      card.querySelectorAll(".pg-optrow").forEach(function(r, i){ r.querySelector(".pg-lvlno").textContent = i; });
+    });
+  }
+
+  function collect(){
+    var qs = {};
+    listEl.querySelectorAll(".pg-qcard").forEach(function(card, i){
+      var id = card.querySelector(".pg-qid").value.trim().replace(/[^a-zA-Z0-9_]/g, "_") || ("q" + (i + 1));
+      while(qs[id]) id = id + "_x";
+      var type = card.querySelector(".pg-qtype").value;
+      var q = { type: type, instructions: card.querySelector(".pg-qinstr").value.trim() };
+      var rows = card.querySelectorAll(".pg-optrow");
+      if(type === "choice"){
+        var c = {};
+        rows.forEach(function(r){
+          var n = r.querySelector(".pg-optname").value.trim();
+          if(n) c[n] = r.querySelector(".pg-optdesc").value.trim();
+        });
+        if(Object.keys(c).length) q.criteria = c;
+      } else if(type === "score"){
+        var lv = [];
+        rows.forEach(function(r){ lv.push(r.querySelector(".pg-optdesc").value.trim()); });
+        if(lv.length >= 2) q.criteria = lv;
+      } else {
+        var y = rows[0].querySelector(".pg-optdesc").value.trim();
+        var n = rows[1].querySelector(".pg-optdesc").value.trim();
+        if(y || n){ q.criteria = {}; if(y) q.criteria["true"] = y; if(n) q.criteria["false"] = n; }
+      }
+      qs[id] = q;
+    });
+    return qs;
+  }
+
+  function snapshot(){
+    var qs = [];
+    listEl.querySelectorAll(".pg-qcard").forEach(function(card){
+      var item = { id: card.querySelector(".pg-qid").value, type: card.querySelector(".pg-qtype").value, instructions: card.querySelector(".pg-qinstr").value, opts: [] };
+      card.querySelectorAll(".pg-optrow").forEach(function(r){
+        var n = r.querySelector(".pg-optname"), d = r.querySelector(".pg-optdesc");
+        item.opts.push({ name: n ? n.value : null, desc: d ? d.value : null });
+      });
+      qs.push(item);
+    });
+    return { state: stateEl.value, model: modelEl.value, questions: qs };
+  }
+  function persist(){ try{ localStorage.setItem("jev_pg_draft", JSON.stringify(snapshot())); }catch(e){} }
+
+  function restoreDraft(){
+    try{
+      var d = JSON.parse(localStorage.getItem("jev_pg_draft") || "null");
+      if(!d || !d.questions || !d.questions.length) return false;
+      if(d.model) modelEl.value = d.model;
+      if(d.state) stateEl.value = d.state;
+      listEl.innerHTML = "";
+      d.questions.forEach(function(qi){
+        var q = { id: qi.id || "", type: qi.type || "choice", instructions: qi.instructions || "" };
+        if(qi.type === "choice" && qi.opts){ q.criteria = {}; qi.opts.forEach(function(o){ if(o.name) q.criteria[o.name] = o.desc || ""; }); }
+        if(qi.type === "score" && qi.opts){ q.criteria = qi.opts.map(function(o){ return o.desc || ""; }); }
+        if(qi.type === "noul" && qi.opts){ q.criteria = { "true": (qi.opts[0] || {}).desc || "", "false": (qi.opts[1] || {}).desc || "" }; }
+        listEl.appendChild(qCard(q));
+      });
+      return true;
+    }catch(e){ return false; }
+  }
+
+  function restoreKey(){
+    try{
+      var k = localStorage.getItem("jev_pg_key");
+      if(k){ keyEl.value = k; $("#pg-nokey").style.display = "none"; }
+    }catch(e){}
+  }
+
+  $("#pg-example").addEventListener("click", function(){
+    stateEl.value = "用户反馈：我的 Stripe 账户连续 3 天连接失败，一直在丢单，请尽快帮我处理！";
+    listEl.innerHTML = "";
+    listEl.appendChild(qCard({ id: "department", type: "choice", instructions: "这张工单应该由哪个团队处理？", criteria: { billing: "支付、账单、退款", technical: "故障、报错、集成问题", sales: "价格、升级、新账户" } }));
+    listEl.appendChild(qCard({ id: "frustration", type: "score", instructions: "客户的愤怒程度如何？", criteria: ["平静，只是陈述事实", "有情绪但仍然礼貌", "非常愤怒，言辞激烈"] }));
+    listEl.appendChild(qCard({ id: "is_urgent", type: "noul", instructions: "这条消息是否表达了紧急性或时效要求？" }));
+    setStatus("示例已加载。填入 API Key 后点「运行决策」。");
+    persist();
+  });
+
+  $("#pg-addq").addEventListener("click", function(){
+    if(listEl.querySelectorAll(".pg-qcard").length >= 8){ setStatus("单次调用最多 8 个问题。", true); return; }
+    listEl.appendChild(qCard(null)); persist();
+  });
+
+  $("#pg-forget").addEventListener("click", function(){
+    try{ localStorage.removeItem("jev_pg_key"); }catch(e){}
+    keyEl.value = ""; $("#pg-nokey").style.display = "flex";
+    setStatus("已从本浏览器清除 Key。");
+  });
+
+  function buildCurl(payload){
+    return 'curl -X POST https://api.typesafe.ai/v1/systemone ' + BS + NL
+      + '  -H "Authorization: Bearer $TYPESAFE_API_KEY" ' + BS + NL
+      + '  -H "Content-Type: application/json" ' + BS + NL
+      + "  -d @- <<'EOF'" + NL + JSON.stringify(payload, null, 2) + NL + "EOF";
+  }
+
+  function bars(probs, chosen){
+    if(!probs) return "";
+    var keys = Object.keys(probs).sort(function(a, b){ return probs[b] - probs[a]; });
+    if(!keys.length) return "";
+    var top = true, html = '<div class="pg-bars">';
+    keys.forEach(function(k){
+      var pct = Math.round(probs[k] * 100);
+      var on = (k === chosen) || (chosen === undefined && top);
+      html += '<div class="pg-bar' + (on ? " is-top" : "") + '"><span class="pg-barlabel' + (on ? " on" : "") + '">' + esc(k) + '</span><div class="pg-bartrack"><div class="pg-barfill" style="width:' + pct + '%"></div></div><span class="pg-barval">' + pct + '%</span></div>';
+      top = false;
+    });
+    return html + '</div>';
+  }
+
+  function showError(status, text, hint){
+    errEl.innerHTML = '<div class="pg-errbox"><strong>' + esc(String(status || "错误")) + '</strong> ' + esc(String(text || "").slice(0, 300)) + '<br/>' + esc(hint || "") + '</div>';
+    curlBox.hidden = false;
+  }
+
+  function render(data, ms){
+    var answers = data.answers || {}, html = "";
+    Object.keys(answers).forEach(function(id){
+      var a = answers[id] || {};
+      html += '<div class="pg-answer"><div class="pg-aid">' + esc(id) + (a.type ? '<span class="pg-typebadge">' + esc(a.type) + '</span>' : "") + '</div>';
+      if(a.choice !== undefined && a.choice !== null){
+        html += '<div class="pg-pick">→ ' + esc(a.choice) + '</div>' + bars(a.probabilities, a.choice);
+      } else if(a.score !== undefined && a.score !== null){
+        html += '<div class="pg-pick">→ 评分 ' + esc(a.score) + '</div>' + bars(a.probabilities, undefined);
+      } else if(a.noul !== undefined && a.noul !== null){
+        var p = typeof a.noul === "number" ? a.noul : (a.noul ? 1 : 0);
+        html += '<div class="pg-pick">→ ' + (p >= 0.5 ? "YES" : "NO") + ' <span class="pg-p">(p(yes)=' + p.toFixed(2) + ')</span></div>';
+      } else {
+        html += '<div class="pg-pick">→ ' + esc(JSON.stringify(a)) + '</div>';
+      }
+      if(typeof a.confidence === "number") html += '<div class="pg-p">置信度 ' + (a.confidence * 100).toFixed(0) + '%</div>';
+      html += '</div>';
+    });
+    answersEl.innerHTML = html;
+    var u = data.usage || {}, it = u.input_tokens || 0;
+    metaEl.textContent = (data.model || "") + " · 输入 " + it + " tokens · 输出 " + (u.output_tokens || 0) + " tokens · ≈ $" + (it / 1000000 * PRICE).toFixed(6) + "（按 $0.042/1M）";
+    curlBox.hidden = true;
+  }
+
+  $("#pg-run").addEventListener("click", function(){
+    var key = keyEl.value.trim();
+    var qs = collect(), ids = Object.keys(qs);
+    if(!key){ setStatus("先填入你的 TypeSafe API Key（注册已开放送 $5 额度——见页面顶部链接）。", true); return; }
+    if(!ids.length){ setStatus("至少添加一个问题。", true); return; }
+    var raw = stateEl.value.trim();
+    if(!raw){ setStatus("State 为空——先粘贴要判断的内容。", true); return; }
+    var state = raw;
+    if(raw.charAt(0) === "{" || raw.charAt(0) === "["){ try{ state = JSON.parse(raw); }catch(e){} }
+    var payload = { state: state, model: modelEl.value, questions: qs };
+    curlEl.textContent = buildCurl(payload);
+    var btn = this; btn.disabled = true; setStatus("运行中…");
+    resultsEl.hidden = false; errEl.innerHTML = "";
+    var t0 = Date.now();
+    var ctrl = new AbortController(), timer = setTimeout(function(){ ctrl.abort(); }, 45000);
+    fetch(API, { method: "POST", headers: { "Authorization": "Bearer " + key, "Content-Type": "application/json" }, body: JSON.stringify(payload), signal: ctrl.signal })
+    .then(function(res){ clearTimeout(timer); return res.text().then(function(text){ return { ok: res.ok, status: res.status, text: text }; }); })
+    .then(function(r){
+      btn.disabled = false;
+      var ms = Date.now() - t0;
+      if(!r.ok){
+        var hint = (r.status === 401 || r.status === 403) ? "请检查 Key 是否有效、账户是否有额度。" : (r.status === 429 ? "触发限流——稍等片刻再试。" : "请检查 payload（题型、选项数量）后重试。");
+        showError(r.status, r.text, hint);
+        setStatus("请求失败（" + r.status + "）。", true);
+        return;
+      }
+      var data;
+      try{ data = JSON.parse(r.text); }catch(e){ showError(0, "响应不是 JSON。", "请稍后重试。"); return; }
+      render(data, ms);
+      setStatus("完成，耗时 " + ms + " ms。");
+      persist();
+    })
+    .catch(function(err){
+      clearTimeout(timer); btn.disabled = false;
+      if(err && err.name === "AbortError"){ setStatus("超时（45 秒）。", true); return; }
+      setStatus("网络错误——浏览器可能拦截了直连（CORS）。", true);
+      showError(0, String(err), "浏览器无法直连 api.typesafe.ai。如果该 API 不允许浏览器跨域（CORS），请在终端运行下方的 curl 命令，或通过你自己的后端代理调用。");
+    });
+  });
+
+  $("#pg-copy").addEventListener("click", function(){
+    var b = this;
+    function done(){ b.textContent = "已复制！"; setTimeout(function(){ b.textContent = "复制 curl 命令"; }, 1500); }
+    function fallback(){
+      var r = document.createRange(); r.selectNodeContents(curlEl);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      try{ document.execCommand("copy"); }catch(e){}
+      done();
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(curlEl.textContent).then(done, fallback); }
+    else fallback();
+  });
+
+  keyEl.addEventListener("input", function(){ if(keyEl.value.trim()) $("#pg-nokey").style.display = "none"; });
+  stateEl.addEventListener("input", persist);
+  modelEl.addEventListener("change", persist);
+
+  restoreKey();
+  if(!restoreDraft()){ $("#pg-example").click(); }
+})();
+</script>""",
+}
