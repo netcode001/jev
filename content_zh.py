@@ -735,7 +735,8 @@ PAGES["playground"] = {
   <button class="pg-ghost" id="pg-forget">清除 Key</button>
 </div>
 
-<div class="pg-grid">
+<div class="pg-layout">
+  <div class="pg-col">
   <section class="pg-card">
     <h2>1 · State（待判断内容）</h2>
     <textarea id="pg-state" class="pg-textarea" rows="7" placeholder="粘贴工单、评论、文本段落或 JSON 对象——这是 Jev 要判断的内容。"></textarea>
@@ -747,19 +748,21 @@ PAGES["playground"] = {
     <div class="pg-empty" id="pg-empty">还没有问题——点上方「加载示例」，或在下面自己添加。</div>
     <button class="pg-ghost" id="pg-addq">+ 添加问题（最多 8 个）</button>
   </section>
-</div>
+  </div>
+  <div class="pg-col">
+    <div class="pg-runrow">
+      <button class="pg-run" id="pg-run">运行决策</button>
+      <span class="pg-status" id="pg-status"></span>
+    </div>
 
-<div class="pg-runrow">
-  <button class="pg-run" id="pg-run">运行决策</button>
-  <span class="pg-status" id="pg-status"></span>
+    <section class="pg-card pg-results" id="pg-results" hidden>
+      <h2>3 · 结果</h2>
+      <div id="pg-answers"></div>
+      <div class="pg-meta" id="pg-meta"></div>
+      <div id="pg-errbox"></div>
+    </section>
+  </div>
 </div>
-
-<section class="pg-card pg-results" id="pg-results" hidden>
-  <h2>3 · 结果</h2>
-  <div id="pg-answers"></div>
-  <div class="pg-meta" id="pg-meta"></div>
-  <div id="pg-errbox"></div>
-</section>
 
 <section class="pg-card pg-curl" id="pg-curlbox" hidden>
   <h2>或者直接在终端里跑</h2>

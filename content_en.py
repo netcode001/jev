@@ -759,7 +759,8 @@ PAGES["playground"] = {
   <button class="pg-ghost" id="pg-forget">Forget key</button>
 </div>
 
-<div class="pg-grid">
+<div class="pg-layout">
+  <div class="pg-col">
   <section class="pg-card">
     <h2>1 · State</h2>
     <textarea id="pg-state" class="pg-textarea" rows="7" placeholder="Paste the ticket, review, passage or JSON object that Jev should judge."></textarea>
@@ -771,19 +772,21 @@ PAGES["playground"] = {
     <div class="pg-empty" id="pg-empty">No questions yet — click <strong>Load example</strong> above, or add your own below.</div>
     <button class="pg-ghost" id="pg-addq">+ Add question (max 8)</button>
   </section>
-</div>
+  </div>
+  <div class="pg-col">
+    <div class="pg-runrow">
+      <button class="pg-run" id="pg-run">Run decision</button>
+      <span class="pg-status" id="pg-status"></span>
+    </div>
 
-<div class="pg-runrow">
-  <button class="pg-run" id="pg-run">Run decision</button>
-  <span class="pg-status" id="pg-status"></span>
+    <section class="pg-card pg-results" id="pg-results" hidden>
+      <h2>3 · Results</h2>
+      <div id="pg-answers"></div>
+      <div class="pg-meta" id="pg-meta"></div>
+      <div id="pg-errbox"></div>
+    </section>
+  </div>
 </div>
-
-<section class="pg-card pg-results" id="pg-results" hidden>
-  <h2>3 · Results</h2>
-  <div id="pg-answers"></div>
-  <div class="pg-meta" id="pg-meta"></div>
-  <div id="pg-errbox"></div>
-</section>
 
 <section class="pg-card pg-curl" id="pg-curlbox" hidden>
   <h2>Or run it from your terminal</h2>
