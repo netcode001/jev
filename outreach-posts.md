@@ -6,9 +6,21 @@
 
 ---
 
-## X（Twitter）· 英文 3 条，隔 1-2 天发
+## X（Twitter）· 中英双语，每条 2 版
+
+> 你的账号是中文号：建议**中文版直接发主帖**，英文版作为该帖的**第一条回复**（thread 形式）——中文粉丝看得懂，英文受众也能被 SEO/转发触达。也可以纯中文发，但 Jev 热度在英文圈，双语覆盖收益最大。
 
 ### X-1（主打「刚开放 + 白送额度」，时效性最强，今天发）
+
+**中文版（主帖）：**
+
+国外热到炸的 Jev 有大动作：waitlist 取消了，9 月 20 日起全面开放，注册直接送 **$5 额度**。
+
+按 $0.042/百万 tokens 算，$5 ≈ 1.2 亿 tokens——够跑上百万次「类型化决策」，一分钱不用花。
+
+接入指南 + 价格对比 + 成本计算器（中文）：https://jev-ai.live/zh/get-access/?utm_source=x&utm_medium=social
+
+**English (first reply):**
 
 Jev's waitlist is gone.
 
@@ -21,6 +33,21 @@ Start here: https://jev-ai.live/get-access/?utm_source=x&utm_medium=social
 #AI #Jev #TypeSafeAI
 
 ### X-2（主打价格数字，数字钩子适合截图传播）
+
+**中文版（主帖）：**
+
+Jev 的计费模式和所有大模型都不一样：
+
+- 输入 $0.042 / 百万 tokens
+- 输出：免费（它只返回类型化决策，不生成文字）
+- 单次决策 ≈ $0.000081
+- 送的 $5 额度 ≈ 1.2 亿 tokens
+
+我做了个成本计算器，输入你的业务量直接对比 LLM 成本：https://jev-ai.live/zh/pricing/?utm_source=x&utm_medium=social
+
+（官方说的「便宜 444 倍」是自报数据——计算器用的是官方挂牌价，不吹不黑）
+
+**English (first reply):**
 
 Jev's pricing model is genuinely different:
 
@@ -35,6 +62,18 @@ I built a calculator so you can check your own workload vs an LLM: https://jev-a
 
 ### X-3（主打生态，蹭高 star 项目的热度）
 
+**中文版（主帖）：**
+
+Jev 生态一周内已经卷起来了，GitHub 上 star 最多的几个：
+
+→ QuantDinger（11.8k★）— AI 交易 OS，Jev 当决策层
+→ kev（1k★）— 可自部署的开源 Jev 类模型
+→ Reticle（776★）— 给 Agent 写的代码做类型化理解
+
+我在持续追踪这些项目，中文整理在这里：https://jev-ai.live/zh/use-cases/?utm_source=x&utm_medium=social
+
+**English (first reply):**
+
 The Jev ecosystem is moving fast. Most-starred repos right now:
 
 → QuantDinger (11.8k★) — AI trading OS, Jev as the decision layer
@@ -45,21 +84,21 @@ I track them all: https://jev-ai.live/use-cases/?utm_source=x&utm_medium=social
 
 ### X-4（纠错帖，差异化信任点，容易引讨论）
 
+**中文版（主帖）：**
+
+辟个谣（也辟我自己的谣）：Jev 发布那一周，很多帖子（包括我）说它能从 OpenRouter 调用。
+
+**实际上不能。** OpenRouter 公开 API 里查不到任何 TypeSafe 条目。靠谱的接入路径只有三条：console.typesafe.ai（现在开放注册+送 $5）、Vercel AI Gateway、Cloudflare Workers AI。
+
+核对细节：https://jev-ai.live/zh/get-access/?utm_source=x&utm_medium=social
+
+**English (first reply):**
+
 PSA: a bunch of launch-week posts (including mine) said Jev is on OpenRouter.
 
 It isn't. OpenRouter's public models API returns zero TypeSafe entries — the reliable paths are console.typesafe.ai, Vercel AI Gateway and Cloudflare Workers AI.
 
 Details + what to verify: https://jev-ai.live/get-access/?utm_source=x&utm_medium=social
-
----
-
-## X（Twitter）· 中文 1 条
-
-### X-5
-
-国外热到天的 Jev 已全面开放：不排队了，注册直接送 $5 额度——按 $0.042/百万 tokens 的价，约等于 1.2 亿个 token，够跑上百万次决策。
-
-整理了中文版的接入指南 + 价格对比 + 成本计算器：https://jev-ai.live/zh/get-access/?utm_source=x&utm_medium=social
 
 ---
 
@@ -145,14 +184,15 @@ TypeSafe removed the Jev waitlist — here's the practical guide to pricing, acc
 
 | 天 | 动作 |
 |---|---|
-| D1（今天） | X-1（时效最强：刚开放+送额度）+ dev.to 长文发布 + X 转发长文 |
+| D1（今天） | X-1（中文主帖+英文回复，时效最强：刚开放+送额度）+ dev.to 长文发布 + X 转发长文 |
 | D2 | Reddit r/LLMDevs 发帖（北京时间 21:00-23:00） |
-| D3 | X-5（中文）+ X-2（价格数字） |
+| D3 | X-2（价格数字，双语） |
 | D4 | HN 找 Jev 帖子用 HN-1/2/3 评论 |
-| D5 | X-4（OpenRouter 纠错帖，引讨论）+ X-3（生态帖） |
+| D5 | X-4（OpenRouter 纠错帖，引讨论）+ X-3（生态帖，双语） |
 
 要点：
 - X-1 的时效性最强，**今天发**——「刚开放+白送额度」的窗口期就这几天
+- 每条 X 帖：中文发主帖，英文版放第一条回复（thread），两类受众都覆盖
 - X-4 纠错帖放在后面：等前面帖子带来关注后再发，纠错+引用自己站点是高级玩法
 - Reddit/HN 账号最好有点历史活跃度再发，新号纯发链接容易被 flag
 - 发完把 X 账号的 profile bio 加上 https://jev-ai.live —— bio 链接长期有效
