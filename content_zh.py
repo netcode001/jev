@@ -1155,7 +1155,7 @@ PAGES["playground"] = {
           return fetch("/api/systemone", reqOpts);
         });
     call
-    .then(function(res){ clearTimeout(timer); return res.text().then(function(text){ return { ok: res.ok, status: res.status, text: text }; }); })
+    .then(function(res){ clearTimeout(timer); return res.text().then(function(text){ return { ok: res.ok, status: res.status, text: text, headers: res.headers }; }); })
     .then(function(r){
       btn.disabled = false;
       var ms = Date.now() - t0;
@@ -1174,7 +1174,7 @@ PAGES["playground"] = {
       try{ data = JSON.parse(r.text); }catch(e){ showError(0, "响应不是 JSON。", "请稍后重试。"); return; }
       render(data, ms, lastQs, isFreeRun);
       if(isFreeRun){
-        var left = r.headers.get("X-Free-Remaining");
+        var left = (r.headers && r.headers.get) ? r.headers.get("X-Free-Remaining") : null;
         setStatus("完成，耗时 " + ms + " ms——今日免费剩余次数：" + (left === null ? "明天再来" : left) + "。");
       } else {
         setStatus("完成，耗时 " + ms + " ms。");
