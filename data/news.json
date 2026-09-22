@@ -1,5 +1,125 @@
 [
   {
+    "date": "2026-09-22",
+    "title": "Jev-powered writing without spaces",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://levmiseri.com/nospace/",
+    "added": "2026-09-22"
+  },
+  {
+    "date": "2026-09-22",
+    "title": "Jev introduces a new shape of LLM",
+    "summary": "Hacker News discussion — 7 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://simonwillison.net/2026/Sep/21/jev/",
+    "added": "2026-09-22"
+  },
+  {
+    "date": "2026-09-22",
+    "title": "Six clones of Jev in 2 days",
+    "summary": "Hacker News discussion — 4 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://www.latent.space/p/ainews-here-are-6-clones-of-jev-in",
+    "added": "2026-09-22"
+  },
+  {
+    "date": "2026-09-22",
+    "title": "Laya vs Jev head-to-head on identical inputs",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/instax-dutta/sysone-bench",
+    "added": "2026-09-22"
+  },
+  {
+    "date": "2026-09-22",
+    "title": "What Makes Jev Different from Other LLMs? A Simple Explanation",
+    "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://medium.com/@dolevietthang/what-makes-jev-different-from-chatgpt-and-claude-a-simple-explanation-45ce943697eb",
+    "added": "2026-09-22"
+  },
+  {
+    "date": "2026-09-22",
+    "title": "Magic Jev Ball",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://jevball.rorz.io/",
+    "added": "2026-09-22"
+  },
+  {
+    "date": "2026-09-22",
+    "title": "Jevframe: Typed semantic decisions for Pandas and Polars with Jev",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://pypi.org/project/jevframe/",
+    "added": "2026-09-22"
+  },
+  {
+    "date": "2026-09-22",
+    "title": "Show HN: Jevopt: Making intelligent compiler optimisation decisions with Jev",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/Ramneet-Singh/jevopt",
+    "added": "2026-09-22"
+  },
+  {
+    "date": "2026-09-22",
+    "title": "Show HN: Jev Powered Obsidian Search",
+    "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/Emlembow/jev-graph-search",
+    "added": "2026-09-22"
+  },
+  {
+    "date": "2026-09-21",
+    "title": "Jev: System One Models for Prod, Not God – With Diogo Almeida, CEO, TypeSafe AI",
+    "summary": "Hacker News discussion — 4 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://www.latent.space/p/jev",
+    "added": "2026-09-22"
+  },
+  {
+    "date": "2026-09-21",
+    "title": "Jev is an honest game changer",
+    "summary": "Hacker News discussion — 2 points, 3 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://benbrady.dev/blog/jev-is-an-honest-game-changer/",
+    "added": "2026-09-22"
+  },
+  {
+    "date": "2026-09-21",
+    "title": "Show HN: Agent Chaperone – Screen AI agent tool calls and results with Jev",
+    "summary": "Hacker News discussion — 4 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/agent-chaperone/agent-chaperone",
+    "added": "2026-09-22"
+  },
+  {
+    "date": "2026-09-21",
+    "title": "Using TypeSafe AI in Bug Bounty",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://www.lampysecurity.com/post/using-typesafe-ai-in-bug-bounty",
+    "added": "2026-09-22"
+  },
+  {
+    "date": "2026-09-21",
+    "title": "Show HN: Jev-CLI – CLI wrapper for JEV typesafe AI model",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/joshLong145/jev-cli",
+    "added": "2026-09-22"
+  },
+  {
+    "date": "2026-09-21",
+    "title": "Jev 1.13 Jaggedness",
+    "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://docs.typesafe.ai/model-jaggedness/jev-1.13",
+    "added": "2026-09-22"
+  },
+  {
     "date": "2026-09-21",
     "title": "Kev: Tiny Jev-like family of decision models built on top of Qwen3.5",
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",

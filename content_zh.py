@@ -114,10 +114,10 @@ PAGES["index"] = {
 <div class="hero">
   <div class="eyebrow"><span class="dot"></span> SYSTEM ONE MODEL · BY TYPESAFE AI · 2026</div>
   <h1>Jev AI <span class="accent">一次讲清</span>：价格、接入、评测与动态。</h1>
-  <p class="lede">Jev 不写文字，它返回<strong>带校准置信度的类型化决策</strong>。2026 年 9 月 15 日发布，几天内 14 万多人排队——9 月 20 日起全面开放：无需排队，注册送 $5 额度。这个站持续回答：它是什么、多少钱、怎么用上。</p>
+  <p class="lede">Jev 不写文字，它返回<strong>带校准置信度的类型化决策</strong>。现在已全面开放：在 console.typesafe.ai 注册领 $5 额度，或者直接在本站试——<strong>无需注册，每天 5 次免费试玩</strong>。这个站持续回答：它是什么、多少钱、怎么用上。</p>
   <div class="hero-cta">
-    <a class="btn btn-primary" href="/zh/get-access/">免费开始 — 送 $5 额度</a>
-    <a class="btn btn-ghost" href="/zh/what-is-jev/">Jev 是什么？</a>
+    <a class="btn btn-primary" href="/zh/playground/">免费试玩 — 无需注册</a>
+    <a class="btn btn-ghost" href="/zh/get-access/">获取 API Key</a>
   </div>
   <div class="stat-grid">
     <div class="stat"><div class="num">193.6x</div><div class="lbl">比前沿 LLM 更快（厂商自报）</div></div>
