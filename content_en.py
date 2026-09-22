@@ -785,6 +785,7 @@ PAGES["playground"] = {
       <option value="jev-preview">jev-preview</option>
     </select>
   </label>
+  <button class="pg-ghost" id="pg-savekey">Save key</button>
   <button class="pg-ghost" id="pg-forget">Forget key</button>
 </div>
 
@@ -1151,7 +1152,7 @@ PAGES["playground"] = {
     listEl.appendChild(qCard(null)); persist();
   });
 
-  $("#pg-savekey").addEventListener("click", function(){
+  if ($("#pg-savekey")) $("#pg-savekey").addEventListener("click", function(){
     var k = keyEl.value.trim();
     if(!k){ setStatus("Paste a key first.", true); return; }
     try{ localStorage.setItem("jev_pg_key", k); $("#pg-nokey").style.display = "none"; setStatus("Key saved in this browser."); }
