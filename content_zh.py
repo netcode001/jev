@@ -770,7 +770,16 @@ PAGES["playground"] = {
   <button class="pg-case" data-case="review">评论打分</button>
   <button class="pg-case" data-case="moderation">内容审核</button>
   <button class="pg-case" data-case="lead">线索分级</button>
+  <button class="pg-case" data-case="hook">标题体检</button>
+  <button class="pg-case" data-case="ai_flavor">AI味检测</button>
+  <button class="pg-case" data-case="feed_filter">选题筛选</button>
+  <button class="pg-case" data-case="read_triage">稍后读分流</button>
+  <button class="pg-case" data-case="code_review">代码审查</button>
+  <button class="pg-case" data-case="cmd_safety">命令安全</button>
+  <button class="pg-case" data-case="inbox">邮件优先级</button>
+  <button class="pg-case" data-case="resume">简历初筛</button>
 </div>
+<p class="pg-hint">12 个场景覆盖 Choice / Score / Noul 三种题型的设计套路——点一个直接跑，改两个字就是你的。</p>
 
 <div class="pg-layout">
   <div class="pg-col">
@@ -998,6 +1007,70 @@ PAGES["playground"] = {
   }
 
   var CASES = {
+    hook: {
+      state: "三个候选标题——A《我用 Jev 一周，把 200 条工单分诊全自动化了》B《AI 判断模型才是被低估的下一个风口》C《别再让大模型干判断的活，又贵又慢》",
+      questions: [
+        { id: "best_hook", type: "choice", instructions: "哪个标题的点击钩子最强？", criteria: { a: "A——数字加结果，具体可信", b: "B——风口叙事，情绪驱动", c: "C——反直觉，戳中痛点" } },
+        { id: "specificity", type: "score", instructions: "标题的具体可信度如何？", criteria: ["空泛口号，没有信息量", "有一些具体信息", "数字+结果，非常具体"] },
+        { id: "clickbait_risk", type: "noul", instructions: "这个标题有标题党风险吗？" }
+      ]
+    },
+    ai_flavor: {
+      state: "在当今快速发展的数字时代，效率的提升不是简单的加班，而是对工具的深度运用。它不仅仅是一个工具，更是一种全新的工作范式。总之，善用工具，才能在激烈的竞争中立于不败之地。",
+      questions: [
+        { id: "ai_flavor", type: "score", instructions: "这段文字的 AI 味有多重？", criteria: ["像人写的", "有模板腔但可以接受", "一眼 AI 生成"] },
+        { id: "main_issue", type: "choice", instructions: "最突出的问题是什么？", criteria: { repetition: "车轱辘话/重复结论", vague: "空泛，没有具体信息", template: "『不是X而是Y』式模板句" } },
+        { id: "needs_rewrite", type: "noul", instructions: "这段需要重写吗？" }
+      ]
+    },
+    feed_filter: {
+      state: "HN 帖：Show HN——我用 2000 行 Go 写了一个把任意网页变成 RSS 的代理，支持登录墙站点，附浏览器插件和部署指南。",
+      questions: [
+        { id: "audience_fit", type: "choice", instructions: "这条内容最值得推给谁？", criteria: { builders: "动手做产品的开发者", general: "泛 AI 爱好者", skip: "与本站读者不匹配" } },
+        { id: "tech_depth", type: "score", instructions: "技术深度如何？", criteria: ["科普级", "有实现细节", "源码级、可复现"] },
+        { id: "worth_writing", type: "noul", instructions: "值得今天就写成一篇文章吗？" }
+      ]
+    },
+    read_triage: {
+      state: "长文：《System One 模型的 RLCD 训练方法详解》，4000 字，含 3 张架构图和一个可复现的实验设置。",
+      questions: [
+        { id: "action", type: "choice", instructions: "读者该如何处理这条内容？", criteria: { save: "收藏并精读", skim: "扫一眼结论即可", hide: "直接隐藏" } },
+        { id: "relevance", type: "score", instructions: "与 AI 工程实践的相关度？", criteria: ["边缘相关", "相关", "核心相关"] },
+        { id: "evergreen", type: "noul", instructions: "内容长青吗（一年后仍有价值）？" }
+      ]
+    },
+    code_review: {
+      state: "diff：timeout 从 30 改为可配置的环境变量；同时新增了一条用户输入直接拼接的 SQL 查询——SELECT * FROM users WHERE name = 用户输入。",
+      questions: [
+        { id: "category", type: "choice", instructions: "这个改动的主要风险类型？", criteria: { security: "安全（注入/越权）", correctness: "正确性或逻辑问题", style: "风格/可维护性" } },
+        { id: "severity", type: "score", instructions: "严重程度？", criteria: ["可忽略", "建议修复", "必须阻塞合并"] },
+        { id: "needs_human", type: "noul", instructions: "需要人工进一步审查吗？" }
+      ]
+    },
+    cmd_safety: {
+      state: "rm -rf ./node_modules && rm -rf ~/Library/Caches/* && git push --force origin main",
+      questions: [
+        { id: "verdict", type: "choice", instructions: "这条命令应该如何处理？", criteria: { allow: "直接执行", confirm: "确认后执行", block: "拒绝执行" } },
+        { id: "blast_radius", type: "score", instructions: "影响范围有多大？", criteria: ["仅当前目录", "波及用户目录或全局", "不可逆破坏"] },
+        { id: "reversible", type: "noul", instructions: "这个操作可逆吗？" }
+      ]
+    },
+    inbox: {
+      state: "老板发来消息：明天晨会前把 API 评估的结论发我，CTO 也要看。",
+      questions: [
+        { id: "priority", type: "choice", instructions: "这条消息应归入哪个处理优先级？", criteria: { now: "立即处理", today: "今天内处理", later: "可延后或忽略" } },
+        { id: "effort", type: "score", instructions: "预计处理耗时？", criteria: ["1 分钟内", "10 分钟级", "需要专门时间"] },
+        { id: "needs_reply", type: "noul", instructions: "必须回复吗？" }
+      ]
+    },
+    resume: {
+      state: "候选人：5 年后端经验，其中 3 年 Python/FastAPI，主导过日均千万请求的网关重构，无 LLM 相关经验，期望薪资高于预算 20%。",
+      questions: [
+        { id: "fit", type: "choice", instructions: "与『高级后端工程师（AI 方向优先）』岗位的匹配度？", criteria: { strong: "强匹配，约面", partial: "部分匹配，备选", weak: "不匹配" } },
+        { id: "salary_risk", type: "score", instructions: "薪资期望带来的风险？", criteria: ["在预算内", "略超但可谈", "明显超出"] },
+        { id: "interview", type: "noul", instructions: "值得约一轮初面吗？" }
+      ]
+    },
     support: {
       state: "用户反馈：我的 Stripe 账户连续 3 天连接失败，一直在丢单，请尽快帮我处理！",
       questions: [

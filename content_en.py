@@ -794,7 +794,16 @@ PAGES["playground"] = {
   <button class="pg-case" data-case="review">Review score</button>
   <button class="pg-case" data-case="moderation">Moderation</button>
   <button class="pg-case" data-case="lead">Lead routing</button>
+  <button class="pg-case" data-case="hook">Title test</button>
+  <button class="pg-case" data-case="ai_flavor">AI flavor</button>
+  <button class="pg-case" data-case="feed_filter">Topic filter</button>
+  <button class="pg-case" data-case="read_triage">Read triage</button>
+  <button class="pg-case" data-case="code_review">Code review</button>
+  <button class="pg-case" data-case="cmd_safety">Cmd safety</button>
+  <button class="pg-case" data-case="inbox">Inbox triage</button>
+  <button class="pg-case" data-case="resume">Resume screen</button>
 </div>
+<p class="pg-hint">12 scenarios covering all three question types (choice / score / noul) — load one, run it, then tweak it into your own.</p>
 
 <div class="pg-layout">
   <div class="pg-col">
@@ -1022,6 +1031,70 @@ PAGES["playground"] = {
   }
 
   var CASES = {
+    hook: {
+      state: "Three candidate titles — A: I automated 200 support tickets a week with Jev. B: Judgment models are the most underrated AI trend. C: Stop making LLMs do judgment, it is slow and expensive.",
+      questions: [
+        { id: "best_hook", type: "choice", instructions: "Which title has the strongest hook?", criteria: { a: "A — number plus result, concrete", b: "B — hype framing, emotion-driven", c: "C — contrarian, hits a pain point" } },
+        { id: "specificity", type: "score", instructions: "How concrete and credible is the title?", criteria: ["Vague slogan, no information", "Some concrete detail", "Number plus result, very specific"] },
+        { id: "clickbait_risk", type: "noul", instructions: "Does this title carry clickbait risk?" }
+      ]
+    },
+    ai_flavor: {
+      state: "In today's fast-paced digital era, productivity gains come not from working longer hours but from the deep adoption of tools. It is not merely a tool — it is an entirely new paradigm. In short, mastering tools is the key to staying competitive.",
+      questions: [
+        { id: "ai_flavor", type: "score", instructions: "How strong is the AI flavor in this paragraph?", criteria: ["Reads human", "Some template tone but acceptable", "Obviously AI-generated"] },
+        { id: "main_issue", type: "choice", instructions: "What is the most prominent problem?", criteria: { repetition: "Repeated conclusions / filler", vague: "Vague, no concrete specifics", template: "Not-X-but-Y template phrasing" } },
+        { id: "needs_rewrite", type: "noul", instructions: "Does this paragraph need a rewrite?" }
+      ]
+    },
+    feed_filter: {
+      state: "HN post: Show HN — I built a 2000-line Go proxy that turns any web page into RSS, supports paywalled sites, ships with a browser extension and a deploy guide.",
+      questions: [
+        { id: "audience_fit", type: "choice", instructions: "Who is this content most worth surfacing to?", criteria: { builders: "Developers shipping products", general: "General AI enthusiasts", skip: "Not a fit for our readers" } },
+        { id: "tech_depth", type: "score", instructions: "How deep is it technically?", criteria: ["Overview level", "Implementation details", "Source-level, reproducible"] },
+        { id: "worth_writing", type: "noul", instructions: "Is it worth writing an article about today?" }
+      ]
+    },
+    read_triage: {
+      state: "Long read: RLCD training for System One models, explained. 4000 words, 3 architecture diagrams, one reproducible experimental setup.",
+      questions: [
+        { id: "action", type: "choice", instructions: "What should the reader do with this item?", criteria: { save: "Save and read carefully", skim: "Skim the takeaway only", hide: "Hide it" } },
+        { id: "relevance", type: "score", instructions: "How relevant to AI engineering practice?", criteria: ["Tangential", "Relevant", "Core"] },
+        { id: "evergreen", type: "noul", instructions: "Is it evergreen (still valuable in a year)?" }
+      ]
+    },
+    code_review: {
+      state: "diff: timeout changed from 30 to a configurable env var; a new SQL query interpolates user input directly — SELECT * FROM users WHERE name = user_input.",
+      questions: [
+        { id: "category", type: "choice", instructions: "What is the main risk category of this change?", criteria: { security: "Security (injection / authz)", correctness: "Correctness or logic", style: "Style / maintainability" } },
+        { id: "severity", type: "score", instructions: "How severe is it?", criteria: ["Negligible", "Should fix", "Must block the merge"] },
+        { id: "needs_human", type: "noul", instructions: "Does this need further human review?" }
+      ]
+    },
+    cmd_safety: {
+      state: "rm -rf ./node_modules && rm -rf ~/Library/Caches/* && git push --force origin main",
+      questions: [
+        { id: "verdict", type: "choice", instructions: "What should happen with this command?", criteria: { allow: "Run it", confirm: "Confirm with the user first", block: "Refuse to run" } },
+        { id: "blast_radius", type: "score", instructions: "How large is the blast radius?", criteria: ["Current directory only", "User home or global scope", "Irreversible damage"] },
+        { id: "reversible", type: "noul", instructions: "Is the operation reversible?" }
+      ]
+    },
+    inbox: {
+      state: "Message from the boss: send me the API evaluation conclusion before tomorrow's standup — the CTO wants to see it too.",
+      questions: [
+        { id: "priority", type: "choice", instructions: "Which handling priority does this message belong to?", criteria: { now: "Handle immediately", today: "Handle today", later: "Defer or ignore" } },
+        { id: "effort", type: "score", instructions: "How much effort to handle?", criteria: ["Under a minute", "About 10 minutes", "Needs dedicated time"] },
+        { id: "needs_reply", type: "noul", instructions: "Does it require a reply?" }
+      ]
+    },
+    resume: {
+      state: "Candidate: 5 years of backend experience, 3 of them Python/FastAPI, led a gateway rebuild handling tens of millions of requests a day, no LLM experience, salary expectation 20% above budget.",
+      questions: [
+        { id: "fit", type: "choice", instructions: "How good is the fit for the Senior Backend Engineer (AI preferred) role?", criteria: { strong: "Strong fit, schedule interview", partial: "Partial fit, keep as backup", weak: "Not a fit" } },
+        { id: "salary_risk", type: "score", instructions: "How risky is the salary expectation?", criteria: ["Within budget", "Slightly over, negotiable", "Clearly over"] },
+        { id: "interview", type: "noul", instructions: "Worth a first-round interview?" }
+      ]
+    },
     support: {
       state: "Hi, I have been trying to connect my Stripe account for 3 days and it keeps failing. I am losing sales. Please help ASAP.",
       questions: [
