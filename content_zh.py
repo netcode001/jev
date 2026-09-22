@@ -21,6 +21,16 @@ def faq_html_and_schema():
     return "\n".join(html), schema
 
 
+def faq_teaser(idxs):
+    """Render a small FAQ block (visible <details>) + matching FAQPage schema."""
+    html, ents = [], []
+    for i in idxs:
+        _cat, q, a = FAQS[i]
+        html.append(f'<details><summary>{q}</summary><div class="a">{a}</div></details>')
+        ents.append({"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a.replace("<strong>", "").replace("</strong>", "")}})
+    return "\n".join(html), {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": ents}
+
+
 NEWS = [
     ("2026-09-21", "Jev 全面开放：取消 waitlist，注册即送 $5 额度",
      "TypeSafe 完全取消排队，console.typesafe.ai 开放注册，新用户送 $5 额度（约 1.2 亿输入 tokens）。Vercel、Cloudflare 渠道路径不变。",
@@ -173,6 +183,13 @@ PAGES["index"] = {
     <a class="card" href="/zh/playground/"><span class="tag">工具</span><h2>在线试玩</h2><p>浏览器里跑真实 Jev 决策：自带 API Key，Choice / Score / Noul 三种题型，实时概率结果。</p></a>
     <a class="card" href="/"><span class="tag">English</span><h2>English version</h2><p>The full English edition, kept in sync with this site.</p></a>
   </div>
+</section>
+
+<section>
+  <div class="kicker">06 · 常见问题</div>
+  <h2>Jev AI FAQ——精简版</h2>
+  {FAQ_TEASER}
+  <p><a href="/zh/faq/">全部 20 个问答，直接说清 →</a></p>
 </section>
 """,
 }
@@ -512,6 +529,10 @@ PAGES["get-access"] = {
   <li>自动化前先在 100–500 条历史样本上做校准回归测试。</li>
 </ul>
 <p>不知道先做什么？从<a href="/zh/use-cases/">工单分诊或邮件路由</a>开始——风险低、见效快。也先看看<a href="/zh/vs-llm/">什么时候根本不该用 Jev</a>。</p>
+
+<h2>Jev AI 接入 FAQ</h2>
+{FAQ_TEASER_ACCESS}
+<p><a href="/zh/faq/">阅读完整的 Jev AI 常见问题 →</a></p>
 """,
 }
 
@@ -693,6 +714,15 @@ NEWS_PREVIEW = "".join(
 )
 PAGES["index"]["body"] = PAGES["index"]["body"].replace("{NEWS_PREVIEW}", NEWS_PREVIEW)
 
+# FAQ teasers (visible block + FAQPage schema) on home and get-access
+_idx_teaser_html, _idx_teaser_schema = faq_teaser([0, 1, 4, 8, 12])
+PAGES["index"]["body"] = PAGES["index"]["body"].replace("{FAQ_TEASER}", _idx_teaser_html)
+PAGES["index"]["schema"].append(_idx_teaser_schema)
+
+_acc_teaser_html, _acc_teaser_schema = faq_teaser([4, 5, 6, 7])
+PAGES["get-access"]["body"] = PAGES["get-access"]["body"].replace("{FAQ_TEASER_ACCESS}", _acc_teaser_html)
+PAGES["get-access"]["schema"].append(_acc_teaser_schema)
+
 NEWS_FULL = "".join(
     f'<div class="tl-item"><div class="date">{d}</div><h3>{t}</h3><p>{s}</p><div class="src">来源：{src}</div></div>'
     for d, t, s, src in NEWS
@@ -740,6 +770,7 @@ PAGES["playground"] = {
   <section class="pg-card">
     <h2>1 · State（待判断内容）</h2>
     <textarea id="pg-state" class="pg-textarea" rows="7" placeholder="粘贴工单、评论、文本段落或 JSON 对象——这是 Jev 要判断的内容。"></textarea>
+    <div class="pg-countrow" id="pg-countrow"><span id="pg-chars">0 字符</span><span class="pg-sep">·</span><span id="pg-toks">≈ 0 tokens</span><span class="pg-sep">·</span><span class="pg-countnote">单次请求上限 64K tokens</span></div>
     <p class="pg-hint">纯文本或 JSON——下方所有问题共享这份 State，在同一次调用里各自独立作答。</p>
   </section>
   <section class="pg-card">
@@ -813,6 +844,16 @@ PAGES["playground"] = {
   var listEl = $("#pg-questions"), countEl = $("#pg-count"), statusEl = $("#pg-status");
   var resultsEl = $("#pg-results"), answersEl = $("#pg-answers"), metaEl = $("#pg-meta"), errEl = $("#pg-errbox");
   var curlBox = $("#pg-curlbox"), curlEl = $("#pg-curl");
+  var countRow = $("#pg-countrow"), charsEl = $("#pg-chars"), toksEl = $("#pg-toks");
+  var lastQs = null;
+
+  function updateCount(){
+    var n = stateEl.value.length;
+    var tok = Math.ceil(n / 4);
+    charsEl.textContent = n + " 字符";
+    toksEl.textContent = "≈ " + tok.toLocaleString() + " tokens";
+    countRow.className = "pg-countrow" + (tok > 60000 ? " warn" : "");
+  }
 
   function setStatus(msg, isErr){ statusEl.textContent = msg; statusEl.className = isErr ? "pg-status err" : "pg-status"; }
 
@@ -977,15 +1018,31 @@ PAGES["playground"] = {
       + "  -d @- <<'EOF'" + NL + JSON.stringify(payload, null, 2) + NL + "EOF";
   }
 
-  function bars(probs, chosen){
+  function legendHtml(crit){
+    var h = '<div class="pg-legend"><div class="pg-legendhead">档位图例</div>';
+    crit.forEach(function(c, i){
+      h += '<div class="pg-legendrow"><span class="pg-lvlbadge">L' + (i + 1) + '</span><span class="pg-legendtext">' + esc(c || "—") + '</span></div>';
+    });
+    return h + '</div>';
+  }
+
+  function bars(probs, chosen, crit){
     if(!probs) return "";
     var keys = Object.keys(probs).sort(function(a, b){ return probs[b] - probs[a]; });
     if(!keys.length) return "";
+    var numeric = keys.every(function(k){ return /^-?[0-9]+$/.test(k); });
+    var base = numeric ? Math.min.apply(null, keys.map(function(k){ return parseInt(k, 10); })) : 0;
     var top = true, html = '<div class="pg-bars">';
     keys.forEach(function(k){
       var pct = Math.round(probs[k] * 100);
       var on = (k === chosen) || (chosen === undefined && top);
-      html += '<div class="pg-bar' + (on ? " is-top" : "") + '"><span class="pg-barlabel' + (on ? " on" : "") + '">' + esc(k) + '</span><div class="pg-bartrack"><div class="pg-barfill" style="width:' + pct + '%"></div></div><span class="pg-barval">' + pct + '%</span></div>';
+      var label = esc(k);
+      if(numeric && crit && crit.length){
+        var idx = parseInt(k, 10) - base;
+        var d = crit[idx];
+        if(d) label = '<span class="pg-lvlbadge">L' + (idx + 1) + '</span>' + esc(d);
+      }
+      html += '<div class="pg-bar' + (on ? " is-top" : "") + '"><span class="pg-barlabel' + (on ? " on" : "") + '" title="' + esc(String(k)) + '">' + label + '</span><div class="pg-bartrack"><div class="pg-barfill" style="width:' + pct + '%"></div></div><span class="pg-barval">' + pct + '%</span></div>';
       top = false;
     });
     return html + '</div>';
@@ -996,7 +1053,7 @@ PAGES["playground"] = {
     curlBox.hidden = false;
   }
 
-  function render(data, ms){
+  function render(data, ms, lastQs){
     var answers = data.answers || {}, html = "";
     Object.keys(answers).forEach(function(id){
       var a = answers[id] || {};
@@ -1004,7 +1061,10 @@ PAGES["playground"] = {
       if(a.choice !== undefined && a.choice !== null){
         html += '<div class="pg-pick">→ ' + esc(a.choice) + '</div>' + bars(a.probabilities, a.choice);
       } else if(a.score !== undefined && a.score !== null){
-        html += '<div class="pg-pick">→ 评分 ' + esc(a.score) + '</div>' + bars(a.probabilities, undefined);
+        var crit = (lastQs && lastQs[id] && Array.isArray(lastQs[id].criteria)) ? lastQs[id].criteria : null;
+        var nlv = crit ? crit.length : Object.keys(a.probabilities || {}).length;
+        html += '<div class="pg-pick">→ 评分 ' + esc(a.score) + ' <span class="pg-p">按 ' + nlv + ' 个档位加权</span></div>' + bars(a.probabilities, undefined, crit);
+        if(crit && crit.length) html += legendHtml(crit);
       } else if(a.noul !== undefined && a.noul !== null){
         var p = typeof a.noul === "number" ? a.noul : (a.noul ? 1 : 0);
         html += '<div class="pg-pick">→ ' + (p >= 0.5 ? "YES" : "NO") + ' <span class="pg-p">(p(yes)=' + p.toFixed(2) + ')</span></div>';
@@ -1030,6 +1090,7 @@ PAGES["playground"] = {
     var state = raw;
     if(raw.charAt(0) === "{" || raw.charAt(0) === "["){ try{ state = JSON.parse(raw); }catch(e){} }
     var payload = { state: state, model: modelEl.value, questions: qs };
+    lastQs = qs;
     curlEl.textContent = buildCurl(payload);
     var btn = this; btn.disabled = true; setStatus("运行中…");
     resultsEl.hidden = false; errEl.innerHTML = "";
@@ -1053,7 +1114,7 @@ PAGES["playground"] = {
       }
       var data;
       try{ data = JSON.parse(r.text); }catch(e){ showError(0, "响应不是 JSON。", "请稍后重试。"); return; }
-      render(data, ms);
+      render(data, ms, lastQs);
       setStatus("完成，耗时 " + ms + " ms。");
       persist();
     })
@@ -1079,11 +1140,12 @@ PAGES["playground"] = {
   });
 
   keyEl.addEventListener("input", function(){ if(keyEl.value.trim()) $("#pg-nokey").style.display = "none"; });
-  stateEl.addEventListener("input", persist);
+  stateEl.addEventListener("input", function(){ persist(); updateCount(); });
   modelEl.addEventListener("change", persist);
 
   restoreKey();
   if(!restoreDraft()){ $("#pg-example").click(); }
+  updateCount();
 })();
 </script>""",
 }

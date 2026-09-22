@@ -105,6 +105,16 @@ def faq_html_and_schema():
     return "\n".join(html), schema
 
 
+def faq_teaser(idxs):
+    """Render a small FAQ block (visible <details>) + matching FAQPage schema."""
+    html, ents = [], []
+    for i in idxs:
+        _cat, q, a = FAQS[i]
+        html.append(f'<details><summary>{q}</summary><div class="a">{a}</div></details>')
+        ents.append({"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a.replace("<strong>", "").replace("</strong>", "")}})
+    return "\n".join(html), {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": ents}
+
+
 # ---------------------------------------------------------------- pages
 
 PAGES = {}
@@ -195,6 +205,13 @@ PAGES["index"] = {
     <a class="card" href="/playground/"><span class="tag">Tool</span><h2>Playground</h2><p>Run real Jev decisions in your browser with your own API key — Choice, Score, Noul, live probabilities.</p></a>
     <a class="card" href="/zh/"><span class="tag">中文</span><h2>中文版</h2><p>本站的完整中文版本，内容同步更新。</p></a>
   </div>
+</section>
+
+<section>
+  <div class="kicker">06 · FAQ</div>
+  <h2>Jev AI FAQ — the short version</h2>
+  {FAQ_TEASER}
+  <p><a href="/faq/">All 20 questions, straight answers →</a></p>
 </section>
 """,
 }
@@ -535,6 +552,10 @@ PAGES["get-access"] = {
   <li>Regression-test calibration on 100–500 historical cases before automating.</li>
 </ul>
 <p>Not sure what to build first? Start with <a href="/use-cases/">ticket triage or email routing</a> — low risk, immediate payoff. And check <a href="/vs-llm/">when Jev shouldn't be used</a> at all.</p>
+
+<h2>Jev AI access FAQ</h2>
+{FAQ_TEASER_ACCESS}
+<p><a href="/faq/">Read the full Jev AI FAQ →</a></p>
 """,
 }
 
@@ -717,6 +738,15 @@ NEWS_PREVIEW = "".join(
 )
 PAGES["index"]["body"] = PAGES["index"]["body"].replace("{NEWS_PREVIEW}", NEWS_PREVIEW)
 
+# FAQ teasers (visible block + FAQPage schema) on home and get-access
+_idx_teaser_html, _idx_teaser_schema = faq_teaser([0, 1, 4, 8, 12])
+PAGES["index"]["body"] = PAGES["index"]["body"].replace("{FAQ_TEASER}", _idx_teaser_html)
+PAGES["index"]["schema"].append(_idx_teaser_schema)
+
+_acc_teaser_html, _acc_teaser_schema = faq_teaser([4, 5, 6, 7])
+PAGES["get-access"]["body"] = PAGES["get-access"]["body"].replace("{FAQ_TEASER_ACCESS}", _acc_teaser_html)
+PAGES["get-access"]["schema"].append(_acc_teaser_schema)
+
 NEWS_FULL = "".join(
     f'<div class="tl-item"><div class="date">{d}</div><h3>{t}</h3><p>{s}</p><div class="src">Source: {src}</div></div>'
     for d, t, s, src in NEWS
@@ -764,6 +794,7 @@ PAGES["playground"] = {
   <section class="pg-card">
     <h2>1 · State</h2>
     <textarea id="pg-state" class="pg-textarea" rows="7" placeholder="Paste the ticket, review, passage or JSON object that Jev should judge."></textarea>
+    <div class="pg-countrow" id="pg-countrow"><span id="pg-chars">0 characters</span><span class="pg-sep">·</span><span id="pg-toks">≈ 0 tokens</span><span class="pg-sep">·</span><span class="pg-countnote">64K token limit per request</span></div>
     <p class="pg-hint">Plain text or JSON — all questions share this state and are answered independently in a single call.</p>
   </section>
   <section class="pg-card">
@@ -837,6 +868,16 @@ PAGES["playground"] = {
   var listEl = $("#pg-questions"), countEl = $("#pg-count"), statusEl = $("#pg-status");
   var resultsEl = $("#pg-results"), answersEl = $("#pg-answers"), metaEl = $("#pg-meta"), errEl = $("#pg-errbox");
   var curlBox = $("#pg-curlbox"), curlEl = $("#pg-curl");
+  var countRow = $("#pg-countrow"), charsEl = $("#pg-chars"), toksEl = $("#pg-toks");
+  var lastQs = null;
+
+  function updateCount(){
+    var n = stateEl.value.length;
+    var tok = Math.ceil(n / 4);
+    charsEl.textContent = n + (n === 1 ? " character" : " characters");
+    toksEl.textContent = "≈ " + tok.toLocaleString() + " tokens";
+    countRow.className = "pg-countrow" + (tok > 60000 ? " warn" : "");
+  }
 
   function setStatus(msg, isErr){ statusEl.textContent = msg; statusEl.className = isErr ? "pg-status err" : "pg-status"; }
 
@@ -1007,15 +1048,31 @@ PAGES["playground"] = {
       + "  -d @- <<'EOF'" + NL + JSON.stringify(payload, null, 2) + NL + "EOF";
   }
 
-  function bars(probs, chosen){
+  function legendHtml(crit){
+    var h = '<div class="pg-legend"><div class="pg-legendhead">Level legend</div>';
+    crit.forEach(function(c, i){
+      h += '<div class="pg-legendrow"><span class="pg-lvlbadge">L' + (i + 1) + '</span><span class="pg-legendtext">' + esc(c || "—") + '</span></div>';
+    });
+    return h + '</div>';
+  }
+
+  function bars(probs, chosen, crit){
     if(!probs) return "";
     var keys = Object.keys(probs).sort(function(a, b){ return probs[b] - probs[a]; });
     if(!keys.length) return "";
+    var numeric = keys.every(function(k){ return /^-?[0-9]+$/.test(k); });
+    var base = numeric ? Math.min.apply(null, keys.map(function(k){ return parseInt(k, 10); })) : 0;
     var top = true, html = '<div class="pg-bars">';
     keys.forEach(function(k){
       var pct = Math.round(probs[k] * 100);
       var on = (k === chosen) || (chosen === undefined && top);
-      html += '<div class="pg-bar' + (on ? " is-top" : "") + '"><span class="pg-barlabel' + (on ? " on" : "") + '">' + esc(k) + '</span><div class="pg-bartrack"><div class="pg-barfill" style="width:' + pct + '%"></div></div><span class="pg-barval">' + pct + '%</span></div>';
+      var label = esc(k);
+      if(numeric && crit && crit.length){
+        var idx = parseInt(k, 10) - base;
+        var d = crit[idx];
+        if(d) label = '<span class="pg-lvlbadge">L' + (idx + 1) + '</span>' + esc(d);
+      }
+      html += '<div class="pg-bar' + (on ? " is-top" : "") + '"><span class="pg-barlabel' + (on ? " on" : "") + '" title="' + esc(String(k)) + '">' + label + '</span><div class="pg-bartrack"><div class="pg-barfill" style="width:' + pct + '%"></div></div><span class="pg-barval">' + pct + '%</span></div>';
       top = false;
     });
     return html + '</div>';
@@ -1026,7 +1083,7 @@ PAGES["playground"] = {
     curlBox.hidden = false;
   }
 
-  function render(data, ms){
+  function render(data, ms, lastQs){
     var answers = data.answers || {}, html = "";
     Object.keys(answers).forEach(function(id){
       var a = answers[id] || {};
@@ -1034,7 +1091,10 @@ PAGES["playground"] = {
       if(a.choice !== undefined && a.choice !== null){
         html += '<div class="pg-pick">→ ' + esc(a.choice) + '</div>' + bars(a.probabilities, a.choice);
       } else if(a.score !== undefined && a.score !== null){
-        html += '<div class="pg-pick">→ score ' + esc(a.score) + '</div>' + bars(a.probabilities, undefined);
+        var crit = (lastQs && lastQs[id] && Array.isArray(lastQs[id].criteria)) ? lastQs[id].criteria : null;
+        var nlv = crit ? crit.length : Object.keys(a.probabilities || {}).length;
+        html += '<div class="pg-pick">→ score ' + esc(a.score) + ' <span class="pg-p">weighted across ' + nlv + ' levels</span></div>' + bars(a.probabilities, undefined, crit);
+        if(crit && crit.length) html += legendHtml(crit);
       } else if(a.noul !== undefined && a.noul !== null){
         var p = typeof a.noul === "number" ? a.noul : (a.noul ? 1 : 0);
         html += '<div class="pg-pick">→ ' + (p >= 0.5 ? "YES" : "NO") + ' <span class="pg-p">(p(yes)=' + p.toFixed(2) + ')</span></div>';
@@ -1083,7 +1143,7 @@ PAGES["playground"] = {
       }
       var data;
       try{ data = JSON.parse(r.text); }catch(e){ showError(0, "Response was not JSON.", "Try again shortly."); return; }
-      render(data, ms);
+      render(data, ms, lastQs);
       setStatus("Done in " + ms + " ms.");
       persist();
     })
@@ -1109,11 +1169,12 @@ PAGES["playground"] = {
   });
 
   keyEl.addEventListener("input", function(){ if(keyEl.value.trim()) $("#pg-nokey").style.display = "none"; });
-  stateEl.addEventListener("input", persist);
+  stateEl.addEventListener("input", function(){ persist(); updateCount(); });
   modelEl.addEventListener("change", persist);
 
   restoreKey();
   if(!restoreDraft()){ $("#pg-example").click(); }
+  updateCount();
 })();
 </script>""",
 }
