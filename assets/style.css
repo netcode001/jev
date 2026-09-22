@@ -86,7 +86,7 @@ h1 {
   margin-bottom: 24px;
 }
 h1 .accent { color: var(--accent); }
-.lede { font-size: 19px; color: var(--ink-2); max-width: 700px; line-height: 1.55; margin-bottom: 32px; }
+.lede { font-size: 19px; color: var(--ink-2); line-height: 1.55; margin-bottom: 32px; }
 .lede strong, .sub strong { color: var(--ink); }
 .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 52px; }
 .btn {
@@ -238,7 +238,7 @@ details .a p:first-child { margin-top: 0; }
 .site-footer li { margin: 5px 0; }
 .site-footer a { color: var(--ink-2); }
 .site-footer a:hover { color: var(--accent-ink); }
-.disclaimer { margin-top: 28px; padding-top: 20px; border-top: 1px dashed var(--line); line-height: 1.6; max-width: 720px; }
+.disclaimer { margin-top: 28px; padding-top: 20px; border-top: 1px dashed var(--line); line-height: 1.6; }
 
 @media (max-width: 1080px) {
   .site-header .wrap { gap: 14px; }
@@ -262,7 +262,7 @@ details .a p:first-child { margin-top: 0; }
 .wrap.wide { max-width: 1060px; }
 .pg-hero { padding: 36px 0 32px; }
 .pg-hero .kicker { margin-bottom: 14px; }
-.pg-hero .sub { max-width: 800px; }
+.pg-hero .sub { }
 #pg-app .pg-notice { margin-top: 0; }
 .pg-notice { background: var(--amber-bg); border: 1px solid var(--amber-line); color: var(--amber-ink); border-radius: 8px; padding: 12px 16px; font-size: 14px; margin: 18px 0; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
 .pg-notice a { font-weight: 600; }
