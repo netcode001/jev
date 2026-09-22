@@ -6,7 +6,9 @@
 //   - Free trial: no Authorization -> injects $TYPESAFE_API_KEY (env var,
 //     never stored in the repo) after rate limiting:
 //       per-IP 5 plays/day, site-wide 500 plays/day, state <= 20k chars.
-// Counters use the Cache API (same-colo consistent, no KV binding needed).
+// Counters use the Cache API when available. NOTE: on some Pages setups
+// cache.match/put throws — every cache op is wrapped and fails OPEN
+// (allow the request) so the proxy never 1101s.
 
 const UPSTREAM = "https://api.typesafe.ai/v1/systemone";
 const FREE_PER_IP = 5;
@@ -36,32 +38,50 @@ async function sha1Hex(s) {
   return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("");
 }
 
+function dayKey() {
+  return new Date().toISOString().slice(0, 10); // UTC date, resets daily
+}
+
 // Cache-API counter: match -> n+1 -> put. Best-effort (races may undercount
-// under heavy concurrency) which is fine for an abuse guard.
+// under heavy concurrency) which is fine for an abuse guard. Any cache
+// failure fails OPEN: { ok: true, count: 0, disabled: true }.
 async function bumpCount(cache, key, max) {
   const u = "https://counter.jev-ai.internal/" + key;
   let n = 0;
-  const hit = await cache.match(u);
-  if (hit) {
-    const v = parseInt(await hit.text(), 10);
-    if (!isNaN(v)) n = v;
+  try {
+    const hit = await cache.match(u);
+    if (hit) {
+      const v = parseInt(await hit.text(), 10);
+      if (!isNaN(v)) n = v;
+    }
+  } catch (e) {
+    return { count: 0, ok: true, disabled: true };
   }
   if (n >= max) return { count: n, ok: false };
   n += 1;
-  const res = new Response(String(n), {
-    headers: { "Cache-Control": "public, max-age=86400" },
-  });
-  await cache.put(u, res.clone());
+  try {
+    const res = new Response(String(n), {
+      headers: { "Cache-Control": "public, max-age=86400" },
+    });
+    await cache.put(u, res.clone());
+  } catch (e) {
+    // put failed (match may still work); allow this request regardless
+  }
   return { count: n, ok: true };
 }
 
 export default {
   async fetch(request, env) {
-    const url = new URL(request.url);
-    if (url.pathname === "/api/systemone") {
-      return handleProxy(request, env);
+    try {
+      const url = new URL(request.url);
+      if (url.pathname === "/api/systemone") {
+        return await handleProxy(request, env);
+      }
+      return env.ASSETS.fetch(request);
+    } catch (e) {
+      // never leak a Cloudflare 1101 HTML page to clients
+      return json({ error: "proxy_error", message: String((e && e.message) || e) }, 500);
     }
-    return env.ASSETS.fetch(request);
   },
 };
 
@@ -91,20 +111,24 @@ async function handleProxy(request, env) {
     if (!siteKey) {
       return json({ error: "free_trial_unavailable", message: "Free trial is not configured yet — bring your own key from console.typesafe.ai ($5 free credit)." }, 503);
     }
-    const ip = request.headers.get("CF-Connecting-IP") || "unknown";
-    const d = dayKey();
-    const cache = caches.default;
+    let cache = null;
+    try { cache = caches.default; } catch (e) { cache = null; }
 
-    const site = await bumpCount(cache, "free-site-" + d, FREE_DAILY_SITE);
-    if (!site.ok) {
-      return json({ error: "rate_limited", message: "The free trial quota is exhausted for today. You can still run unlimited decisions with your own key." }, 429);
+    if (cache) {
+      const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+      const d = dayKey();
+      const site = await bumpCount(cache, "free-site-" + d, FREE_DAILY_SITE);
+      if (!site.ok) {
+        return json({ error: "rate_limited", message: "The free trial quota is exhausted for today. You can still run unlimited decisions with your own key." }, 429);
+      }
+      const ipHash = await sha1Hex(ip);
+      const ipr = await bumpCount(cache, "free-ip-" + ipHash + "-" + d, FREE_PER_IP);
+      if (!ipr.ok) {
+        return json({ error: "rate_limited", message: "You have used all " + FREE_PER_IP + " free plays for today. Come back tomorrow, or sign up at console.typesafe.ai for $5 in free credit and run with your own key." }, 429);
+      }
+      if (!ipr.disabled) freeRemaining = FREE_PER_IP - ipr.count;
     }
-    const ipHash = await sha1Hex(ip);
-    const ipr = await bumpCount(cache, "free-ip-" + ipHash + "-" + d, FREE_PER_IP);
-    if (!ipr.ok) {
-      return json({ error: "rate_limited", message: "You have used all " + FREE_PER_IP + " free plays for today. Come back tomorrow, or sign up at console.typesafe.ai for $5 in free credit and run with your own key." }, 429);
-    }
-    freeRemaining = FREE_PER_IP - ipr.count;
+    // cache unavailable -> rate limiting skipped (fail open); still serve
     headers.Authorization = "Bearer " + siteKey;
   }
 
