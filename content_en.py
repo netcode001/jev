@@ -773,7 +773,7 @@ PAGES["playground"] = {
 </div>
 
 <div id="pg-app">
-<div class="pg-notice" id="pg-nokey">No API key yet? TypeSafe registration is open with <strong>$5 in free credit</strong> (~120M tokens). <a href="/get-access/">Get a key here</a></div>
+<div class="pg-notice" id="pg-nokey"><strong>No API key? Just hit Run.</strong> The site sponsors <strong>5 free plays a day</strong>, no signup. Want your own key? TypeSafe registration is open with <a href="/get-access/">$5 in free credit</a>.</div>
 
 <div class="pg-keybar">
   <label>TypeSafe API key
@@ -785,8 +785,15 @@ PAGES["playground"] = {
       <option value="jev-preview">jev-preview</option>
     </select>
   </label>
-  <button class="pg-ghost" id="pg-example">Load example</button>
   <button class="pg-ghost" id="pg-forget">Forget key</button>
+</div>
+
+<div class="pg-cases" id="pg-cases">
+  <span class="pg-caseslabel">Try a scenario</span>
+  <button class="pg-case is-on" data-case="support">Support triage</button>
+  <button class="pg-case" data-case="review">Review score</button>
+  <button class="pg-case" data-case="moderation">Moderation</button>
+  <button class="pg-case" data-case="lead">Lead routing</button>
 </div>
 
 <div class="pg-layout">
@@ -869,7 +876,7 @@ PAGES["playground"] = {
   var resultsEl = $("#pg-results"), answersEl = $("#pg-answers"), metaEl = $("#pg-meta"), errEl = $("#pg-errbox");
   var curlBox = $("#pg-curlbox"), curlEl = $("#pg-curl");
   var countRow = $("#pg-countrow"), charsEl = $("#pg-chars"), toksEl = $("#pg-toks");
-  var lastQs = null;
+  var lastQs = null, isFreeRun = false;
 
   function updateCount(){
     var n = stateEl.value.length;
@@ -1014,14 +1021,56 @@ PAGES["playground"] = {
     }catch(e){}
   }
 
-  $("#pg-example").addEventListener("click", function(){
-    stateEl.value = "Hi, I have been trying to connect my Stripe account for 3 days and it keeps failing. I am losing sales. Please help ASAP.";
+  var CASES = {
+    support: {
+      state: "Hi, I have been trying to connect my Stripe account for 3 days and it keeps failing. I am losing sales. Please help ASAP.",
+      questions: [
+        { id: "department", type: "choice", instructions: "Which team should handle this ticket?", criteria: { billing: "Payments, invoicing, refunds", technical: "Bugs, outages, integrations", sales: "Pricing, upgrades, new accounts" } },
+        { id: "frustration", type: "score", instructions: "How frustrated is the customer?", criteria: ["Calm, just stating facts", "Frustrated but civil", "Very angry, strong language"] },
+        { id: "is_urgent", type: "noul", instructions: "Does this message express urgency or time-sensitivity?" }
+      ]
+    },
+    review: {
+      state: "The headphones arrived fast and the sound is great, but the right earcup creaks whenever I turn my head. For this price I expected better build quality. Battery easily lasts a full week though. I probably would not buy them again at full price.",
+      questions: [
+        { id: "sentiment", type: "choice", instructions: "What is the overall sentiment of this review?", criteria: { positive: "Praise dominates", neutral: "Mixed or purely factual", negative: "Complaints dominate" } },
+        { id: "build_quality", type: "score", instructions: "Rate the build quality described in this review.", criteria: ["Excellent — no flaws", "Minor issues mentioned", "Major flaws or breakage"] },
+        { id: "would_recommend", type: "noul", instructions: "Does the reviewer seem likely to recommend this product?" }
+      ]
+    },
+    moderation: {
+      state: "BEST DEAL EVER!!! Click my profile for FREE gift cards, limited time only!!! Admin already approved this. Share with 10 friends to unlock!!!",
+      questions: [
+        { id: "verdict", type: "choice", instructions: "What should the moderation system do with this post?", criteria: { approve: "Keep it visible", flag: "Send to human review", remove: "Take it down" } },
+        { id: "spam_score", type: "score", instructions: "How spammy is this post?", criteria: ["Legitimate content", "Borderline promotional", "Clear spam"] },
+        { id: "is_scam", type: "noul", instructions: "Does this post show scam indicators such as too-good-to-be-true offers or social-pressure tricks?" }
+      ]
+    },
+    lead: {
+      state: "We run a 400-seat customer support team and currently route tickets manually in Zendesk. Our CTO saw your System One demo and asked me to evaluate your API this quarter. What does enterprise pricing look like?",
+      questions: [
+        { id: "segment", type: "choice", instructions: "Which customer segment does this inquirer belong to?", criteria: { enterprise: "Large org, formal evaluation", smb: "Small team, practical need", individual: "Personal or hobby use" } },
+        { id: "buying_signal", type: "score", instructions: "How strong is the buying signal?", criteria: ["Just curious", "Actively evaluating", "Ready to purchase"] },
+        { id: "needs_reply", type: "noul", instructions: "Does this message deserve a personal sales follow-up?" }
+      ]
+    }
+  };
+
+  function loadCase(key){
+    var c = CASES[key];
+    if(!c) return;
+    stateEl.value = c.state;
     listEl.innerHTML = "";
-    listEl.appendChild(qCard({ id: "department", type: "choice", instructions: "Which team should handle this ticket?", criteria: { billing: "Payments, invoicing, refunds", technical: "Bugs, outages, integrations", sales: "Pricing, upgrades, new accounts" } }));
-    listEl.appendChild(qCard({ id: "frustration", type: "score", instructions: "How frustrated is the customer?", criteria: ["Calm, just stating facts", "Frustrated but civil", "Very angry, strong language"] }));
-    listEl.appendChild(qCard({ id: "is_urgent", type: "noul", instructions: "Does this message express urgency or time-sensitivity?" }));
-    setStatus("Example loaded. Add your API key and hit Run.");
-    persist();
+    c.questions.forEach(function(q){ listEl.appendChild(qCard(q)); });
+    persist(); updateCount();
+  }
+
+  document.querySelectorAll(".pg-case").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      document.querySelectorAll(".pg-case").forEach(function(b){ b.classList.remove("is-on"); });
+      btn.classList.add("is-on");
+      loadCase(btn.getAttribute("data-case"));
+    });
   });
 
   $("#pg-addq").addEventListener("click", function(){
@@ -1083,7 +1132,7 @@ PAGES["playground"] = {
     curlBox.hidden = false;
   }
 
-  function render(data, ms, lastQs){
+  function render(data, ms, lastQs, isFree){
     var answers = data.answers || {}, html = "";
     Object.keys(answers).forEach(function(id){
       var a = answers[id] || {};
@@ -1106,36 +1155,46 @@ PAGES["playground"] = {
     });
     answersEl.innerHTML = html;
     var u = data.usage || {}, it = u.input_tokens || 0;
-    metaEl.textContent = (data.model || "") + " · " + it + " input tokens · " + (u.output_tokens || 0) + " output tokens · ≈ $" + (it / 1000000 * PRICE).toFixed(6) + " at $0.042/1M";
+    metaEl.textContent = (data.model || "") + " · " + it + " input tokens · " + (u.output_tokens || 0) + " output tokens · ≈ $" + (it / 1000000 * PRICE).toFixed(6) + " at $0.042/1M" + (isFree ? " · free trial (site-sponsored)" : "");
     curlBox.hidden = true;
   }
 
   $("#pg-run").addEventListener("click", function(){
     var key = keyEl.value.trim();
     var qs = collect(), ids = Object.keys(qs);
-    if(!key){ setStatus("Enter your TypeSafe API key first (registration is open with $5 free credit — link at the top).", true); return; }
     if(!ids.length){ setStatus("Add at least one question.", true); return; }
     var raw = stateEl.value.trim();
     if(!raw){ setStatus("State is empty — paste something for Jev to judge.", true); return; }
     var state = raw;
     if(raw.charAt(0) === "{" || raw.charAt(0) === "["){ try{ state = JSON.parse(raw); }catch(e){} }
     var payload = { state: state, model: modelEl.value, questions: qs };
+    lastQs = qs; isFreeRun = !key;
     curlEl.textContent = buildCurl(payload);
-    var btn = this; btn.disabled = true; setStatus("Running…");
+    var btn = this; btn.disabled = true;
+    setStatus(isFreeRun ? "Running free trial (no key)…" : "Running…");
     resultsEl.hidden = false; errEl.innerHTML = "";
     var t0 = Date.now();
     var ctrl = new AbortController(), timer = setTimeout(function(){ ctrl.abort(); }, 45000);
-    var reqOpts = { method: "POST", headers: { "Authorization": "Bearer " + key, "Content-Type": "application/json" }, body: JSON.stringify(payload), signal: ctrl.signal };
-    fetch(API, reqOpts).catch(function(err){
-      if(err && err.name === "AbortError") throw err;
-      setStatus("Direct call blocked (CORS) — retrying via site proxy…");
-      return fetch("/api/systemone", reqOpts);
-    })
+    var reqHeaders = isFreeRun ? { "Content-Type": "application/json" } : { "Authorization": "Bearer " + key, "Content-Type": "application/json" };
+    var reqOpts = { method: "POST", headers: reqHeaders, body: JSON.stringify(payload), signal: ctrl.signal };
+    var call = isFreeRun
+      ? fetch("/api/systemone", reqOpts)
+      : fetch(API, reqOpts).catch(function(err){
+          if(err && err.name === "AbortError") throw err;
+          setStatus("Direct call blocked (CORS) — retrying via site proxy…");
+          return fetch("/api/systemone", reqOpts);
+        });
+    call
     .then(function(res){ clearTimeout(timer); return res.text().then(function(text){ return { ok: res.ok, status: res.status, text: text }; }); })
     .then(function(r){
       btn.disabled = false;
       var ms = Date.now() - t0;
       if(!r.ok){
+        if(r.status === 429 && isFreeRun){
+          setStatus("Free plays used up for today (5 per IP) — come back tomorrow, or sign up for your own key with $5 free credit (link at the top).", true);
+          showError(r.status, r.text, "The site sponsors 5 free plays per IP per day. Own-key runs are unlimited.");
+          return;
+        }
         var hint = (r.status === 401 || r.status === 403) ? "Check that the key is valid and has credits." : (r.status === 429 ? "Rate limited — wait a moment and retry." : "Check the payload (question types, option counts) and retry.");
         showError(r.status, r.text, hint);
         setStatus("Request failed (" + r.status + ").", true);
@@ -1143,8 +1202,13 @@ PAGES["playground"] = {
       }
       var data;
       try{ data = JSON.parse(r.text); }catch(e){ showError(0, "Response was not JSON.", "Try again shortly."); return; }
-      render(data, ms, lastQs);
-      setStatus("Done in " + ms + " ms.");
+      render(data, ms, lastQs, isFreeRun);
+      if(isFreeRun){
+        var left = r.headers.get("X-Free-Remaining");
+        setStatus("Done in " + ms + " ms — free plays left today: " + (left === null ? "see you tomorrow" : left) + ".");
+      } else {
+        setStatus("Done in " + ms + " ms.");
+      }
       persist();
     })
     .catch(function(err){
@@ -1173,7 +1237,7 @@ PAGES["playground"] = {
   modelEl.addEventListener("change", persist);
 
   restoreKey();
-  if(!restoreDraft()){ $("#pg-example").click(); }
+  if(!restoreDraft()){ loadCase("support"); }
   updateCount();
 })();
 </script>""",

@@ -749,7 +749,7 @@ PAGES["playground"] = {
 </div>
 
 <div id="pg-app">
-<div class="pg-notice" id="pg-nokey">还没有 API Key？TypeSafe 已开放注册，<strong>送 $5 额度</strong>（约 1.2 亿 tokens）。<a href="/zh/get-access/">去获取 Key</a></div>
+<div class="pg-notice" id="pg-nokey"><strong>没有 API Key？直接点「运行决策」。</strong>本站提供<strong>每天 5 次免费试玩</strong>，无需注册。想要自己的 Key？TypeSafe 已开放注册，<a href="/zh/get-access/">注册送 $5 额度</a>。</div>
 
 <div class="pg-keybar">
   <label>TypeSafe API Key
@@ -761,8 +761,15 @@ PAGES["playground"] = {
       <option value="jev-preview">jev-preview</option>
     </select>
   </label>
-  <button class="pg-ghost" id="pg-example">加载示例</button>
   <button class="pg-ghost" id="pg-forget">清除 Key</button>
+</div>
+
+<div class="pg-cases" id="pg-cases">
+  <span class="pg-caseslabel">试试场景</span>
+  <button class="pg-case is-on" data-case="support">客服分流</button>
+  <button class="pg-case" data-case="review">评论打分</button>
+  <button class="pg-case" data-case="moderation">内容审核</button>
+  <button class="pg-case" data-case="lead">线索分级</button>
 </div>
 
 <div class="pg-layout">
@@ -845,7 +852,7 @@ PAGES["playground"] = {
   var resultsEl = $("#pg-results"), answersEl = $("#pg-answers"), metaEl = $("#pg-meta"), errEl = $("#pg-errbox");
   var curlBox = $("#pg-curlbox"), curlEl = $("#pg-curl");
   var countRow = $("#pg-countrow"), charsEl = $("#pg-chars"), toksEl = $("#pg-toks");
-  var lastQs = null;
+  var lastQs = null, isFreeRun = false;
 
   function updateCount(){
     var n = stateEl.value.length;
@@ -990,14 +997,56 @@ PAGES["playground"] = {
     }catch(e){}
   }
 
-  $("#pg-example").addEventListener("click", function(){
-    stateEl.value = "用户反馈：我的 Stripe 账户连续 3 天连接失败，一直在丢单，请尽快帮我处理！";
+  var CASES = {
+    support: {
+      state: "用户反馈：我的 Stripe 账户连续 3 天连接失败，一直在丢单，请尽快帮我处理！",
+      questions: [
+        { id: "department", type: "choice", instructions: "这张工单应该由哪个团队处理？", criteria: { billing: "支付、账单、退款", technical: "故障、报错、集成问题", sales: "价格、升级、新账户" } },
+        { id: "frustration", type: "score", instructions: "客户的愤怒程度如何？", criteria: ["平静，只是陈述事实", "有情绪但仍然礼貌", "非常愤怒，言辞激烈"] },
+        { id: "is_urgent", type: "noul", instructions: "这条消息是否表达了紧急性或时效要求？" }
+      ]
+    },
+    review: {
+      state: "耳机到货很快，音质也不错，但右耳罩一转头就有异响。这个价位做工不该这样。不过续航确实撑了一整周。原价回购的话我大概率不会再买。",
+      questions: [
+        { id: "sentiment", type: "choice", instructions: "这条评论的整体情绪倾向是？", criteria: { positive: "以夸奖为主", neutral: "中性或仅陈述事实", negative: "以吐槽为主" } },
+        { id: "build_quality", type: "score", instructions: "评论中描述的做工质量如何？", criteria: ["很好——没有瑕疵", "提到小问题", "明显缺陷或损坏"] },
+        { id: "would_recommend", type: "noul", instructions: "评论者看起来会推荐这个产品吗？" }
+      ]
+    },
+    moderation: {
+      state: "史上最强福利！！！点我主页免费领礼品卡，仅限今天！！！管理员已经同意了。转发给 10 个好友即可解锁！！！",
+      questions: [
+        { id: "verdict", type: "choice", instructions: "内容审核系统应该如何处理这条帖子？", criteria: { approve: "保持可见", flag: "转人工复审", remove: "下架删除" } },
+        { id: "spam_score", type: "score", instructions: "这条帖子的垃圾营销程度？", criteria: ["正常内容", "打擦边球的推广", "明显垃圾营销"] },
+        { id: "is_scam", type: "noul", instructions: "这条帖子是否呈现诈骗特征（天上掉馅饼的优惠、社交施压话术）？" }
+      ]
+    },
+    lead: {
+      state: "我们有一个 400 人的客服团队，目前用 Zendesk 手动分流工单。我们 CTO 看了你们的 System One 演示，让我这个季度评估一下你们的 API。企业版价格怎么算？",
+      questions: [
+        { id: "segment", type: "choice", instructions: "这条咨询属于哪个客户分层？", criteria: { enterprise: "大型组织，正式评估流程", smb: "小团队，务实需求", individual: "个人或兴趣用途" } },
+        { id: "buying_signal", type: "score", instructions: "购买信号的强度如何？", criteria: ["只是好奇", "正在积极评估", "准备下单"] },
+        { id: "needs_reply", type: "noul", instructions: "这条消息值得销售人工跟进吗？" }
+      ]
+    }
+  };
+
+  function loadCase(key){
+    var c = CASES[key];
+    if(!c) return;
+    stateEl.value = c.state;
     listEl.innerHTML = "";
-    listEl.appendChild(qCard({ id: "department", type: "choice", instructions: "这张工单应该由哪个团队处理？", criteria: { billing: "支付、账单、退款", technical: "故障、报错、集成问题", sales: "价格、升级、新账户" } }));
-    listEl.appendChild(qCard({ id: "frustration", type: "score", instructions: "客户的愤怒程度如何？", criteria: ["平静，只是陈述事实", "有情绪但仍然礼貌", "非常愤怒，言辞激烈"] }));
-    listEl.appendChild(qCard({ id: "is_urgent", type: "noul", instructions: "这条消息是否表达了紧急性或时效要求？" }));
-    setStatus("示例已加载。填入 API Key 后点「运行决策」。");
-    persist();
+    c.questions.forEach(function(q){ listEl.appendChild(qCard(q)); });
+    persist(); updateCount();
+  }
+
+  document.querySelectorAll(".pg-case").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      document.querySelectorAll(".pg-case").forEach(function(b){ b.classList.remove("is-on"); });
+      btn.classList.add("is-on");
+      loadCase(btn.getAttribute("data-case"));
+    });
   });
 
   $("#pg-addq").addEventListener("click", function(){
@@ -1053,7 +1102,7 @@ PAGES["playground"] = {
     curlBox.hidden = false;
   }
 
-  function render(data, ms, lastQs){
+  function render(data, ms, lastQs, isFree){
     var answers = data.answers || {}, html = "";
     Object.keys(answers).forEach(function(id){
       var a = answers[id] || {};
@@ -1076,37 +1125,46 @@ PAGES["playground"] = {
     });
     answersEl.innerHTML = html;
     var u = data.usage || {}, it = u.input_tokens || 0;
-    metaEl.textContent = (data.model || "") + " · 输入 " + it + " tokens · 输出 " + (u.output_tokens || 0) + " tokens · ≈ $" + (it / 1000000 * PRICE).toFixed(6) + "（按 $0.042/1M）";
+    metaEl.textContent = (data.model || "") + " · 输入 " + it + " tokens · 输出 " + (u.output_tokens || 0) + " tokens · ≈ $" + (it / 1000000 * PRICE).toFixed(6) + "（按 $0.042/1M）" + (isFree ? " · 免费试玩（本站承担）" : "");
     curlBox.hidden = true;
   }
 
   $("#pg-run").addEventListener("click", function(){
     var key = keyEl.value.trim();
     var qs = collect(), ids = Object.keys(qs);
-    if(!key){ setStatus("先填入你的 TypeSafe API Key（注册已开放送 $5 额度——见页面顶部链接）。", true); return; }
     if(!ids.length){ setStatus("至少添加一个问题。", true); return; }
     var raw = stateEl.value.trim();
     if(!raw){ setStatus("State 为空——先粘贴要判断的内容。", true); return; }
     var state = raw;
     if(raw.charAt(0) === "{" || raw.charAt(0) === "["){ try{ state = JSON.parse(raw); }catch(e){} }
     var payload = { state: state, model: modelEl.value, questions: qs };
-    lastQs = qs;
+    lastQs = qs; isFreeRun = !key;
     curlEl.textContent = buildCurl(payload);
-    var btn = this; btn.disabled = true; setStatus("运行中…");
+    var btn = this; btn.disabled = true;
+    setStatus(isFreeRun ? "免费试玩运行中（未填 Key）…" : "运行中…");
     resultsEl.hidden = false; errEl.innerHTML = "";
     var t0 = Date.now();
     var ctrl = new AbortController(), timer = setTimeout(function(){ ctrl.abort(); }, 45000);
-    var reqOpts = { method: "POST", headers: { "Authorization": "Bearer " + key, "Content-Type": "application/json" }, body: JSON.stringify(payload), signal: ctrl.signal };
-    fetch(API, reqOpts).catch(function(err){
-      if(err && err.name === "AbortError") throw err;
-      setStatus("直连被拦截（CORS）——自动改走本站代理重试…");
-      return fetch("/api/systemone", reqOpts);
-    })
+    var reqHeaders = isFreeRun ? { "Content-Type": "application/json" } : { "Authorization": "Bearer " + key, "Content-Type": "application/json" };
+    var reqOpts = { method: "POST", headers: reqHeaders, body: JSON.stringify(payload), signal: ctrl.signal };
+    var call = isFreeRun
+      ? fetch("/api/systemone", reqOpts)
+      : fetch(API, reqOpts).catch(function(err){
+          if(err && err.name === "AbortError") throw err;
+          setStatus("直连被拦截（CORS）——自动改走本站代理重试…");
+          return fetch("/api/systemone", reqOpts);
+        });
+    call
     .then(function(res){ clearTimeout(timer); return res.text().then(function(text){ return { ok: res.ok, status: res.status, text: text }; }); })
     .then(function(r){
       btn.disabled = false;
       var ms = Date.now() - t0;
       if(!r.ok){
+        if(r.status === 429 && isFreeRun){
+          setStatus("今日免费试玩次数已用完（每 IP 每天 5 次）——明天再来，或注册自己的 Key（送 $5 额度，见页面顶部）。", true);
+          showError(r.status, r.text, "本站赞助的免费试玩为每 IP 每天 5 次；用自己的 Key 运行不限次数。");
+          return;
+        }
         var hint = (r.status === 401 || r.status === 403) ? "请检查 Key 是否有效、账户是否有额度。" : (r.status === 429 ? "触发限流——稍等片刻再试。" : "请检查 payload（题型、选项数量）后重试。");
         showError(r.status, r.text, hint);
         setStatus("请求失败（" + r.status + "）。", true);
@@ -1114,8 +1172,13 @@ PAGES["playground"] = {
       }
       var data;
       try{ data = JSON.parse(r.text); }catch(e){ showError(0, "响应不是 JSON。", "请稍后重试。"); return; }
-      render(data, ms, lastQs);
-      setStatus("完成，耗时 " + ms + " ms。");
+      render(data, ms, lastQs, isFreeRun);
+      if(isFreeRun){
+        var left = r.headers.get("X-Free-Remaining");
+        setStatus("完成，耗时 " + ms + " ms——今日免费剩余次数：" + (left === null ? "明天再来" : left) + "。");
+      } else {
+        setStatus("完成，耗时 " + ms + " ms。");
+      }
       persist();
     })
     .catch(function(err){
@@ -1144,7 +1207,7 @@ PAGES["playground"] = {
   modelEl.addEventListener("change", persist);
 
   restoreKey();
-  if(!restoreDraft()){ $("#pg-example").click(); }
+  if(!restoreDraft()){ loadCase("support"); }
   updateCount();
 })();
 </script>""",
