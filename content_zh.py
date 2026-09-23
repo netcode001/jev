@@ -117,7 +117,6 @@ PAGES["index"] = {
   <p class="lede">Jev 不写文字，它返回<strong>带校准置信度的类型化决策</strong>。现在已全面开放：在 console.typesafe.ai 注册领 $5 额度，或者直接在本站试——<strong>无需注册，每天 5 次免费试玩</strong>。这个站持续回答：它是什么、多少钱、怎么用上。</p>
   <div class="hero-cta">
     <a class="btn btn-primary" href="/zh/playground/">免费试玩 — 无需注册</a>
-    <a class="btn btn-ghost" href="/zh/get-access/">获取 API Key</a>
   </div>
   <div class="stat-grid">
     <div class="stat"><div class="num">193.6x</div><div class="lbl">比前沿 LLM 更快（厂商自报）</div></div>

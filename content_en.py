@@ -139,7 +139,6 @@ PAGES["index"] = {
   <p class="lede">Jev doesn't write text — it returns <strong>typed decisions with calibrated probabilities</strong>. It's open to everyone now: grab $5 in free credit at console.typesafe.ai, or judge it yourself right here — <strong>no signup, 5 free runs a day</strong>. This hub tracks what it is, what it costs, and how to build on it — and keeps answering as things change.</p>
   <div class="hero-cta">
     <a class="btn btn-primary" href="/playground/">Try it free — no signup</a>
-    <a class="btn btn-ghost" href="/get-access/">Get your API Key</a>
   </div>
   <div class="stat-grid">
     <div class="stat"><div class="num">193.6x</div><div class="lbl">faster than frontier LLMs (self-reported)</div></div>
