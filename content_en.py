@@ -1315,3 +1315,119 @@ PAGES["playground"] = {
 })();
 </script>""",
 }
+
+
+# ---- privacy ----
+PAGES["privacy"] = {
+    "title": "Privacy Policy | Jev Hub",
+    "desc": "How Jev Hub handles data: analytics, cookies, the playground API key storage, rate limiting, and third parties such as Google Analytics and TypeSafe AI.",
+    "crumb": CRUMB_HOME + [("Privacy Policy", None)],
+    "schema": [],
+    "body": """
+<p class="updated">Last updated: 2026-09-24</p>
+<h1>Privacy Policy</h1>
+<p class="lede">Jev Hub (jev-ai.live) is an independent information site. This page explains what data we collect, why, and how you can control it. Short version: we collect as little as possible, and your API key never leaves your browser unless you run a request.</p>
+
+<h2>What we collect</h2>
+<h3>1. Website analytics</h3>
+<p>We use Google Analytics to understand aggregate traffic: page views, rough geography, referrers. This data is anonymized/aggregated by Google and does not include names or email addresses. You can block it with any ad blocker or by disabling cookies.</p>
+<h3>2. Playground local storage</h3>
+<p>The Playground stores your settings — your API key (if you enter one), the current state text, and the selected model — in your browser's <code>localStorage</code>. This data <strong>stays in your browser</strong> and is never transmitted to us. When you click Run with your own key, the request goes directly to the TypeSafe AI API. Use "Forget key" in the Playground to erase it at any time.</p>
+<h3>3. Free-play rate limiting</h3>
+<p>Free runs (no API key) are proxied through our server and limited to 5 per visitor per day. To count visits without identifying anyone, we keep a per-day counter keyed by a <strong>SHA-1 hash of your IP address</strong>. The hash is one-way, is not stored beyond the current day, and cannot be reversed or used to identify you.</p>
+
+<h2>Third parties</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Service</th><th>When</th><th>What is shared</th></tr></thead>
+  <tbody>
+    <tr><td>Google Analytics</td><td>Every page view</td><td>Aggregate usage data (cookies, device, rough location)</td></tr>
+    <tr><td>TypeSafe AI API</td><td>Playground run</td><td>The state text and question you submit; with your own key, the key itself</td></tr>
+    <tr><td>Advertising (e.g. Google AdSense)</td><td>If ad units are enabled</td><td>Cookies used for ad delivery and measurement</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Third parties have their own privacy policies; we encourage you to read them.</p>
+
+<h2>Cookies</h2>
+<p>We do not set tracking cookies ourselves. Cookies may be set by Google Analytics (measurement) and, if enabled, by advertising partners (personalized ads). Where required by law (EU/UK), consent banners will be shown before non-essential cookies are used.</p>
+
+<h2>Data retention</h2>
+<p>Rate-limit hashes expire daily. Analytics data is retained by Google per their default settings. We keep no server-side user accounts and no mailing list unless you explicitly subscribe in the future.</p>
+
+<h2>Your rights</h2>
+<p>Depending on your jurisdiction (GDPR, UK GDPR, CCPA and others), you may have rights to access, correct or delete personal data. Since we hold almost no personal data, the fastest action is usually: clear your browser's local storage for this site, or contact us and we will help.</p>
+
+<h2>Changes</h2>
+<p>We may update this policy as the site evolves. Material changes will be reflected in the "Last updated" date above.</p>
+
+<h2>Contact</h2>
+<p>Questions about privacy: <a href="mailto:hello@jev-ai.live">hello@jev-ai.live</a>. See also our <a href="/contact/">contact page</a>.</p>
+""",
+}
+
+# ---- about ----
+PAGES["about"] = {
+    "title": "About Jev Hub | Independent Jev Tracker",
+    "desc": "Who runs Jev Hub, where the data comes from, how the site is funded, and our editorial approach to tracking Jev (System One) news, pricing and ecosystem.",
+    "crumb": CRUMB_HOME + [("About", None)],
+    "schema": [],
+    "body": """
+<p class="updated">Last updated: 2026-09-24</p>
+<h1>About Jev Hub</h1>
+<p class="lede">Jev Hub is an independent, third-party information hub for <strong>Jev</strong>, the System One model built by TypeSafe AI. We track pricing, access paths, news, and the ecosystem growing around it — so builders don't have to piece it together from scattered posts.</p>
+
+<h2>What this site does</h2>
+<ul>
+  <li><strong>Explain the product</strong> — what typed decisions are, how Jev differs from chat LLMs, and when to use each.</li>
+  <li><strong>Track the facts</strong> — pricing comparisons, provider listings and cost calculators, updated automatically as sources change.</li>
+  <li><strong>Let you try it</strong> — a free Playground with 12 real-world scenario templates, no signup required.</li>
+  <li><strong>Watch the ecosystem</strong> — new projects, benchmarks and community threads, curated daily.</li>
+</ul>
+
+<h2>Where the data comes from</h2>
+<p>News items and pricing snapshots are gathered automatically from public sources: Hacker News, GitHub topic feeds and the OpenRouter models API. Every item links to its original source. Summaries and guides are written by the site's editor — not auto-scraped text — and we mark vendor-reported figures as such.</p>
+
+<h2>Independence</h2>
+<p>Jev Hub is <strong>not affiliated with, endorsed by, or sponsored by TypeSafe AI</strong>. "Jev" and "TypeSafe" are trademarks of their respective owners. We call out limitations and trade-offs honestly, including where the product is weak.</p>
+
+<h2>How the site is funded</h2>
+<p>Jev Hub is free to use. Running costs (hosting, the free playground quota) are currently paid out of pocket. To keep it that way, the site may display advertising and affiliate links in the future — sponsored placements, if any, will be clearly labelled and will never change our editorial assessment.</p>
+
+<h2>Who is behind it</h2>
+<p>An independent developer and builder, based in China, tracking the Jev ecosystem in English and Simplified Chinese. Say hello: <a href="mailto:hello@jev-ai.live">hello@jev-ai.live</a>.</p>
+""",
+}
+
+# ---- contact ----
+PAGES["contact"] = {
+    "title": "Contact | Jev Hub",
+    "desc": "Get in touch with Jev Hub: corrections, feedback, business inquiries, ecosystem submissions or content removal requests.",
+    "crumb": CRUMB_HOME + [("Contact", None)],
+    "schema": [],
+    "body": """
+<p class="updated">Last updated: 2026-09-24</p>
+<h1>Contact</h1>
+<p class="lede">The fastest way to reach us is email. We read everything and usually reply within a couple of days.</p>
+
+<h2>Email</h2>
+<p class="mono" style="font-size:18px"><a href="mailto:hello@jev-ai.live">hello@jev-ai.live</a></p>
+
+<h2>What to write about</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Topic</th><th>Examples</th></tr></thead>
+  <tbody>
+    <tr><td>Corrections</td><td>Pricing or benchmark figures that are out of date or wrong (with a source, if possible)</td></tr>
+    <tr><td>Feedback</td><td>Playground templates you'd like to see, features, bugs</td></tr>
+    <tr><td>Ecosystem</td><td>Submit a project for the ecosystem page</td></tr>
+    <tr><td>Business</td><td>Sponsorship, partnerships, advertising</td></tr>
+    <tr><td>Legal</td><td>Content removal requests, privacy questions, trademark concerns</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Other places</h2>
+<p>RSS is available for the news feed: <a href="/feed.xml">jev-ai.live/feed.xml</a>. For product questions about Jev itself, the official site is <a href="https://typesafe.ai" rel="noopener">typesafe.ai</a> — we are an independent tracker, not a support channel.</p>
+""",
+}

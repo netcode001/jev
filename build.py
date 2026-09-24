@@ -58,6 +58,7 @@ LOCALES = {
             ("Learn", [("What is Jev", "/what-is-jev/"), ("Jev vs LLMs", "/vs-llm/"), ("Use Cases", "/use-cases/"), ("FAQ", "/faq/")]),
             ("Data", [("Pricing", "/pricing/"), ("News", "/news/"), ("Ecosystem", "/ecosystem/")]),
             ("Access", [("Get Access", "/get-access/"), ("Playground", "/playground/"), ("TypeSafe AI (official)", "https://typesafe.ai")]),
+            ("Site", [("About", "/about/"), ("Contact", "/contact/"), ("Privacy Policy", "/privacy/"), ("Sitemap", "/sitemap.xml")]),
         ],
         "disclaimer": ("Jev Hub is not affiliated with, endorsed by, or sponsored by TypeSafe AI. "
                        "\"Jev\" and \"TypeSafe\" are trademarks of their respective owners. Benchmark and "
@@ -80,6 +81,7 @@ LOCALES = {
             ("了解", [("Jev 是什么", "/zh/what-is-jev/"), ("Jev vs 大模型", "/zh/vs-llm/"), ("使用场景", "/zh/use-cases/"), ("常见问题", "/zh/faq/")]),
             ("数据", [("价格对比", "/zh/pricing/"), ("最新动态", "/zh/news/"), ("生态项目", "/zh/ecosystem/")]),
             ("接入", [("获取方式", "/zh/get-access/"), ("在线试玩", "/zh/playground/"), ("TypeSafe AI 官网", "https://typesafe.ai")]),
+            ("站点", [("关于", "/zh/about/"), ("联系", "/zh/contact/"), ("隐私政策", "/zh/privacy/"), ("站点地图", "/sitemap.xml")]),
         ],
         "disclaimer": ("Jev Hub 与 TypeSafe AI 无隶属、背书或赞助关系。\"Jev\"\"TypeSafe\" 为其各自所有者的商标。"
                        "除特别注明外，评测与价格数据均为厂商自报，可能随时调整。内容仅供参考，不构成投资或采购建议。"),

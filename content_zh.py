@@ -1284,3 +1284,119 @@ PAGES["playground"] = {
 })();
 </script>""",
 }
+
+
+# ---- privacy ----
+PAGES["privacy"] = {
+    "title": "隐私政策 | Jev Hub",
+    "desc": "Jev Hub 如何处理数据：统计分析、Cookie、试玩页 API Key 的本地存储、限流机制，以及 Google Analytics、TypeSafe AI 等第三方服务。",
+    "crumb": CRUMB_HOME + [("隐私政策", None)],
+    "schema": [],
+    "body": """
+<p class="updated">最后更新：2026-09-24</p>
+<h1>隐私政策</h1>
+<p class="lede">Jev Hub（jev-ai.live）是一个独立的信息站点。本页说明我们收集哪些数据、为什么收集，以及你如何控制它们。一句话版本：能不收集就不收集；你的 API Key 除非你主动运行请求，否则永远不离开浏览器。</p>
+
+<h2>我们收集什么</h2>
+<h3>1. 网站统计分析</h3>
+<p>我们使用 Google Analytics 了解聚合层面的流量情况：页面浏览量、大致地域、来源渠道。数据由 Google 匿名/聚合处理，不包含姓名或邮箱。你可以用广告拦截插件或禁用 Cookie 来屏蔽。</p>
+<h3>2. 试玩页的本地存储</h3>
+<p>Playground 会把你的设置——API Key（如果你填了）、当前 State 文本、所选模型——保存在浏览器的 <code>localStorage</code> 里。这些数据<strong>只存在于你的浏览器中</strong>，不会传给我们。使用自己的 Key 点击运行时，请求直达 TypeSafe AI 官方 API。随时可以点 Playground 里的「Forget key / 忘记 Key」清除。</p>
+<h3>3. 免费试玩限流</h3>
+<p>免费运行（不填 Key）通过我们的服务器代理，每人每天限 5 次。为了在不识别身份的前提下计数，我们以「<strong>IP 地址的 SHA-1 哈希</strong>」为键保存当日计数器。哈希不可逆、仅保留当天、无法还原或用于识别个人。</p>
+
+<h2>第三方服务</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>服务</th><th>何时</th><th>共享什么</th></tr></thead>
+  <tbody>
+    <tr><td>Google Analytics</td><td>每次页面浏览</td><td>聚合使用数据（Cookie、设备、大致位置）</td></tr>
+    <tr><td>TypeSafe AI API</td><td>试玩页运行时</td><td>你提交的 State 与问题文本；使用自己的 Key 时还包括 Key 本身</td></tr>
+    <tr><td>广告服务（如 Google AdSense）</td><td>如启用广告位</td><td>用于广告投放与衡量的 Cookie</td></tr>
+  </tbody>
+</table>
+</div>
+<p>第三方有各自的隐私政策，建议自行阅读。</p>
+
+<h2>Cookie</h2>
+<p>我们自己不设置跟踪 Cookie。Google Analytics（统计）以及启用后的广告合作伙伴（个性化广告）可能会设置 Cookie。在法律要求的地区（欧盟/英国），会在非必要 Cookie 使用前征得同意。</p>
+
+<h2>数据保留</h2>
+<p>限流哈希每日过期。统计数据按 Google 默认设置保留。我们没有服务端用户账号，除非你未来主动订阅，否则也没有邮件列表。</p>
+
+<h2>你的权利</h2>
+<p>根据所在司法辖区（GDPR、英国 GDPR、CCPA 等），你可能有权访问、更正或删除个人数据。由于我们几乎不持有个人数据，最快的操作通常是：清除本站点的浏览器本地存储，或直接联系我们。</p>
+
+<h2>政策变更</h2>
+<p>随站点演进，本政策可能更新；重要变更会体现在上方的「最后更新」日期。</p>
+
+<h2>联系我们</h2>
+<p>隐私相关问题：<a href="mailto:hello@jev-ai.live">hello@jev-ai.live</a>。另见<a href="/zh/contact/">联系页</a>。</p>
+""",
+}
+
+# ---- about ----
+PAGES["about"] = {
+    "title": "关于 Jev Hub | 独立 Jev 信息站",
+    "desc": "谁在运营 Jev Hub、数据从哪来、站点如何维持运转，以及我们追踪 Jev（System One）动态、价格与生态的编辑原则。",
+    "crumb": CRUMB_HOME + [("关于", None)],
+    "schema": [],
+    "body": """
+<p class="updated">最后更新：2026-09-24</p>
+<h1>关于 Jev Hub</h1>
+<p class="lede">Jev Hub 是一个独立的第三方信息站，追踪 TypeSafe AI 旗下的 System One 模型 <strong>Jev</strong>——包括价格、获取路径、最新动态与围绕它生长的生态，让开发者不必从零散的帖子里自己拼图。</p>
+
+<h2>这个站做什么</h2>
+<ul>
+  <li><strong>讲清产品</strong>——什么是类型化决策、Jev 与对话式大模型的区别、各自适合什么场景。</li>
+  <li><strong>追踪事实</strong>——价格对比、供应商上架情况与成本计算器，随数据源变化自动更新。</li>
+  <li><strong>让你上手</strong>——免费在线 Playground，12 个真实场景模板，无需注册。</li>
+  <li><strong>盯住生态</strong>——新项目、评测与社区讨论，每日精选。</li>
+</ul>
+
+<h2>数据从哪来</h2>
+<p>新闻与价格快照自动采集自公开来源：Hacker News、GitHub topic、OpenRouter 模型 API。每条内容都附原文链接。摘要与指南由站长撰写——不是自动抓取的文本——厂商自报的数据我们会明确标注。</p>
+
+<h2>独立性声明</h2>
+<p>Jev Hub <strong>与 TypeSafe AI 无隶属、背书或赞助关系</strong>。"Jev""TypeSafe" 为其各自所有者的商标。我们会诚实指出产品的局限与短板，包括不好看的部分。</p>
+
+<h2>站点如何维持</h2>
+<p>Jev Hub 免费使用。运行成本（托管、免费试玩额度）目前由站长个人承担。为了保持免费，站点未来可能展示广告或联盟链接——如有赞助位会明确标注，且不会影响编辑判断。</p>
+
+<h2>站长是谁</h2>
+<p>一名独立开发者，坐标中国，以英文和简体中文双语追踪 Jev 生态。欢迎来信：<a href="mailto:hello@jev-ai.live">hello@jev-ai.live</a>。</p>
+""",
+}
+
+# ---- contact ----
+PAGES["contact"] = {
+    "title": "联系 | Jev Hub",
+    "desc": "联系 Jev Hub：内容纠错、反馈建议、商务合作、生态项目投稿或内容移除请求。",
+    "crumb": CRUMB_HOME + [("联系", None)],
+    "schema": [],
+    "body": """
+<p class="updated">最后更新：2026-09-24</p>
+<h1>联系</h1>
+<p class="lede">最快的方式是邮件。所有来信都会读，通常一两天内回复。</p>
+
+<h2>邮箱</h2>
+<p class="mono" style="font-size:18px"><a href="mailto:hello@jev-ai.live">hello@jev-ai.live</a></p>
+
+<h2>可以写什么</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>主题</th><th>举例</th></tr></thead>
+  <tbody>
+    <tr><td>内容纠错</td><td>价格或评测数据过时/有误（最好附上来源）</td></tr>
+    <tr><td>反馈建议</td><td>想看的 Playground 模板、功能建议、Bug 反馈</td></tr>
+    <tr><td>生态投稿</td><td>把项目提交到生态页</td></tr>
+    <tr><td>商务合作</td><td>赞助、合作、广告</td></tr>
+    <tr><td>法务相关</td><td>内容移除请求、隐私问题、商标事宜</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>其他渠道</h2>
+<p>新闻订阅可用 RSS：<a href="/feed.xml">jev-ai.live/feed.xml</a>。Jev 产品本身的问题请前往官网 <a href="https://typesafe.ai" rel="noopener">typesafe.ai</a>——我们是独立信息站，不是官方客服渠道。</p>
+""",
+}
