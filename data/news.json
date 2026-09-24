@@ -1,6 +1,30 @@
 [
   {
     "date": "2026-09-24",
+    "title": "RevExOS – JEV",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://revexos.com/jev-playground",
+    "added": "2026-09-24"
+  },
+  {
+    "date": "2026-09-24",
+    "title": "JEV-as-a-Judge",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://academy.dair.ai/papers/jev-as-a-judge-accept-when-confident-escalate-when-unsure-2609.26550",
+    "added": "2026-09-24"
+  },
+  {
+    "date": "2026-09-24",
+    "title": "JEV-Star: Low-Cost StarCraft II Control with Language-Model Planning",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/sc2musa/Jev_Star",
+    "added": "2026-09-24"
+  },
+  {
+    "date": "2026-09-24",
     "title": "Show HN: Clue Me – Describe the word you're given, Jev tries to guess it",
     "summary": "Hacker News discussion — 2 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
