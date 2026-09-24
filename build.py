@@ -206,8 +206,12 @@ def render_page(lang, slug, page, all_pages):
 
 
 def rewrite_internal_links(html, prefix):
-    """Rewrite root-absolute hrefs (/zh/xxx/) into relative paths so links
-    work on file://, the local preview server, and the deployed site alike."""
+    """Rewrite root-absolute hrefs (/zh/xxx/) into relative CLEAN directory
+    URLs (no /index.html suffix). Clean URLs avoid the 308 redirects that
+    Cloudflare Pages applies to /path/index.html, which previously flooded
+    GSC with "Page with redirect" reports. Static assets (sitemap.xml etc.)
+    are passed through untouched. Works on local preview servers and deploy;
+    file:// directory links are no longer supported."""
     import re
 
     def repl(m):
@@ -219,11 +223,14 @@ def rewrite_internal_links(html, prefix):
             path, anchor = raw.split("#", 1)
             anchor = "#" + anchor
         path = path.rstrip("/")
-        if path == "":
-            target = "index.html"
+        if re.search(r"\.(xml|txt|png|jpe?g|webp|ico|webmanifest|css|js)$", path):
+            target = path  # static asset: never append /index.html or a slash
+        elif path == "":
+            target = ""
         else:
-            target = path + "/index.html"
-        return f'href="{prefix}{target}{anchor}"'
+            target = path + "/"
+        href = f"{prefix}{target}{anchor}"
+        return f'href="{href}"' if href else 'href="./"'
 
     return re.sub(r'href="/([^"]*)"', repl, html)
 
