@@ -2,8 +2,8 @@ name: daily-update
 
 on:
   schedule:
-    - cron: '0 2 * * *'
-      - cron: '0 14 * * *'   # UTC 02:00 = 北京时间 10:00
+    - cron: '0 2 * * *'    # UTC 02:00 = 北京时间 10:00
+    - cron: '0 14 * * *'   # UTC 14:00 = 北京时间 22:00
   workflow_dispatch: {}    # 手动触发入口
 
 permissions:

@@ -1,5 +1,93 @@
 [
   {
+    "date": "2026-09-24",
+    "title": "JEV Engineering for Coding Agents",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://drive.google.com/file/d/17h982xvsL3E7b80iGmOCfKp9qTOW9ohv/view?pli=1",
+    "added": "2026-09-24"
+  },
+  {
+    "date": "2026-09-23",
+    "title": "Jev deserves hype but not the type its getting",
+    "summary": "Hacker News discussion — 2 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/YidiDev/jev-benchmark",
+    "added": "2026-09-24"
+  },
+  {
+    "date": "2026-09-23",
+    "title": "I tried using Jev for judgment based guardrails",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/deepansh-saxena/jev-guardrails",
+    "added": "2026-09-24"
+  },
+  {
+    "date": "2026-09-23",
+    "title": "Show HN: OpenCode Agent Router – Jev Controlled Subagents",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/maharshi365/oc-agent-router",
+    "added": "2026-09-24"
+  },
+  {
+    "date": "2026-09-23",
+    "title": "Serve DiffusionGemma-Jev (Djev) on a TypeSafe AI Compatible API",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/taeold/djev-run",
+    "added": "2026-09-24"
+  },
+  {
+    "date": "2026-09-23",
+    "title": "gev beats jev and takes images as input too",
+    "summary": "Hacker News discussion — 1 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://anyeval.com/eval/jevbench/versus?a=typesafe-ai%252Fjev&b=trustedrouter%252Fgev-1.0",
+    "added": "2026-09-24"
+  },
+  {
+    "date": "2026-09-23",
+    "title": "Show HN: I Built a GIF Decider with Jev",
+    "summary": "Hacker News discussion — 2 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://gifdecider.com/",
+    "added": "2026-09-24"
+  },
+  {
+    "date": "2026-09-23",
+    "title": "Show HN: Sniffslop – browser extension to classify text using Jev",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/kmcheung12/sniffslop/",
+    "added": "2026-09-24"
+  },
+  {
+    "date": "2026-09-22",
+    "title": "I built a linter/skill that ensures requests to jev are structured correctly",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/item?id=49803473",
+    "added": "2026-09-24"
+  },
+  {
+    "date": "2026-09-22",
+    "title": "TypeSafe AI Jev vs. GPT-6 Astra",
+    "summary": "Hacker News discussion — 4 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://vercel.com/i/jev-vs-gpt-6-astra",
+    "added": "2026-09-24"
+  },
+  {
+    "date": "2026-09-22",
+    "title": "What you can build with TypeSafe AI Jev",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://vercel.com/i/jev-use-cases",
+    "added": "2026-09-24"
+  },
+  {
     "date": "2026-09-22",
     "title": "Jev-powered writing without spaces",
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
