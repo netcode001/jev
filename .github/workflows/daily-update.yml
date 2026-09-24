@@ -2,8 +2,10 @@ name: daily-update
 
 on:
   schedule:
-    - cron: '0 2 * * *'    # UTC 02:00 = 北京时间 10:00
-    - cron: '0 14 * * *'   # UTC 14:00 = 北京时间 22:00
+    # single comma-separated entry: one list item, three runs a day.
+    # (a multi-item list is what broke this file on 2026-09-22 — nesting a
+    #  second `- cron:` under the first silences the whole workflow)
+    - cron: '0 2,8,14 * * *'   # 北京时间 10:00 / 16:00 / 22:00
   workflow_dispatch: {}    # 手动触发入口
 
 permissions:
