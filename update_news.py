@@ -29,10 +29,18 @@ TODAY = date.today().isoformat()
 UA = {"User-Agent": "jev-hub/1.0 (Jev news tracker)"}
 
 
+NET_FAILS = 0  # incremented on every unreachable source (used by the guards in main())
+
+
 def http_json(url, timeout=15, headers=None):
+    global NET_FAILS
     req = urllib.request.Request(url, headers={**UA, **(headers or {})})
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        return json.loads(r.read().decode("utf-8", "replace"))
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            return json.loads(r.read().decode("utf-8", "replace"))
+    except Exception:
+        NET_FAILS += 1
+        raise
 
 
 def load_json(path, default):
@@ -163,7 +171,15 @@ def fetch_openrouter():
 
 
 def fetch_reddit(news):
-    """Best-effort: recent r/LLMDevs+r/LocalLLaMA threads about Jev."""
+    """Recent r/LLMDevs+r/LocalLLaMA threads about Jev.
+
+    DISABLED by default: as of 2026-09 Reddit returns HTTP 403 to every
+    anonymous request (any User-Agent, any endpoint: www/api/old), so the
+    source is dead weight and would only pollute the failure guards. Set
+    REDDIT_ENABLED=1 once OAuth credentials are wired in."""
+    if os.environ.get("REDDIT_ENABLED") != "1":
+        print("  - Reddit: skipped (anonymous access blocked by Reddit; set REDDIT_ENABLED=1 to force)")
+        return []
     new_items = []
     for sub in ("LLMDevs", "LocalLLaMA"):
         api = (f"https://www.reddit.com/r/{sub}/search.json?"
@@ -247,6 +263,25 @@ def main():
               f"({len(news)} total), price snapshots: {len(price_hist)}")
     else:
         print(f"[{TODAY}] no changes; data files untouched")
+
+    # --- guards: a silently broken feed must show up as a RED run -------------
+    # Without these, a blocked network or a changed API looks exactly like a
+    # quiet news day: green run, "no changes", stale site for days on end.
+    newest = max((i.get("date", "") for i in news), default="")[:10]
+    if newest:
+        try:
+            age = (date.today() - date.fromisoformat(newest)).days
+        except ValueError:
+            age = 0
+        print(f"  - freshness: newest item {newest} ({age} day(s) old)")
+        if age > 3:
+            print(f"ERROR: news feed is stale — newest item is {age} days old. "
+                  f"Check the fetch sources (blocked network / changed API).")
+            return 1
+    if NET_FAILS >= 3 and not fresh:
+        print(f"ERROR: {NET_FAILS} source request(s) failed and nothing was "
+              f"fetched — all sources look unreachable.")
+        return 1
 
     # signal for build script
     return 0
