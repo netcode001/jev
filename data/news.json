@@ -1,5 +1,45 @@
 [
   {
+    "date": "2026-09-25",
+    "title": "Show HN: Jevper – an LLM API client constrained to the Jev wire format",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/zhulinchng/jevper",
+    "added": "2026-09-25"
+  },
+  {
+    "date": "2026-09-25",
+    "title": "Show HN: Knowledge Signal – A JEV-powered rubric assessment tool for study notes",
+    "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/sumant1122/knowledge-signal",
+    "added": "2026-09-25"
+  },
+  {
+    "date": "2026-09-25",
+    "title": "Jev Based Code Review",
+    "summary": "Hacker News discussion — 4 points, 2 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/egma-ai/jev-code-reviewer",
+    "added": "2026-09-25"
+  },
+  {
+    "date": "2026-09-25",
+    "title": "Perch: Semantic Code Linting with Jev",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/lakeday-org/perch",
+    "added": "2026-09-25"
+  },
+  {
+    "date": "2026-09-25",
+    "title": "Jev and System One Models: Calibration Beats Accuracy",
+    "summary": "Hacker News discussion — 12 points, 9 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://www.kartikpansuriya.com/blog/jev-system-one-model-calibrated-decisions",
+    "added": "2026-09-25"
+  },
+  {
     "date": "2026-09-24",
     "title": "RevExOS – JEV",
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
