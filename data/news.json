@@ -1,6 +1,30 @@
 [
   {
     "date": "2026-09-25",
+    "title": "Show HN: JevPertus – Jev-style option scoring on Apertus",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/Jaluus/JevPertus",
+    "added": "2026-09-25"
+  },
+  {
+    "date": "2026-09-25",
+    "title": "I made a linter using Jev for things a regular linter can't catch",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/darkmatter/adhere",
+    "added": "2026-09-25"
+  },
+  {
+    "date": "2026-09-25",
+    "title": "Show HN: Herobrine – Minecraft buddies using jev",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/xatuke/herobrine",
+    "added": "2026-09-25"
+  },
+  {
+    "date": "2026-09-25",
     "title": "Show HN: Jevper – an LLM API client constrained to the Jev wire format",
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
