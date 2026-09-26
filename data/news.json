@@ -1,5 +1,101 @@
 [
   {
+    "date": "2026-09-26",
+    "title": "It's a Jev's World",
+    "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://www.bolna.ai/blog/testing-jev-on-real-phone-calls",
+    "added": "2026-09-26"
+  },
+  {
+    "date": "2026-09-26",
+    "title": "Show HN: I built a chatbot that can only reply in emoji, powered by Jev",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://jev.chat",
+    "added": "2026-09-26"
+  },
+  {
+    "date": "2026-09-26",
+    "title": "Show HN: I built my parents a credit card chooser with Jev",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://points.chengeric.com/",
+    "added": "2026-09-26"
+  },
+  {
+    "date": "2026-09-26",
+    "title": "A single function Jev-like wrapper for LLMs, including vision models",
+    "summary": "Hacker News discussion — 37 points, 2 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "http://allanrbo.blogspot.com/2026/09/a-jev-like-wrapper-for-llms-including.html",
+    "added": "2026-09-26"
+  },
+  {
+    "date": "2026-09-26",
+    "title": "Show HN: Jevlang. delegate every if/while condition to Jev",
+    "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/RoyWiggins/jevlang",
+    "added": "2026-09-26"
+  },
+  {
+    "date": "2026-09-26",
+    "title": "Laya, Jev, and the work of keeping answers close to the page",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://openbrowser-landing.pages.dev/context-atlas-blog/",
+    "added": "2026-09-26"
+  },
+  {
+    "date": "2026-09-26",
+    "title": "Reflex – run a Jev-like decision model locally on a 16GB Nvidia GPU",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/lateos-ai/reflex",
+    "added": "2026-09-26"
+  },
+  {
+    "date": "2026-09-26",
+    "title": "Show HN: Tenjin – A Jev based x402 tool router for Claude Code",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/BackTrackCo/tenjin-agent",
+    "added": "2026-09-26"
+  },
+  {
+    "date": "2026-09-25",
+    "title": "Jev Plays Pokémon Red (LIVE): an AI decision model plays the whole game [video]",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://www.youtube.com/watch?v=1HMOA3BawXg",
+    "added": "2026-09-26"
+  },
+  {
+    "date": "2026-09-25",
+    "title": "Jev-Mem: System-One-Controlled Agentic Memory for Efficient AI Agents",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://academy.dair.ai/papers/jev-mem-system-one-controlled-agentic-memory-for-efficient-ai-agents-2609.23986",
+    "added": "2026-09-26"
+  },
+  {
+    "date": "2026-09-25",
+    "title": "Show HN: Jev.Store – A dedicated directory of useful things made on Jev",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://www.jev.store/",
+    "added": "2026-09-26"
+  },
+  {
+    "date": "2026-09-25",
+    "title": "Kiro adds jev to decide turn in preview",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://kiro.dev/changelog/",
+    "added": "2026-09-26"
+  },
+  {
     "date": "2026-09-25",
     "title": "Jev for Input Validation",
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",

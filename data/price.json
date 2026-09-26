@@ -1,0 +1,13 @@
+[
+  {
+    "date": "2026-09-26",
+    "models": [
+      {
+        "id": "typesafe/jev-router",
+        "input_per_mtok": -1000000.0,
+        "output_per_mtok": -1000000.0,
+        "context": 1000000
+      }
+    ]
+  }
+]
