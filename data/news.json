@@ -1,6 +1,14 @@
 [
   {
     "date": "2026-09-26",
+    "title": "Jevq, A Jev filter sidecar for jq",
+    "summary": "Hacker News discussion — 1 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/who/jevq",
+    "added": "2026-09-26"
+  },
+  {
+    "date": "2026-09-26",
     "title": "It's a Jev's World",
     "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
