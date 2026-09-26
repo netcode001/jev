@@ -1,6 +1,46 @@
 [
   {
     "date": "2026-09-26",
+    "title": "Is Jev calibrated? Tests on real data",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://leonardgrazian.com/blog/jev-calibration/",
+    "added": "2026-09-26"
+  },
+  {
+    "date": "2026-09-26",
+    "title": "What Is Jev AI? A Practical Guide to System One and Executable Decisions",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://huggingface.co/blog/sora-2/what-is-jev-ai-a-practical-guide-to-system-one-and",
+    "added": "2026-09-26"
+  },
+  {
+    "date": "2026-09-26",
+    "title": "Show HN: Jev predicting your life choices",
+    "summary": "Hacker News discussion — 1 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://quiz.seek.ws/",
+    "added": "2026-09-26"
+  },
+  {
+    "date": "2026-09-26",
+    "title": "Turning GLM-5.3-Flash into a Jev-like decision model",
+    "summary": "Hacker News discussion — 5 points, 2 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://www.privatemode.ai/blog/system-one-from-glm-flash",
+    "added": "2026-09-26"
+  },
+  {
+    "date": "2026-09-26",
+    "title": "Show HN: Ephemeral runner for JEV-style models",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/Partysun/jigor",
+    "added": "2026-09-26"
+  },
+  {
+    "date": "2026-09-26",
     "title": "Jevq, A Jev filter sidecar for jq",
     "summary": "Hacker News discussion — 1 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
