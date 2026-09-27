@@ -1,6 +1,46 @@
 [
   {
     "date": "2026-09-27",
+    "title": "Jev in your local browser in Go with WebGPU using Jeyzma",
+    "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://jeyzma.com/",
+    "added": "2026-09-27"
+  },
+  {
+    "date": "2026-09-27",
+    "title": "How do you run System One decision models locally?",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://stackness.dev/blog/how-do-you-run-system-one-decision-models-locally-ollaya-laya-mlx-and-the-runtime-slot",
+    "added": "2026-09-27"
+  },
+  {
+    "date": "2026-09-27",
+    "title": "Show HN: Jev-windows-agent – Windows UI Automation back end for CUA agents",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/VBS2004/jev-windows-agent",
+    "added": "2026-09-27"
+  },
+  {
+    "date": "2026-09-27",
+    "title": "Show HN: TanStack Start and TanStack AI Jev Integration",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://vercel.com/i/using-jev-in-tanstack-start-with-tanstack-ai",
+    "added": "2026-09-27"
+  },
+  {
+    "date": "2026-09-27",
+    "title": "Show HN: Peekaboolean – image and jev-like typed questions in typed anwers out",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/bykof/peekaboolean",
+    "added": "2026-09-27"
+  },
+  {
+    "date": "2026-09-27",
     "title": "Show HN: Jauvex, one app for Claude+Codex+Grok+Jev with two-way voice chat",
     "summary": "Hacker News discussion — 1 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
