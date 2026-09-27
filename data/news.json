@@ -1,6 +1,54 @@
 [
   {
     "date": "2026-09-27",
+    "title": "Ask HN: How Jev in production for generative UI working out, anyone tried ?",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/item?id=49869020",
+    "added": "2026-09-27"
+  },
+  {
+    "date": "2026-09-27",
+    "title": "How Jev works: calibrated decision models",
+    "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://victordibia.com/explainers/jev/",
+    "added": "2026-09-27"
+  },
+  {
+    "date": "2026-09-27",
+    "title": "I was impressed by Jev, please explain why I shouldn't be",
+    "summary": "Hacker News discussion — 4 points, 5 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/item?id=49868483",
+    "added": "2026-09-27"
+  },
+  {
+    "date": "2026-09-27",
+    "title": "Show HN: Chrome extension where Jev decides if each post/video/page is worth it",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/plusminushalf/rot-guard",
+    "added": "2026-09-27"
+  },
+  {
+    "date": "2026-09-27",
+    "title": "Statistical tie with Jev on BANKING77 (91.79% vs. 92.40%, p=0.27) ~1/1000th cost",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://www.reddit.com/r/learnmachinelearning/comments/1wrd95w/statistical_tie_with_jev_on_banking77_9179_vs/",
+    "added": "2026-09-27"
+  },
+  {
+    "date": "2026-09-27",
+    "title": "Show HN: Matching Jev on BANKING77 at a thousandth of the cost",
+    "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/item?id=49867086",
+    "added": "2026-09-27"
+  },
+  {
+    "date": "2026-09-27",
     "title": "Jev in your local browser in Go with WebGPU using Jeyzma",
     "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
