@@ -1,5 +1,37 @@
 [
   {
+    "date": "2026-09-27",
+    "title": "Show HN: Jauvex, one app for Claude+Codex+Grok+Jev with two-way voice chat",
+    "summary": "Hacker News discussion — 1 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/reindent/jauvex",
+    "added": "2026-09-27"
+  },
+  {
+    "date": "2026-09-27",
+    "title": "Eikos - OSS Jev-like model",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/caiovicentino/eikos",
+    "added": "2026-09-27"
+  },
+  {
+    "date": "2026-09-27",
+    "title": "Credence – Jev-style typed decisions from a local GGUF model",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/bulyaki/Credence",
+    "added": "2026-09-27"
+  },
+  {
+    "date": "2026-09-26",
+    "title": "Show HN: Newt – A Swift Package for Jev-Style Decisions on Apple Core AI",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/willswire/swift-newt",
+    "added": "2026-09-27"
+  },
+  {
     "date": "2026-09-26",
     "title": "Is Jev calibrated? Tests on real data",
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
