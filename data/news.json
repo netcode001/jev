@@ -1,5 +1,29 @@
 [
   {
+    "date": "2026-09-28",
+    "title": "How to build a Jev-style classifier with DiffusionGemma and vLLM",
+    "summary": "Hacker News discussion — 1 points, 2 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://medium.com/google-cloud/how-to-build-a-jev-style-classifier-with-diffusiongemma-and-vllm-ef2e0bfa9ad7",
+    "added": "2026-09-28"
+  },
+  {
+    "date": "2026-09-27",
+    "title": "Rene-1: Open-weight classifier sets SOTA on Decision Index (+9 over Jev)",
+    "summary": "Hacker News discussion — 6 points, 2 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://huggingface.co/salfatigroup/rene-1-31b-fp8",
+    "added": "2026-09-28"
+  },
+  {
+    "date": "2026-09-27",
+    "title": "Show HN: Jev-Like Model Learns to Cook",
+    "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://rlafuente.com/posts/2026-9-26-training-a-small-decision-model-to-cook#",
+    "added": "2026-09-28"
+  },
+  {
     "date": "2026-09-27",
     "title": "Ask HN: How Jev in production for generative UI working out, anyone tried ?",
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
