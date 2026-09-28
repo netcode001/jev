@@ -1,6 +1,30 @@
 [
   {
     "date": "2026-09-28",
+    "title": "You shouldn't use Jev for coding agents and routing",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://weaveos.com/blog/why-you-shouldnt-use-jev-for-coding-agents-and-routing",
+    "added": "2026-09-28"
+  },
+  {
+    "date": "2026-09-28",
+    "title": "Is Jev Faster for Browser Automation? I Measured It",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://shaharia.com/blog/jev-cli-browser-automation-speed-benchmark/",
+    "added": "2026-09-28"
+  },
+  {
+    "date": "2026-09-28",
+    "title": "Show HN: onesie – An expressive Unix-pipeable CLI for System One models like Jev",
+    "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/frodi-karlsson/onesie",
+    "added": "2026-09-28"
+  },
+  {
+    "date": "2026-09-28",
     "title": "How to build a Jev-style classifier with DiffusionGemma and vLLM",
     "summary": "Hacker News discussion — 1 points, 2 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
