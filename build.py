@@ -22,6 +22,7 @@ ASSETS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets")
 OG_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "og")
 
 FAVICON = "/assets/favicon.svg"
+ADSENSE_CLIENT = "ca-pub-2412133960034139"
 
 FONT_LINKS = ('  <link rel="preconnect" href="https://fonts.googleapis.com"/>\n'
               '  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>\n'
@@ -170,6 +171,8 @@ def render_page(lang, slug, page, all_pages):
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"/>
   <link rel="icon" href="/assets/favicon.ico" sizes="32x32"/>
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"/>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={ADSENSE_CLIENT}"
+        crossorigin="anonymous"></script>
 {FONT_LINKS}{GA_SNIPPET}  <style>
 {CSS_CONTENT}
   </style>
@@ -367,6 +370,10 @@ def build():
 
     write(os.path.join(BUILD_DIR, "robots.txt"),
           f"User-agent: *\nAllow: /\n\nSitemap: {SITE_URL}/sitemap.xml\n")
+
+    # AdSense ownership: ads.txt at site root
+    write(os.path.join(BUILD_DIR, "ads.txt"),
+          f"google.com, {ADSENSE_CLIENT.replace('ca-', '')}, DIRECT, f08c47fec0942fa0\n")
 
     count = sum(len(p) for p in (PAGES_EN, PAGES_ZH))
     build_rss()
