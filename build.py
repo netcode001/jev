@@ -21,10 +21,7 @@ BUILD_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "site")
 ASSETS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets")
 OG_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "og")
 
-FAVICON = ("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E"
-           "%3Crect width='32' height='32' rx='6' fill='%230E1726'/%3E"
-           "%3Ctext x='16' y='22' font-family='monospace' font-size='16' font-weight='700' "
-           "fill='%23E85D3D' text-anchor='middle'%3EJ%3C/text%3E%3C/svg%3E")
+FAVICON = "/assets/favicon.svg"
 
 FONT_LINKS = ('  <link rel="preconnect" href="https://fonts.googleapis.com"/>\n'
               '  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>\n'
@@ -170,7 +167,9 @@ def render_page(lang, slug, page, all_pages):
   <meta name="twitter:description" content="{esc(page['desc'])}"/>
   <meta name="twitter:image" content="{og_image}"/>
   <link rel="alternate" type="application/rss+xml" title="Jev Hub — Jev news &amp; updates" href="{SITE_URL}/feed.xml"/>
-  <link rel="icon" href="{FAVICON}"/>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"/>
+  <link rel="icon" href="/assets/favicon.ico" sizes="32x32"/>
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"/>
 {FONT_LINKS}{GA_SNIPPET}  <style>
 {CSS_CONTENT}
   </style>
@@ -225,7 +224,7 @@ def rewrite_internal_links(html, prefix):
             path, anchor = raw.split("#", 1)
             anchor = "#" + anchor
         path = path.rstrip("/")
-        if re.search(r"\.(xml|txt|png|jpe?g|webp|ico|webmanifest|css|js)$", path):
+        if re.search(r"\.(xml|txt|png|jpe?g|webp|ico|svg|webmanifest|css|js)$", path):
             target = path  # static asset: never append /index.html or a slash
         elif path == "":
             target = ""

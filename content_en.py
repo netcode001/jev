@@ -122,7 +122,7 @@ PAGES = {}
 # ---- index ----
 PAGES["index"] = {
     "title": "Jev AI: Pricing, Access & News Tracker | Jev Hub",
-    "desc": "Independent hub for Jev, TypeSafe AI's System One model: what it is, pricing across providers, benchmarks with caveats, open-access paths (now with free credit), and auto-updated news.",
+    "desc": "Independent hub for Jev, the System One model by TypeSafe AI: pricing, access paths, benchmarks, daily news and a free playground with 12 templates.",
     "crumb": [("Home", None)],
     "schema": [
         {"@context": "https://schema.org", "@type": "WebSite", "name": "Jev Hub", "url": "https://jev-ai.live/",
@@ -424,7 +424,7 @@ PAGES["pricing"] = {
 # ---- use-cases ----
 PAGES["use-cases"] = {
     "title": "10 Jev AI Use Cases With Real Numbers (2026)",
-    "desc": "Practical Jev workflows with community-reported results: agent guardrails, model routing, RAG filtering, ticket triage, moderation, LLM-as-judge, lead scoring and more.",
+    "desc": "Practical Jev workflows with community-reported results: agent guardrails, model routing, RAG filtering, support triage, content moderation, LLM-as-judge.",
     "crumb": CRUMB_HOME + [("Use Cases", None)],
     "schema": [],
     "body": """
@@ -488,7 +488,7 @@ PAGES["use-cases"] = {
 # ---- get-access ----
 PAGES["get-access"] = {
     "title": "How to Get Access to Jev AI (2026): Open Signup, $5 Free Credit",
-    "desc": "Jev is now open to everyone — no waitlist. Sign up at console.typesafe.ai with $5 in free credit, or use it via Vercel AI Gateway and Cloudflare Workers AI. 5-minute quickstart inside.",
+    "desc": "Jev is open — no waitlist. Sign up at console.typesafe.ai with $5 free credit, or connect via Vercel AI Gateway, Cloudflare and Vivgrid. All paths compared.",
     "crumb": CRUMB_HOME + [("Get Access", None)],
     "schema": [],
     "body": """
@@ -755,7 +755,7 @@ PAGES["news"]["body"] = PAGES["news"]["body"].replace("{NEWS_FULL}", NEWS_FULL)
 # ---- playground (BYOK interactive tool) ----
 PAGES["playground"] = {
     "title": "Jev AI Playground — Try the Jev Model Online With Your Own Key | Jev Hub",
-    "desc": "Run real Jev (TypeSafe System One) decisions in your browser: build Choice, Score and Noul questions, use your own API key (stored locally, never sent to us), and see live probabilities, confidence and per-call cost.",
+    "desc": "Run real Jev (System One) decisions in your browser: build Choice, Score and Noul questions from 12 templates, use your API key or 5 free runs a day — no signup.",
     "crumb": [("Home", "/"), ("Playground", None)],
     "wide": True,
     "schema": [{
@@ -1402,7 +1402,7 @@ PAGES["about"] = {
 # ---- contact ----
 PAGES["contact"] = {
     "title": "Contact | Jev Hub",
-    "desc": "Get in touch with Jev Hub: corrections, feedback, business inquiries, ecosystem submissions or content removal requests.",
+    "desc": "Get in touch with Jev Hub: corrections, feedback, business inquiries, ecosystem submissions or content removal requests. We usually reply within two days.",
     "crumb": CRUMB_HOME + [("Contact", None)],
     "schema": [],
     "body": """

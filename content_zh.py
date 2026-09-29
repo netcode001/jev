@@ -401,7 +401,7 @@ PAGES["pricing"] = {
 # ---- use-cases ----
 PAGES["use-cases"] = {
     "title": "Jev AI 的 10 个使用场景（附真实数据，2026）",
-    "desc": "Jev 实战打法与社区实测数据：agent 护栏、模型路由、RAG 过滤、工单分诊、内容审核、LLM-as-judge、线索评分等。",
+    "desc": "Jev 实战打法与社区实测数据：agent 护栏、模型路由、RAG 过滤、工单分诊、内容审核、LLM-as-judge、线索评分等，附可直接复制的 State 与问题模板。",
     "crumb": CRUMB_HOME + [("使用场景", None)],
     "schema": [],
     "body": """
@@ -538,7 +538,7 @@ PAGES["get-access"] = {
 # ---- vs-llm ----
 PAGES["vs-llm"] = {
     "title": "Jev AI vs 大模型：什么时候用哪个（2026 诚实指南）",
-    "desc": "用 Jev 还是用聊天大模型？路由、分类、生成三类工作流的决策表，混合架构模式，以及双方诚实的局限。",
+    "desc": "用 Jev 还是用聊天大模型？路由、分类、生成三类工作流的决策表，混合架构模式，以及双方诚实的局限；附真实成本对比与迁移建议，帮你选对工具。",
     "crumb": CRUMB_HOME + [("Jev vs 大模型", None)],
     "schema": [],
     "body": """
@@ -614,7 +614,7 @@ PAGES["vs-llm"] = {
 # ---- news ----
 PAGES["news"] = {
     "title": "Jev AI 动态与更新——自动追踪时间线（2026）",
-    "desc": "关于 Jev 的每一条重要更新：发布新闻、接入政策变化、渠道上架、价格变化、评测分析与社区项目——自动追踪，持续更新。",
+    "desc": "关于 Jev 的每一条重要更新：发布新闻、接入政策变化、渠道上架、价格变化、评测分析与社区项目——自动追踪、每天多次更新，并提供 RSS 订阅与历史时间线。",
     "crumb": CRUMB_HOME + [("动态", None)],
     "schema": [],
     "body": """
@@ -670,7 +670,7 @@ PAGES["ecosystem"] = {
 _faq_body, _faq_schema = faq_html_and_schema()
 PAGES["faq"] = {
     "title": "Jev AI 常见问题：TypeSafe System One 模型 20 个问答",
-    "desc": "关于 Jev 的直接答案：它是什么、开放接入、价格、速率限制、零幻觉保证、评测可信度，以及信息来源。",
+    "desc": "关于 Jev 的直接答案：它是什么、开放接入与 $5 免费额度、价格与速率限制、零幻觉保证与评测可信度、中文用户怎么用，以及本站信息的来源与更新频率。",
     "crumb": CRUMB_HOME + [("常见问题", None)],
     "schema": [_faq_schema],
     "body": """
@@ -1338,7 +1338,7 @@ PAGES["privacy"] = {
 # ---- about ----
 PAGES["about"] = {
     "title": "关于 Jev Hub | 独立 Jev 信息站",
-    "desc": "谁在运营 Jev Hub、数据从哪来、站点如何维持运转，以及我们追踪 Jev（System One）动态、价格与生态的编辑原则。",
+    "desc": "谁在运营 Jev Hub、数据从哪来、站点如何维持运转，以及我们追踪 Jev（System One）动态、价格与生态的编辑原则；附独立性声明与变现方式披露。",
     "crumb": CRUMB_HOME + [("关于", None)],
     "schema": [],
     "body": """
@@ -1371,7 +1371,7 @@ PAGES["about"] = {
 # ---- contact ----
 PAGES["contact"] = {
     "title": "联系 | Jev Hub",
-    "desc": "联系 Jev Hub：内容纠错、反馈建议、商务合作、生态项目投稿或内容移除请求。",
+    "desc": "联系 Jev Hub：内容纠错、反馈建议、商务合作、生态项目投稿或内容移除请求。所有来信都会读，通常一两天内回复；隐私相关问题请参见隐私政策页。",
     "crumb": CRUMB_HOME + [("联系", None)],
     "schema": [],
     "body": """
