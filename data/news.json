@@ -1,5 +1,37 @@
 [
   {
+    "date": "2026-09-30",
+    "title": "Show HN: I made Jev to talk",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/zie1ony/jev-talks",
+    "added": "2026-09-30"
+  },
+  {
+    "date": "2026-09-30",
+    "title": "Jev Compares to Other Rerankers",
+    "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://www.lancedb.com/blog/how-jev-compares-to-other-rerankers",
+    "added": "2026-09-30"
+  },
+  {
+    "date": "2026-09-30",
+    "title": "Show HN: Jev as the Bletchley Park Analyst: A Software Bombe on Enigma",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/agodoy21/enigma-jev",
+    "added": "2026-09-30"
+  },
+  {
+    "date": "2026-09-30",
+    "title": "Jev-as-a-Judge: Accept When Confident, Escalate When Unsure",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://arxiv.org/abs/2609.26550",
+    "added": "2026-09-30"
+  },
+  {
     "date": "2026-09-29",
     "title": "Ask HN: Jev but that returns an attention matrix over the input",
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
