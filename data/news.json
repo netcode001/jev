@@ -1,6 +1,54 @@
 [
   {
     "date": "2026-09-30",
+    "title": "Jevstiller: Distill a repeated Jev classification task into a local model",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/tomerglick57/Jevstiller",
+    "added": "2026-09-30"
+  },
+  {
+    "date": "2026-09-30",
+    "title": "Jevstiller: Open-source tool distills Jev so you can run it locally",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://www.theregister.com/ai-and-ml/2026/09/29/open-source-tool-distills-jev-so-you-can-run-it-locally/5299856",
+    "added": "2026-09-30"
+  },
+  {
+    "date": "2026-09-30",
+    "title": "Show HN: Dbb1 radio – endless radio powered by Jev",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://radio.dbb1.dev/",
+    "added": "2026-09-30"
+  },
+  {
+    "date": "2026-09-30",
+    "title": "Show HN: I made a techmeme for EdTech with Jev",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://edfountain.com/",
+    "added": "2026-09-30"
+  },
+  {
+    "date": "2026-09-30",
+    "title": "Lichen – A local, BOY model system1 (Jev) server with image support",
+    "summary": "Hacker News discussion — 2 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/Mushroom-Systems/lichen",
+    "added": "2026-09-30"
+  },
+  {
+    "date": "2026-09-30",
+    "title": "How to use Jev for financial decisions",
+    "summary": "Hacker News discussion — 1 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://revexos.medium.com/typesafes-jev-model-using-structured-ai-evaluation-in-the-financial-accounting-order-to-cash-0a8a95ed019c",
+    "added": "2026-09-30"
+  },
+  {
+    "date": "2026-09-30",
     "title": "Show HN: I made Jev to talk",
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
