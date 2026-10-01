@@ -1,5 +1,29 @@
 [
   {
+    "date": "2026-10-01",
+    "title": "Can typesafe.ai Jev model talk? – they said no",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/huemorgan2/say-hi",
+    "added": "2026-10-01"
+  },
+  {
+    "date": "2026-10-01",
+    "title": "Amazon releases its own Jev clone as decision models flood the web",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://techcrunch.com/2026/10/01/amazon-releases-its-own-jev-clone-as-decision-models-flood-the-web/",
+    "added": "2026-10-01"
+  },
+  {
+    "date": "2026-10-01",
+    "title": "EU/Jev – First System One Model Hosted in the EU",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://jev.bevel.software/",
+    "added": "2026-10-01"
+  },
+  {
     "date": "2026-09-30",
     "title": "Jevstiller: Distill a repeated Jev classification task into a local model",
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
