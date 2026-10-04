@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-10-04",
+    "title": "Startup TypeSafe AI's Jev Model Sparks Copycats, Talk of LLM Alternatives",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://www.wsj.com/tech/ai/startup-typesafe-ais-jev-model-sparks-copycats-talk-of-llm-alternatives-e39ff57d",
+    "added": "2026-10-04"
+  },
+  {
+    "date": "2026-10-03",
+    "title": "Gutsy: Tiny model for typed decisions on CPU (Jev style)",
+    "summary": "Hacker News discussion — 2 points, 2 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/kouhxp/gutsy",
+    "added": "2026-10-04"
+  },
+  {
     "date": "2026-10-03",
     "title": "Better Call Jev",
     "summary": "Hacker News discussion — 5 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
