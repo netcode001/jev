@@ -1,6 +1,14 @@
 [
   {
     "date": "2026-10-05",
+    "title": "Dotpals - Catches agents that edit tests to pass using JEV",
+    "summary": "Hacker News discussion — 1 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/Rikinshah787/dotpals",
+    "added": "2026-10-05"
+  },
+  {
+    "date": "2026-10-05",
     "title": "TypeSafe AI's Jev vs. Perplexity's Decisions API",
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
