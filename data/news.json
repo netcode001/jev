@@ -1,6 +1,38 @@
 [
   {
     "date": "2026-10-06",
+    "title": "Hands-on comparison of Jev with Haiku 4.5, GPT-5.4-mini, and Gemini 3.5 Flash",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://blog.oodle.ai/is-jev-the-right-model-for-your-use-case-a-walkthrough-comparing-haiku-4-5-gpt-5-4-mini-and-gemini-3-5-flash/",
+    "added": "2026-10-06"
+  },
+  {
+    "date": "2026-10-06",
+    "title": "Jev for Voice Agents",
+    "summary": "Hacker News discussion — 5 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://veris.ai/blog/jev-turn-detection",
+    "added": "2026-10-06"
+  },
+  {
+    "date": "2026-10-06",
+    "title": "Show HN: Use Jev to delete fundraising emails",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://huggingface.co/blog/stephen-solka/use-jev-to-delete-fundraising-emails",
+    "added": "2026-10-06"
+  },
+  {
+    "date": "2026-10-06",
+    "title": "Show HN: Jev schema builder from TypeScript Type with Typia",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://typia.io/blog/jev/",
+    "added": "2026-10-06"
+  },
+  {
+    "date": "2026-10-06",
     "title": "Jev vs. Clef",
     "summary": "Hacker News discussion — 5 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
