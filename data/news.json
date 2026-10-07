@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-10-07",
+    "title": "Jev isn't a better judge than Claude",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://deeplearningguy.github.io/blog/jev-vs-claude-judge/",
+    "added": "2026-10-07"
+  },
+  {
+    "date": "2026-10-06",
+    "title": "An Independent Evaluation of TypeSafe's Jev",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://www.vals.ai/blogs/independent-evaluation-of-jev",
+    "added": "2026-10-07"
+  },
+  {
     "date": "2026-10-06",
     "title": "Hands-on comparison of Jev with Haiku 4.5, GPT-5.4-mini, and Gemini 3.5 Flash",
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
