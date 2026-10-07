@@ -63,6 +63,10 @@ FAQS = [
      "不能。Jev 不会写文章、写邮件、做摘要，也无法开放式推理。它是补充角色：接管 LLM 技术栈里的结构化判断环节，让昂贵的生成模型少被调用。"),
     ("access", "必须等 TypeSafe 官方 waitlist 吗？",
      "不用了。2026 年 9 月 20 日起 Jev 全面开放、取消排队：直接在 console.typesafe.ai 注册，新用户送 $5 额度（约 1.2 亿 tokens）。Vercel AI Gateway（typesafe-ai/jev）与 Cloudflare Workers AI（typesafe/jev）也可直接调用。"),
+    ("access", "需要 Jev 邀请码吗？",
+     "不需要。Jev 没有邀请机制、也没有邀请码——2026 年 9 月 20 日起排队取消，注册就是 console.typesafe.ai 上的一次普通开放注册。新 Jev 账户不带任何码也送 $5 额度；看到「Jev 邀请码」类信息请当作骗局或过时帖子。"),
+    ("access", "怎么注册 Jev 账户？",
+     "打开 console.typesafe.ai，用邮箱注册并确认即可——流程就这几步。Jev 账户内含网页 Playground、API key 管理与用量看板，注册即送 $5 免费额度（约 1.2 亿输入 tokens）。Vercel 与 Cloudflare 用户也可以直接用现有账户调用 Jev，无需单独注册。"),
     ("access", "有免费的网页试用吗？",
      "有。获批用户可使用 console.typesafe.ai/playground：左侧粘贴文本作为 state，用大白话写问题，选好题型，点运行——一秒内返回带置信度的结果。Choice、Score、Noul 可以混在一次运行里。"),
     ("access", "官方提供哪些 SDK？",
@@ -317,7 +321,7 @@ PAGES["what-is-jev"] = {
 <p>Jev 不是更便宜的 LLM，而是<strong>一个恰好有智能的类型化函数调用</strong>：直接返回代码可用的值，附带置信度。有了它，很多只为「在字符串输出中活下来并做校验」而存在的代码就不需要存在了。发布几天内，开源项目 <a href="/zh/ecosystem/">openjev</a> 就在小开源模型上复刻了这套接口模式——说明这个原语的生命周期可能超过任何单一厂商。</p>
 
 <h2 id="access">怎么试用</h2>
-<p>从零代码到完整 API 的三条路径，我们在<a href="/zh/get-access/">获取方式指南</a>里逐步讲清——包括送 $5 额度的官方直注路径与 Vercel / Cloudflare 渠道。什么时候该用 Jev、什么时候该用前沿模型，见 <a href="/zh/vs-llm/">Jev vs 大模型</a>；具体工作流见<a href="/zh/use-cases/">使用场景</a>。</p>
+<p>从零代码到完整 API 的三条路径，我们在<a href="/zh/get-access/">Jev 注册与获取使用权限指南</a>里逐步讲清——包括送 $5 额度的官方直注路径与 Vercel / Cloudflare 渠道。什么时候该用 Jev、什么时候该用前沿模型，见 <a href="/zh/vs-llm/">Jev vs 大模型</a>；具体工作流见<a href="/zh/use-cases/">使用场景</a>。</p>
 """,
 }
 
@@ -464,16 +468,19 @@ PAGES["use-cases"] = {
 
 # ---- get-access ----
 PAGES["get-access"] = {
-    "title": "如何获取 Jev AI 使用权限（2026）：开放注册、$5 免费额度",
-    "desc": "Jev 已全面开放、无需排队。直接在 console.typesafe.ai 注册并领取 $5 免费额度，或经 Vercel AI Gateway、Cloudflare Workers AI 调用——附 5 分钟快速上手。",
+    "title": "Jev AI 注册教程（2026）：如何获取 Jev 使用权限与 $5 免费额度",
+    "desc": "Jev AI 注册已全面开放——无需排队、无需邀请码。在 console.typesafe.ai 注册 Jev 账户并领取 $5 免费额度，或经 Vercel、Cloudflare 获取使用权限。",
     "crumb": CRUMB_HOME + [("获取方式", None)],
     "schema": [],
     "body": """
-<p class="updated">最后更新：2026-09-20</p>
-<h1>如何获取 Jev 使用权限</h1>
-<p class="lede"><strong>Jev 已于 2026 年 9 月 20 日全面开放——排队取消。</strong>在 console.typesafe.ai 注册即送 $5 额度（约 1.2 亿输入 tokens）。也可以走 Vercel、Cloudflare 渠道，调用的都是同一个模型。</p>
+<p class="updated">最后更新：2026-10-07</p>
+<h1>Jev AI 注册教程：如何获取 Jev 使用权限</h1>
+<p class="lede"><strong>Jev 已于 2026 年 9 月 20 日全面开放——排队取消，也无需邀请码。</strong>在 console.typesafe.ai 注册即送 $5 额度（约 1.2 亿输入 tokens）。也可以走 Vercel、Cloudflare 渠道，调用的都是同一个模型。</p>
 
 <div class="pg-notice">写代码之前先上手感受？<a href="/zh/playground/">打开在线试玩</a>——在浏览器里用你的 Key 直接跑真实决策。</div>
+<h2 id="signup-terms">注册、获取权限、邀请码——都是同一扇门</h2>
+<p>很多人搜「Jev 注册」「Jev 邀请码」「如何获取 Jev 使用权限」，一次说清：<strong>没有邀请机制，也不需要邀请码</strong>。注册 Jev 账户就是一次普通的开放注册——在 console.typesafe.ai 用邮箱和密码创建账户即可。「注册」与「创建账户」是同一步；「获取使用权限」= 这一步 + 选一条调用路径：官方控制台（方式一）、Vercel AI Gateway（方式二）或 Cloudflare Workers AI（方式三）。</p>
+
 <h2 id="console">方式一：TypeSafe 官方直注（已开放）</h2>
 <ol>
   <li>打开 <a href="https://console.typesafe.ai" rel="nofollow noopener" target="_blank">console.typesafe.ai</a> 注册——无需排队、无需邀请。</li>
@@ -844,7 +851,7 @@ PAGES["playground"] = {
     <li><strong>限制</strong>：单请求最多 64K tokens，State + 最长问题合计 32K，直连约 1,200 次/分钟（以 TypeSafe 当前文档为准）。</li>
     <li><strong>答案合法不代表答案正确</strong>——Jev 保证的是 schema 合法性，不是准确性。用置信度分档决策：高置信自动执行，中档人工复核，低置信升级处理。</li>
     <li><strong>问题要原子化</strong>。一个问题 = 一个判断。「给这个创业项目打分」混合了市场、技术、团队多个维度——拆成多个 Score，在代码里组合。</li>
-    <li><strong>还没有 Key？</strong>注册已开放并送 $5 额度——见<a href="/zh/get-access/">获取方式</a>。</li>
+    <li><strong>还没有 Key？</strong>注册已开放并送 $5 额度——见<a href="/zh/get-access/">Jev 注册教程</a>。</li>
   </ul>
 </section>
 

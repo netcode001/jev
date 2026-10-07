@@ -55,6 +55,10 @@ FAQS = [
      "No. Jev cannot write text, draft emails, summarize, or reason openly. It is a complement: it takes over the structured decision steps of an LLM stack so the expensive generative model is called less often."),
     ("access", "Do I have to wait on the TypeSafe waitlist?",
      "No — as of Sep 20, 2026 the waitlist is gone. Jev is open to everyone: sign up at console.typesafe.ai and get $5 in free credit (~120M tokens). The Vercel AI Gateway (typesafe-ai/jev) and Cloudflare Workers AI (typesafe/jev) also serve it directly."),
+    ("access", "Do I need a Jev invite or an invite code?",
+     "No. There is no invite system and no invite code — Jev dropped its waitlist on Sep 20, 2026 and the sign up is a plain open registration at console.typesafe.ai. A new Jev account comes with $5 in free credit without any code; treat any \u201cinvite Jev\u201d offers as scams or outdated posts."),
+    ("access", "How do I register a Jev account?",
+     "Go to console.typesafe.ai, sign up with your email and confirm — that’s the whole process. The Jev account includes the web playground, API key management and usage dashboards, and ships with $5 in free credit (~120M input tokens). Vercel and Cloudflare users can instead call Jev through their existing accounts, no separate registration needed."),
     ("access", "Is there a free playground?",
      "Yes. Approved users get console.typesafe.ai/playground: paste text as state, write a plain-language question, pick the answer type, and get a sub-second result with a confidence score. You can mix Choice, Score, and Noul questions in one run."),
     ("access", "Which SDKs are available?",
@@ -340,7 +344,7 @@ PAGES["what-is-jev"] = {
 <p>Jev isn't a cheaper LLM. It's <strong>a typed function call that happens to be intelligent</strong>: it returns a value your code can use directly, with a confidence number attached. Once you have that, a lot of code that exists only to survive and validate string output stops needing to exist at all. Within days of launch, the open-source <a href="/ecosystem/">openjev project</a> reproduced the interface pattern on a small open model — a sign the primitive may outlive any single vendor.</p>
 
 <h2 id="access">How to try it</h2>
-<p>Three routes, from zero-code to full API access, are covered step by step in our <a href="/get-access/">Get Access guide</a> — including the free-credit console path and the Vercel / Cloudflare gateways. For when to use Jev versus a frontier model, see <a href="/vs-llm/">Jev vs LLMs</a>; for concrete workflows, see <a href="/use-cases/">use cases</a>.</p>
+<p>Three routes, from zero-code to full API access, are covered step by step in our <a href="/get-access/">guide to getting Jev access (sign up, register or connect)</a> — including the free-credit console path and the Vercel / Cloudflare gateways. For when to use Jev versus a frontier model, see <a href="/vs-llm/">Jev vs LLMs</a>; for concrete workflows, see <a href="/use-cases/">use cases</a>.</p>
 """,
 }
 
@@ -487,16 +491,19 @@ PAGES["use-cases"] = {
 
 # ---- get-access ----
 PAGES["get-access"] = {
-    "title": "How to Get Access to Jev AI (2026): Open Signup, $5 Free Credit",
-    "desc": "Jev is open — no waitlist. Sign up at console.typesafe.ai with $5 free credit, or connect via Vercel AI Gateway, Cloudflare and Vivgrid. All paths compared.",
+    "title": "Jev AI Sign Up (2026): How to Get Jev Access & Register Free",
+    "desc": "Jev AI sign up is open — no waitlist, no invite code. Register a Jev account at console.typesafe.ai with $5 free credit, or get access via Vercel or Cloudflare.",
     "crumb": CRUMB_HOME + [("Get Access", None)],
     "schema": [],
     "body": """
-<p class="updated">Last updated: 2026-09-20</p>
-<h1>How to Get Access to Jev AI</h1>
-<p class="lede"><strong>Jev opened to everyone on Sep 20, 2026 — the waitlist is gone.</strong> Sign up at console.typesafe.ai and get $5 in free credit (~120M input tokens). Prefer a gateway? Vercel and Cloudflare serve the same model. Every route ends at the same Jev.</p>
+<p class="updated">Last updated: 2026-10-07</p>
+<h1>How to Get Jev Access: Sign Up, Register &amp; Start Free</h1>
+<p class="lede"><strong>Jev opened to everyone on Sep 20, 2026 — the waitlist is gone, and no invite code is needed.</strong> Sign up at console.typesafe.ai and get $5 in free credit (~120M input tokens). Prefer a gateway? Vercel and Cloudflare serve the same model. Every route ends at the same Jev.</p>
 
 <div class="pg-notice">Want to feel the model before writing code? <a href="/playground/">Open the Playground</a> — run real decisions with your key, right in the browser.</div>
+<h2 id="signup-terms">Jev sign up, register, invite — which one is it?</h2>
+<p>People land here searching for “Jev sign up”, “Jev register” or a “Jev invite”, so let’s clear it up in one line: <strong>there is no invite system and no invite code</strong>. Creating a Jev account is a plain open sign up — email and password at console.typesafe.ai, nothing else. “Sign up”, “register” and “create an account” all mean the same step. “Getting Jev access” is that step plus choosing a route: the direct console (Option 1), the Vercel AI Gateway (Option 2) or Cloudflare Workers AI (Option 3) below.</p>
+
 <h2 id="console">Option 1: direct signup at TypeSafe (open now)</h2>
 <ol>
   <li>Go to <a href="https://console.typesafe.ai" rel="nofollow noopener" target="_blank">console.typesafe.ai</a> and register — no waitlist, no invite.</li>
@@ -772,7 +779,7 @@ PAGES["playground"] = {
 </div>
 
 <div id="pg-app">
-<div class="pg-notice" id="pg-nokey"><strong>No API key? Just hit Run.</strong> The site sponsors <strong>5 free plays a day</strong>, no signup. Want your own key? TypeSafe registration is open with <a href="/get-access/">$5 in free credit</a>.</div>
+<div class="pg-notice" id="pg-nokey"><strong>No API key? Just hit Run.</strong> The site sponsors <strong>5 free plays a day</strong>, no signup. Want your own key? <a href="/get-access/">Sign up for Jev</a> — registration is open with $5 in free credit.</div>
 
 <div class="pg-keybar">
   <label>TypeSafe API key
@@ -869,7 +876,7 @@ PAGES["playground"] = {
     <li><strong>Limits</strong>: up to 64K tokens per request, 32K combined for state plus the longest question, ~1,200 requests/minute on direct access (subject to TypeSafe's current docs).</li>
     <li><strong>A valid answer can still be wrong</strong> — Jev guarantees schema validity, not correctness. Gate actions on confidence bands: act automatically when high, review in the middle, escalate when low.</li>
     <li><strong>Write atomic questions.</strong> One question = one judgment. "Score this startup" mixes market, tech and team — split it into several Score questions and combine in your code.</li>
-    <li><strong>No key yet?</strong> Registration is open with $5 in free credit — see <a href="/get-access/">Get access</a>.</li>
+    <li><strong>No key yet?</strong> Registration is open with $5 in free credit — see <a href="/get-access/">how to get Jev access</a>.</li>
   </ul>
 </section>
 
