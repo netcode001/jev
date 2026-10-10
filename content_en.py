@@ -761,7 +761,7 @@ PAGES["news"]["body"] = PAGES["news"]["body"].replace("{NEWS_FULL}", NEWS_FULL)
 
 # ---- playground (BYOK interactive tool) ----
 PAGES["playground"] = {
-    "title": "Jev AI Playground — Try the Jev Model Online With Your Own Key | Jev Hub",
+    "title": "Jev AI Playground: Try Jev Online With Your Own API Key",
     "desc": "Run real Jev (System One) decisions in your browser: build Choice, Score and Noul questions from 12 templates, use your API key or 5 free runs a day — no signup.",
     "crumb": [("Home", "/"), ("Playground", None)],
     "wide": True,
