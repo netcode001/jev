@@ -44,5 +44,5 @@ jobs:
             URLS=$(curl -s https://jev-ai.live/sitemap.xml | grep -o '<loc>[^<]*</loc>' | sed 's/<loc>//;s|</loc>||' | awk '{printf "\"%s\",", $1}' | sed 's/,$//')
             curl -s -X POST "https://api.indexnow.org/indexnow" \
               -H "Content-Type: application/json; charset=utf-8" \
-              -d "{\"host\":\"jev-ai.live\",\"key\":\"a3f8c2e91b7d4f6e8c5a2d7b9e4f1c38\",\"keyLocation\":\"https://jev-ai.live/a3f8c2e91b7d4f6e8c5a2d7b9e4f1c38.txt\",\"urlList\":[${URLS}]}" || true
+              -d "{\"host\":\"jev-ai.live\",\"key\":\"77d033352ffc4731a152084d37eab60c\",\"keyLocation\":\"https://jev-ai.live/77d033352ffc4731a152084d37eab60c.txt\",\"urlList\":[${URLS}]}" || true
           fi
