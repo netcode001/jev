@@ -1,6 +1,46 @@
 [
   {
     "date": "2026-10-09",
+    "title": "Jev Playground",
+    "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://jevplayground.com",
+    "added": "2026-10-10"
+  },
+  {
+    "date": "2026-10-09",
+    "title": "Show HN: We Beat TypeSafe Jev and Released Open-Source Decision Model",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://twitter.com/reversedoofz/status/2108668397148094910",
+    "added": "2026-10-10"
+  },
+  {
+    "date": "2026-10-09",
+    "title": "Show HN: HN Jev Sorter – classify HN comments in real time",
+    "summary": "Hacker News discussion — 4 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/ritza-co/hn-jev-sorter",
+    "added": "2026-10-10"
+  },
+  {
+    "date": "2026-10-09",
+    "title": "Jeventus: A Jev Powered Slack Pet",
+    "summary": "Hacker News discussion — 5 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://twitter.com/thepericulum/status/2108649129798701363",
+    "added": "2026-10-10"
+  },
+  {
+    "date": "2026-10-09",
+    "title": "What we learned building 38 projects with Jev in 12 hours",
+    "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://gc.ai/blog/what-we-learned-building-38-projects-with-jev-in-12-hours",
+    "added": "2026-10-10"
+  },
+  {
+    "date": "2026-10-09",
     "title": "Jevfree – repurposing EmbeddingGemma 2 for Jev-like decisions",
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
