@@ -165,7 +165,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/mkly/jev-bisect",
-    "added": "2026-10-08"
+    "added": "2026-10-08",
+    "comment_en": "Bisection search on Jev's typed decisions could turn debugging into a tractable, deterministic loop, but two points and zero comments mean no one has stress-tested it against real workloads yet.",
+    "comment_zh": "对 Jev 的类型化决策做二分搜索，或许能把调试变成可追踪的确定性循环，但两点零评论意味着还没人用真实工作负载压测过它。"
   },
   {
     "date": "2026-10-07",
@@ -173,7 +175,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://deeplearningguy.github.io/blog/jev-vs-claude-judge/",
-    "added": "2026-10-07"
+    "added": "2026-10-07",
+    "comment_en": "With zero comments and two points, this thread offers no first-hand evidence, so Jev users should treat any claim about its judging ability as untested rather than settled.",
+    "comment_zh": "这个帖子零评论、两分，没有任何一手证据，因此 Jev 用户应把关于其评判能力的说法视为未经检验，而非已有定论。"
   },
   {
     "date": "2026-10-06",
@@ -181,7 +185,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://www.vals.ai/blogs/independent-evaluation-of-jev",
-    "added": "2026-10-07"
+    "added": "2026-10-07",
+    "comment_en": "With zero comments and a single point, this evaluation offers no independent signal yet, so Jev developers should treat any conclusions as unverified until real usage reports surface.",
+    "comment_zh": "由于零评论、仅一分，这份评测目前无法提供独立信号，Jev 开发者应将其结论视为未经证实，直到出现真实使用反馈。"
   },
   {
     "date": "2026-10-06",
@@ -189,7 +195,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://blog.oodle.ai/is-jev-the-right-model-for-your-use-case-a-walkthrough-comparing-haiku-4-5-gpt-5-4-mini-and-gemini-3-5-flash/",
-    "added": "2026-10-06"
+    "added": "2026-10-06",
+    "comment_en": "Without any comments or votes, this comparison offers no real signal yet, so Jev developers should treat its benchmark claims as unverified until independent tests confirm the typed-decision advantages.",
+    "comment_zh": "由于没有任何评论或投票，这项对比目前没有真正的参考价值，因此 Jev 开发者应将其基准测试结论视为未经证实，直到独立测试确认类型化决策的优势。"
   },
   {
     "date": "2026-10-06",
@@ -197,7 +205,9 @@
     "summary": "Hacker News discussion — 5 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://veris.ai/blog/jev-turn-detection",
-    "added": "2026-10-06"
+    "added": "2026-10-06",
+    "comment_en": "Five points and zero comments means Jev's voice-agent pitch is still unproven in the wild, so developers should benchmark latency and streaming behavior themselves before betting production pipelines on it.",
+    "comment_zh": "五分零评论意味着 Jev 的语音代理方案尚未在真实场景中得到验证，开发者在下注生产流水线之前，应自行测试其延迟与流式表现。"
   },
   {
     "date": "2026-10-06",
@@ -205,7 +215,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://huggingface.co/blog/stephen-solka/use-jev-to-delete-fundraising-emails",
-    "added": "2026-10-06"
+    "added": "2026-10-06",
+    "comment_en": "A one-point Hacker News post is thin evidence, but Jev's typed decisions could let developers encode email-triage rules that stay auditable rather than buried in a prompt.",
+    "comment_zh": "一条仅有一分的 Hacker News 帖子证据薄弱，但 Jev 的类型化决策或许能让开发者把邮件分类规则写成可审计的代码，而非埋在提示词里。"
   },
   {
     "date": "2026-10-06",
@@ -213,7 +225,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://typia.io/blog/jev/",
-    "added": "2026-10-06"
+    "added": "2026-10-06",
+    "comment_en": "Typia's compile-time validation could let Jev developers skip hand-written schema glue, but the thread's zero comments mean no independent confirmation yet.",
+    "comment_zh": "Typia 的编译期校验或许能让 Jev 开发者省去手写 schema 胶水代码，但该帖零评论意味着尚无独立验证。"
   },
   {
     "date": "2026-10-06",
@@ -221,7 +235,9 @@
     "summary": "Hacker News discussion — 5 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://twitter.com/sztwiorok/status/2107356946844070190",
-    "added": "2026-10-06"
+    "added": "2026-10-06",
+    "comment_en": "Five points and a single comment is thin evidence, so treat this Jev-versus-Clef thread as an anecdote, not a benchmark for your typed-decision stack.",
+    "comment_zh": "五个赞、一条评论，证据太单薄，所以请把这条 Jev 与 Clef 的对比帖当作个例，而非你类型化决策技术栈的基准。"
   },
   {
     "date": "2026-10-05",
