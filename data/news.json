@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-10-15",
+    "title": "Jev Meets the Trolley Problem",
+    "summary": "Hacker News discussion — 11 points, 4 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://zachlandes.com/trolley-problem/",
+    "added": "2026-10-15",
+    "comment_en": "Eleven points and four comments is barely a signal, so treat this thread as anecdote rather than evidence about how Jev actually handles typed ethical trade-offs in production.",
+    "comment_zh": "11分4条评论几乎算不上信号，所以这个帖子只能当轶事看，而非Jev在生产环境中如何处理带类型伦理权衡的证据。"
+  },
+  {
     "date": "2026-10-14",
     "title": "We’re releasing Jev 1.14.0 along with experimental features for dreamers",
     "summary": "Hacker News discussion — 227 points, 76 comments. Community reaction and first-hand usage reports in the thread.",
@@ -325,7 +335,9 @@
     "summary": "Hacker News discussion — 4 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://www.synthpop.ai/resources/does-a-decision-model-know-when-it-is-guessing-post-1",
-    "added": "2026-10-02"
+    "added": "2026-10-02",
+    "comment_en": "Calibration data from half a million calls is a useful reality check, but developers should treat Jev's confidence scores as a signal to verify, not a guarantee.",
+    "comment_zh": "五十万次调用的校准数据是有用的现实检验，但开发者应将 Jev 的置信度分数视为需要核实的信号，而非保证。"
   },
   {
     "date": "2026-10-02",
@@ -333,7 +345,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://developers.redhat.com/articles/2026/10/02/benchmarking-ai-decision-models-against-traditional-guardrails",
-    "added": "2026-10-02"
+    "added": "2026-10-02",
+    "comment_en": "Jev's typed-decision premise only pays off if its constraints actually beat a tuned classifier or an LLM judge on your task, and a two-point HN thread proves nothing yet.",
+    "comment_zh": "Jev 的类型化决策前提只有在约束条件确实优于调优分类器或 LLM 评判器时才有价值，而 HN 上仅两分的帖子目前什么都证明不了。"
   },
   {
     "date": "2026-10-02",
@@ -341,7 +355,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://tv.junkdrawer.ai",
-    "added": "2026-10-02"
+    "added": "2026-10-02",
+    "comment_en": "A two-point Show HN with zero comments is barely a signal, so treat this eBay filtering demo as a proof-of-concept for Jev's typed decisions rather than a validated pattern.",
+    "comment_zh": "一个只有两分、零评论的 Show HN 几乎算不上信号，所以应把这个 eBay 过滤演示视为 Jev 类型化决策的概念验证，而非经过验证的模式。"
   },
   {
     "date": "2026-10-01",
@@ -349,7 +365,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/huemorgan2/say-hi",
-    "added": "2026-10-01"
+    "added": "2026-10-01",
+    "comment_en": "A one-point, zero-comment thread is not evidence of anything, so treat this as an open question until TypeSafe AI documents Jev's actual input and output modalities.",
+    "comment_zh": "一个只有1分、0评论的帖子不能说明任何问题，在TypeSafe AI正式说明Jev的输入输出模态之前，这只能算一个悬而未决的疑问。"
   },
   {
     "date": "2026-10-01",
@@ -357,7 +375,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://techcrunch.com/2026/10/01/amazon-releases-its-own-jev-clone-as-decision-models-flood-the-web/",
-    "added": "2026-10-01"
+    "added": "2026-10-01",
+    "comment_en": "Amazon cloning Jev signals the typed-decision niche is now worth copying, but with zero comments and two points, developers should treat this as a press release, not a proven alternative.",
+    "comment_zh": "亚马逊克隆 Jev 表明类型化决策这一细分领域已值得复制，但零评论、两分的讨论热度意味着开发者应将其视为一份新闻稿，而非经过验证的替代方案。"
   },
   {
     "date": "2026-10-01",
@@ -365,7 +385,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://jev.bevel.software/",
-    "added": "2026-10-01"
+    "added": "2026-10-01",
+    "comment_en": "Hosting Jev's first System One model inside the EU may ease data-residency worries, but with zero comments, nobody has yet shown latency, pricing, or whether it behaves identically to the US deployment.",
+    "comment_zh": "将Jev首个System One模型托管在欧盟境内或许能缓解数据驻留顾虑，但由于零评论，尚无人展示延迟、定价，也无法确认其行为是否与美国部署完全一致。"
   },
   {
     "date": "2026-09-30",
@@ -373,7 +395,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/tomerglick57/Jevstiller",
-    "added": "2026-09-30"
+    "added": "2026-09-30",
+    "comment_en": "Distilling a repeated Jev classification task into a local model could cut inference costs, but with zero comments, nobody has yet validated whether the distilled model preserves Jev's typed-decision guarantees.",
+    "comment_zh": "将重复的 Jev 分类任务蒸馏到本地模型或许能降低推理成本，但由于零评论，尚无人验证蒸馏后的模型是否保留了 Jev 的类型化决策保证。"
   },
   {
     "date": "2026-09-30",
