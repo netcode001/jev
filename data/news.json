@@ -5,7 +5,9 @@
     "summary": "Hacker News discussion — 227 points, 76 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://typesafe.ai/blog/jev-1-14",
-    "added": "2026-10-15"
+    "added": "2026-10-15",
+    "comment_en": "Jev 1.14.0's experimental dreamer features are worth testing in isolation, but the HN thread's 76 comments suggest mixed first-hand results worth reading before adopting.",
+    "comment_zh": "Jev 1.14.0 的实验性 dreamer 功能值得在隔离环境中测试，但 HN 帖子的 76 条评论显示第一手结果褒贬不一，采用前值得一读。"
   },
   {
     "date": "2026-10-14",
@@ -13,7 +15,9 @@
     "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/qualixar/superlocalmemory",
-    "added": "2026-10-14"
+    "added": "2026-10-14",
+    "comment_en": "With zero comments, this Show HN tells us nothing about how Laya and Gemma actually pair with Jev's typed decisions, so treat the 'never bluffs' claim as marketing until developers post real failure cases.",
+    "comment_zh": "这个 Show HN 零评论，完全无法说明 Laya 和 Gemma 如何与 Jev 的类型化决策实际配合，所以在开发者给出真实失败案例前，应把“绝不 bluff”当作营销话术。"
   },
   {
     "date": "2026-10-13",
@@ -21,7 +25,9 @@
     "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://www.unsiloed.ai/blog/document-review-unsiloed-typesafe-jev",
-    "added": "2026-10-13"
+    "added": "2026-10-13",
+    "comment_en": "Three points and zero comments means the real test is still ahead: watch whether Unsiloed's document review pipeline holds up on messy, real-world PDFs rather than curated demos.",
+    "comment_zh": "三个赞、零评论意味着真正的考验还没到来：要观察 Unsiloed 的文档审查流程在杂乱的真实 PDF 上是否站得住脚，而不只是精心准备的演示。"
   },
   {
     "date": "2026-10-12",
@@ -109,7 +115,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://johnnys.news/2026/10/Jevfree-repurposing-an-embedding-model-for-decisions/",
-    "added": "2026-10-09"
+    "added": "2026-10-09",
+    "comment_en": "Repurposing EmbeddingGemma 2 for Jev-like decisions shows how flexible embeddings can be, but without benchmarks or community feedback, developers should verify accuracy before adopting it.",
+    "comment_zh": "将 EmbeddingGemma 2 改用于类似 Jev 的决策，显示了嵌入模型的灵活性，但缺乏基准测试和社区反馈，开发者采用前应验证准确性。"
   },
   {
     "date": "2026-10-09",
@@ -117,7 +125,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://doofz.substack.com/p/introducing-thx-01-an-open-source",
-    "added": "2026-10-09"
+    "added": "2026-10-09",
+    "comment_en": "A phone-runnable open model claiming to beat Jev deserves scrutiny, since benchmark wins rarely translate to the typed-decision edge cases Jev developers actually ship against.",
+    "comment_zh": "一个宣称能在手机上运行并击败 Jev 的开源模型值得审视，因为基准测试的胜利很少能转化为 Jev 开发者实际面对的带类型决策边界情况。"
   },
   {
     "date": "2026-10-09",
@@ -125,7 +135,9 @@
     "summary": "Hacker News discussion — 1 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://huggingface.co/doofz/THX-01",
-    "added": "2026-10-09"
+    "added": "2026-10-09",
+    "comment_en": "If THX-01's on-device benchmarks hold up, Jev's typed-decision edge narrows to tooling and ecosystem, not raw accuracy—so verify the eval harness before switching.",
+    "comment_zh": "如果THX-01的端侧基准测试经得起检验，Jev的类型化决策优势将缩小到工具链和生态，而非原始准确率——因此在切换前请先核实其评测方法。"
   },
   {
     "date": "2026-10-09",
@@ -133,7 +145,9 @@
     "summary": "Hacker News discussion — 69 points, 39 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://typesafe.ai/blog/series-ai",
-    "added": "2026-10-09"
+    "added": "2026-10-09",
+    "comment_en": "The funding validates typed-decision models, but developers should watch whether TypeSafe prioritizes enterprise contracts over the open Jev tooling and community-driven iteration that made it useful.",
+    "comment_zh": "这笔融资验证了类型化决策模型的价值，但开发者应关注 TypeSafe 是否会优先考虑企业合同，而忽视让 Jev 真正实用的开放工具链和社区驱动的迭代。"
   },
   {
     "date": "2026-10-09",
@@ -141,7 +155,9 @@
     "summary": "Hacker News discussion — 2 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://pypi.org/project/thx01",
-    "added": "2026-10-09"
+    "added": "2026-10-09",
+    "comment_en": "A phone-class open-source rival to Jev is a useful pressure test, but two points and one comment prove nothing about whether THX-01's typed decisions survive real workloads.",
+    "comment_zh": "一个能在手机上运行、对标 Jev 的开源模型是个有用的压力测试，但两点和一个评论根本无法证明 THX-01 的类型化决策能经受真实工作负载。"
   },
   {
     "date": "2026-10-08",
