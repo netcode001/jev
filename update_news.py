@@ -212,6 +212,73 @@ def fetch_reddit(news):
     return new_items
 
 
+# ------------------------------------------------------- editor comments
+
+DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
+
+
+def _deepseek_comment(title, summary, source):
+    """One original editorial sentence (en + zh) for a news item."""
+    key = os.environ.get("DEEPSEEK_API_KEY")
+    if not key:
+        return None
+    prompt = (
+        "You are the editor of an independent tracker site for the Jev AI model "
+        "(a typed-decision model by TypeSafe AI). Write ONE original editorial "
+        "sentence (20-35 words) about the news item below: what it means for "
+        "developers using Jev, what is genuinely notable, or a caveat. Never "
+        "restate the title, never use filler like 'the community discussed'. "
+        "Then write the same sentence in natural Simplified Chinese. "
+        'Reply with strict JSON only: {"en": "...", "zh": "..."}\n\n'
+        f"Title: {title}\nSummary: {summary}\nSource: {source}"
+    )
+    body = json.dumps({
+        "model": "deepseek-chat",
+        "messages": [{"role": "user", "content": prompt}],
+        "temperature": 0.7,
+        "max_tokens": 300,
+        "response_format": {"type": "json_object"},
+    }).encode("utf-8")
+    req = urllib.request.Request(DEEPSEEK_URL, data=body, headers={
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {key}",
+    })
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            data = json.loads(r.read().decode("utf-8", "replace"))
+        parsed = json.loads(data["choices"][0]["message"]["content"])
+        en = (parsed.get("en") or "").strip()
+        zh = (parsed.get("zh") or "").strip()
+        if en and zh:
+            return en, zh
+    except Exception as e:
+        print(f"  - editor comment failed for '{title[:48]}': {e}")
+    return None
+
+
+def commentate(news):
+    """Attach unique editorial comments to items missing one (newest first,
+    backfills older boilerplate entries too). Hard budget of 12 calls per run."""
+    if not os.environ.get("DEEPSEEK_API_KEY"):
+        print("  - editor comments: skipped (DEEPSEEK_API_KEY not set)")
+        return news, 0
+    budget = 12
+    changed = 0
+    for i in news:  # newest-first
+        if budget <= 0:
+            break
+        if i.get("comment_en") and i.get("comment_zh"):
+            continue
+        result = _deepseek_comment(i.get("title", ""), i.get("summary", ""), i.get("source", ""))
+        if result:
+            i["comment_en"], i["comment_zh"] = result
+            changed += 1
+            budget -= 1
+    if changed:
+        print(f"  - editor comments: {changed} written")
+    return news, changed
+
+
 # ---------------------------------------------------------------- main
 
 def dedupe(items):
@@ -258,9 +325,12 @@ def main():
             })
         news = dedupe(fresh + news)  # newest first by fetch order; sorted below
         news.sort(key=lambda i: i.get("date", ""), reverse=True)
+
+    news, commented = commentate(news)
+    if fresh or snap_recorded or commented:
         save_json(NEWS_FILE, news)
-        print(f"[{TODAY}] wrote {len(fresh)} new item(s) -> data/news.json "
-              f"({len(news)} total), price snapshots: {len(price_hist)}")
+        print(f"[{TODAY}] wrote {len(fresh)} new item(s), {commented} editor comment(s) "
+              f"-> data/news.json ({len(news)} total), price snapshots: {len(price_hist)}")
     else:
         print(f"[{TODAY}] no changes; data files untouched")
 

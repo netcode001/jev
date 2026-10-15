@@ -627,7 +627,7 @@ PAGES["news"] = {
     "body": """
 <p class="updated">最后更新：2026-09-20 · 本页随新信源出现自动刷新</p>
 <h1>Jev 动态与更新</h1>
-<p class="lede">关于 Jev 值得知道的一切，按时间排列：官方公告、渠道上架、独立分析、社区里程碑。每条附来源链接；厂商自报数据均已标注。</p>
+<p class="lede">关于 Jev 值得知道的一切，按时间排列：官方公告、渠道上架、独立分析、社区里程碑。每条附来源链接，并附一句编辑点评——说清它对开发者意味着什么；厂商自报数据均已标注。本页展示最近 40 条。</p>
 <div class="timeline">
 {NEWS_FULL}
 </div>
@@ -668,6 +668,15 @@ PAGES["ecosystem"] = {
   <div class="card"><span class="tag">实验</span><h2>jev-trader</h2><p>市场信号实验。独立测试显示 Jev 在短周期预测上与掷硬币无异——参见<a href="/zh/use-cases/">那条铁律</a>。</p></div>
 </div>
 
+<h2>第一个月说明了什么</h2>
+<p>这个目录里能读出三个信号。<strong>其一，复刻者来得很快：</strong>openjev 的存在本身就是有力证据——产品不只是托管模型，而是类型化决策这个接口模式本身。<strong>其二，赢家都是「成本形状」的：</strong>几乎每个有用的项目都把 Jev 当作昂贵环节前面的廉价守门人——agent 的工具调用、数据库查询、生成前的过滤——而不是让它当主角。<strong>其三，失败同样有启发：</strong>试图让 Jev 预测未来的实验全部停留在掷硬币水平，这正是它的设计边界所预言的。</p>
+
+<h2>项目怎么进目录</h2>
+<p>没有提交表单，也没有付费位。一个项目进入目录的条件是：用 Jev 做出了真实可演示的东西——通常由自动追踪器从 Hacker News 或 GitHub topic 发现，再由编辑核实并撰写介绍。只有 API 包装、没有可运行 demo 的项目不收录；独立测试与作者说法矛盾的地方会明确标注（见上面的 jev-trader）。</p>
+
+<h2>诚实地读这些数字</h2>
+<p>卡片里的延迟与成本数字来自项目作者自己的帖子和演示。能独立复现的我们复现了；不能的，请当作「报告值」看待。生态才一个月大——预期会有弃坑仓库、接口漂移和快速迭代，记得锁定依赖版本。</p>
+
 <h2>想被收录？</h2>
 <p>用 Jev 做了东西？它大概率会出现在 Hacker News 或 X 上——我们的追踪器会从那里自动发现并收录到这里，也可以直接把链接发给我们。</p>
 """,
@@ -694,9 +703,11 @@ if _os.path.exists(_news_file):
     _live = _json.load(open(_news_file, encoding="utf-8"))
     NEWS = [
         (i["date"], i["title"],
-         i["summary"] + (f' <a href="{(i.get("url") or "").replace("&", "&amp;")}">查看原文 →</a>' if i.get("url") else ""),
+         ((f"<strong>编辑点评：</strong>{i['comment_zh']} " if i.get("comment_zh")
+           else i["summary"] + " ")
+          + (f'<a href="{(i.get("url") or "").replace("&", "&amp;")}">查看原文 →</a>' if i.get("url") else "")),
          i["source"])
-        for i in _live
+        for i in _live[:40]
     ]
     from datetime import date as _date
     PAGES["news"]["body"] = PAGES["news"]["body"].replace(
@@ -1362,13 +1373,25 @@ PAGES["about"] = {
 </ul>
 
 <h2>数据从哪来</h2>
-<p>新闻与价格快照自动采集自公开来源：Hacker News、GitHub topic、OpenRouter 模型 API。每条内容都附原文链接。摘要与指南由站长撰写——不是自动抓取的文本——厂商自报的数据我们会明确标注。</p>
+<p>新闻与价格快照自动采集自公开来源：Hacker News、GitHub topic、OpenRouter 模型 API。每条内容都附原文链接。指南与对比由站长撰写；动态条目的短点评由 AI 辅助起草、发布前经站长审核；厂商自报的数据我们会明确标注。</p>
 
 <h2>独立性声明</h2>
 <p>Jev Hub <strong>与 TypeSafe AI 无隶属、背书或赞助关系</strong>。"Jev""TypeSafe" 为其各自所有者的商标。我们会诚实指出产品的局限与短板，包括不好看的部分。</p>
 
 <h2>站点如何维持</h2>
 <p>Jev Hub 免费使用。运行成本（托管、免费试玩额度）目前由站长个人承担。为了保持免费，站点未来可能展示广告或联盟链接——如有赞助位会明确标注，且不会影响编辑判断。</p>
+
+<h2>编辑原则</h2>
+<ul>
+  <li><strong>永远附来源。</strong>动态页的每一条都指向原始帖子、仓库或公告。</li>
+  <li><strong>事实与判断分开。</strong>厂商自报的数字（延迟、跑分、价格承诺）会明确标注；我们自己的测试与计算会标明「独立」。</li>
+  <li><strong>纠错成本低。</strong>发现错误或数据过时，发邮件即可，我们会修；价格页标注了最近一次核实的日期。</li>
+  <li><strong>AI 辅助，公开披露。</strong>动态条目的短点评由 AI 依据公开来源素材起草，经编辑审核后发布；指南、对比与分析由编辑撰写。</li>
+</ul>
+
+<h2>我们写什么、不写什么</h2>
+<p><strong>在范围内：</strong>Jev 本身（获取、价格、限制）、提供服务的渠道、基于它生长的开源生态、包含它的独立评测。<strong>在范围外：</strong>泛 AI 行业八卦、与用户无关的公司新闻、以及其他所有模型的新品节奏——那些有更专的站去做。</p>
+<p>结果就是一个窄而深的站：这里的任何变化，都对用 Jev 做开发的人有意义。</p>
 
 <h2>站长是谁</h2>
 <p>一名独立开发者，坐标中国，以英文和简体中文双语追踪 Jev 生态。欢迎来信：<a href="mailto:hello@jev-ai.live">hello@jev-ai.live</a>。</p>
@@ -1402,6 +1425,16 @@ PAGES["contact"] = {
   </tbody>
 </table>
 </div>
+
+<h2>发邮件之前</h2>
+<p>这几个问题在站内能更快找到答案：</p>
+<ul>
+  <li><strong>「怎么获取 Jev 的访问权限？」</strong>——见<a href="/zh/get-access/">获取指南</a>，随渠道开通实时更新。</li>
+  <li><strong>「Jev 多少钱？」</strong>——<a href="/zh/pricing/">价格页</a>有全部渠道的当前费率和成本计算器。</li>
+  <li><strong>「Jev 挂了/被限流了？」</strong>——我们不自营模型，看不到你的报错；请先查你所用渠道的状态页。</li>
+  <li><strong>「能帮我做个 X 吗？」</strong>——不接客户项目，但<a href="/zh/use-cases/">场景手册</a>覆盖了常见模式。</li>
+</ul>
+<p>其他事项——尤其是附来源的纠错——邮件就很好。纠错优先处理：事实准确是这个站的全部产品。</p>
 
 <h2>其他渠道</h2>
 <p>新闻订阅可用 RSS：<a href="/feed.xml">jev-ai.live/feed.xml</a>。Jev 产品本身的问题请前往官网 <a href="https://typesafe.ai" rel="noopener">typesafe.ai</a>——我们是独立信息站，不是官方客服渠道。</p>

@@ -650,7 +650,7 @@ PAGES["news"] = {
     "body": """
 <p class="updated">Last updated: 2026-09-20 · This page is refreshed automatically as new sources appear</p>
 <h1>Jev AI News &amp; Updates</h1>
-<p class="lede">A running timeline of everything that matters about Jev — official announcements, provider rollouts, independent analyses, and community milestones. Each item links to its source; vendor-reported figures are marked as such.</p>
+<p class="lede">A running timeline of everything that matters about Jev — official announcements, provider rollouts, independent analyses, and community milestones. Every item links to its source and carries a short editor&#8217;s note on what it actually means for builders; vendor-reported figures are marked as such. Shows the 40 most recent items.</p>
 <div class="timeline">
 {NEWS_FULL}
 </div>
@@ -691,6 +691,15 @@ PAGES["ecosystem"] = {
   <div class="card"><span class="tag">Experiments</span><h2>jev-trader</h2><p>Market-signal experiments. Independent testing showed Jev does no better than a coin flip on short-horizon prediction — see <a href="/use-cases/">the rule</a>.</p></div>
 </div>
 
+<h2>What the first month says</h2>
+<p>Three patterns are worth reading out of this directory. <strong>First, the reproducers moved fast:</strong> openjev existing at all is strong evidence that the typed-decision interface — not just the hosted model — is the product. <strong>Second, the winners are cost-shaped:</strong> nearly every useful project uses Jev as a cheap gatekeeper in front of something expensive — an agent&#8217;s tool calls, a database query, a generation pass — not as the star of the show. <strong>Third, the failures are instructive:</strong> experiments that tried to make Jev predict the future landed at coin-flip level, exactly what its design implies.</p>
+
+<h2>How projects get in</h2>
+<p>There is no submission form and no paid placement. A project enters this directory when it does something real and demonstrable with Jev — usually spotted via its Hacker News thread or GitHub topic feed by the automated tracker, then verified and described by the editor. Projects that only wrap the API without a working demo are skipped, and wherever independent testing contradicted an author&#8217;s claim, we say so (see jev-trader above).</p>
+
+<h2>Reading the numbers honestly</h2>
+<p>Latency and cost figures in the cards come from the project authors&#8217; own posts and demos. Where we could reproduce them independently, we did; where we couldn&#8217;t, treat them as reported values. The ecosystem is a month old — expect churn, abandoned repos and API drift, and pin your dependencies.</p>
+
 <h2>Want to be listed?</h2>
 <p>Building something with Jev? It'll likely show up on Hacker News or X — our tracker picks it up from there and adds it here automatically, or reach out with a link.</p>
 """,
@@ -717,9 +726,11 @@ if _os.path.exists(_news_file):
     _live = _json.load(open(_news_file, encoding="utf-8"))
     NEWS = [
         (i["date"], i["title"],
-         i["summary"] + (f' <a href="{(i.get("url") or "").replace("&", "&amp;")}">Read source →</a>' if i.get("url") else ""),
+         ((f"<strong>Editor&#8217;s take:</strong> {i['comment_en']} " if i.get("comment_en")
+           else i["summary"] + " ")
+          + (f'<a href="{(i.get("url") or "").replace("&", "&amp;")}">Read source →</a>' if i.get("url") else "")),
          i["source"])
-        for i in _live
+        for i in _live[:40]
     ]
     from datetime import date as _date
     PAGES["news"]["body"] = PAGES["news"]["body"].replace(
@@ -1393,13 +1404,25 @@ PAGES["about"] = {
 </ul>
 
 <h2>Where the data comes from</h2>
-<p>News items and pricing snapshots are gathered automatically from public sources: Hacker News, GitHub topic feeds and the OpenRouter models API. Every item links to its original source. Summaries and guides are written by the site's editor — not auto-scraped text — and we mark vendor-reported figures as such.</p>
+<p>News items and pricing snapshots are gathered automatically from public sources: Hacker News, GitHub topic feeds and the OpenRouter models API. Every item links to its original source. Guides and comparisons are written by the editor; the short editorial notes on news items are AI-assisted and reviewed before publication; vendor-reported figures are marked as such.</p>
 
 <h2>Independence</h2>
 <p>Jev Hub is <strong>not affiliated with, endorsed by, or sponsored by TypeSafe AI</strong>. "Jev" and "TypeSafe" are trademarks of their respective owners. We call out limitations and trade-offs honestly, including where the product is weak.</p>
 
 <h2>How the site is funded</h2>
 <p>Jev Hub is free to use. Running costs (hosting, the free playground quota) are currently paid out of pocket. To keep it that way, the site may display advertising and affiliate links in the future — sponsored placements, if any, will be clearly labelled and will never change our editorial assessment.</p>
+
+<h2>Editorial principles</h2>
+<ul>
+  <li><strong>Link to the source, always.</strong> Every item on the news tracker points to the original thread, repository or announcement.</li>
+  <li><strong>Separate fact from assessment.</strong> Vendor-reported numbers (latency, benchmark scores, pricing claims) are labelled as such; our own tests and calculations are marked as independent.</li>
+  <li><strong>Corrections are cheap.</strong> Spotted something wrong or stale? Email us and it gets fixed — the pricing page carries the date its rates were last verified.</li>
+  <li><strong>AI assistance, disclosed.</strong> Short editorial notes on news items are drafted with AI assistance from the item&#8217;s public source material, then reviewed by the editor before publication. Guides, comparisons and analysis are written by the editor.</li>
+</ul>
+
+<h2>What we cover — and what we don&#8217;t</h2>
+<p><strong>In scope:</strong> Jev itself (access, pricing, limits), the providers serving it, the open-source ecosystem built on it, and independent benchmarks that include it. <strong>Out of scope:</strong> general AI industry gossip, TypeSafe company news that doesn&#8217;t affect users, and every other model&#8217;s release cycle — other trackers do that better.</p>
+<p>The result is a narrow but deep site: if something here changes, it matters to people building with Jev.</p>
 
 <h2>Who is behind it</h2>
 <p>An independent developer and builder, based in China, tracking the Jev ecosystem in English and Simplified Chinese. Say hello: <a href="mailto:hello@jev-ai.live">hello@jev-ai.live</a>.</p>
@@ -1433,6 +1456,16 @@ PAGES["contact"] = {
   </tbody>
 </table>
 </div>
+
+<h2>Before you email</h2>
+<p>A few things that are answered faster on the site itself:</p>
+<ul>
+  <li><strong>&ldquo;How do I get access to Jev?&rdquo;</strong> — see the <a href="/get-access/">access guide</a>; it follows provider sign-ups in real time.</li>
+  <li><strong>&ldquo;What does Jev cost?&rdquo;</strong> — the <a href="/pricing/">pricing page</a> has every provider&#8217;s current rate and a calculator.</li>
+  <li><strong>&ldquo;Is Jev down / rate-limited?&rdquo;</strong> — we don&#8217;t run the model, so we can&#8217;t see your errors. Check your provider&#8217;s status page first.</li>
+  <li><strong>&ldquo;Can you build X for me?&rdquo;</strong> — we don&#8217;t take client work, but the <a href="/use-cases/">use-case playbook</a> covers the common patterns.</li>
+</ul>
+<p>For everything else — especially corrections with a source attached — email is perfect. Corrections get priority: factual accuracy is the whole product here.</p>
 
 <h2>Other places</h2>
 <p>RSS is available for the news feed: <a href="/feed.xml">jev-ai.live/feed.xml</a>. For product questions about Jev itself, the official site is <a href="https://typesafe.ai" rel="noopener">typesafe.ai</a> — we are an independent tracker, not a support channel.</p>

@@ -26,6 +26,8 @@ jobs:
         env:
           # 内置 token，让 GitHub topic:jev 信源不受匿名限流
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # DeepSeek API key：为新闻条目生成编辑点评（未配置时自动跳过）
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
 
       - name: Commit & push new data (triggers Cloudflare Pages rebuild)
         run: |
