@@ -245,7 +245,9 @@
     "summary": "Hacker News discussion — 1 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/Rikinshah787/dotpals",
-    "added": "2026-10-05"
+    "added": "2026-10-05",
+    "comment_en": "If Jev's typed decisions can flag agents that quietly rewrite tests to force a pass, that's a real safety win — but one HN thread with a single comment proves nothing yet.",
+    "comment_zh": "如果 Jev 的类型化决策真能识别出悄悄改写测试以强行通过的智能体，那确实是安全上的实质进步——但仅凭一条只有一个评论的 HN 帖子，还远不足以证明什么。"
   },
   {
     "date": "2026-10-05",
@@ -253,7 +255,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://vercel.com/i/jev-vs-perplexity",
-    "added": "2026-10-05"
+    "added": "2026-10-05",
+    "comment_en": "With zero comments and a single point, this thread offers no real signal yet, so Jev developers should treat any Perplexity comparison as unverified until actual migration reports surface.",
+    "comment_zh": "由于零评论、仅一分，这个帖子目前没有任何实质信号，因此 Jev 开发者应把任何与 Perplexity 的对比视为未经证实，直到出现真实的迁移报告。"
   },
   {
     "date": "2026-10-04",
@@ -261,7 +265,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/sagapranav/jev-pages",
-    "added": "2026-10-04"
+    "added": "2026-10-04",
+    "comment_en": "A single-point Show HN with zero comments tells us almost nothing about Jev-pages' real-world reliability, so treat this demo as a proof of concept rather than a validated tool for production landing pages.",
+    "comment_zh": "这个只有1分、零评论的Show HN几乎无法说明Jev-pages在实际使用中的可靠性，因此应把它当作概念验证，而非经过验证的生产级落地页工具。"
   },
   {
     "date": "2026-10-04",
@@ -269,7 +275,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/Ayush0054/metis",
-    "added": "2026-10-04"
+    "added": "2026-10-04",
+    "comment_en": "A lone Show HN post about scripting Git workflows in Jev is thin evidence, so treat it as a prompt to test the model's typed decisions yourself rather than proof of maturity.",
+    "comment_zh": "一条关于用 Jev 编写 Git 工作流的 Show HN 帖子证据单薄，不妨把它当作亲自测试该模型类型化决策的契机，而非其成熟度的证明。"
   },
   {
     "date": "2026-10-04",
@@ -277,7 +285,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://www.wsj.com/tech/ai/startup-typesafe-ais-jev-model-sparks-copycats-talk-of-llm-alternatives-e39ff57d",
-    "added": "2026-10-04"
+    "added": "2026-10-04",
+    "comment_en": "With zero comments and one point, this 'discussion' is really just a headline; developers should wait for actual usage reports before treating Jev as a serious LLM alternative.",
+    "comment_zh": "零评论、一分，这个所谓讨论其实只是个标题；开发者应等待真实使用报告，再决定是否把 Jev 当作 LLM 的认真替代方案。"
   },
   {
     "date": "2026-10-03",
@@ -285,7 +295,9 @@
     "summary": "Hacker News discussion — 2 points, 2 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/kouhxp/gutsy",
-    "added": "2026-10-04"
+    "added": "2026-10-04",
+    "comment_en": "A two-point thread is hardly proof, but a CPU-only typed-decision model in the Jev style is worth testing before trusting its latency claims.",
+    "comment_zh": "两分的帖子算不上什么证明，但一个 Jev 风格、仅靠 CPU 运行的 typed-decision 模型值得先测一测，再决定是否相信它的延迟宣称。"
   },
   {
     "date": "2026-10-03",
@@ -293,7 +305,9 @@
     "summary": "Hacker News discussion — 5 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://bettercalljev.vercel.app",
-    "added": "2026-10-03"
+    "added": "2026-10-03",
+    "comment_en": "Five points and a single comment is hardly a verdict, so treat this thread as one developer's anecdote rather than evidence that Jev's typed decisions hold up in production.",
+    "comment_zh": "五分一评远算不上定论，所以这条讨论只是一位开发者的个人经验，而非 Jev 的类型化决策在生产环境中站得住脚的证据。"
   },
   {
     "date": "2026-10-02",
@@ -301,7 +315,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://www.atomic14.com/2026/09/29/jev-plays-manic-miner",
-    "added": "2026-10-02"
+    "added": "2026-10-02",
+    "comment_en": "A single-point Hacker News post about Jev playing Manic Miner tells developers almost nothing about typed-decision reliability, so treat this as entertainment, not an evaluation signal.",
+    "comment_zh": "一条仅有一点积分的 Hacker News 帖子称 Jev 能玩 Manic Miner，但这几乎无法说明类型化决策的可靠性，因此应视其为娱乐而非评估信号。"
   },
   {
     "date": "2026-10-02",
