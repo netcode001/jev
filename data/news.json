@@ -1,6 +1,14 @@
 [
   {
     "date": "2026-10-14",
+    "title": "We’re releasing Jev 1.14.0 along with experimental features for dreamers",
+    "summary": "Hacker News discussion — 227 points, 76 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://typesafe.ai/blog/jev-1-14",
+    "added": "2026-10-15"
+  },
+  {
+    "date": "2026-10-14",
     "title": "Show HN: SuperLocalMemory\" AI brain that never bluffs: Laya, Jev, Google Gemma",
     "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
@@ -21,7 +29,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://thesecretsproject.com/20-questions",
-    "added": "2026-10-12"
+    "added": "2026-10-12",
+    "comment_en": "With zero comments and a single point, this Hacker News post offers no real usage data, so developers should treat it as a demo prompt rather than evidence of Jev's typed-decision reliability.",
+    "comment_zh": "这条Hacker News帖子零评论、仅一点积分，没有任何真实使用数据，开发者应把它当作演示提示，而非Jev类型化决策可靠性的证据。"
   },
   {
     "date": "2026-10-12",
@@ -29,7 +39,9 @@
     "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://www.lesswrong.com/posts/kE4pbmwzdgmFx2RFo/can-decision-models-like-jev-plan-ahead",
-    "added": "2026-10-12"
+    "added": "2026-10-12",
+    "comment_en": "Until Jev developers publish reproducible planning benchmarks, treat any claim that typed decisions yield lookahead as marketing rather than verified capability.",
+    "comment_zh": "在 Jev 开发者发布可复现的规划基准测试之前，任何声称类型化决策具备前瞻能力说法都应视为营销宣传，而非经过验证的能力。"
   },
   {
     "date": "2026-10-10",
@@ -37,7 +49,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://alexvidovich.com/papers/text-judge",
-    "added": "2026-10-10"
+    "added": "2026-10-10",
+    "comment_en": "The six-gate setup sounds like a sensible safety scaffold, but a single HN submission with zero comments offers no evidence that Jev's typed decisions actually outperform Claude in practice.",
+    "comment_zh": "六道关卡的设置听起来是合理的安全框架，但仅有一条零评论的HN投稿，并不能证明Jev的类型化决策在实践中真的优于Claude。"
   },
   {
     "date": "2026-10-09",
@@ -45,7 +59,9 @@
     "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://jevplayground.com",
-    "added": "2026-10-10"
+    "added": "2026-10-10",
+    "comment_en": "A three-point, zero-comment Hacker News thread tells developers almost nothing about Jev's playground, so treat this as a launch signal rather than validated first-hand usage evidence.",
+    "comment_zh": "一个只有3分、零评论的Hacker News帖子几乎无法说明Jev playground的实际表现，因此应将其视为发布信号，而非经过验证的一手使用证据。"
   },
   {
     "date": "2026-10-09",
@@ -53,7 +69,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://twitter.com/reversedoofz/status/2108668397148094910",
-    "added": "2026-10-10"
+    "added": "2026-10-10",
+    "comment_en": "A two-point Show HN claiming to beat Jev proves nothing without reproducible benchmarks, so treat it as a prompt to test the open-source alternative yourself rather than a verdict.",
+    "comment_zh": "一个仅有两点积分的 Show HN 声称击败了 Jev，但没有可复现的基准测试就毫无说服力，不妨把它当作自己动手测试这个开源替代方案的提示，而非定论。"
   },
   {
     "date": "2026-10-09",
@@ -61,7 +79,9 @@
     "summary": "Hacker News discussion — 4 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/ritza-co/hn-jev-sorter",
-    "added": "2026-10-10"
+    "added": "2026-10-10",
+    "comment_en": "A single Show HN post with zero comments proves little about Jev's real-world reliability, so treat this sorter as a demo rather than evidence of production-grade classification.",
+    "comment_zh": "一个零评论的 Show HN 帖子几乎无法证明 Jev 在实际场景中的可靠性，因此应把这个分类器当作演示，而非生产级分类能力的证据。"
   },
   {
     "date": "2026-10-09",
@@ -69,7 +89,9 @@
     "summary": "Hacker News discussion — 5 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://twitter.com/thepericulum/status/2108649129798701363",
-    "added": "2026-10-10"
+    "added": "2026-10-10",
+    "comment_en": "A five-point Slack pet hardly validates Jev's typed-decision model, but it hints that hobbyist experimentation, not production tooling, is where early adoption is happening.",
+    "comment_zh": "一个只拿到五分、把 Jev 当作 Slack 宠物的项目，几乎无法证明其类型化决策模型的价值，但也暗示早期采用者仍集中在业余实验，而非生产工具。"
   },
   {
     "date": "2026-10-09",
@@ -77,7 +99,9 @@
     "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://gc.ai/blog/what-we-learned-building-38-projects-with-jev-in-12-hours",
-    "added": "2026-10-10"
+    "added": "2026-10-10",
+    "comment_en": "Thirty-eight projects in twelve hours sounds like a hackathon stunt, but the real test is whether Jev's typed decisions hold up in production code six months from now.",
+    "comment_zh": "十二小时完成三十八个项目听起来像黑客马拉松的噱头，但真正的考验在于，Jev 的类型化决策能否在六个月后的生产代码中依然站得住脚。"
   },
   {
     "date": "2026-10-09",
