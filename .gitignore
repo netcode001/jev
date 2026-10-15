@@ -3,3 +3,5 @@ __pycache__/
 *.pyc
 .DS_Store
 outreach-posts.md
+outreach-backlinks-*.md
+data/.dskey

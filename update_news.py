@@ -243,17 +243,25 @@ def _deepseek_comment(title, summary, source):
         "Content-Type": "application/json",
         "Authorization": f"Bearer {key}",
     })
-    try:
-        with urllib.request.urlopen(req, timeout=30) as r:
+    from concurrent.futures import ThreadPoolExecutor
+
+    def _call():
+        with urllib.request.urlopen(req, timeout=25) as r:
             data = json.loads(r.read().decode("utf-8", "replace"))
         parsed = json.loads(data["choices"][0]["message"]["content"])
         en = (parsed.get("en") or "").strip()
         zh = (parsed.get("zh") or "").strip()
-        if en and zh:
-            return en, zh
-    except Exception as e:
-        print(f"  - editor comment failed for '{title[:48]}': {e}")
-    return None
+        return (en, zh) if en and zh else None
+
+    # hard wall-clock guard: a slow-trickling response defeats socket timeouts
+    with ThreadPoolExecutor(1) as ex:
+        fut = ex.submit(_call)
+        try:
+            return fut.result(timeout=45)
+        except Exception as e:
+            print(f"  - editor comment failed for '{title[:48]}': {type(e).__name__}")
+            fut.cancel()
+            return None
 
 
 def commentate(news):
@@ -262,7 +270,7 @@ def commentate(news):
     if not os.environ.get("DEEPSEEK_API_KEY"):
         print("  - editor comments: skipped (DEEPSEEK_API_KEY not set)")
         return news, 0
-    budget = 12
+    budget = 8
     changed = 0
     for i in news:  # newest-first
         if budget <= 0:
