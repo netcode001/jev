@@ -485,7 +485,9 @@
     "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://www.lancedb.com/blog/how-jev-compares-to-other-rerankers",
-    "added": "2026-09-30"
+    "added": "2026-09-30",
+    "comment_en": "With three points and zero comments, this thread offers no first-hand reranker comparisons, so Jev users should treat the title as an untested claim rather than evidence.",
+    "comment_zh": "这个帖子只有三分且零评论，没有任何第一手重排序器对比，因此 Jev 用户应把这标题当作未经检验的说法，而非证据。"
   },
   {
     "date": "2026-09-30",
@@ -493,7 +495,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/agodoy21/enigma-jev",
-    "added": "2026-09-30"
+    "added": "2026-09-30",
+    "comment_en": "Two points and zero comments suggests Jev's typed-decision approach to Enigma-style problems is still a curiosity rather than a validated workflow, so developers should treat the Bombe analogy as a demo, not a benchmark.",
+    "comment_zh": "两分零评论说明 Jev 针对 Enigma 式问题的类型化决策方法仍只是新奇玩具，而非经过验证的工作流，开发者应把 Bombe 类比视为演示而非基准。"
   },
   {
     "date": "2026-09-30",
@@ -501,7 +505,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://arxiv.org/abs/2609.26550",
-    "added": "2026-09-30"
+    "added": "2026-09-30",
+    "comment_en": "A confidence-gated escalation policy is only as good as its calibration data, so treat Jev-as-a-Judge as a routing heuristic, not an authority, until you've measured its false-accept rate on your own domain.",
+    "comment_zh": "基于置信度的升级策略，其效果完全取决于校准数据的质量；在用自己的领域数据测出误接受率之前，应把 Jev-as-a-Judge 当作路由启发式，而非权威裁判。"
   },
   {
     "date": "2026-09-29",
@@ -509,7 +515,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://news.ycombinator.com/item?id=49893330",
-    "added": "2026-09-29"
+    "added": "2026-09-29",
+    "comment_en": "If Jev exposes attention weights, verify whether they reflect causal decision paths or merely post-hoc saliency, since interpretability claims rarely survive ablation on real inputs.",
+    "comment_zh": "如果 Jev 公开注意力权重，请验证它们反映的是因果决策路径还是事后显著性，因为在真实输入上可解释性主张很少能经受消融实验的检验。"
   },
   {
     "date": "2026-09-29",
@@ -517,7 +525,9 @@
     "summary": "Hacker News discussion — 3 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/qualixar/jev-decision-layer",
-    "added": "2026-09-29"
+    "added": "2026-09-29",
+    "comment_en": "Caching closed decisions locally could cut frontier token spend, but only if Jev's typed schema stays stable across retrains and edge cases don't silently bypass the layer.",
+    "comment_zh": "在本地缓存已关闭的决策或许能削减前沿 token 开销，但前提是 Jev 的类型化模式在重训练间保持稳定，且边界情况不会悄悄绕过该层。"
   },
   {
     "date": "2026-09-29",
@@ -525,7 +535,9 @@
     "summary": "Hacker News discussion — 1 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://www.youtube.com/watch?v=0zY_yzrcF9c",
-    "added": "2026-09-29"
+    "added": "2026-09-29",
+    "comment_en": "A single HN upvote is hardly validation, yet pitting Jev's typed decisions against a fruit fly's 100k neurons in Roblox is a genuinely odd, oddly useful benchmark for developers.",
+    "comment_zh": "HN 上仅一票算不上验证，但让 Jev 的类型化决策在 Roblox 里与果蝇的十万神经元一较高下，对开发者而言是个古怪却意外有用的基准。"
   },
   {
     "date": "2026-09-29",
@@ -533,7 +545,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://twitter.com/spillai/status/2104652597248561477",
-    "added": "2026-09-29"
+    "added": "2026-09-29",
+    "comment_en": "At a fraction of a cent per page, Jev's typed decisions finally make batch classification cheap enough to run on entire document archives, though the absence of any comments means the accuracy claims remain untested.",
+    "comment_zh": "每页成本不到一美分，Jev 的类型化决策终于让批量分类便宜到可以跑完整个文档库，但零评论意味着准确率声明尚未经过验证。"
   },
   {
     "date": "2026-09-28",
@@ -541,7 +555,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://weaveos.com/blog/why-you-shouldnt-use-jev-for-coding-agents-and-routing",
-    "added": "2026-09-28"
+    "added": "2026-09-28",
+    "comment_en": "If Jev's typed decisions break down on coding agents and routing, developers should treat those as boundary cases and validate the model on their own workloads before adopting it.",
+    "comment_zh": "如果 Jev 的类型化决策在编码代理和路由场景下失效，开发者应将其视为边界情况，并在采用前用自己的工作负载验证该模型。"
   },
   {
     "date": "2026-09-28",
