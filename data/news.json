@@ -1,6 +1,26 @@
 [
   {
     "date": "2026-10-15",
+    "title": "Testing Jev and other decision models on search-related tasks",
+    "summary": "Hacker News discussion — 5 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://parallel.ai/blog/are-all-system-one-models-created-equal",
+    "added": "2026-10-16",
+    "comment_en": "With only a single comment and five points, this thread offers anecdotal impressions rather than rigorous benchmarks, so treat any Jev search-task claims as provisional until reproducible evaluations appear.",
+    "comment_zh": "由于只有一个评论和五个积分，这个讨论帖提供的是轶事印象而非严格基准，因此在可复现的评测出现之前，应将任何关于 Jev 搜索任务的结论视为暂定。"
+  },
+  {
+    "date": "2026-10-15",
+    "title": "How to Use Jev with Claude Code, Codex and Cursor",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://flaviocopes.com/jev-coding-agents/",
+    "added": "2026-10-16",
+    "comment_en": "A zero-comment thread on wiring Jev into Claude Code, Codex, and Cursor is thin evidence, so treat any claimed workflow gains as unverified until developers publish reproducible benchmarks.",
+    "comment_zh": "关于将 Jev 接入 Claude Code、Codex 和 Cursor 的帖子零评论，证据薄弱，因此在开发者公布可复现的基准测试前，任何所谓工作流提升都应视为未经证实。"
+  },
+  {
+    "date": "2026-10-15",
     "title": "Jev Meets the Trolley Problem",
     "summary": "Hacker News discussion — 11 points, 4 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
@@ -405,7 +425,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://www.theregister.com/ai-and-ml/2026/09/29/open-source-tool-distills-jev-so-you-can-run-it-locally/5299856",
-    "added": "2026-09-30"
+    "added": "2026-09-30",
+    "comment_en": "Local distillation of Jev could cut inference costs for developers, but without benchmark numbers or a reproducibility guide, treat this as promising scaffolding rather than a production-ready drop-in.",
+    "comment_zh": "Jev 的本地蒸馏有望降低开发者的推理成本，但缺少基准数据和可复现指南，应将其视为有前景的脚手架，而非可直接上线的替代方案。"
   },
   {
     "date": "2026-09-30",
@@ -413,7 +435,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://radio.dbb1.dev/",
-    "added": "2026-09-30"
+    "added": "2026-09-30",
+    "comment_en": "A single-point, zero-comment Show HN is barely a signal, so treat this Jev-powered endless radio as a curiosity rather than proof the typed-decision model holds up in production audio pipelines.",
+    "comment_zh": "一个只有1分、0评论的Show HN几乎算不上信号，所以请把这个由Jev驱动的无限电台当作好奇心产物，而非该类型化决策模型能胜任生产级音频流水线的证明。"
   },
   {
     "date": "2026-09-30",
@@ -421,7 +445,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://edfountain.com/",
-    "added": "2026-09-30"
+    "added": "2026-09-30",
+    "comment_en": "A lone Show HN post with zero comments is hardly validation, yet it hints developers are quietly wiring Jev into niche EdTech pipelines before the tooling matures.",
+    "comment_zh": "一条零评论的 Show HN 帖子算不上验证，但它暗示开发者正悄悄把 Jev 接入小众教育科技流程，趁工具尚未成熟。"
   },
   {
     "date": "2026-09-30",
@@ -429,7 +455,9 @@
     "summary": "Hacker News discussion — 2 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/Mushroom-Systems/lichen",
-    "added": "2026-09-30"
+    "added": "2026-09-30",
+    "comment_en": "Lichen's local Jev server with image support matters less for raw capability than for what it signals: typed-decision models are finally getting self-hosted tooling, though two points and one comment is hardly proof of production readiness.",
+    "comment_zh": "Lichen 为 Jev 提供的本地服务器加图像支持，其价值不在于原始能力，而在于它释放的信号：类型化决策模型终于开始有自托管工具了，不过两点和一个评论远不足以证明它已可用于生产环境。"
   },
   {
     "date": "2026-09-30",
@@ -437,7 +465,9 @@
     "summary": "Hacker News discussion — 1 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://revexos.medium.com/typesafes-jev-model-using-structured-ai-evaluation-in-the-financial-accounting-order-to-cash-0a8a95ed019c",
-    "added": "2026-09-30"
+    "added": "2026-09-30",
+    "comment_en": "With just one comment and one point, this thread offers no real evidence that Jev's typed decisions actually hold up for financial use cases, so treat it as a prompt to test rather than a recommendation.",
+    "comment_zh": "这条帖子只有一个赞和一条评论，无法证明 Jev 的类型化决策在金融场景中真的可靠，因此应把它当作测试的起点，而不是推荐。"
   },
   {
     "date": "2026-09-30",
@@ -445,7 +475,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/zie1ony/jev-talks",
-    "added": "2026-09-30"
+    "added": "2026-09-30",
+    "comment_en": "A one-point, zero-comment Show HN is barely a signal, so treat this Jev demo as a curiosity rather than evidence the typed-decision model holds up in real developer workflows.",
+    "comment_zh": "一个只有一分、零评论的 Show HN 几乎算不上信号，所以请把这次 Jev 演示当作好奇之作，而非该类型化决策模型能经受真实开发者工作流考验的证据。"
   },
   {
     "date": "2026-09-30",
