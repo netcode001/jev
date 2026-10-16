@@ -565,7 +565,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://shaharia.com/blog/jev-cli-browser-automation-speed-benchmark/",
-    "added": "2026-09-28"
+    "added": "2026-09-28",
+    "comment_en": "A single first-hand benchmark on Hacker News proves little about Jev's browser automation speed, so treat any typed-decision advantage as unverified until reproducible tests exist.",
+    "comment_zh": "Hacker News 上仅凭一份第一手基准测试，无法证明 Jev 在浏览器自动化上的速度优势，在可复现测试出现前，应将其类型化决策优势视为未经证实。"
   },
   {
     "date": "2026-09-28",
@@ -573,7 +575,9 @@
     "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/frodi-karlsson/onesie",
-    "added": "2026-09-28"
+    "added": "2026-09-28",
+    "comment_en": "A pipeable CLI for Jev could finally make typed decisions composable in shell workflows, but three points and zero comments means no one has yet stress-tested whether it holds up beyond a demo.",
+    "comment_zh": "一个可管道化的 Jev 命令行工具或许能让类型化决策在 shell 工作流中真正可组合，但三点零评论意味着还没人验证过它在演示之外是否经得起考验。"
   },
   {
     "date": "2026-09-28",
@@ -581,7 +585,9 @@
     "summary": "Hacker News discussion — 1 points, 2 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://medium.com/google-cloud/how-to-build-a-jev-style-classifier-with-diffusiongemma-and-vllm-ef2e0bfa9ad7",
-    "added": "2026-09-28"
+    "added": "2026-09-28",
+    "comment_en": "Worth noting the pipeline leans on DiffusionGemma and vLLM rather than Jev's own tooling, so treat it as an architectural pattern to adapt, not a drop-in recipe.",
+    "comment_zh": "值得注意的是，该流程依赖 DiffusionGemma 和 vLLM，而非 Jev 自身的工具链，因此应将其视为可借鉴的架构模式，而非开箱即用的方案。"
   },
   {
     "date": "2026-09-27",
@@ -589,7 +595,9 @@
     "summary": "Hacker News discussion — 6 points, 2 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://huggingface.co/salfatigroup/rene-1-31b-fp8",
-    "added": "2026-09-28"
+    "added": "2026-09-28",
+    "comment_en": "Rene-1's open weights and Decision Index lead over Jev matter less than whether its classifier generalizes beyond the benchmark tasks developers actually deploy.",
+    "comment_zh": "Rene-1 开放权重且在决策指数上领先 Jev，但真正重要的是它的分类器能否泛化到开发者实际部署的任务，而非仅限基准测试。"
   },
   {
     "date": "2026-09-27",
@@ -597,7 +605,9 @@
     "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://rlafuente.com/posts/2026-9-26-training-a-small-decision-model-to-cook#",
-    "added": "2026-09-28"
+    "added": "2026-09-28",
+    "comment_en": "A three-point, zero-comment HN post is thin evidence for any real cooking capability, so Jev developers should treat this as a curiosity, not a benchmark shift.",
+    "comment_zh": "一个只有三点、零评论的 HN 帖子不足以证明任何真正的烹饪能力，因此 Jev 开发者应将其视为趣闻，而非基准变化。"
   },
   {
     "date": "2026-09-27",
@@ -605,7 +615,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://news.ycombinator.com/item?id=49869020",
-    "added": "2026-09-27"
+    "added": "2026-09-27",
+    "comment_en": "With zero comments and one point, this thread offers no real production signal yet, so developers evaluating Jev for generative UI should wait for substantive firsthand reports before committing.",
+    "comment_zh": "这个帖子只有1分且零评论，目前无法提供真实的生产环境信号，因此评估将Jev用于生成式UI的开发者应等待实质性的第一手报告后再做决定。"
   },
   {
     "date": "2026-09-27",
@@ -613,7 +625,9 @@
     "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://victordibia.com/explainers/jev/",
-    "added": "2026-09-27"
+    "added": "2026-09-27",
+    "comment_en": "With zero comments and just three points, this is less a signal about Jev's calibrated decision models than a reminder that early HN threads rarely reflect real production experience.",
+    "comment_zh": "仅有三个点赞、零条评论，这与其说是Jev校准决策模型的信号，不如说提醒我们：HN早期讨论帖很少能反映真实的生产环境经验。"
   },
   {
     "date": "2026-09-27",
@@ -621,7 +635,9 @@
     "summary": "Hacker News discussion — 4 points, 5 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://news.ycombinator.com/item?id=49868483",
-    "added": "2026-09-27"
+    "added": "2026-09-27",
+    "comment_en": "The thread's real value lies in its pushback: ask whether Jev's typed decisions hold up outside demos, since five comments can't validate production reliability.",
+    "comment_zh": "该讨论的真正价值在于质疑：应追问 Jev 的类型化决策在演示之外是否成立，因为五条评论无法验证生产环境的可靠性。"
   },
   {
     "date": "2026-09-27",
