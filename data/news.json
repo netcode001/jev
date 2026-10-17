@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-10-17",
+    "title": "Make System One Models Fight",
+    "summary": "Hacker News discussion — 1 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://system-one-arcade.fly.dev/",
+    "added": "2026-10-17",
+    "comment_en": "A one-point thread is no validation of anything, so treat any first-hand Jev reports here as anecdote rather than evidence of the model's behavior under real workloads.",
+    "comment_zh": "一个只有一分的热帖谈不上任何验证，因此请把这里关于 Jev 的第一手报告当作轶事，而非该模型在真实工作负载下表现的证据。"
+  },
+  {
     "date": "2026-10-15",
     "title": "Testing Jev and other decision models on search-related tasks",
     "summary": "Hacker News discussion — 5 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
@@ -805,7 +815,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/Partysun/jigor",
-    "added": "2026-09-26"
+    "added": "2026-09-26",
+    "comment_en": "With zero comments, this ephemeral runner is an unvetted experiment, so developers should test its cleanup guarantees against Jev's typed-decision traces before trusting it in any pipeline.",
+    "comment_zh": "由于零评论，这个临时运行器仍是未经检验的实验，开发者在任何流水线中信任它之前，应针对 Jev 的类型化决策追踪测试其清理保证。"
   },
   {
     "date": "2026-09-26",
@@ -813,7 +825,9 @@
     "summary": "Hacker News discussion — 1 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/who/jevq",
-    "added": "2026-09-26"
+    "added": "2026-09-26",
+    "comment_en": "A jq sidecar that filters with Jev's typed decisions could spare developers from brittle string-matching pipelines, but one point and one comment mean no real usage evidence yet.",
+    "comment_zh": "一个用 Jev 类型化决策来过滤的 jq 边车，或许能让开发者免于脆弱的字符串匹配流程，但仅一分一评意味着尚无真实使用证据。"
   },
   {
     "date": "2026-09-26",
@@ -821,7 +835,9 @@
     "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://www.bolna.ai/blog/testing-jev-on-real-phone-calls",
-    "added": "2026-09-26"
+    "added": "2026-09-26",
+    "comment_en": "A three-point, zero-comment thread is thin evidence, so treat any first-hand Jev usage reports here as anecdotal rather than a reliable signal of real-world adoption.",
+    "comment_zh": "一个仅3分、零评论的帖子证据薄弱，因此请将其中关于Jev的第一手使用报告视为轶事，而非真实采用情况的可靠信号。"
   },
   {
     "date": "2026-09-26",
@@ -829,7 +845,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://jev.chat",
-    "added": "2026-09-26"
+    "added": "2026-09-26",
+    "comment_en": "A two-point Show HN with no comments proves little about Jev's typed-decision strengths, so treat this emoji-only chatbot as a fun constraint demo rather than evidence of production readiness.",
+    "comment_zh": "一个仅两点、零评论的 Show HN 帖子几乎无法证明 Jev 在类型化决策上的优势，因此这个只能用 emoji 回复的聊天机器人更像是有趣的约束演示，而非可用于生产的证据。"
   },
   {
     "date": "2026-09-26",
@@ -837,7 +855,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://points.chengeric.com/",
-    "added": "2026-09-26"
+    "added": "2026-09-26",
+    "comment_en": "A single Show HN with one point proves little about Jev's maturity, but a credit card chooser is exactly the kind of narrow, rule-heavy domain where typed decisions should shine for developers.",
+    "comment_zh": "一个只有一分、零评论的 Show HN 帖子难以证明 Jev 的成熟度，但信用卡选择器恰恰是类型化决策应当发挥优势的那类规则密集的窄领域，值得开发者关注。"
   },
   {
     "date": "2026-09-26",
@@ -845,7 +865,9 @@
     "summary": "Hacker News discussion — 37 points, 2 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "http://allanrbo.blogspot.com/2026/09/a-jev-like-wrapper-for-llms-including.html",
-    "added": "2026-09-26"
+    "added": "2026-09-26",
+    "comment_en": "A one-function wrapper sounds convenient, but with only two comments and no benchmarks, treat it as a prototype rather than a proven abstraction for Jev-style typed decisions.",
+    "comment_zh": "单函数封装看似方便，但仅两条评论且无基准测试，应将其视为原型，而非 Jev 风格类型化决策的成熟抽象。"
   },
   {
     "date": "2026-09-26",
@@ -853,7 +875,9 @@
     "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/RoyWiggins/jevlang",
-    "added": "2026-09-26"
+    "added": "2026-09-26",
+    "comment_en": "Delegating every if/while condition to Jev sounds elegant, but with zero comments there's no evidence yet on whether the added indirection pays off in real codebases.",
+    "comment_zh": "将每个 if/while 条件都委托给 Jev 听起来很优雅，但零评论意味着尚无证据表明这种额外间接层在真实代码库中是否值得。"
   },
   {
     "date": "2026-09-26",
