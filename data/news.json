@@ -725,7 +725,9 @@
     "summary": "Hacker News discussion — 1 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/reindent/jauvex",
-    "added": "2026-09-27"
+    "added": "2026-09-27",
+    "comment_en": "A single client juggling Claude, Codex, Grok and Jev with two-way voice sounds convenient, but one point and one comment on HN means zero real-world validation for Jev developers yet.",
+    "comment_zh": "一个客户端同时集成 Claude、Codex、Grok 和 Jev 并支持双向语音听起来很方便，但 HN 上仅 1 分 1 评论，意味着对 Jev 开发者而言尚无任何真实场景验证。"
   },
   {
     "date": "2026-09-27",
@@ -733,7 +735,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/caiovicentino/eikos",
-    "added": "2026-09-27"
+    "added": "2026-09-27",
+    "comment_en": "With zero comments and two points, this Eikos release offers no first-hand evidence yet on whether its Jev-style typed decisions hold up outside demos, so treat it as a signal to watch, not adopt.",
+    "comment_zh": "Eikos 发布至今零评论、两点热度，尚无一手使用证据能说明其 Jev 风格的类型化决策在演示之外是否可靠，因此只宜观望，不宜采用。"
   },
   {
     "date": "2026-09-27",
@@ -741,7 +745,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/bulyaki/Credence",
-    "added": "2026-09-27"
+    "added": "2026-09-27",
+    "comment_en": "A single-point HN post with zero comments proves nothing about reliability, so treat Credence's local GGUF approach as an experiment to benchmark yourself, not a drop-in replacement for Jev.",
+    "comment_zh": "这条只有1分、零评论的HN帖子无法证明可靠性，因此请把Credence的本地GGUF方案当作需自行基准测试的实验，而非Jev的直接替代品。"
   },
   {
     "date": "2026-09-26",
@@ -749,7 +755,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/willswire/swift-newt",
-    "added": "2026-09-27"
+    "added": "2026-09-27",
+    "comment_en": "Newt's real test is whether Swift developers adopt it for on-device Jev-style decisions, since two points and zero comments reveal interest but no evidence of production use yet.",
+    "comment_zh": "Newt 的真正考验在于 Swift 开发者是否会用它做端侧 Jev 风格决策，因为两点零评论只说明有人关注，尚无生产环境使用的证据。"
   },
   {
     "date": "2026-09-26",
@@ -757,7 +765,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://leonardgrazian.com/blog/jev-calibration/",
-    "added": "2026-09-26"
+    "added": "2026-09-26",
+    "comment_en": "Two points and zero comments is not evidence of calibration, so treat this thread as a prompt to run your own reliability checks on Jev rather than a validation signal.",
+    "comment_zh": "两个赞、零评论并不能证明模型经过校准，因此应把这个帖子当作提醒，自己在 Jev 上做可靠性检验，而不是当作验证信号。"
   },
   {
     "date": "2026-09-26",
@@ -765,7 +775,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://huggingface.co/blog/sora-2/what-is-jev-ai-a-practical-guide-to-system-one-and",
-    "added": "2026-09-26"
+    "added": "2026-09-26",
+    "comment_en": "Zero comments means no independent verification yet, so treat claims about Jev's executable decisions as marketing until developers publish reproducible benchmarks.",
+    "comment_zh": "零评论意味着尚无独立验证，在开发者发布可复现的基准测试之前，请将关于 Jev 可执行决策的说法视为营销宣传。"
   },
   {
     "date": "2026-09-26",
@@ -773,7 +785,9 @@
     "summary": "Hacker News discussion — 1 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://quiz.seek.ws/",
-    "added": "2026-09-26"
+    "added": "2026-09-26",
+    "comment_en": "A single upvote and one comment is not validation—Jev's typed-decision premise remains unproven until developers share reproducible benchmarks rather than anecdotal life-choice demos.",
+    "comment_zh": "一个赞成票和一条评论算不上验证——在开发者拿出可复现的基准测试而非轶事式的人生选择演示之前，Jev 的类型化决策前提仍未得到证实。"
   },
   {
     "date": "2026-09-26",
@@ -781,7 +795,9 @@
     "summary": "Hacker News discussion — 5 points, 2 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://www.privatemode.ai/blog/system-one-from-glm-flash",
-    "added": "2026-09-26"
+    "added": "2026-09-26",
+    "comment_en": "Five points and two comments is barely a signal, so treat any GLM-5.3-Flash-to-Jev conversion recipe as an unverified experiment rather than a proven path for typed-decision workloads.",
+    "comment_zh": "五个赞、两条评论几乎算不上有效信号，因此把任何将 GLM-5.3-Flash 转成 Jev 的方案都当作未经证实的实验，而非类型化决策任务的成熟路径。"
   },
   {
     "date": "2026-09-26",
