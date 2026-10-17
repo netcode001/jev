@@ -645,7 +645,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/plusminushalf/rot-guard",
-    "added": "2026-09-27"
+    "added": "2026-09-27",
+    "comment_en": "A one-point Show HN with zero comments is not validation, but it hints at a real use case: Jev's typed decisions could gate content before it reaches your attention, if latency holds up.",
+    "comment_zh": "一个只有一分、零评论的 Show HN 算不上验证，但它暗示了一个真实用例：如果延迟可控，Jev 的类型化决策可以在内容进入你的视野前进行筛选。"
   },
   {
     "date": "2026-09-27",
@@ -653,7 +655,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://www.reddit.com/r/learnmachinelearning/comments/1wrd95w/statistical_tie_with_jev_on_banking77_9179_vs/",
-    "added": "2026-09-27"
+    "added": "2026-09-27",
+    "comment_en": "A p=0.27 result cannot distinguish these systems, so the cost claim matters only if your BANKING77-style intent workload tolerates a single-benchmark proxy for real routing quality.",
+    "comment_zh": "p=0.27 的结果无法区分这两个系统，因此只有当你的 BANKING77 式意图负载能容忍用单一基准来代理真实路由质量时，成本优势才值得考虑。"
   },
   {
     "date": "2026-09-27",
@@ -661,7 +665,9 @@
     "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://news.ycombinator.com/item?id=49867086",
-    "added": "2026-09-27"
+    "added": "2026-09-27",
+    "comment_en": "A thousandth of the cost is a striking claim, but with zero comments and three points, there's no replication or detail on whether the cheaper pipeline preserves Jev's typed-decision guarantees under distribution shift.",
+    "comment_zh": "成本仅为千分之一是个惊人的说法，但零评论、三点热度意味着既无复现也无细节说明这条更便宜的流水线能否在分布偏移下保持 Jev 的类型化决策保证。"
   },
   {
     "date": "2026-09-27",
@@ -669,7 +675,9 @@
     "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://jeyzma.com/",
-    "added": "2026-09-27"
+    "added": "2026-09-27",
+    "comment_en": "Running Jev locally via WebGPU in Go is an intriguing proof of concept, but with zero comments and three points, there's no evidence yet that it performs better than existing inference paths.",
+    "comment_zh": "用 Go 通过 WebGPU 在本地浏览器运行 Jev 是个有趣的概念验证，但零评论、三点热度意味着尚无证据表明它比现有推理路径表现更好。"
   },
   {
     "date": "2026-09-27",
@@ -677,7 +685,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://stackness.dev/blog/how-do-you-run-system-one-decision-models-locally-ollaya-laya-mlx-and-the-runtime-slot",
-    "added": "2026-09-27"
+    "added": "2026-09-27",
+    "comment_en": "With zero comments and two points, this thread offers no first-hand reports, so developers should treat any local-inference claims for Jev as unverified until reproducible benchmarks appear.",
+    "comment_zh": "该帖仅两点、零评论，没有任何一手使用报告，因此在出现可复现的基准测试之前，开发者应把关于 Jev 本地推理的任何说法都视为未经证实。"
   },
   {
     "date": "2026-09-27",
@@ -685,7 +695,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/VBS2004/jev-windows-agent",
-    "added": "2026-09-27"
+    "added": "2026-09-27",
+    "comment_en": "A Windows UI Automation backend for Jev's CUA agents is a practical step, but with two points and zero comments, there's no evidence yet of real-world reliability.",
+    "comment_zh": "为 Jev 的 CUA 智能体提供 Windows UI Automation 后端是务实之举，但仅两点、零评论，尚无实际可靠性证据。"
   },
   {
     "date": "2026-09-27",
@@ -693,7 +705,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://vercel.com/i/using-jev-in-tanstack-start-with-tanstack-ai",
-    "added": "2026-09-27"
+    "added": "2026-09-27",
+    "comment_en": "With zero comments and a single point, this integration is essentially unvetted, so treat any claimed TanStack Start and Jev compatibility as a starting point for your own testing rather than a proven setup.",
+    "comment_zh": "这条集成目前零评论、仅一分，基本未经社区验证，因此请把所声称的 TanStack Start 与 Jev 兼容性当作自行测试的起点，而非已被证实的方案。"
   },
   {
     "date": "2026-09-27",
@@ -701,7 +715,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/bykof/peekaboolean",
-    "added": "2026-09-27"
+    "added": "2026-09-27",
+    "comment_en": "Peekaboolean's Jev-like typed questions suggest developers are already extending the format beyond TypeSafe's own tooling, though two points and zero comments mean there's no real usage signal yet.",
+    "comment_zh": "Peekaboolean 采用类似 Jev 的类型化提问，说明开发者已在 TypeSafe 自家工具之外扩展这一格式，但仅 2 分、零评论意味着尚无真实使用信号。"
   },
   {
     "date": "2026-09-27",
