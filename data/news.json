@@ -1,6 +1,16 @@
 [
   {
     "date": "2026-10-18",
+    "title": "Ask HN: System One models for autonomous agents",
+    "summary": "Hacker News discussion — 3 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://news.ycombinator.com/item?id=50142037",
+    "added": "2026-10-18",
+    "comment_en": "Three points and a single comment is thin evidence, so treat any first-hand claims about Jev's System One behavior for agents as anecdote, not benchmark.",
+    "comment_zh": "三点和一个评论的证据太单薄，因此关于 Jev 在智能体中 System One 表现的第一手说法只能当作轶事，而非基准测试。"
+  },
+  {
+    "date": "2026-10-18",
     "title": "Eval of 19 ways to crop images using LLMs, Jev and image classification models",
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
@@ -1045,7 +1055,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/xatuke/herobrine",
-    "added": "2026-09-25"
+    "added": "2026-09-25",
+    "comment_en": "A two-point Show HN with zero comments is barely a signal, so treat this Minecraft buddy demo as an early proof-of-concept for Jev's typed decisions rather than validated developer traction.",
+    "comment_zh": "这个只有2分、零评论的Show HN几乎算不上信号，所以请把这款Minecraft伙伴演示视为Jev类型化决策的早期概念验证，而非经过验证的开发者采用度。"
   },
   {
     "date": "2026-09-25",
@@ -1053,7 +1065,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/zhulinchng/jevper",
-    "added": "2026-09-25"
+    "added": "2026-09-25",
+    "comment_en": "A single-show HN post with two points and no comments is not validation, but Jevper hints that constraining an LLM client to Jev's wire format could cut hand-written parsing code for developers.",
+    "comment_zh": "一条只有两点、零评论的 HN 发布算不上验证，但 Jevper 暗示：将 LLM 客户端约束到 Jev 的线格式，或能为开发者省去手写解析代码。"
   },
   {
     "date": "2026-09-25",
@@ -1061,7 +1075,9 @@
     "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/sumant1122/knowledge-signal",
-    "added": "2026-09-25"
+    "added": "2026-09-25",
+    "comment_en": "A three-point HN post with zero comments is not validation, so treat this rubric tool as an early demo of Jev's typed-decision API rather than a proven study workflow.",
+    "comment_zh": "一个仅有3分、零评论的HN帖子算不上验证，因此应把这个评分工具当作Jev类型化决策API的早期演示，而非经过验证的学习流程。"
   },
   {
     "date": "2026-09-25",
@@ -1069,7 +1085,9 @@
     "summary": "Hacker News discussion — 4 points, 2 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/egma-ai/jev-code-reviewer",
-    "added": "2026-09-25"
+    "added": "2026-09-25",
+    "comment_en": "Four points and two comments is barely a signal, so treat any first-hand reports here as anecdotal rather than evidence that Jev-based code review works at scale.",
+    "comment_zh": "四个点和两条评论几乎算不上有效信号，因此请把这些一手反馈当作轶事，而非 Jev 代码审查在大规模下有效的证据。"
   },
   {
     "date": "2026-09-25",
@@ -1077,7 +1095,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/lakeday-org/perch",
-    "added": "2026-09-25"
+    "added": "2026-09-25",
+    "comment_en": "With zero comments and two points, Perch is less a validated tool than a single developer's experiment—worth testing on a small codebase before trusting its semantic linting in production.",
+    "comment_zh": "在零评论、两点热度的情况下，Perch 与其说是经过验证的工具，不如说是某位开发者的个人实验——值得先在小规模代码库上试用，再决定是否在生产环境中信任它的语义检查。"
   },
   {
     "date": "2026-09-25",
@@ -1085,7 +1105,9 @@
     "summary": "Hacker News discussion — 12 points, 9 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://www.kartikpansuriya.com/blog/jev-system-one-model-calibrated-decisions",
-    "added": "2026-09-25"
+    "added": "2026-09-25",
+    "comment_en": "Early Jev users report that calibration, not raw accuracy, drives trust in typed decisions, though the sample is nine comments—treat these first-hand claims as promising but unverified.",
+    "comment_zh": "早期Jev用户反馈称，让类型化决策真正可信的是校准度而非原始准确率，不过样本仅有九条评论——请把这些一手说法视为有前景但尚未验证。"
   },
   {
     "date": "2026-09-24",
@@ -1093,7 +1115,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://revexos.com/jev-playground",
-    "added": "2026-09-24"
+    "added": "2026-09-24",
+    "comment_en": "A single-point Hacker News thread with zero comments offers no real signal, so Jev developers should treat any claims about RevExOS as unverified until independent benchmarks or code surface.",
+    "comment_zh": "一个仅有一点、零评论的 Hacker News 帖子毫无实质信号，Jev 开发者应将关于 RevExOS 的任何说法视为未经证实，直到出现独立基准测试或代码。"
   },
   {
     "date": "2026-09-24",
