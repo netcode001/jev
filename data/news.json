@@ -1,6 +1,16 @@
 [
   {
     "date": "2026-10-17",
+    "title": "Jeva: System One Models from First Principles",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://arxiv.org/abs/2610.18773",
+    "added": "2026-10-18",
+    "comment_en": "With zero comments, this submission offers no first-hand reports on how Jeva's first-principles system-one approach actually behaves in production, so developers should treat it as a pointer to evaluate rather than evidence.",
+    "comment_zh": "这条提交零评论，没有任何关于 Jeva 从第一性原理构建的系统一模型在生产环境中实际表现的一手反馈，开发者应将其视为待评估的线索而非证据。"
+  },
+  {
+    "date": "2026-10-17",
     "title": "Make System One Models Fight",
     "summary": "Hacker News discussion — 1 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
@@ -885,7 +895,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://openbrowser-landing.pages.dev/context-atlas-blog/",
-    "added": "2026-09-26"
+    "added": "2026-09-26",
+    "comment_en": "With zero comments and a single point, this thread offers no real usage signal for Jev, so treat any claims about Laya integration as unverified until developers publish reproducible benchmarks.",
+    "comment_zh": "这个帖子零评论、仅一分，对 Jev 而言没有任何真实使用信号，因此在开发者发布可复现的基准测试之前，任何关于 Laya 集成的说法都应视为未经证实。"
   },
   {
     "date": "2026-09-26",
@@ -893,7 +905,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/lateos-ai/reflex",
-    "added": "2026-09-26"
+    "added": "2026-09-26",
+    "comment_en": "A two-point HN thread with zero comments is no validation, but a 16GB-VRAM local implementation of a Jev-style decision model is worth testing yourself before trusting any benchmark claims.",
+    "comment_zh": "一个只有2分、零评论的HN帖子算不上验证，但在16GB显存上本地运行Jev式决策模型的实现，值得你亲自测试，而不是轻信任何基准宣称。"
   },
   {
     "date": "2026-09-26",
@@ -901,7 +915,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/BackTrackCo/tenjin-agent",
-    "added": "2026-09-26"
+    "added": "2026-09-26",
+    "comment_en": "Tenjin's x402 routing for Claude Code shows Jev's typed decisions extending into tool orchestration, but two points and zero comments mean no real-world validation yet—treat it as a pattern, not a proven dependency.",
+    "comment_zh": "Tenjin 为 Claude Code 提供的 x402 路由表明 Jev 的类型化决策正延伸到工具编排领域，但仅两点、零评论意味着尚无真实场景验证——应将其视为一种模式，而非已验证的依赖。"
   },
   {
     "date": "2026-09-25",
@@ -909,7 +925,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://www.youtube.com/watch?v=1HMOA3BawXg",
-    "added": "2026-09-26"
+    "added": "2026-09-26",
+    "comment_en": "A live playthrough is a useful stress test of Jev's long-horizon decision consistency, but with zero comments so far, treat any claims about robustness as unverified until independent runs are logged.",
+    "comment_zh": "实时通关是对Jev长程决策一致性的有效压力测试，但目前零评论，在独立运行记录出现之前，任何关于鲁棒性的说法都应视为未经证实。"
   },
   {
     "date": "2026-09-25",
@@ -917,7 +935,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://academy.dair.ai/papers/jev-mem-system-one-controlled-agentic-memory-for-efficient-ai-agents-2609.23986",
-    "added": "2026-09-26"
+    "added": "2026-09-26",
+    "comment_en": "With zero comments and a single point, this Jev-Mem post offers no real-world evidence, so developers should treat its system-one memory routing claims as unverified until reproducible benchmarks appear.",
+    "comment_zh": "这条 Jev-Mem 帖子仅有一点、零评论，缺乏真实使用证据，开发者应将其系统一记忆路由的主张视为未经证实，直到出现可复现的基准测试。"
   },
   {
     "date": "2026-09-25",
@@ -925,7 +945,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://www.jev.store/",
-    "added": "2026-09-26"
+    "added": "2026-09-26",
+    "comment_en": "A directory with only two points and no comments signals enthusiasm outpacing adoption, so developers evaluating Jev should treat these listings as experiments rather than proven patterns.",
+    "comment_zh": "一个只有两分且零评论的目录，说明热情超前于实际采用，因此评估 Jev 的开发者应把这些条目视为实验，而非经过验证的模式。"
   },
   {
     "date": "2026-09-25",
@@ -933,7 +955,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://kiro.dev/changelog/",
-    "added": "2026-09-26"
+    "added": "2026-09-26",
+    "comment_en": "Kiro's preview integration of Jev for turn decisions is worth testing, but with zero comments and one point, there's no real-world evidence yet on latency or edge-case behavior.",
+    "comment_zh": "Kiro 预览版集成 Jev 来做回合决策值得一试，但由于零评论、一分的讨论热度，目前还没有关于延迟或边界情况行为的实际证据。"
   },
   {
     "date": "2026-09-25",
