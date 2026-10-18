@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-10-18",
+    "title": "Eval of 19 ways to crop images using LLMs, Jev and image classification models",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://workflows-of-ai.com/blog/can-ai-set-the-focal-point-of-a-photo",
+    "added": "2026-10-18",
+    "comment_en": "A one-point HN post with zero comments is not evidence that Jev beats vision LLMs at cropping, so treat the 19-way comparison as a prompt to run your own benchmark rather than a settled result.",
+    "comment_zh": "一条仅有一点、零评论的 Hacker News 帖子并不能证明 Jev 在裁剪任务上胜过视觉大模型，因此应把这项 19 种方法的对比当作自行跑基准测试的提示，而非定论。"
+  },
+  {
     "date": "2026-10-17",
     "title": "Jeva: System One Models from First Principles",
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
@@ -965,7 +975,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://unstack.io/jev-for-input-validation",
-    "added": "2026-09-25"
+    "added": "2026-09-25",
+    "comment_en": "Two points and zero comments is not a signal of anything, so treat this as a pointer to a thread worth watching rather than evidence that Jev's typed-decision approach actually simplifies input validation.",
+    "comment_zh": "两点、零评论本身说明不了什么，与其把它当作 Jev 类型化决策方法真能简化输入校验的证据，不如当成一个值得留意的讨论线索。"
   },
   {
     "date": "2026-09-25",
@@ -973,7 +985,9 @@
     "summary": "Hacker News discussion — 1 points, 3 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://ninetysky.com/research",
-    "added": "2026-09-25"
+    "added": "2026-09-25",
+    "comment_en": "A single-point HN thread is thin evidence, so treat any Jev weather-forecasting claims as anecdotal until reproducible benchmarks or code surface.",
+    "comment_zh": "一个只有一分的 HN 帖子证据薄弱，在出现可复现的基准测试或代码之前，应将任何 Jev 天气预报方面的说法视为轶事。"
   },
   {
     "date": "2026-09-25",
@@ -981,7 +995,9 @@
     "summary": "Hacker News discussion — 11 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://opper.ai/blog/jev-vs-kev-open-decision-model",
-    "added": "2026-09-25"
+    "added": "2026-09-25",
+    "comment_en": "With zero comments and only 11 points, this side-by-side comparison offers no verified benchmarks, so treat any performance claims about Jev versus the Kev alternative as unsubstantiated until independent tests emerge.",
+    "comment_zh": "仅有11分且零评论，这一并排对比没有提供经过验证的基准测试，因此在独立测试出现之前，应将关于 Jev 与 Kev 替代方案性能对比的任何说法视为未经证实。"
   },
   {
     "date": "2026-09-25",
@@ -989,7 +1005,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://www.astronomer.io/blog/what-jev-will-do-to-data-engineering/",
-    "added": "2026-09-25"
+    "added": "2026-09-25",
+    "comment_en": "With only two points and zero comments, this thread offers no real usage evidence, so developers should treat any claims about Jev reshaping data engineering pipelines as unverified until hands-on reports emerge.",
+    "comment_zh": "该帖仅有两分且零评论，缺乏真实使用证据，因此在出现实际体验报告之前，开发者应将关于 Jev 重塑数据工程流水线的任何说法视为未经证实。"
   },
   {
     "date": "2026-09-25",
@@ -997,7 +1015,9 @@
     "summary": "Hacker News discussion — 3 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://www.doom-or-bloom.com",
-    "added": "2026-09-25"
+    "added": "2026-09-25",
+    "comment_en": "A three-point HN thread is thin evidence, so treat this worldview-mapping demo as a prompt to test Jev's typed decisions yourself rather than proof of how it behaves.",
+    "comment_zh": "HN 上仅三分、一条评论的讨论参考价值有限，不妨把这个世界观映射演示当作自己动手测试 Jev 类型化决策的引子，而非其行为表现的证据。"
   },
   {
     "date": "2026-09-25",
@@ -1005,7 +1025,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/Jaluus/JevPertus",
-    "added": "2026-09-25"
+    "added": "2026-09-25",
+    "comment_en": "A two-point HN showing with no comments is thin validation, but JevPertus matters as the first third-party attempt to port Jev's option scoring onto Apertus, so developers should test whether scoring semantics survive the swap before trusting it.",
+    "comment_zh": "在HN上仅得两分且零评论，验证力度薄弱，但JevPertus作为首个将Jev期权评分移植到Apertus的第三方尝试仍有意义，开发者在信任它之前应测试评分语义在迁移后是否保持不变。"
   },
   {
     "date": "2026-09-25",
@@ -1013,7 +1035,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/darkmatter/adhere",
-    "added": "2026-09-25"
+    "added": "2026-09-25",
+    "comment_en": "A single Hacker News post with two points and zero comments proves nothing about Jev's fitness for linting, but it hints that typed-decision models may catch semantic issues that regex-based linters structurally cannot.",
+    "comment_zh": "一条只有两点、零评论的Hacker News帖子无法证明Jev适合做lint工具，但它暗示类型化决策模型或许能捕捉基于正则的linter在结构上无法发现的语义问题。"
   },
   {
     "date": "2026-09-25",
