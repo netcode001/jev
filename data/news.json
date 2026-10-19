@@ -1205,7 +1205,9 @@
     "summary": "Hacker News discussion — 2 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/YidiDev/jev-benchmark",
-    "added": "2026-09-24"
+    "added": "2026-09-24",
+    "comment_en": "Two points and one comment is not a signal, so treat this thread as anecdote rather than evidence that Jev's typed-decision approach actually holds up under real developer workloads.",
+    "comment_zh": "两个赞和一条评论算不上什么信号，所以请把这帖当作轶事，而非 Jev 的类型化决策方法在真实开发者工作负载下确实站得住脚的证据。"
   },
   {
     "date": "2026-09-23",
@@ -1213,7 +1215,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/deepansh-saxena/jev-guardrails",
-    "added": "2026-09-24"
+    "added": "2026-09-24",
+    "comment_en": "A two-point, zero-comment thread is anecdotal at best, so treat this guardrail experiment as a prompt to test Jev's typed decisions against your own judgment calls rather than as evidence it works.",
+    "comment_zh": "一个仅有两分、零评论的帖子至多只能算轶事，因此请把这个护栏实验当作契机，用你自己的判断场景去检验 Jev 的类型化决策，而不是把它当作有效的证据。"
   },
   {
     "date": "2026-09-23",
@@ -1221,7 +1225,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/maharshi365/oc-agent-router",
-    "added": "2026-09-24"
+    "added": "2026-09-24",
+    "comment_en": "With zero comments and a single point, this router offers no evidence yet that Jev's typed decisions actually improve subagent coordination, so treat it as an experiment to fork rather than adopt.",
+    "comment_zh": "这个路由器目前零评论、仅一分，尚无证据表明 Jev 的类型化决策真能改善子代理协作，因此应将其视为可复刻的实验，而非直接采用。"
   },
   {
     "date": "2026-09-23",
@@ -1229,7 +1235,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/taeold/djev-run",
-    "added": "2026-09-24"
+    "added": "2026-09-24",
+    "comment_en": "With zero comments and a single point, this HN post offers no real-world signal on Djev's reliability, so developers should benchmark it against their own workloads before trusting the TypeSafe-compatible API claim.",
+    "comment_zh": "这条HN帖子零评论、仅一分，无法提供Djev可靠性的真实反馈，开发者应先用自己的工作负载做基准测试，再决定是否信任其兼容TypeSafe API的说法。"
   },
   {
     "date": "2026-09-23",
@@ -1237,7 +1245,9 @@
     "summary": "Hacker News discussion — 1 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://anyeval.com/eval/jevbench/versus?a=typesafe-ai%252Fjev&b=trustedrouter%252Fgev-1.0",
-    "added": "2026-09-24"
+    "added": "2026-09-24",
+    "comment_en": "A single Hacker News comment claiming gev outperforms Jev on image inputs is thin evidence, so developers should benchmark it against their own typed-decision workloads before switching.",
+    "comment_zh": "仅凭 Hacker News 上一条声称 gev 在图像输入上胜过 Jev 的评论，证据还很薄弱，开发者应先在自己的类型化决策任务上做基准测试，再决定是否切换。"
   },
   {
     "date": "2026-09-23",
@@ -1245,7 +1255,9 @@
     "summary": "Hacker News discussion — 2 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://gifdecider.com/",
-    "added": "2026-09-24"
+    "added": "2026-09-24",
+    "comment_en": "A single two-point Show HN post is thin evidence of real-world adoption, but a GIF decider built on Jev's typed decisions hints at practical use beyond toy demos.",
+    "comment_zh": "一个仅有两分的 Show HN 帖子难以作为真实采用的充分证据，但基于 Jev 类型化决策构建的 GIF 决策器暗示了超越玩具示例的实用场景。"
   },
   {
     "date": "2026-09-23",
@@ -1253,7 +1265,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/kmcheung12/sniffslop/",
-    "added": "2026-09-24"
+    "added": "2026-09-24",
+    "comment_en": "A one-point Show HN with zero comments tells you almost nothing about Sniffslop's accuracy, so treat any Jev-based text classification as a promising demo rather than a validated tool.",
+    "comment_zh": "一个仅有一点、零评论的 Show HN 帖子几乎无法说明 Sniffslop 的准确度，因此应把任何基于 Jev 的文本分类视为有潜力的演示，而非经过验证的工具。"
   },
   {
     "date": "2026-09-22",
@@ -1261,7 +1275,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://news.ycombinator.com/item?id=49803473",
-    "added": "2026-09-24"
+    "added": "2026-09-24",
+    "comment_en": "A one-point HN post with zero comments is barely a signal, so treat this linter as an unvetted prototype rather than a standard for structuring Jev requests.",
+    "comment_zh": "一条仅有一点、零评论的HN帖子几乎算不上信号，因此应把这个linter当作未经检验的原型，而非构建Jev请求的标准。"
   },
   {
     "date": "2026-09-22",
