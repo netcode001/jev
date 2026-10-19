@@ -1125,7 +1125,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://academy.dair.ai/papers/jev-as-a-judge-accept-when-confident-escalate-when-unsure-2609.26550",
-    "added": "2026-09-24"
+    "added": "2026-09-24",
+    "comment_en": "With zero comments and a single point, this thread offers no real usage reports, so developers should treat any claims about Jev-as-a-judge as untested until independent benchmarks appear.",
+    "comment_zh": "这个帖子零评论、仅一分，没有任何真实使用报告，因此在独立基准出现之前，开发者应将 Jev 作为评判者的任何说法视为未经检验。"
   },
   {
     "date": "2026-09-24",
@@ -1133,7 +1135,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/sc2musa/Jev_Star",
-    "added": "2026-09-24"
+    "added": "2026-09-24",
+    "comment_en": "Jev-Star's low-cost StarCraft II control is a promising stress test for typed-decision planning, but with zero comments the real-world reliability and cost claims remain unverified for developers.",
+    "comment_zh": "Jev-Star 以低成本控制《星际争霸 II》，为类型化决策规划提供了一次有价值的压力测试，但由于零评论，其真实可靠性和成本声明对开发者而言仍未得到验证。"
   },
   {
     "date": "2026-09-24",
@@ -1141,7 +1145,9 @@
     "summary": "Hacker News discussion — 2 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://yorohan.com/clue-me",
-    "added": "2026-09-24"
+    "added": "2026-09-24",
+    "comment_en": "A two-point Show HN thread is thin evidence, so treat any first-hand reports about Jev's guessing behavior as anecdotal until more developers publish reproducible tests.",
+    "comment_zh": "一个只有两分的 Show HN 帖子证据太少，在更多开发者发布可复现的测试之前，请把关于 Jev 猜测行为的第一手报告当作轶事看待。"
   },
   {
     "date": "2026-09-24",
@@ -1149,7 +1155,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://jev-approach-control.vercel.app/",
-    "added": "2026-09-24"
+    "added": "2026-09-24",
+    "comment_en": "With zero comments and a single point, this submission offers no first-hand evidence yet, so developers should treat any claimed benefits of Jev Approach Control as unverified until real usage reports surface.",
+    "comment_zh": "这条提交目前零评论、仅一分，尚无第一手证据，因此在出现真实使用报告之前，开发者应把 Jev Approach Control 的任何宣称优势视为未经证实。"
   },
   {
     "date": "2026-09-24",
@@ -1157,7 +1165,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://di-zhang-llm.github.io/blog/what-is-rlcd-the-secret-behind-jev/",
-    "added": "2026-09-24"
+    "added": "2026-09-24",
+    "comment_en": "Two points and zero comments is not a launch signal, so treat any RLCD claims about Jev as unverified until independent benchmarks or reproducible usage reports surface.",
+    "comment_zh": "两点零评论算不上发布信号，因此在出现独立基准测试或可复现的使用报告之前，应把关于 Jev 的任何 RLCD 说法视为未经证实。"
   },
   {
     "date": "2026-09-24",
@@ -1165,7 +1175,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://www.localcan.com/blog/build-your-own-captcha",
-    "added": "2026-09-24"
+    "added": "2026-09-24",
+    "comment_en": "A two-point Show HN with zero comments is barely a signal, so treat this CAPTCHA rebuild as a single developer's experiment with Jev's typed decisions rather than evidence the model handles adversarial input well.",
+    "comment_zh": "一个仅两分、零评论的 Show HN 几乎算不上信号，因此应把这次 CAPTCHA 重建视为某位开发者对 Jev 类型化决策的单独实验，而非该模型能妥善处理对抗性输入的证据。"
   },
   {
     "date": "2026-09-24",
@@ -1173,7 +1185,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://blog.kvit.app/posts/ending-a-turn-with-a-choice/",
-    "added": "2026-09-24"
+    "added": "2026-09-24",
+    "comment_en": "A one-point HN thread is thin evidence, so treat reverse-choice endings as an untested pattern until you've checked how Jev's typed decisions actually resolve at the end of a reply.",
+    "comment_zh": "一个只有一分、零评论的 HN 帖子证据太薄，在确认 Jev 的类型化决策在回复末尾究竟如何解析之前，应把“反向选择式结尾”视为未经检验的模式。"
   },
   {
     "date": "2026-09-24",
@@ -1181,7 +1195,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://drive.google.com/file/d/17h982xvsL3E7b80iGmOCfKp9qTOW9ohv/view?pli=1",
-    "added": "2026-09-24"
+    "added": "2026-09-24",
+    "comment_en": "Two points and zero comments is not a signal of adoption, so treat this coding-agent engineering post as a prompt to test Jev's typed-decision guarantees yourself rather than evidence they hold.",
+    "comment_zh": "两个赞、零评论并不能说明它被采用，所以请把这篇关于编码智能体工程的文章当作一个提醒：亲自测试 Jev 的类型化决策保证，而不是把它当作这些保证成立的证据。"
   },
   {
     "date": "2026-09-23",
