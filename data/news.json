@@ -1365,7 +1365,9 @@
     "summary": "Hacker News discussion — 4 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://www.latent.space/p/ainews-here-are-6-clones-of-jev-in",
-    "added": "2026-09-22"
+    "added": "2026-09-22",
+    "comment_en": "Six clones in two days suggests Jev's typed-decision design is easy to imitate but hard to match, so developers should test whether forks preserve the original's type guarantees or just borrow its name.",
+    "comment_zh": "两天内出现六个克隆版本，说明 Jev 的类型化决策设计容易被模仿却难以被真正复制，开发者应检验这些分支是否保留了原版的类型保证，还是仅仅借用了它的名字。"
   },
   {
     "date": "2026-09-22",
@@ -1373,7 +1375,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/instax-dutta/sysone-bench",
-    "added": "2026-09-22"
+    "added": "2026-09-22",
+    "comment_en": "A single low-score HN post with zero comments is not evidence of anything, so benchmark Laya against Jev on your own typed workloads before drawing conclusions.",
+    "comment_zh": "一个零评论、低分的 HN 帖子说明不了任何问题，在得出任何结论之前，请先在你自己的类型化工作负载上对 Laya 和 Jev 进行基准测试。"
   },
   {
     "date": "2026-09-22",
@@ -1381,7 +1385,9 @@
     "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://medium.com/@dolevietthang/what-makes-jev-different-from-chatgpt-and-claude-a-simple-explanation-45ce943697eb",
-    "added": "2026-09-22"
+    "added": "2026-09-22",
+    "comment_en": "With zero comments, this thread offers no first-hand evidence yet, so treat the framing as TypeSafe's own positioning rather than independent validation of Jev's typed-decision claims.",
+    "comment_zh": "该帖目前零评论，尚无一手使用证据，因此应将其视为 TypeSafe 自身的定位宣传，而非对 Jev 类型化决策主张的独立验证。"
   },
   {
     "date": "2026-09-22",
@@ -1389,7 +1395,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://jevball.rorz.io/",
-    "added": "2026-09-22"
+    "added": "2026-09-22",
+    "comment_en": "With just one point and zero comments, this thread offers no real usage reports, so treat any claims about Jev's magic as unverified until developers actually publish hands-on results.",
+    "comment_zh": "这个帖子只有一分且零评论，没有任何真实的使用报告，因此在开发者真正发布实测结果之前，请把关于 Jev 神奇之处的任何说法都视为未经证实。"
   },
   {
     "date": "2026-09-22",
@@ -1397,7 +1405,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://pypi.org/project/jevframe/",
-    "added": "2026-09-22"
+    "added": "2026-09-22",
+    "comment_en": "With zero comments and one point, Jevframe's typed semantic decisions for Pandas and Polars remain unvetted, so treat its type-safety claims as promising but unproven until real pipelines are tested.",
+    "comment_zh": "在零评论和一分的情况下，Jevframe 为 Pandas 和 Polars 提供的类型化语义决策尚未经过验证，因此其类型安全声明虽有前景，但在真实流水线测试之前仍属未经证实。"
   },
   {
     "date": "2026-09-22",
@@ -1405,7 +1415,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/Ramneet-Singh/jevopt",
-    "added": "2026-09-22"
+    "added": "2026-09-22",
+    "comment_en": "Jevopt's use of Jev for compiler optimisation decisions is promising, but with just 2 points and no comments, there's no real-world evidence yet that the typed-decision approach outperforms heuristic compilers.",
+    "comment_zh": "Jevopt 用 Jev 做编译器优化决策的想法值得关注，但目前仅 2 分且零评论，尚无实际证据表明这种类型化决策方法优于启发式编译器。"
   },
   {
     "date": "2026-09-22",
@@ -1413,7 +1425,9 @@
     "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/Emlembow/jev-graph-search",
-    "added": "2026-09-22"
+    "added": "2026-09-22",
+    "comment_en": "With zero comments, this Show HN offers no first-hand validation of Jev's typed-decision approach in a real Obsidian search workflow, so treat it as a prompt to test rather than proof.",
+    "comment_zh": "这条Show HN零评论，无法为Jev的类型化决策方法在真实Obsidian搜索工作流中的表现提供第一手验证，因此应把它当作值得亲自测试的线索，而非可靠证明。"
   },
   {
     "date": "2026-09-21",
@@ -1421,7 +1435,9 @@
     "summary": "Hacker News discussion — 4 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://www.latent.space/p/jev",
-    "added": "2026-09-22"
+    "added": "2026-09-22",
+    "comment_en": "With only four points and a single comment, this thread offers almost no real-world signal, so developers should treat any claims about Jev in production as unverified until broader usage reports emerge.",
+    "comment_zh": "这个帖子只有4分和一条评论，几乎没有任何真实世界的信号，因此开发者应把关于Jev在生产环境中使用的任何说法视为未经证实，直到出现更广泛的使用报告。"
   },
   {
     "date": "2026-09-21",
