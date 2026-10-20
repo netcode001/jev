@@ -1,5 +1,45 @@
 [
   {
+    "date": "2026-10-19",
+    "title": "Jev Helps Multiplayer AI",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://www.runtype.com/blog/jev-in-the-group-chat",
+    "added": "2026-10-20",
+    "comment_en": "A one-point Hacker News thread with zero comments offers no first-hand reports, so developers should treat claims about Jev improving multiplayer AI as unverified until benchmarks or usage details surface.",
+    "comment_zh": "这条仅有一点、零评论的 Hacker News 帖子没有任何一手使用报告，因此在基准测试或使用细节出现之前，开发者应把 Jev 能改善多人 AI 的说法视为未经证实。"
+  },
+  {
+    "date": "2026-10-19",
+    "title": "Where Jev Fits in a Large-Scale Data Pipeline",
+    "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://trychannel3.com/blog/where-jev-fits",
+    "added": "2026-10-20",
+    "comment_en": "Three points and zero comments is not a usage report; treat any claims about Jev in production pipelines as unverified until someone publishes benchmarks or failure cases.",
+    "comment_zh": "三点内容和零评论算不上使用报告；在有人公布基准测试或失败案例之前，请把关于 Jev 用于生产管道的任何说法都视为未经证实。"
+  },
+  {
+    "date": "2026-10-19",
+    "title": "Ranking a Backlog with Jev",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://feniix-hq.net/blog/ranking-a-backlog-with-jev/",
+    "added": "2026-10-20",
+    "comment_en": "With zero comments and two points, this thread offers no real signal yet, so treat any claimed Jev ranking workflow as anecdotal until independent benchmarks or reproducible code appear.",
+    "comment_zh": "这个帖子零评论、两分，目前还没有真正的信号，因此在独立基准或可复现代码出现之前，任何声称的 Jev 排序工作流都只能视为轶事。"
+  },
+  {
+    "date": "2026-10-19",
+    "title": "Show HN: Jev in action – task classifier and auto model router in Keen Code",
+    "summary": "Hacker News discussion — 6 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://mochow13.github.io/keen-code/docs/task-classification-using-decision-models.html",
+    "added": "2026-10-20",
+    "comment_en": "With zero comments, this demo shows Jev routing tasks in Keen Code but offers no independent evidence that its typed decisions outperform simpler heuristics at scale.",
+    "comment_zh": "在零评论的情况下，这个演示展示了 Jev 在 Keen Code 中的任务路由能力，但并未提供独立证据证明其类型化决策在大规模场景下优于更简单的启发式方法。"
+  },
+  {
     "date": "2026-10-18",
     "title": "Ask HN: System One models for autonomous agents",
     "summary": "Hacker News discussion — 3 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
@@ -1285,7 +1325,9 @@
     "summary": "Hacker News discussion — 4 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://vercel.com/i/jev-vs-gpt-6-astra",
-    "added": "2026-09-24"
+    "added": "2026-09-24",
+    "comment_en": "A four-point, zero-comment thread is not evidence of anything, so treat any Jev-versus-Astra comparison here as unverified until developers publish reproducible benchmarks.",
+    "comment_zh": "一个只有4分、零评论的帖子说明不了什么，因此在开发者发布可复现的基准测试之前，请把这里任何Jev与Astra的对比都视为未经证实。"
   },
   {
     "date": "2026-09-22",
@@ -1293,7 +1335,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://vercel.com/i/jev-use-cases",
-    "added": "2026-09-24"
+    "added": "2026-09-24",
+    "comment_en": "With zero comments and just two points, this thread offers no real usage reports, so treat any claims about Jev's typed-decision workflow as unverified until developers publish actual build experiences.",
+    "comment_zh": "这个帖子只有两分且零评论，实际上没有任何使用报告，因此在开发者公布真实构建经验之前，请把关于Jev类型化决策工作流的任何说法都视为未经证实。"
   },
   {
     "date": "2026-09-22",
@@ -1301,7 +1345,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://levmiseri.com/nospace/",
-    "added": "2026-09-22"
+    "added": "2026-09-22",
+    "comment_en": "A single-point HN thread on space-free writing with Jev is thin evidence, so treat any workflow claims as anecdotal until reproducible examples and failure cases surface.",
+    "comment_zh": "Hacker News 上仅有一点、零评论的 Jev 无空格写作帖证据薄弱，在出现可复现示例和失败案例前，应将其工作流说法视为轶事。"
   },
   {
     "date": "2026-09-22",
@@ -1309,7 +1355,9 @@
     "summary": "Hacker News discussion — 7 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://simonwillison.net/2026/Sep/21/jev/",
-    "added": "2026-09-22"
+    "added": "2026-09-22",
+    "comment_en": "Seven points and zero comments is not a launch, it's a whisper, so treat the 'new shape of LLM' framing as marketing until independent benchmarks or real usage reports exist.",
+    "comment_zh": "七个点赞、零条评论算不上发布，只是一声低语，所以在出现独立基准测试或真实使用报告之前，请把“LLM 新形态”的说法当作营销话术。"
   },
   {
     "date": "2026-09-22",
