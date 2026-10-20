@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-10-20",
+    "title": "Testing Jev, a fast multiple-choice AI model, on forensic accounting tasks",
+    "summary": "Hacker News discussion — 1 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://case-trail.com/blog/testing-jev-ai-model-forensic-accounting",
+    "added": "2026-10-20",
+    "comment_en": "A single HN comment is too thin to validate Jev's forensic accounting accuracy, so treat any claimed speed advantage as unproven until broader benchmarks appear.",
+    "comment_zh": "仅凭一条Hacker News评论远不足以验证Jev在法务会计任务上的准确性，在更广泛的基准测试出现之前，应将其宣称的速度优势视为未经证实。"
+  },
+  {
     "date": "2026-10-19",
     "title": "Jev Helps Multiplayer AI",
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
@@ -1445,7 +1455,9 @@
     "summary": "Hacker News discussion — 2 points, 3 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://benbrady.dev/blog/jev-is-an-honest-game-changer/",
-    "added": "2026-09-22"
+    "added": "2026-09-22",
+    "comment_en": "Two points and three comments is barely a signal, so treat any 'game changer' verdict as one person's enthusiasm rather than a validated shift for Jev developers.",
+    "comment_zh": "两点和三條评论几乎算不上有效信号，所以对Jev开发者而言，任何“游戏规则改变者”的结论都应视为个人热情，而非经过验证的转变。"
   },
   {
     "date": "2026-09-21",
@@ -1453,7 +1465,9 @@
     "summary": "Hacker News discussion — 4 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/agent-chaperone/agent-chaperone",
-    "added": "2026-09-22"
+    "added": "2026-09-22",
+    "comment_en": "A four-point HN post with zero comments is barely a signal, so treat Agent Chaperone as an unvetted example of Jev's typed-decision screening rather than proof it improves agent safety.",
+    "comment_zh": "一条仅4分、零评论的HN帖子几乎算不上信号，因此应把Agent Chaperone视为Jev类型化决策筛选的未经验证示例，而非它能提升智能体安全性的证据。"
   },
   {
     "date": "2026-09-21",
@@ -1461,7 +1475,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://www.lampysecurity.com/post/using-typesafe-ai-in-bug-bounty",
-    "added": "2026-09-22"
+    "added": "2026-09-22",
+    "comment_en": "A one-point, zero-comment thread is not evidence of anything, so treat any bug-bounty claims about Jev as unverified until reproducible writeups appear.",
+    "comment_zh": "一个仅有一点、零评论的帖子算不上任何证据，因此在出现可复现的 writeup 之前，请把关于 Jev 的任何漏洞赏金说法视为未经证实。"
   },
   {
     "date": "2026-09-21",
@@ -1469,7 +1485,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/joshLong145/jev-cli",
-    "added": "2026-09-22"
+    "added": "2026-09-22",
+    "comment_en": "A CLI wrapper for Jev matters only if it exposes the typed-decision guarantees at the terminal, so developers can script model calls without losing type safety—though two points and zero comments mean no one has validated that yet.",
+    "comment_zh": "Jev 的命令行封装只有在终端也能保留类型化决策保证时才有意义，让开发者可脚本化调用模型而不牺牲类型安全——但仅 2 分 0 评论说明尚无人验证这一点。"
   },
   {
     "date": "2026-09-21",
@@ -1477,7 +1495,9 @@
     "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://docs.typesafe.ai/model-jaggedness/jev-1.13",
-    "added": "2026-09-22"
+    "added": "2026-09-22",
+    "comment_en": "A three-point, zero-comment HN thread is barely a signal, so treat any claims about Jev 1.13's jaggedness as anecdote until reproducible benchmarks or migration notes appear.",
+    "comment_zh": "Hacker News 上仅三分、零评论的帖子几乎算不上信号，因此在出现可复现的基准测试或迁移说明之前，应把关于 Jev 1.13 锯齿性（jaggedness）的说法视为轶事。"
   },
   {
     "date": "2026-09-21",
@@ -1485,7 +1505,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/jaredpalmer/kev/tree/main",
-    "added": "2026-09-21"
+    "added": "2026-09-21",
+    "comment_en": "Kev's Qwen3.5 foundation may inherit different tokenizer and decision semantics than Jev, so benchmark parity claims deserve scrutiny before swapping it into typed-decision pipelines.",
+    "comment_zh": "Kev 基于 Qwen3.5 构建，其分词器与决策语义可能与 Jev 不同，因此在将其替换进类型化决策流水线之前，对基准一致性声明应保持审慎。"
   },
   {
     "date": "2026-09-21",
@@ -1493,7 +1515,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://blog.r6i.it/typesafe-jev-vs-agentic-loop.html",
-    "added": "2026-09-21"
+    "added": "2026-09-21",
+    "comment_en": "A single anecdotal 7x speedup on a two-point HN post is thin evidence, but it hints Jev's typed decisions may beat agentic loops on classification tasks—worth reproducing yourself.",
+    "comment_zh": "一条仅获两分的HN帖子里的7倍加速只是孤例，证据薄弱，但它暗示Jev的类型化决策在分类任务上可能胜过智能体循环——值得你亲自复现验证。"
   },
   {
     "date": "2026-09-21",
