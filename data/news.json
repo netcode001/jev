@@ -1525,7 +1525,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://archerhume.com/posts/jevs-architecture-unmasked/",
-    "added": "2026-09-21"
+    "added": "2026-09-21",
+    "comment_en": "With just two points and zero comments, this thread offers no first-hand evidence yet, so developers should treat any architectural claims about Jev as unverified until real usage reports surface.",
+    "comment_zh": "该帖子仅有两个点赞和零条评论，尚无第一手证据，因此在真实使用反馈出现之前，开发者应将关于Jev架构的任何说法视为未经证实。"
   },
   {
     "date": "2026-09-21",
@@ -1533,7 +1535,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://altslate-labs.github.io/jevable-code/",
-    "added": "2026-09-21"
+    "added": "2026-09-21",
+    "comment_en": "A two-point HN post with zero comments is not validation, but an audit script for spotting Jev-replaceable decisions could still save refactoring time if its heuristics hold up.",
+    "comment_zh": "一个只有两点、零评论的HN帖子算不上验证，但如果其启发式规则站得住脚，用于识别可被Jev替代决策的审计脚本仍可能节省重构时间。"
   },
   {
     "date": "2026-09-21",
@@ -1541,7 +1545,9 @@
     "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://sgnt.ai/p/jev/",
-    "added": "2026-09-21"
+    "added": "2026-09-21",
+    "comment_en": "A three-point, zero-comment HN thread is thin evidence, so treat any Jev usage claims here as anecdote rather than a signal about the model's real-world reliability.",
+    "comment_zh": "Hacker News 上一个仅 3 分、零评论的帖子证据薄弱，因此其中关于 Jev 的使用说法只能当作轶事，而非该模型实际可靠性的信号。"
   },
   {
     "date": "2026-09-21",
@@ -1549,7 +1555,9 @@
     "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/khimaros/verdict",
-    "added": "2026-09-21"
+    "added": "2026-09-21",
+    "comment_en": "With zero comments and only three points, this is less a validated integration than a pointer worth testing yourself before trusting the endpoint claim.",
+    "comment_zh": "只有三个赞、零评论，这更像一条值得亲自验证的线索，而非可信的集成方案，别急着相信那个端点声明。"
   },
   {
     "date": "2026-09-21",
@@ -1557,7 +1565,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://jev-hector.vercel.app/",
-    "added": "2026-09-21"
+    "added": "2026-09-21",
+    "comment_en": "A two-point HN post with zero comments is barely a signal, so treat this bell demo as a curiosity rather than evidence Jev handles real conversational workloads.",
+    "comment_zh": "一个只有两点、零评论的HN帖子几乎算不上信号，所以请把这个铃铛演示当作猎奇，而非Jev能胜任真实对话负载的证据。"
   },
   {
     "date": "2026-09-21",
@@ -1565,7 +1575,9 @@
     "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://askjev.net/",
-    "added": "2026-09-21"
+    "added": "2026-09-21",
+    "comment_en": "With zero comments and just three points, this thread offers no real usage reports, so treat any claims about Jev's typed-decision behavior skeptically until developers publish reproducible examples.",
+    "comment_zh": "这个帖子只有三分且零评论，没有提供任何真实的使用报告，因此在开发者公布可复现的示例之前，对 Jev 类型化决策行为的任何说法都应保持怀疑。"
   },
   {
     "date": "2026-09-21",
@@ -1573,7 +1585,9 @@
     "summary": "TypeSafe removed the waitlist entirely — console.typesafe.ai is now open registration, with $5 in free credit (~120M input tokens) for new users. The Vercel and Cloudflare gateway paths continue unchanged.",
     "source": "console.typesafe.ai / aicrier",
     "url": "https://console.typesafe.ai",
-    "added": "2026-09-21"
+    "added": "2026-09-21",
+    "comment_en": "Open registration with $5 credit lets developers benchmark Jev's typed-decision routing on real workloads before committing, though the roughly 120M input-token allowance disappears quickly once you move past smoke tests.",
+    "comment_zh": "开放注册并提供5美元额度，让开发者能在真实工作负载上测试Jev的类型化决策路由再决定是否投入，但约1.2亿输入token的额度一旦超出初步测试阶段就会很快耗尽。"
   },
   {
     "date": "2026-09-20",
@@ -1581,7 +1595,9 @@
     "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://twitter.com/typesafeai/status/2101786156572823624",
-    "added": "2026-09-21"
+    "added": "2026-09-21",
+    "comment_en": "Open access removes the waitlist bottleneck, but with zero comments on the thread, developers should treat early usage reports as unverified until independent benchmarks emerge.",
+    "comment_zh": "开放访问消除了等待名单的瓶颈，但由于讨论帖零评论，开发者应将早期使用报告视为未经证实，直到出现独立基准测试。"
   },
   {
     "date": "2026-09-20",
