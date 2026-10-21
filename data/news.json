@@ -1685,7 +1685,9 @@
     "summary": "Hacker News discussion — 2 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://www.tryconvoy.xyz",
-    "added": "2026-09-20"
+    "added": "2026-09-20",
+    "comment_en": "Semantic end-to-end tests across iOS, Android, and web could cut flaky selector maintenance, but two points and one comment is far too thin to judge real-world reliability.",
+    "comment_zh": "跨 iOS、Android 和 Web 的语义端到端测试或许能减少选择器维护带来的不稳定，但仅两点和一个评论远不足以判断其实际可靠性。"
   },
   {
     "date": "2026-09-19",
@@ -1693,7 +1695,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://fly.rahmanyoonus.com",
-    "added": "2026-09-20"
+    "added": "2026-09-20",
+    "comment_en": "With zero comments and just two points, this is less a signal about Jev's typed-decision model than a reminder that early HN submissions rarely reflect real developer adoption or production readiness.",
+    "comment_zh": "仅有两点、零评论，这与其说是Jev类型化决策模型的信号，不如说提醒我们：早期HN投稿很少能反映真实的开发者采用情况或生产可用性。"
   },
   {
     "date": "2026-09-19",
@@ -1701,7 +1705,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://vercel.com/kb/guide/typesafe-jev-and-ai-sdk",
-    "added": "2026-09-20"
+    "added": "2026-09-20",
+    "comment_en": "With zero comments and two points, this HN post offers no real usage reports, so treat its classification and routing patterns as unverified until you test them against your own Jev workloads.",
+    "comment_zh": "这条 HN 帖子只有两点、零评论，没有任何真实使用反馈，因此其分类与路由模式在你用自己的 Jev 工作负载验证之前，都应视为未经证实。"
   },
   {
     "date": "2026-09-19",
@@ -1709,7 +1715,9 @@
     "summary": "Hacker News discussion — 5 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://techcrunch.com/2026/09/18/a-new-kind-of-ai-model-from-a-chatgpt-inventor-is-thrilling-developers/",
-    "added": "2026-09-20"
+    "added": "2026-09-20",
+    "comment_en": "Five points and zero comments reveal more about Hacker News' indifference than about Typesafe.ai's actual merits, so Jev developers should wait for hands-on benchmarks before rearchitecting anything.",
+    "comment_zh": "五个赞、零评论，这更多说明 Hacker News 对此漠不关心，而非 Typesafe.ai 本身的价值，因此 Jev 开发者应等待实测基准再决定是否重构。"
   },
   {
     "date": "2026-09-18",
@@ -1717,7 +1725,9 @@
     "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://forkast.news/typesafe-ais-jev-is-not-an-llm-and-that-may-be-the-point/",
-    "added": "2026-09-20"
+    "added": "2026-09-20",
+    "comment_en": "With zero comments and three points, this thread offers no real usage signal, so treat the anti-LLM framing as marketing until independent benchmarks or developer reports surface.",
+    "comment_zh": "这个帖子只有3分、零评论，没有任何真实使用信号，因此在独立基准测试或开发者反馈出现之前，应把“非LLM”的定位当作营销话术看待。"
   },
   {
     "date": "2026-09-18",
@@ -1725,7 +1735,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://typesafe.ai/manifesto",
-    "added": "2026-09-20"
+    "added": "2026-09-20",
+    "comment_en": "With zero comments and a single point, this manifesto offers no real signal about Jev's production readiness, so developers should treat its framing as marketing rather than evidence.",
+    "comment_zh": "这条宣言零评论、仅一分，无法为Jev的生产可用性提供任何真实信号，开发者应将其表述视为营销而非证据。"
   },
   {
     "date": "2026-09-18",
@@ -1733,7 +1745,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://semanticspace.dev/",
-    "added": "2026-09-20"
+    "added": "2026-09-20",
+    "comment_en": "A two-point Show HN with zero comments offers no real signal on whether Jev's 2D semantic space is useful in practice, so treat this as a demo to try yourself rather than a validated tool.",
+    "comment_zh": "这条仅有2分、零评论的Show HN帖子无法说明Jev的二维语义空间在实践中是否有用，不妨把它当作自己动手试试的演示，而非经过验证的工具。"
   },
   {
     "date": "2026-09-18",
@@ -1741,7 +1755,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://docs.typesafe.ai/introduction/machine-learning-primer",
-    "added": "2026-09-20"
+    "added": "2026-09-20",
+    "comment_en": "With zero comments and a single point, this thread offers no first-hand Jev usage reports yet, so treat any claims about \"Meaningful Intelligence\" as vendor framing rather than developer-verified behavior.",
+    "comment_zh": "该帖零评论、仅一分，尚无关于 Jev 的一手使用报告，因此请将“有意义智能”的相关说法视为厂商话术，而非开发者验证过的行为。"
   },
   {
     "date": "2026-09-18",
