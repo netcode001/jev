@@ -1605,7 +1605,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/maayanlevy/mysql-ailike",
-    "added": "2026-09-21"
+    "added": "2026-09-21",
+    "comment_en": "A meaning-based row filter inside MySQL is a clever demo, but with zero comments and two points it's untested by anyone outside its author, so treat the Jev integration as a pattern to study rather than a dependency.",
+    "comment_zh": "在 MySQL 内部按语义过滤行是个巧妙的演示，但零评论、两点热度意味着除作者外无人验证，因此应把 Jev 集成当作可研究的模式，而非可直接依赖的组件。"
   },
   {
     "date": "2026-09-20",
@@ -1613,7 +1615,9 @@
     "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://gpu.studio/trolley",
-    "added": "2026-09-20"
+    "added": "2026-09-20",
+    "comment_en": "With zero comments, this thread offers no real signal on whether Jev's typed-decision approach handles classic ethical edge cases or just reshapes the prompt.",
+    "comment_zh": "这条帖子零评论，因此无法判断 Jev 的类型化决策方法究竟能处理经典伦理边界情况，还是只是换了个方式改写提示词。"
   },
   {
     "date": "2026-09-20",
@@ -1621,7 +1625,9 @@
     "summary": "Hacker News discussion — 3 points, 2 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://jev.0x0.boo/",
-    "added": "2026-09-20"
+    "added": "2026-09-20",
+    "comment_en": "With only two comments, this thread offers thin first-hand evidence, so treat any claims about Jev's Bluesky account analysis as anecdotal until more developers verify the behavior themselves.",
+    "comment_zh": "仅凭两条评论，这个讨论串提供的第一手证据相当有限，因此在更多开发者亲自验证之前，应将关于 Jev 分析 Bluesky 账号能力的说法视为轶事。"
   },
   {
     "date": "2026-09-20",
@@ -1629,7 +1635,9 @@
     "summary": "Hacker News discussion — 2 points, 6 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://news.ycombinator.com/item?id=49772507",
-    "added": "2026-09-20"
+    "added": "2026-09-20",
+    "comment_en": "Six comments is thin evidence for any verdict on Jev, so treat these first-hand reports as anecdotes worth testing against your own typed-decision workloads rather than proof of maturity.",
+    "comment_zh": "六条评论不足以对 Jev 下定论，这些一手反馈只能当作轶事，值得你在自己的类型化决策工作负载中验证，而非当作成熟的证明。"
   },
   {
     "date": "2026-09-20",
@@ -1637,7 +1645,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://twitter.com/Alex_aic5/status/2101523309158343137",
-    "added": "2026-09-20"
+    "added": "2026-09-20",
+    "comment_en": "Before trusting the 40-second claim, developers should ask whether the 6K+ candidate pool was pre-filtered and how ranking quality holds up against slower, more deliberate scoring pipelines.",
+    "comment_zh": "在相信“40秒”这一说法之前，开发者应确认6K+候选池是否经过预筛选，以及排序质量与更慢、更审慎的评分流程相比究竟如何。"
   },
   {
     "date": "2026-09-20",
@@ -1645,7 +1655,9 @@
     "summary": "Hacker News discussion — 4 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://www.spritefusion.com/blog/generating-game-level-in-real-time-with-jev",
-    "added": "2026-09-20"
+    "added": "2026-09-20",
+    "comment_en": "A four-point thread with zero comments is barely evidence of anything, so treat this real-time level-generation claim as a prompt to test Jev's latency yourself rather than a validated win.",
+    "comment_zh": "一个只有4分、零评论的帖子几乎算不上任何证据，所以请把这条实时关卡生成的宣称当作自行测试Jev延迟的提示，而非已被验证的成果。"
   },
   {
     "date": "2026-09-19",
@@ -1653,7 +1665,9 @@
     "summary": "Hacker News discussion — 5 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/zdenham/jev-lint",
-    "added": "2026-09-20"
+    "added": "2026-09-20",
+    "comment_en": "A plain-English rule layer for Jev could lower the barrier to catching typed-decision bugs, but with only five points and one comment, there's no real evidence yet that the rules hold up on production codebases.",
+    "comment_zh": "为 Jev 提供纯英文规则层或许能降低发现类型决策类 bug 的门槛，但目前仅 5 分、1 条评论，尚无实际证据表明这些规则在真实生产代码库中站得住脚。"
   },
   {
     "date": "2026-09-19",
@@ -1661,7 +1675,9 @@
     "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://github.com/sutro-sh/jev-align",
-    "added": "2026-09-20"
+    "added": "2026-09-20",
+    "comment_en": "A calibration CLI could turn Jev's typed decisions from a black box into a tunable component, but with zero comments, no one has yet shown whether alignment actually improves real-world accuracy.",
+    "comment_zh": "一个校准命令行工具或许能让 Jev 的类型化决策从黑盒变成可调组件，但由于零评论，尚无人证明对齐是否真能提升实际场景中的准确率。"
   },
   {
     "date": "2026-09-19",
