@@ -1845,7 +1845,9 @@
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://huggingface.co/spaces/drinkmoonshine/parallel-constrained-decoding",
-    "added": "2026-09-20"
+    "added": "2026-09-20",
+    "comment_en": "A two-point HN thread with zero comments offers no first-hand signal, so treat this Qwen-2.5-1B-RLCD fork as an untested alternative to Jev until developers report real typed-decision benchmarks.",
+    "comment_zh": "这条只有2分、零评论的HN帖子没有任何一手信号，因此在开发者给出真实的类型化决策基准之前，应把Qwen-2.5-1B-RLCD这个分支视为未经检验的Jev替代方案。"
   },
   {
     "date": "2026-09-16",
@@ -1853,7 +1855,9 @@
     "summary": "Hacker News discussion — 1 points, 2 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://www.theregister.com/ai-and-ml/2026/09/16/typesafe-ai-debuts-model-for-machines-that-plays-doom/5296711",
-    "added": "2026-09-20"
+    "added": "2026-09-20",
+    "comment_en": "Two comments and one point is not a signal about Jev's typed-decision quality, so treat this Doom demo as a capability teaser rather than evidence developers can build on.",
+    "comment_zh": "两个评论和一个赞不足以说明 Jev 类型化决策的质量，因此应把这次 Doom 演示看作能力预告，而非开发者可以依赖的证据。"
   },
   {
     "date": "2026-09-16",
@@ -1861,7 +1865,9 @@
     "summary": "Vercel CEO Rauch Grover confirmed Jev is available through the Vercel AI Gateway under typesafe-ai/jev, reporting up to 18x faster p95 responses versus text-generating models on routing workloads. This becomes the fastest no-waitlist path to a Jev API key.",
     "source": "vercel.com / x.com",
     "url": null,
-    "added": "2026-09-20"
+    "added": "2026-09-20",
+    "comment_en": "Vercel's gateway gives Jev a frictionless on-ramp, but the 18x p95 claim compares routing workloads against text generators—benchmark your own decision latency before trusting it.",
+    "comment_zh": "Vercel网关为Jev提供了无摩擦的接入通道，但18倍p95提升是路由任务对比文本生成模型的结果——在采信之前，请先基准测试你自己的决策延迟。"
   },
   {
     "date": "2026-09-16",
@@ -1869,7 +1875,9 @@
     "summary": "Cloudflare Workers AI lists typesafe/jev (32K context), OpenRouter lists typesafe/jev-1.13 (64K context, $0.042/1M input, $0 output), and LangChain publishes a guide for building evaluation harnesses with Jev via the langchain-typesafe package.",
     "source": "openrouter.ai",
     "url": null,
-    "added": "2026-09-20"
+    "added": "2026-09-20",
+    "comment_en": "Day-one support across Cloudflare, OpenRouter, and LangChain signals real distribution momentum, but the 32K versus 64K context split between providers means developers must verify limits per endpoint rather than assume parity.",
+    "comment_zh": "Cloudflare、OpenRouter 和 LangChain 首日即支持，说明分发势头确实强劲，但各提供商 32K 与 64K 的上下文差异意味着开发者必须逐端核实限制，而不能想当然认为一致。"
   },
   {
     "date": "2026-09-15",
@@ -1877,7 +1885,9 @@
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://docs.typesafe.ai/concepts/system-one",
-    "added": "2026-09-20"
+    "added": "2026-09-20",
+    "comment_en": "With zero comments and a single point, this thread offers no real usage signal, so treat any claims about Jev's System One behavior as unverified until developers publish reproducible benchmarks.",
+    "comment_zh": "该帖零评论、仅一分，缺乏真实使用信号，因此在开发者发布可复现的基准测试之前，应将关于 Jev 的 System One 行为的任何说法视为未经证实。"
   },
   {
     "date": "2026-09-15",
@@ -1885,7 +1895,9 @@
     "summary": "Hacker News discussion — 1917 points, 502 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
     "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
-    "added": "2026-09-20"
+    "added": "2026-09-20",
+    "comment_en": "Beneath the hype, the 502-comment thread is the real signal: Jev's typed-decision approach draws strong opinions, but early adopters report rough edges worth testing before you commit production code.",
+    "comment_zh": "在炒作之下，502 条评论的讨论串才是真正的信号：Jev 的类型化决策方法引发了强烈争议，但早期采用者报告了一些粗糙边缘，在投入生产代码前值得先测试。"
   },
   {
     "date": "2026-09-15",
@@ -1893,6 +1905,8 @@
     "summary": "TypeSafe AI launches Jev, a model that returns typed decisions (Choice, Score, Noul) with calibrated probabilities instead of generating text. Headline claims: 193.6x faster and 444.6x cheaper than frontier LLMs on System One workflows, $0.042 per 1M input tokens with output unmetered, and 0% schema/type errors by construction.",
     "source": "typesafe.ai",
     "url": null,
-    "added": "2026-09-20"
+    "added": "2026-09-20",
+    "comment_en": "Jev's promise of structural zero type errors matters most for pipelines where parsing failures silently corrupt downstream logic, but those 193x speed and 444x cost claims deserve independent replication before teams rebuild around them.",
+    "comment_zh": "Jev 宣称的结构性零类型错误，对解析失败会悄悄污染下游逻辑的流水线最有价值；但 193 倍速度和 444 倍成本的说法值得独立复现，团队再据此重构才稳妥。"
   }
 ]
