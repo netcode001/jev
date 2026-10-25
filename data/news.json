@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-10-25",
+    "title": "Jev-style decisions for IMAGES: Fovea-4B, open 4B, one forward pass",
+    "summary": "Hacker News discussion — 2 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://huggingface.co/Sivasuthan/fovea-4b",
+    "added": "2026-10-25",
+    "comment_en": "Fovea-4B is not Jev, so treat any shared 'typed decision' framing as analogy rather than compatibility—and with only two points and one comment, there is no usage evidence yet.",
+    "comment_zh": "Fovea-4B 并非 Jev，因此所谓共享的“类型化决策”框架只是类比而非兼容；而且仅有两分和一个评论，目前尚无使用证据。"
+  },
+  {
     "date": "2026-10-24",
     "title": "RoboJev: Jev, but to Grade Robot Data",
     "summary": "Hacker News discussion — 4 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
