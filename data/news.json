@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-10-24",
+    "title": "RoboJev: Jev, but to Grade Robot Data",
+    "summary": "Hacker News discussion — 4 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://robo-jev.com/",
+    "added": "2026-10-25",
+    "comment_en": "With zero comments and just four points, RoboJev's real signal is whether grading robot data with Jev's typed decisions actually generalizes beyond demo datasets—worth testing yourself before adopting.",
+    "comment_zh": "仅有四点热度、零条评论，RoboJev 的真正看点在于用 Jev 的类型化决策来评分机器人数据能否真正泛化到演示数据集之外——采用前值得亲自测试。"
+  },
+  {
     "date": "2026-10-21",
     "title": "Smallchat (Jev as Judge) on the XERJ Corpus Hub",
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
