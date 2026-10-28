@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-10-28",
+    "title": "Create your own Jev using Voyage models",
+    "summary": "Hacker News discussion — 2 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://blog.voyageai.com/2026/10/27/how-to-create-your-own-jev-using-voyage-models/",
+    "added": "2026-10-28",
+    "comment_en": "Voyage's embedding models let you build a custom Jev-like classifier, but with just two points and one comment, there's no real evidence yet on retrieval quality or cost at scale.",
+    "comment_zh": "Voyage 的嵌入模型让你能构建类似 Jev 的自定义分类器，但目前仅有两个点赞和一条评论，尚无实际证据说明其检索质量或大规模成本表现。"
+  },
+  {
     "date": "2026-10-25",
     "title": "Jev-style decisions for IMAGES: Fovea-4B, open 4B, one forward pass",
     "summary": "Hacker News discussion — 2 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
