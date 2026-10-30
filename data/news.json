@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-10-30",
+    "title": "Torturing Jev",
+    "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://www.jonathanchiang.ca/blog/jev.html",
+    "added": "2026-10-30",
+    "comment_en": "With zero comments, this thread offers no real usage data, so developers should treat any claims about Jev's behavior under stress as unverified until reproducible benchmarks appear.",
+    "comment_zh": "该帖零评论，缺乏真实使用数据，因此在可复现的基准出现之前，开发者应将关于 Jev 压力下行为的任何说法视为未经证实。"
+  },
+  {
     "date": "2026-10-28",
     "title": "Create your own Jev using Voyage models",
     "summary": "Hacker News discussion — 2 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
