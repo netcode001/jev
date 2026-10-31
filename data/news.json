@@ -1,5 +1,25 @@
 [
   {
+    "date": "2026-10-31",
+    "title": "Video deconstructing how Jev works",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://www.youtube.com/watch?v=aIxSu5vqu6E",
+    "added": "2026-10-31",
+    "comment_en": "With zero comments and just two points, this thread offers no real usage signal, so treat any claims about Jev's typed-decision behavior as unverified until developers share concrete reports.",
+    "comment_zh": "这个帖子只有两点、零评论，无法提供真实的使用信号，因此在开发者给出具体反馈之前，应把关于 Jev 类型化决策行为的任何说法视为未经证实。"
+  },
+  {
+    "date": "2026-10-30",
+    "title": "Show HN: Fastbrowse, Browser agent that picks clicks with a System One model",
+    "summary": "Hacker News discussion — 3 points, 2 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://www.fastbrowse.ai/",
+    "added": "2026-10-31",
+    "comment_en": "Fastbrowse's use of a System One model for click selection is a useful test case for Jev, but three HN points and two comments are far too little evidence to judge real-world reliability.",
+    "comment_zh": "Fastbrowse 用 System One 模型做点击选择，对 Jev 来说是个有用的测试案例，但 HN 上仅 3 分和 2 条评论，远不足以判断其真实可靠性。"
+  },
+  {
     "date": "2026-10-30",
     "title": "Torturing Jev",
     "summary": "Hacker News discussion — 3 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
