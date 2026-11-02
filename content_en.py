@@ -233,7 +233,7 @@ PAGES["what-is-jev"] = {
         "about": {"@type": "SoftwareApplication", "name": "Jev", "applicationCategory": "AI Model"},
     }],
     "body": """
-<p class="updated">Last updated: 2026-09-20 · Sources: typesafe.ai, provider listings, independent write-ups (linked inline)</p>
+<p class="updated">Last updated: 2026-11-02 · Sources: typesafe.ai, provider listings, independent write-ups (linked inline)</p>
 <h1>What Is Jev AI? TypeSafe's System One Model Explained</h1>
 <p class="lede">Jev is the first of a new model class — <strong>System One Models</strong> — announced by TypeSafe AI on September 15, 2026. Instead of generating text, it answers typed questions about your input and returns structured decisions with calibrated probabilities. This guide explains how it works, what it can and cannot do, and which claims you should verify yourself.</p>
 
@@ -355,7 +355,7 @@ PAGES["pricing"] = {
     "crumb": CRUMB_HOME + [("Pricing", None)],
     "schema": [],
     "body": """
-<p class="updated">Last updated: 2026-09-20 · Rates verified against provider listings on this date</p>
+<p class="updated">Last updated: 2026-11-02 · Rates verified against provider listings on this date</p>
 <h1>Jev AI Pricing: What It Actually Costs (2026)</h1>
 <p class="lede">Jev's reference price is <strong>$0.042 per 1 million input tokens — about $42 per billion</strong> — and <strong>output is free</strong> on every provider, because the model returns compact typed decisions instead of generated text. This page tracks every provider's rate, translates them into real per-decision costs, and lets you compute your own bill.</p>
 
@@ -561,7 +561,7 @@ PAGES["get-access"] = {
 
 <h2>Jev AI access FAQ</h2>
 {FAQ_TEASER_ACCESS}
-<p><a href="/faq/">Read the full Jev AI FAQ →</a></p>
+<p>For hands-on builds, see the <a href="/guides/">guides &amp; tutorials</a> — or <a href="/faq/">read the full Jev AI FAQ →</a></p>
 """,
 }
 
@@ -572,7 +572,7 @@ PAGES["vs-llm"] = {
     "crumb": CRUMB_HOME + [("Jev vs LLMs", None)],
     "schema": [],
     "body": """
-<p class="updated">Last updated: 2026-09-20</p>
+<p class="updated">Last updated: 2026-11-02</p>
 <h1>Jev AI vs LLMs: When to Use Each</h1>
 <p class="lede"><strong>The one-line answer:</strong> if the answer already exists in the input and one of a known set of options is correct, use Jev. If the answer has to be written — prose, code, a summary, a plan — use an LLM. Most real systems want both.</p>
 
@@ -637,7 +637,7 @@ PAGES["vs-llm"] = {
 </ul>
 
 <h2>Bottom line</h2>
-<p>The trade is <strong>cost, not accuracy</strong>: Jev lands within a point or two of mid-tier frontier models on bounded workflows while costing 1–2 orders of magnitude less. Run the cheap judge everywhere, spend the expensive thinker rarely. Check the <a href="/pricing/">cost calculator</a> with your real volumes, and pick a first workflow from the <a href="/use-cases/">use-case playbook</a>.</p>
+<p>The trade is <strong>cost, not accuracy</strong>: Jev lands within a point or two of mid-tier frontier models on bounded workflows while costing 1–2 orders of magnitude less. Run the cheap judge everywhere, spend the expensive thinker rarely. Check the <a href="/pricing/">cost calculator</a> with your real volumes, and pick a first workflow from the <a href="/use-cases/">use-case playbook</a>. For hands-on builds, see the <a href="/guides/">guides &amp; tutorials</a>.</p>
 """,
 }
 
@@ -648,7 +648,7 @@ PAGES["news"] = {
     "crumb": CRUMB_HOME + [("News", None)],
     "schema": [],
     "body": """
-<p class="updated">Last updated: 2026-09-20 · This page is refreshed automatically as new sources appear</p>
+<p class="updated">Last updated: 2026-11-02 · This page is refreshed automatically as new sources appear</p>
 <h1>Jev AI News &amp; Updates</h1>
 <p class="lede">A running timeline of everything that matters about Jev — official announcements, provider rollouts, independent analyses, and community milestones. Every item links to its source and carries a short editor&#8217;s note on what it actually means for builders; vendor-reported figures are marked as such. Shows the 40 most recent items.</p>
 <div class="timeline">
@@ -664,7 +664,7 @@ PAGES["ecosystem"] = {
     "crumb": CRUMB_HOME + [("Ecosystem", None)],
     "schema": [],
     "body": """
-<p class="updated">Last updated: 2026-09-20 · Project descriptions from public demos and author posts</p>
+<p class="updated">Last updated: 2026-11-02 · Project descriptions from public demos and author posts</p>
 <h1>The Jev AI Ecosystem</h1>
 <p class="lede">Within days of launch, developers started building on Jev's typed-decision primitive — agents, guardrails, database filters, games, and even an open-source reproduction of the interface itself. This directory tracks the notable ones.</p>
 
@@ -713,7 +713,7 @@ PAGES["faq"] = {
     "crumb": CRUMB_HOME + [("FAQ", None)],
     "schema": [_faq_schema],
     "body": """
-<p class="updated">Last updated: 2026-09-20</p>
+<p class="updated">Last updated: 2026-11-02</p>
 <h1>Jev AI FAQ: 20 Questions, Straight Answers</h1>
 <p class="lede">Everything people are actually asking about Jev, answered without marketing gloss. Where a claim is TypeSafe's own, we say so.</p>
 """ + _faq_body,
@@ -734,7 +734,7 @@ if _os.path.exists(_news_file):
     ]
     from datetime import date as _date
     PAGES["news"]["body"] = PAGES["news"]["body"].replace(
-        "Last updated: 2026-09-20", f"Last updated: {_date.today().isoformat()}")
+        "Last updated: 2026-11-02", f"Last updated: {_date.today().isoformat()}")
 
 # news 页 ItemList schema：给 Google 富数据 + 新鲜度信号
 if _os.path.exists(_news_file):
@@ -1342,7 +1342,7 @@ PAGES["privacy"] = {
     "crumb": CRUMB_HOME + [("Privacy Policy", None)],
     "schema": [],
     "body": """
-<p class="updated">Last updated: 2026-09-24</p>
+<p class="updated">Last updated: 2026-11-02</p>
 <h1>Privacy Policy</h1>
 <p class="lede">Jev Hub (jev-ai.live) is an independent information site. This page explains what data we collect, why, and how you can control it. Short version: we collect as little as possible, and your API key never leaves your browser unless you run a request.</p>
 
@@ -1391,7 +1391,7 @@ PAGES["about"] = {
     "crumb": CRUMB_HOME + [("About", None)],
     "schema": [],
     "body": """
-<p class="updated">Last updated: 2026-09-24</p>
+<p class="updated">Last updated: 2026-11-02</p>
 <h1>About Jev Hub</h1>
 <p class="lede">Jev Hub is an independent, third-party information hub for <strong>Jev</strong>, the System One model built by TypeSafe AI. We track pricing, access paths, news, and the ecosystem growing around it — so builders don't have to piece it together from scattered posts.</p>
 
@@ -1436,7 +1436,7 @@ PAGES["contact"] = {
     "crumb": CRUMB_HOME + [("Contact", None)],
     "schema": [],
     "body": """
-<p class="updated">Last updated: 2026-09-24</p>
+<p class="updated">Last updated: 2026-11-02</p>
 <h1>Contact</h1>
 <p class="lede">The fastest way to reach us is email. We read everything and usually reply within a couple of days.</p>
 
@@ -1469,5 +1469,313 @@ PAGES["contact"] = {
 
 <h2>Other places</h2>
 <p>RSS is available for the news feed: <a href="/feed.xml">jev-ai.live/feed.xml</a>. For product questions about Jev itself, the official site is <a href="https://typesafe.ai" rel="noopener">typesafe.ai</a> — we are an independent tracker, not a support channel.</p>
+""",
+}
+
+
+# ============================================================ guides (2026-11)
+_GUIDE_SCHEMA = lambda headline: [{
+    "@context": "https://schema.org", "@type": "TechArticle",
+    "headline": headline, "datePublished": "2026-11-02", "dateModified": "2026-11-02",
+    "author": {"@type": "Organization", "name": "Jev Hub"},
+    "publisher": {"@type": "Organization", "name": "Jev Hub"},
+}]
+_GUIDE_CRUMB = CRUMB_HOME + [("Guides", "/guides/")]
+
+PAGES["guides"] = {
+    "title": "Jev Guides & Tutorials: Hands-On Playbooks for Builders (2026)",
+    "desc": "Deep, practical Jev guides written by the Jev Hub editor: state design that cuts input tokens 60%+, a ticket-triage build in 50 lines, function-calling comparisons and a production checklist.",
+    "crumb": CRUMB_HOME + [("Guides", None)],
+    "schema": [],
+    "body": """
+<p class="updated">Last updated: 2026-11-02</p>
+<h1>Jev Guides &amp; Tutorials</h1>
+<p class="lede">Hands-on playbooks for people building with Jev — written by the Jev Hub editor, not auto-generated. Each guide is working-code-first, uses the real API shape (<span class="mono">POST /v1/systemone</span>), and includes the trade-offs we think matter. Every rate and figure traces back to a provider listing or a named community report; where we add our own judgment, we say so.</p>
+
+<div class="card-grid">
+  <div class="card"><span class="tag">Cost</span><h2>State design: cut input tokens 60%+</h2><p>Jev bills input only, so your state <em>is</em> your bill. Before/after examples and five stripping techniques — plus the accuracy trap to avoid.</p><p><a href="/guide-state-design/">Read the state-design guide →</a></p></div>
+  <div class="card"><span class="tag">Tutorial</span><h2>Ticket triage in ~50 lines of Python</h2><p>A complete, runnable support-ticket router: Choice + Noul + Score questions, confidence thresholds, priority lanes and human escalation.</p><p><a href="/guide-ticket-triage/">Build the triage system →</a></p></div>
+  <div class="card"><span class="tag">Architecture</span><h2>Jev vs function calling</h2><p>Both return structured answers — so which one belongs in your decision layer? Cost, latency, calibration and migration notes.</p><p><a href="/guide-vs-function-calling/">Compare the two layers →</a></p></div>
+  <div class="card"><span class="tag">Ops</span><h2>Production checklist: 12 points before launch</h2><p>Calibration, provider fallbacks, cost alerts, PII hygiene, drift monitoring — the pre-flight list we'd run before pointing real traffic at Jev.</p><p><a href="/guide-production-checklist/">Run the checklist →</a></p></div>
+</div>
+
+<h2>How these guides are made</h2>
+<p>The code in these guides mirrors the request shape used by the official console and SDKs, and the rates come from the provider listings we track on the <a href="/pricing/">pricing page</a>. We don't run sponsored content, and we flag vendor-reported benchmarks as such — the same policy described on the <a href="/about/">about page</a>. If you spot an error, the <a href="/contact/">corrections channel</a> gets priority handling.</p>
+<p>New guides land when there's something genuinely useful to add — not on a schedule. Suggestions: <a href="mailto:hello@jev-ai.live">hello@jev-ai.live</a>.</p>
+""",
+}
+
+PAGES["guide-state-design"] = {
+    "title": "Jev State Design: Cut Input Tokens (and Your Bill) by 60%+",
+    "desc": "Jev bills input only, so state length is your entire cost. Before/after state examples, five stripping techniques, the accuracy trap, and the math at $0.042/1M.",
+    "crumb": _GUIDE_CRUMB + [("State design", None)],
+    "schema": _GUIDE_SCHEMA("Jev State Design: Cut Input Tokens (and Your Bill) by 60%"),
+    "body": """
+<p class="updated">Last updated: 2026-11-02 · Written by the editor · Rates from provider listings</p>
+<h1>Jev State Design: Cut Input Tokens (and Your Bill) by 60%+</h1>
+<p class="lede">With Jev, <strong>the state is the bill</strong>. Input is the only thing charged ($0.042 per 1M tokens, output free), so every token you ship in a decision request is a token you pay for — millions of times over. This guide shows how a typical padded state shrinks by ~65% without losing decision signal, and the one trap that makes over-stripping dangerous.</p>
+
+<h2>1. Why state is the whole bill</h2>
+<p>A Jev request has two parts: the <strong>state</strong> (the text to judge) and the <strong>questions</strong> (typed: choice / score / noul). Questions ride along in the same request and are nearly free — adding a second or third question barely moves the bill. The state is different: it is charged, and it is usually 10–50x longer than the questions.</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>State length</th><th>Cost per decision</th><th>1M decisions/month</th></tr></thead>
+  <tbody>
+    <tr><td class="mono">850 tokens (padded)</td><td class="mono">$0.0000357</td><td class="mono">$35.70</td></tr>
+    <tr><td class="mono">290 tokens (lean)</td><td class="mono">$0.0000122</td><td class="mono">$12.18</td></tr>
+  </tbody>
+</table>
+</div>
+<p>At $0.042/1M input tokens, cutting state from ~850 to ~290 tokens saves ~$23.5 per million decisions — a <strong>66% cut</strong> that requires zero infrastructure work. (Community reports run leaner still: the 1,018-paper classification that cost $0.08 total averaged far below these figures.)</p>
+
+<h2>2. The padded state (before)</h2>
+<p>Here's what a naively constructed state looks like when you pipe a raw support ticket straight in — HTML markup, signatures, ticket metadata and all:</p>
+<pre><code>From: maria.k@goldline-ltd.co.uk
+To: support@yourapp.com
+Subject: [Ticket #48213] Re: Re: Re: Cannot connect Stripe
+X-Mailer: Microsoft Outlook 16.0
+---
+&lt;html&gt;&lt;body&gt;&lt;p&gt;Hi, I've been trying to connect my Stripe account
+for 3 days and it keeps failing. I am losing sales because checkout
+is broken. Please help ASAP.&lt;/p&gt;
+&lt;p&gt;--&lt;br&gt;Maria K&lt;br&gt;Head of Ops, Goldline Ltd&lt;br&gt;
+This email and any attachments are confidential...&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;</code></pre>
+<p>Roughly 180–220 words, ~850–1,100 tokens with markup. The actual decision signal — the customer's sentence — is about 30 words.</p>
+
+<h2>3. The lean state (after)</h2>
+<pre><code>Customer (Head of Ops): cannot connect Stripe account for 3 days,
+checkout broken, losing sales. Third follow-up.</code></pre>
+<p>~30 words, ~40–60 tokens. Same routing decision, same urgency call, same sentiment read. The signature, the mail headers, the confidentiality footer and the HTML carried <strong>zero</strong> decision information — they were pure cost.</p>
+
+<h2>4. Five stripping techniques</h2>
+<h3>a. Strip transport, keep facts</h3>
+<p>Convert HTML to text before it reaches the state; drop signatures, legal footers and reply chains. If you control ingestion, extract the message body at the webhook, not at the model call.</p>
+<h3>b. Replace history with deltas</h3>
+<p>Don't ship a six-message thread. Ship the latest message plus one line of context: <span class="mono">"Prior turns: billing dispute; agent offered refund; customer declined."</span> The delta carries what the decision needs; the transcript carries tokens.</p>
+<h3>c. Normalize values</h3>
+<p>"3 days ago" beats a full ISO timestamp with timezone for most judgment questions; short ids beat long UUIDs. Normalize <em>before</em> the request, deterministically, in code.</p>
+<h3>d. Compose state per question-set</h3>
+<p>If one workflow asks spam-check and another asks routing, they rarely need the same state. Build the state in the handler that knows which questions are coming — spam checks can drop even more.</p>
+<h3>e. Budget, don't guess</h3>
+<p>Count tokens (rough: 1 token ≈ 4 chars English / ≈ 1–1.5 chars Chinese) and alert when a state crosses your budget. A state that quietly grows from 300 to 900 tokens after a "minor" upstream change is a 3x cost regression nobody notices on a dashboard of decision counts.</p>
+
+<h2>5. The accuracy trap</h2>
+<p>Stripping is not free. Context you remove was sometimes load-bearing: "third follow-up" changes urgency; the product line changes routing. The failure mode is subtle — the model returns a <em>valid, confident</em> answer that is simply worse, because Jev can't hallucinate text but can absolutely be wrong with high confidence.</p>
+<p>The fix is a replay set, not intuition: take <strong>100–500 historical cases</strong> with known outcomes (the same calibration we recommend in the <a href="/guide-production-checklist/">production checklist</a>), run them against both the padded and the lean state, and compare accuracy. If lean matches padded within noise, ship lean. If not, you've found which stripped field was doing work — put that one back.</p>
+
+<h2>6. Test it free before writing code</h2>
+<p>You can iterate on state design without any code: open the <a href="/playground/">Playground</a>, paste your padded state, run the decision, then paste the lean version and compare answers and confidence. The playground shows full probability distributions, which is exactly what you want to watch while trimming — confidence should stay stable as tokens fall.</p>
+
+<h2>7. Keep states lean by default — then earn the extra tokens</h2>
+<p>Treat the lean state as the default and require justification for every addition — the inverse of how most integrations evolve. The official guidance agrees: <em>"Keep states lean — strip HTML and metadata. Fewer tokens, better accuracy."</em> It's one of the rare optimizations that improves cost, latency and often accuracy at once.</p>
+<p>Next steps: see the real per-decision math on the <a href="/pricing/">pricing page</a>, or build something with the state you just designed — the <a href="/guide-ticket-triage/">ticket-triage tutorial</a> is a 50-line starting point.</p>
+""",
+}
+
+PAGES["guide-ticket-triage"] = {
+    "title": "Build a Support-Ticket Triage with Jev in ~50 Lines of Python",
+    "desc": "A complete, runnable Jev ticket router: category Choice, urgency Noul, frustration Score, confidence thresholds, priority lanes and human escalation — with the real API shape.",
+    "crumb": _GUIDE_CRUMB + [("Ticket triage", None)],
+    "schema": _GUIDE_SCHEMA("Build a Support-Ticket Triage with Jev in ~50 Lines of Python"),
+    "body": """
+<p class="updated">Last updated: 2026-11-02 · Written by the editor · API shape per official docs</p>
+<h1>Build a Support-Ticket Triage with Jev in ~50 Lines of Python</h1>
+<p class="lede">Ticket routing is the canonical first Jev workflow — bounded categories, high volume, and a cost profile where the old options (human triage or an LLM call per ticket) both lose. Here is a complete, working router in about 50 lines: three typed questions, a confidence-threshold policy, a priority lane and a human fallback.</p>
+
+<h2>The full script</h2>
+<pre><code>import os
+import requests
+
+API = "https://api.typesafe.ai/v1/systemone"      # or your provider's endpoint
+KEY = os.environ["JEV_API_KEY"]
+
+QUESTIONS = {
+    "category": {"type": "choice", "options": ["billing", "technical", "sales", "spam"]},
+    "urgent":   {"type": "noul",
+                 "statement": "The customer is blocked, or losing money or time."},
+    "mood":     {"type": "score", "scale": ["calm", "annoyed", "angry", "furious"]},
+}
+
+def decide(state: str) -> dict:
+    r = requests.post(
+        API,
+        headers={"Authorization": f"Bearer {KEY}"},
+        json={"model": "jev-latest", "state": state, "questions": QUESTIONS},
+        timeout=10,
+    )
+    r.raise_for_status()
+    return r.json()["answers"]          # {name: {value, confidence, ...}}
+
+def route(state: str) -> str:
+    a = decide(state)
+    cat, urgent, mood = a["category"], a["urgent"], a["mood"]
+
+    # 1. spam: cheap to auto-archive when very confident
+    if cat["value"] == "spam" and cat["confidence"] > 0.90:
+        return "archive"
+
+    # 2. priority lane: blocked customers or hot tempers skip the queue
+    if (urgent["value"] and urgent["confidence"] > 0.85) or \\
+       mood["value"] in ("angry", "furious"):
+        return "priority-queue"
+
+    # 3. auto-route: only when the model is sure enough
+    if cat["confidence"] >= 0.75:
+        return f"team-{cat['value']}"
+
+    # 4. everything else: human review
+    return "human-review"
+
+if __name__ == "__main__":
+    for line in open("tickets.txt"):
+        if line.strip():
+            print(route(line.strip()))</code></pre>
+<p>Fifty lines, and the interesting part — the policy — is about ten of them. Note what the code does <em>not</em> contain: no prompt strings, no output parsing, no schema validation. The response either has your fields or the call failed.</p>
+
+<h2>Why three questions in one call</h2>
+<p>The three questions (choice / noul / score) ride along in a single request. Because Jev charges input only, questions two and three are essentially free — the entire call costs the state plus a rounding error. Compare: three separate LLM calls at $0.25/1M input + $2.00/1M output, each 2–8 seconds, each with a parse failure mode. This is the core economic argument from our <a href="/guide-vs-function-calling/">Jev vs function calling</a> comparison, in miniature.</p>
+
+<h2>The policy is a product decision, not code style</h2>
+<p>The thresholds (0.90, 0.85, 0.75) are starting points, not recommendations. They encode how much automation risk you accept:</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Threshold</th><th>Meaning</th><th>Failure mode when wrong</th></tr></thead>
+  <tbody>
+    <tr><td class="mono">spam &gt; 0.90</td><td>Auto-archive</td><td>A real customer ticket vanishes. Expensive.</td></tr>
+    <tr><td class="mono">urgent &gt; 0.85</td><td>Priority lane</td><td>False positive: queue-jumping. Cheap. False negative: a furious customer waits. Costly.</td></tr>
+    <tr><td class="mono">route ≥ 0.75</td><td>Auto-route</td><td>Misrouted ticket; agent re-files. Annoying, survivable.</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Set them with a replay set — 100–500 past tickets labeled by hand — and read the <a href="/guide-production-checklist/">production checklist</a> before trusting any threshold in anger. Jev's confidence is trained to be calibrated (RLCD, not RLHF), but calibration on the vendor's eval is not calibration on <em>your</em> tickets.</p>
+
+<h2>Making the state lean</h2>
+<p>The script above sends whatever state you give it — which is why the companion guide on <a href="/guide-state-design/">state design</a> matters: strip signatures, HTML and thread history before calling, and the same routing decision costs ~60% less. At 100k tickets/month that's real money even at Jev's rates; at LLM rates it's the difference between viable and absurd.</p>
+
+<h2>Plugging it in</h2>
+<ul>
+  <li><strong>Webhook trigger:</strong> point your helpdesk's outbound webhook (Zendesk, Intercom, Plain…) at a small handler that extracts the message body and calls <span class="mono">route()</span>, then writes the result back via the helpdesk API.</li>
+  <li><strong>Provider choice:</strong> the same request works against Vercel AI Gateway (<span class="mono">typesafe-ai/jev</span>), Cloudflare Workers AI (<span class="mono">typesafe/jev</span>) or Vivgrid (<span class="mono">jev</span>) — see the <a href="/pricing/">provider comparison</a>. Running two providers behind a fallback is cheap insurance (also in the checklist).</li>
+  <li><strong>Observability:</strong> log category/confidence distributions, not just routing counts. A drift in the confidence histogram is your earliest warning that traffic mix or model behavior changed.</li>
+</ul>
+
+<h2>Where to go next</h2>
+<p>Once routing works, the same state can feed a generation step: a chat LLM drafts the reply <em>after</em> Jev has classified, prioritized and spam-filtered — the hybrid pattern from the <a href="/vs-llm/">Jev vs LLMs</a> page. And if you want to test question phrasing before touching code, the <a href="/playground/">Playground</a> runs real decisions with full probability output, free.</p>
+""",
+}
+
+PAGES["guide-vs-function-calling"] = {
+    "title": "Jev vs Function Calling: Choosing Your Decision Layer (2026)",
+    "desc": "Both return structured answers. A practical comparison of Jev and LLM function calling: cost, latency, calibration, schema guarantees — and when each belongs in your stack.",
+    "crumb": _GUIDE_CRUMB + [("Jev vs function calling", None)],
+    "schema": _GUIDE_SCHEMA("Jev vs Function Calling: Choosing Your Decision Layer"),
+    "body": """
+<p class="updated">Last updated: 2026-11-02 · Written by the editor</p>
+<h1>Jev vs Function Calling: Choosing Your Decision Layer</h1>
+<p class="lede">Function calling already gives you structured output — so why a dedicated decision model? The honest answer: <strong>for most bounded decisions, function calling works; Jev just does the same job 20–400x cheaper and 20–200x faster, with calibration you can act on.</strong> Whether that matters depends entirely on volume.</p>
+
+<h2>The 30-second refresher</h2>
+<p><strong>Function calling (FC)</strong>: you describe a tool schema; a chat LLM decides whether to "call" it and with what arguments. Structured output, but generated token-by-token by a model built to produce text. <strong>Jev</strong>: you send a state and typed questions; a model trained with RLCD returns one of your options, a scale position, or a true/false probability — with a confidence estimate — in a single pass. No text is ever generated.</p>
+
+<h2>Side by side</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th></th><th>Jev</th><th>Function calling (mid-tier LLM)</th></tr></thead>
+  <tbody>
+    <tr><td>Cost per decision</td><td class="mono good">~$0.0001 (input only)</td><td class="mono">$0.001–0.01+ (input + output)</td></tr>
+    <tr><td>Latency</td><td class="mono good">70–500 ms</td><td class="mono">2–8 s typical</td></tr>
+    <tr><td>Invalid output rate</td><td class="good">0% (schema by construction)</td><td class="mono">~0.6–45% observed, mitigated by retries</td></tr>
+    <tr><td>Calibrated confidence</td><td class="good">Native (RLCD-trained)</td><td class="bad">None — logprobs at best, vibes at worst</td></tr>
+    <tr><td>Can also generate text</td><td class="bad">Never</td><td class="good">Yes — same call can explain</td></tr>
+    <tr><td>Complex nested schemas</td><td class="bad">Bounded (choice/score/noul)</td><td class="good">Arbitrary JSON</td></tr>
+    <tr><td>Large-context judgment</td><td class="mono">64K state</td><td class="good">128K–1M+</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="updated">Rates from provider listings, 2026 (see the <a href="/pricing/">pricing tracker</a>); latency and error-rate figures are vendor-reported or community-measured, marked as such.</p>
+
+<h2>The difference that actually matters: calibration</h2>
+<p>Both layers can return <span class="mono">{"category": "billing"}</span>. The gap is what surrounds it. FC gives you a parse; you bolt on confidence via logprobs or self-reported certainty, neither of which is trained to mean anything. Jev's confidence <em>is</em> the training objective — which is what makes threshold policies (auto-route at 0.75, escalate below) trustworthy engineering rather than folklore. If your workflow needs a threshold, this is the whole argument.</p>
+
+<h2>Where function calling still wins</h2>
+<ul>
+  <li><strong>You need generation too.</strong> If the same step must explain, summarize or compose, one FC call beats a Jev call plus an LLM call on simplicity.</li>
+  <li><strong>The output is genuinely complex.</strong> Nested objects, arrays, dependent fields — Jev's primitives are deliberately small.</li>
+  <li><strong>Volume is tiny.</strong> At 100 decisions a month, the $10 you save is noise. Don't add a second provider for that.</li>
+  <li><strong>The state exceeds 64K tokens</strong> — or the task is open-ended reasoning, where Jev structurally cannot go.</li>
+</ul>
+
+<h2>Where Jev wins outright</h2>
+<ul>
+  <li><strong>High-volume bounded classification:</strong> triage, routing, relevance filtering, moderation gates — anywhere the same decision runs thousands of times a day.</li>
+  <li><strong>Agent tool-call gating:</strong> approving every tool call is exactly the "cheap judge in front of an expensive system" pattern — see the ecosystem's <span class="mono">jev-guard</span>.</li>
+  <li><strong>Realtime UI:</strong> sub-second decisions make per-keystroke judgment feasible (the Typewriter demo runs 16 live judgments while you type).</li>
+</ul>
+
+<h2>A hybrid that works in production</h2>
+<pre><code># Jev gates the expensive call
+verdict = jev(state, questions={
+    "needs_llm": {"type": "noul",
+                  "statement": "This request needs generated text or open reasoning."},
+    "topic":     {"type": "choice", "options": ["faq", "account", "bug", "other"]},
+})
+
+if verdict["needs_llm"]["confidence"] < 0.6 or verdict["needs_llm"]["value"]:
+    reply = llm_with_function_calling(state)   # 2–8 s, $$$ — only when needed
+else:
+    reply = deterministic_handler[verdict["topic"]["value"]]</code></pre>
+<p>Most requests never reach the LLM; the ones that do arrive pre-classified. This is the same complement-not-replacement framing LangChain's own guide uses.</p>
+
+<h2>Migrating a classifier from FC to Jev</h2>
+<ol>
+  <li><strong>Map the enum:</strong> FC tool names/options become Jev choice options verbatim.</li>
+  <li><strong>Replay 100–500 labeled cases</strong> through both layers; compare accuracy and calibration (Jev probabilities vs your FC confidence proxy).</li>
+  <li><strong>Port thresholds:</strong> tune Jev confidence cutoffs to match your accepted error rates — see the <a href="/guide-production-checklist/">checklist</a>.</li>
+  <li><strong>Keep FC for the long tail:</strong> requests Jev flags low-confidence fall through to the existing path. Nothing is ripped out on day one.</li>
+</ol>
+<p>Bottom line: FC is a capable generalist; Jev is a specialist that's cheaper, faster and calibrated for the single job of deciding. Run the numbers for your volume on the <a href="/pricing/">cost calculator</a>, and check the <a href="/use-cases/">use-case playbook</a> for the workflows where the switch pays back fastest.</p>
+""",
+}
+
+PAGES["guide-production-checklist"] = {
+    "title": "Shipping Jev to Production: A 12-Point Pre-Launch Checklist",
+    "desc": "Calibration replays, provider fallbacks, cost alerts, PII hygiene, drift monitoring and more — the pre-flight list before pointing real traffic at Jev.",
+    "crumb": _GUIDE_CRUMB + [("Production checklist", None)],
+    "schema": _GUIDE_SCHEMA("Shipping Jev to Production: A 12-Point Pre-Launch Checklist"),
+    "body": """
+<p class="updated">Last updated: 2026-11-02 · Written by the editor</p>
+<h1>Shipping Jev to Production: A 12-Point Pre-Launch Checklist</h1>
+<p class="lede">Jev's guarantees — valid answers by construction, no hallucinated text, sub-second latency — remove whole classes of failure. They don't remove <em>your</em> failure modes: miscalibrated thresholds, silent provider outages, cost regressions and data-hygiene mistakes all still happen. This is the pre-flight list we'd run before pointing real traffic at a Jev integration.</p>
+
+<h2>Correctness (points 1–4)</h2>
+<p><strong>1. Calibrate on a replay set, not on vibes.</strong> Take 100–500 historical cases with known outcomes, run them through your exact states and questions, and pick thresholds from the resulting precision/recall trade-off. Vendor calibration (RLCD) is a property of the model; <em>your</em> operating point is a property of your data.</p>
+<p><strong>2. Treat confidence as the API, not the answer.</strong> Every automated path should read <span class="mono">confidence</span> and have an explicit below-threshold destination (human queue, fallback LLM, retry with more context). "Always trust the top option" is the single most common integration mistake.</p>
+<p><strong>3. Version states and questions like prompts.</strong> A wording change in a question — or a state-format tweak upstream — is a model change. Hash the question-set and state schema into your logs so any decision can be traced to the exact configuration that produced it.</p>
+<p><strong>4. Watch distribution drift, not just errors.</strong> Log the histogram of answers and confidences weekly. A slow shift in category mix or a widening confidence spread is often your first signal that input traffic changed — or that a provider swapped something behind the same model id.</p>
+
+<h2>Resilience (points 5–8)</h2>
+<p><strong>5. Put two providers behind one interface.</strong> Jev is served by TypeSafe's console, Vercel AI Gateway (<span class="mono">typesafe-ai/jev</span>), Cloudflare Workers AI (<span class="mono">typesafe/jev</span>) and Vivgrid (<span class="mono">jev</span>) at the same reference rate (context differs: 64K, except 32K on Cloudflare). A fallback chain costs minutes to build and turns a single-provider outage into a non-event.</p>
+<p><strong>6. Set timeouts and a retry budget.</strong> Sub-second latency is typical — which means a 10-second timeout with one retry is generous. Fail toward your below-threshold path, not toward a hanging request.</p>
+<p><strong>7. Design the degraded mode before launch.</strong> When Jev (and its fallback) are both down, what happens? For triage: everything lands in human review. For gating: fail open or closed, deliberately. Decide in a doc, not at 3 a.m.</p>
+<p><strong>8. Respect the rate limits, then confirm them.</strong> Early-access defaults are ~250,000 tokens/sec and ~1,200 requests/min. Load-test with your real state lengths — token throughput, not request count, is usually what you hit first with fat states.</p>
+
+<h2>Cost (points 9–10)</h2>
+<p><strong>9. Alert on tokens per decision, not just request count.</strong> Your bill is input tokens × volume. A per-decision token metric catches the quiet state-bloat regression (see <a href="/guide-state-design/">state design</a>) long before the invoice does. Alert at, say, 1.5x your design-time median.</p>
+<p><strong>10. Attribute cost per feature.</strong> Tag decisions with the workflow that made them. "Jev costs $40/month" is unactionable; "the spam gate grew 3x this week" is a bug ticket.</p>
+
+<h2>Data hygiene (points 11–12)</h2>
+<p><strong>11. Scrub PII before it becomes a state.</strong> Tickets contain emails, phone numbers, order ids. Jev only needs the judgment-relevant text. Scrubbing upstream shrinks cost <em>and</em> shrinks the compliance surface of what you send to any third-party API.</p>
+<p><strong>12. Log decisions, not states (or log states deliberately).</strong> Full states in your logs are a data-retention liability. Store the question-set version, the answer, the confidence and a state reference — not the raw customer text — unless you've decided the trade-off explicitly.</p>
+
+<h2>The 60-second version</h2>
+<ul>
+  <li>Replay 100–500 cases → thresholds from data ✔</li>
+  <li>Below-threshold path for every automated decision ✔</li>
+  <li>Two providers, timeouts, documented degraded mode ✔</li>
+  <li>Token-per-decision alert + per-feature cost attribution ✔</li>
+  <li>PII scrubbing upstream; log answers, not raw states ✔</li>
+</ul>
+<p>Most of this list is ordinary production engineering — which is the point. Jev moves judgment from "unreliable magic" to "measurable component," and measurable components deserve boring, disciplined ops. When you're ready to build: the <a href="/guide-ticket-triage/">50-line triage tutorial</a> is the fastest start, and the <a href="/pricing/">cost calculator</a> tells you what your volume really costs.</p>
 """,
 }

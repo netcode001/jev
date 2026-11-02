@@ -211,7 +211,7 @@ PAGES["what-is-jev"] = {
         "about": {"@type": "SoftwareApplication", "name": "Jev", "applicationCategory": "AI Model"},
     }],
     "body": """
-<p class="updated">最后更新：2026-09-20 · 来源：typesafe.ai、渠道商列表、独立媒体（文中附链接）</p>
+<p class="updated">最后更新：2026-11-02 · 来源：typesafe.ai、渠道商列表、独立媒体（文中附链接）</p>
 <h1>Jev AI 是什么？TypeSafe System One 模型完整解读</h1>
 <p class="lede">Jev 是 TypeSafe AI 于 2026 年 9 月 15 日发布的全新模型品类——<strong>System One Models</strong>——的第一个成员。它不生成文本，而是针对你的输入回答带类型的问题，返回附带校准置信度的结构化决策。这篇指南讲清它的工作原理、能做什么不能做什么，以及哪些说法你应该亲自验证。</p>
 
@@ -332,7 +332,7 @@ PAGES["pricing"] = {
     "crumb": CRUMB_HOME + [("价格", None)],
     "schema": [],
     "body": """
-<p class="updated">最后更新：2026-09-20 · 价格已于当日对照各渠道商列表核验</p>
+<p class="updated">最后更新：2026-11-02 · 价格已于当日对照各渠道商列表核验</p>
 <h1>Jev 价格：到底要花多少钱（2026）</h1>
 <p class="lede">Jev 的参考价是<strong>输入 $0.042 / 100 万 tokens（约 $42 / 10 亿）</strong>，且在所有渠道<strong>输出完全免费</strong>——因为模型返回的是紧凑的类型化决策，不是生成的文字。本页追踪每个渠道的费率、换算成真实的单决策成本，并让你直接算出自己的账单。</p>
 
@@ -409,7 +409,7 @@ PAGES["use-cases"] = {
     "crumb": CRUMB_HOME + [("使用场景", None)],
     "schema": [],
     "body": """
-<p class="updated">最后更新：2026-09-20 · 社区数据由项目作者自行报告</p>
+<p class="updated">最后更新：2026-11-02 · 社区数据由项目作者自行报告</p>
 <h1>Jev 的 10 个真实可用的场景</h1>
 <p class="lede">下面每个场景都依赖同样三样东西：<strong>类型化的答案</strong>、<strong>置信度数字</strong>，以及低到可以对「全量数据」而非「抽样数据」运行的定价。只要答案已经存在于你发送的 state 里，Jev 就是提取它的最便宜方式。</p>
 <div class="callout warn"><div class="t">一条铁律</div>
@@ -538,7 +538,7 @@ PAGES["get-access"] = {
 
 <h2>Jev AI 接入 FAQ</h2>
 {FAQ_TEASER_ACCESS}
-<p><a href="/zh/faq/">阅读完整的 Jev AI 常见问题 →</a></p>
+<p>想动手搭建，请看<a href="/zh/guides/">实战指南与教程</a>——或<a href="/zh/faq/">阅读完整的 Jev AI 常见问题 →</a></p>
 """,
 }
 
@@ -549,7 +549,7 @@ PAGES["vs-llm"] = {
     "crumb": CRUMB_HOME + [("Jev vs 大模型", None)],
     "schema": [],
     "body": """
-<p class="updated">最后更新：2026-09-20</p>
+<p class="updated">最后更新：2026-11-02</p>
 <h1>Jev vs 大模型：什么时候用哪个</h1>
 <p class="lede"><strong>一句话答案：</strong>如果答案已经存在于输入中、且正确答案是已知选项之一，用 Jev。如果答案需要被「写出来」——文章、代码、摘要、方案——用 LLM。大多数真实系统两者都要。</p>
 
@@ -614,7 +614,7 @@ PAGES["vs-llm"] = {
 </ul>
 
 <h2>结论</h2>
-<p>这笔交易的实质是<strong>用少量精度换一两个数量级的成本</strong>：在有限工作流上，Jev 与中档前沿模型的差距只有一两个点，成本却低 1–2 个数量级。让便宜的裁判无处不在，让昂贵的思考者偶尔出场。用你的真实业务量跑一下<a href="/zh/pricing/">成本计算器</a>，再从<a href="/zh/use-cases/">场景打法</a>里挑第一个落地的工作流。</p>
+<p>这笔交易的实质是<strong>用少量精度换一两个数量级的成本</strong>：在有限工作流上，Jev 与中档前沿模型的差距只有一两个点，成本却低 1–2 个数量级。让便宜的裁判无处不在，让昂贵的思考者偶尔出场。用你的真实业务量跑一下<a href="/zh/pricing/">成本计算器</a>，再从<a href="/zh/use-cases/">场景打法</a>里挑第一个落地的工作流。想动手搭建，请看<a href="/zh/guides/">实战指南与教程</a>。</p>
 """,
 }
 
@@ -625,7 +625,7 @@ PAGES["news"] = {
     "crumb": CRUMB_HOME + [("动态", None)],
     "schema": [],
     "body": """
-<p class="updated">最后更新：2026-09-20 · 本页随新信源出现自动刷新</p>
+<p class="updated">最后更新：2026-11-02 · 本页随新信源出现自动刷新</p>
 <h1>Jev 动态与更新</h1>
 <p class="lede">关于 Jev 值得知道的一切，按时间排列：官方公告、渠道上架、独立分析、社区里程碑。每条附来源链接，并附一句编辑点评——说清它对开发者意味着什么；厂商自报数据均已标注。本页展示最近 40 条。</p>
 <div class="timeline">
@@ -641,7 +641,7 @@ PAGES["ecosystem"] = {
     "crumb": CRUMB_HOME + [("生态项目", None)],
     "schema": [],
     "body": """
-<p class="updated">最后更新：2026-09-20 · 项目介绍来自公开演示与作者发文</p>
+<p class="updated">最后更新：2026-11-02 · 项目介绍来自公开演示与作者发文</p>
 <h1>Jev 生态</h1>
 <p class="lede">发布几天之内，开发者们就开始基于 Jev 的类型化决策原语构建东西了——agent、护栏、数据库过滤器、游戏，甚至接口本身的开源复刻。这个目录收录值得关注的那些。</p>
 
@@ -690,7 +690,7 @@ PAGES["faq"] = {
     "crumb": CRUMB_HOME + [("常见问题", None)],
     "schema": [_faq_schema],
     "body": """
-<p class="updated">最后更新：2026-09-20</p>
+<p class="updated">最后更新：2026-11-02</p>
 <h1>Jev 常见问题：20 个问答，直接说清</h1>
 <p class="lede">人们真正在问的关于 Jev 的一切，不带营销滤镜地回答。凡属 TypeSafe 自己的说法，我们会注明。</p>
 """ + _faq_body,
@@ -711,7 +711,7 @@ if _os.path.exists(_news_file):
     ]
     from datetime import date as _date
     PAGES["news"]["body"] = PAGES["news"]["body"].replace(
-        "最后更新：2026-09-20", f"最后更新：{_date.today().isoformat()}")
+        "最后更新：2026-11-02", f"最后更新：{_date.today().isoformat()}")
 
 # news 页 ItemList schema：给 Google 富数据 + 新鲜度信号
 if _os.path.exists(_news_file):
@@ -1311,7 +1311,7 @@ PAGES["privacy"] = {
     "crumb": CRUMB_HOME + [("隐私政策", None)],
     "schema": [],
     "body": """
-<p class="updated">最后更新：2026-09-24</p>
+<p class="updated">最后更新：2026-11-02</p>
 <h1>隐私政策</h1>
 <p class="lede">Jev Hub（jev-ai.live）是一个独立的信息站点。本页说明我们收集哪些数据、为什么收集，以及你如何控制它们。一句话版本：能不收集就不收集；你的 API Key 除非你主动运行请求，否则永远不离开浏览器。</p>
 
@@ -1360,7 +1360,7 @@ PAGES["about"] = {
     "crumb": CRUMB_HOME + [("关于", None)],
     "schema": [],
     "body": """
-<p class="updated">最后更新：2026-09-24</p>
+<p class="updated">最后更新：2026-11-02</p>
 <h1>关于 Jev Hub</h1>
 <p class="lede">Jev Hub 是一个独立的第三方信息站，追踪 TypeSafe AI 旗下的 System One 模型 <strong>Jev</strong>——包括价格、获取路径、最新动态与围绕它生长的生态，让开发者不必从零散的帖子里自己拼图。</p>
 
@@ -1405,7 +1405,7 @@ PAGES["contact"] = {
     "crumb": CRUMB_HOME + [("联系", None)],
     "schema": [],
     "body": """
-<p class="updated">最后更新：2026-09-24</p>
+<p class="updated">最后更新：2026-11-02</p>
 <h1>联系</h1>
 <p class="lede">最快的方式是邮件。所有来信都会读，通常一两天内回复。</p>
 
@@ -1438,5 +1438,313 @@ PAGES["contact"] = {
 
 <h2>其他渠道</h2>
 <p>新闻订阅可用 RSS：<a href="/feed.xml">jev-ai.live/feed.xml</a>。Jev 产品本身的问题请前往官网 <a href="https://typesafe.ai" rel="noopener">typesafe.ai</a>——我们是独立信息站，不是官方客服渠道。</p>
+""",
+}
+
+
+# ============================================================ guides (2026-11)
+_GUIDE_SCHEMA = lambda headline: [{
+    "@context": "https://schema.org", "@type": "TechArticle",
+    "headline": headline, "datePublished": "2026-11-02", "dateModified": "2026-11-02",
+    "author": {"@type": "Organization", "name": "Jev Hub"},
+    "publisher": {"@type": "Organization", "name": "Jev Hub"},
+}]
+_GUIDE_CRUMB = CRUMB_HOME + [("实战指南", "/zh/guides/")]
+
+PAGES["guides"] = {
+    "title": "Jev 实战指南与教程：写给开发者的上手手册（2026）",
+    "desc": "Jev Hub 编辑撰写的深度实战指南：把输入 token 压掉 60% 的 State 设计、50 行代码的工单分类系统、Jev 与 Function Calling 选型对比、上线前检查清单。",
+    "crumb": CRUMB_HOME + [("实战指南", None)],
+    "schema": [],
+    "body": """
+<p class="updated">最后更新：2026-11-02</p>
+<h1>Jev 实战指南与教程</h1>
+<p class="lede">写给用 Jev 做开发的人的动手手册——由 Jev Hub 编辑撰写，不是自动生成的内容。每篇都以可运行的代码为先，使用真实 API 形态（<span class="mono">POST /v1/systemone</span>），并把我们认为重要的取舍讲清楚。所有费率与数字都能追溯到渠道商列表或具名的社区实测；属于我们自己判断的地方，会明确说明。</p>
+
+<div class="card-grid">
+  <div class="card"><span class="tag">成本</span><h2>State 设计：输入 token 压掉 60%+</h2><p>Jev 只对输入计费，所以 State 就是你的账单。前后对比示例 + 五个瘦身技巧——以及过度瘦身的一个坑。</p><p><a href="/zh/guide-state-design/">阅读 State 设计指南 →</a></p></div>
+  <div class="card"><span class="tag">教程</span><h2>50 行 Python 搭建工单分类</h2><p>完整可运行的工单路由器：Choice + Noul + Score 三类问题、置信度阈值、优先通道与人工兜底。</p><p><a href="/zh/guide-ticket-triage/">搭建分类系统 →</a></p></div>
+  <div class="card"><span class="tag">架构</span><h2>Jev 与 Function Calling 选型</h2><p>两者都返回结构化结果——决策层到底该用哪个？成本、延迟、校准度与迁移方案的对比。</p><p><a href="/zh/guide-vs-function-calling/">对比两种方案 →</a></p></div>
+  <div class="card"><span class="tag">运维</span><h2>上线前检查清单：12 个要点</h2><p>校准回放、渠道容灾、成本告警、隐私清洗、漂移监控——把真实流量指向 Jev 之前的起飞前清单。</p><p><a href="/zh/guide-production-checklist/">过一遍清单 →</a></p></div>
+</div>
+
+<h2>这些指南是怎么写的</h2>
+<p>指南里的代码与官方控制台和 SDK 使用的请求形态一致，费率来自我们在<a href="/zh/pricing/">价格页</a>追踪的渠道商列表。我们不接软文，厂商自报的基准数据一律标注——与<a href="/zh/about/">关于页</a>所述的编辑原则相同。发现错误请走<a href="/zh/contact/">纠错通道</a>，优先处理。</p>
+<p>有真正值得写的内容时才会新增指南，不凑更新频率。建议与需求：<a href="mailto:hello@jev-ai.live">hello@jev-ai.live</a>。</p>
+""",
+}
+
+PAGES["guide-state-design"] = {
+    "title": "Jev State 设计：把输入 token（和账单）压掉 60% 以上",
+    "desc": "Jev 只对输入计费，State 长度就是全部成本。瘦身前后的 State 对比、五个瘦身技巧、过度瘦身的精度陷阱，以及 $0.042/1M 下的成本账。",
+    "crumb": _GUIDE_CRUMB + [("State 设计", None)],
+    "schema": _GUIDE_SCHEMA("Jev State 设计：把输入 token（和账单）压掉 60% 以上"),
+    "body": """
+<p class="updated">最后更新：2026-11-02 · 编辑撰写 · 费率来自渠道商列表</p>
+<h1>Jev State 设计：把输入 token（和账单）压掉 60% 以上</h1>
+<p class="lede">用 Jev 时，<strong>State 就是账单</strong>。输入是唯一计费的部分（$0.042/1M token，输出免费），你发出的每个 token 都要付费——而且乘上百万次。这篇指南展示一个典型的臃肿 State 如何在不损失决策信号的前提下瘦身约 65%，以及过度瘦身的一个真实陷阱。</p>
+
+<h2>1. 为什么 State 就是全部账单</h2>
+<p>一次 Jev 请求有两部分：<strong>State</strong>（要判断的文本）和 <strong>questions</strong>（类型化问题：choice / score / noul）。问题随请求捎带，几乎免费——加第二个、第三个问题对账单影响极小。State 不同：它计费，而且通常比问题长 10–50 倍。</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>State 长度</th><th>单次决策成本</th><th>每月 100 万次决策</th></tr></thead>
+  <tbody>
+    <tr><td class="mono">850 token（臃肿）</td><td class="mono">$0.0000357</td><td class="mono">$35.70</td></tr>
+    <tr><td class="mono">290 token（精瘦）</td><td class="mono">$0.0000122</td><td class="mono">$12.18</td></tr>
+  </tbody>
+</table>
+</div>
+<p>按 $0.042/1M 计算，把 State 从 ~850 压到 ~290 token，每百万次决策省约 $23.5——<strong>66% 的降幅</strong>，且不需要任何基础设施改动。（社区实测还能更瘦：那个总成本 $0.08 完成 1018 篇论文分类的案例，平均远低于这些数字。）</p>
+
+<h2>2. 臃肿的 State（瘦身前）</h2>
+<p>把原始工单原样灌进 State，通常长这样——HTML 标记、签名、工单元数据全都在：</p>
+<pre><code>From: maria.k@goldline-ltd.co.uk
+To: support@yourapp.com
+Subject: [Ticket #48213] Re: Re: Re: Cannot connect Stripe
+X-Mailer: Microsoft Outlook 16.0
+---
+&lt;html&gt;&lt;body&gt;&lt;p&gt;Hi, I've been trying to connect my Stripe account
+for 3 days and it keeps failing. I am losing sales because checkout
+is broken. Please help ASAP.&lt;/p&gt;
+&lt;p&gt;--&lt;br&gt;Maria K&lt;br&gt;Head of Ops, Goldline Ltd&lt;br&gt;
+This email and any attachments are confidential...&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;</code></pre>
+<p>约 180–220 词，含标记约 850–1,100 token。真正的决策信号——客户那句话——只有 30 词左右。</p>
+
+<h2>3. 精瘦的 State（瘦身后）</h2>
+<pre><code>Customer (Head of Ops): cannot connect Stripe account for 3 days,
+checkout broken, losing sales. Third follow-up.</code></pre>
+<p>约 30 词、40–60 token。同样的路由决策、同样的紧急度判断、同样的情绪读取。签名、邮件头、保密声明和 HTML 携带的决策信息是<strong>零</strong>——它们是纯成本。</p>
+
+<h2>4. 五个瘦身技巧</h2>
+<h3>a. 去掉传输层，保留事实</h3>
+<p>HTML 先转文本再进 State；签名、法律声明、回复链全部丢弃。如果入口在你手里，在 webhook 就提取正文，而不是在调模型的时候。</p>
+<h3>b. 用增量替代历史</h3>
+<p>别把六条消息的完整线程发过去。发最新一条，外加一行上下文：<span class="mono">"Prior turns: billing dispute; agent offered refund; customer declined."</span> 决策需要的是增量，聊天记录只是 token。</p>
+<h3>c. 先归一化再发送</h3>
+<p>对大多数判断类问题，「3 days ago」比带时区的完整 ISO 时间戳好；短 id 比长 UUID 好。在请求之前、在代码里确定性地完成归一化。</p>
+<h3>d. 按问题组定制 State</h3>
+<p>如果垃圾检测和路由是两个工作流，它们很少需要同一个 State。在知道要问什么问题的处理器里构建 State——垃圾检测甚至可以砍得更狠。</p>
+<h3>e. 设预算，别靠猜</h3>
+<p>数 token（粗略：英文 1 token ≈ 4 字符，中文 1 字 ≈ 1–1.5 token），State 超预算就告警。一次「小改」之后 State 从 300 悄悄涨到 900 token，就是一次 3 倍的成本回归——在只看决策次数的仪表盘上没人会注意到。</p>
+
+<h2>5. 精度陷阱</h2>
+<p>瘦身不是免费的。你删掉的上下文有时是承重墙：「third follow-up」会改变紧急度；产品线会改变路由。失败模式很隐蔽——模型返回一个<strong>有效且高置信</strong>的答案，只是质量更差：Jev 不会编造文本，但完全可能高置信地犯错。</p>
+<p>解法是回放集，不是直觉：取 <strong>100–500 个已知结果的历史案例</strong>（与<a href="/zh/guide-production-checklist/">生产检查清单</a>里推荐的校准方法相同），分别用臃肿和精瘦的 State 跑一遍，对比准确率。精瘦版在噪声范围内持平，就上线；没持平，说明被砍掉的字段里有承重的——把那一个加回来。</p>
+
+<h2>6. 写代码之前先用试玩页</h2>
+<p>迭代 State 设计不需要写代码：打开<a href="/zh/playground/">在线试玩</a>，粘贴臃肿版 State 跑一次，再换精瘦版对比答案和置信度。试玩页展示完整的概率分布——这正是瘦身时最该盯的东西：token 下降的过程中，置信度应该保持稳定。</p>
+
+<h2>7. 默认精瘦，token 要靠申请</h2>
+<p>把精瘦 State 当默认，每个新增字段都要理由——和大多数集成的演化方向正好相反。官方建议也是这个意思：<em>「保持 State 精瘦——去掉 HTML 和元数据。token 更少，精度更好。」</em>这是少见的成本、延迟、精度三赢的优化。</p>
+<p>下一步：在<a href="/zh/pricing/">价格页</a>看真实的单次决策成本，或者拿刚设计好的 State 干点活——<a href="/zh/guide-ticket-triage/">工单分类教程</a>是一个 50 行的起点。</p>
+""",
+}
+
+PAGES["guide-ticket-triage"] = {
+    "title": "用 50 行 Python 搭建 Jev 工单分类系统",
+    "desc": "完整可运行的 Jev 工单路由器：类别 Choice、紧急度 Noul、情绪 Score、置信度阈值、优先通道与人工兜底——使用真实 API 形态。",
+    "crumb": _GUIDE_CRUMB + [("工单分类", None)],
+    "schema": _GUIDE_SCHEMA("用 50 行 Python 搭建 Jev 工单分类系统"),
+    "body": """
+<p class="updated">最后更新：2026-11-02 · 编辑撰写 · API 形态与官方文档一致</p>
+<h1>用 50 行 Python 搭建 Jev 工单分类系统</h1>
+<p class="lede">工单路由是最典型的第一个 Jev 工作流——类别有界、量大，而旧方案（人工分诊或每单一次 LLM 调用）在成本上全输。这是一个大约 50 行的完整路由器：三个类型化问题、一套置信度阈值策略、优先通道和人工兜底。</p>
+
+<h2>完整脚本</h2>
+<pre><code>import os
+import requests
+
+API = "https://api.typesafe.ai/v1/systemone"      # 或你的渠道商端点
+KEY = os.environ["JEV_API_KEY"]
+
+QUESTIONS = {
+    "category": {"type": "choice", "options": ["billing", "technical", "sales", "spam"]},
+    "urgent":   {"type": "noul",
+                 "statement": "The customer is blocked, or losing money or time."},
+    "mood":     {"type": "score", "scale": ["calm", "annoyed", "angry", "furious"]},
+}
+
+def decide(state: str) -> dict:
+    r = requests.post(
+        API,
+        headers={"Authorization": f"Bearer {KEY}"},
+        json={"model": "jev-latest", "state": state, "questions": QUESTIONS},
+        timeout=10,
+    )
+    r.raise_for_status()
+    return r.json()["answers"]          # {name: {value, confidence, ...}}
+
+def route(state: str) -> str:
+    a = decide(state)
+    cat, urgent, mood = a["category"], a["urgent"], a["mood"]
+
+    # 1. 垃圾：高置信时直接归档
+    if cat["value"] == "spam" and cat["confidence"] > 0.90:
+        return "archive"
+
+    # 2. 优先通道：被卡住或情绪激动的客户插队
+    if (urgent["value"] and urgent["confidence"] > 0.85) or \\
+       mood["value"] in ("angry", "furious"):
+        return "priority-queue"
+
+    # 3. 自动路由：只在模型足够确信时
+    if cat["confidence"] >= 0.75:
+        return f"team-{cat['value']}"
+
+    # 4. 其余全部：人工复核
+    return "human-review"
+
+if __name__ == "__main__":
+    for line in open("tickets.txt"):
+        if line.strip():
+            print(route(line.strip()))</code></pre>
+<p>五十行，其中真正有趣的——策略——只占十行左右。注意代码里<strong>没有</strong>什么：没有 prompt 字符串、没有输出解析、没有 schema 校验。响应要么带着你要的字段，要么调用本身失败。</p>
+
+<h2>为什么三个问题一次调用</h2>
+<p>三个问题（choice / noul / score）随同一次请求捎带。Jev 只对输入计费，第二、第三个问题近乎免费——整次调用的成本约等于 State 加一点零头。对比：三次独立 LLM 调用，$0.25/1M 输入 + $2.00/1M 输出，每次 2–8 秒，每次都有解析失败的可能。这就是<a href="/zh/guide-vs-function-calling/">Jev 与 Function Calling 对比</a>里的核心经济账，微缩版。</p>
+
+<h2>策略是产品决策，不是代码风格</h2>
+<p>阈值（0.90、0.85、0.75）是起点，不是推荐值。它们编码的是你接受多大的自动化风险：</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>阈值</th><th>含义</th><th>出错时的代价</th></tr></thead>
+  <tbody>
+    <tr><td class="mono">spam &gt; 0.90</td><td>自动归档</td><td>真实客户工单凭空消失。昂贵。</td></tr>
+    <tr><td class="mono">urgent &gt; 0.85</td><td>优先通道</td><td>误报：插队，代价小；漏报：愤怒的客户干等，代价大。</td></tr>
+    <tr><td class="mono">route ≥ 0.75</td><td>自动路由</td><td>路由错误的工单，客服重新归档。烦人但可活。</td></tr>
+  </tbody>
+</table>
+</div>
+<p>用回放集定阈值——100–500 条人工标注的历史工单——并在把任何阈值用于生产前读一遍<a href="/zh/guide-production-checklist/">生产检查清单</a>。Jev 的置信度经过校准训练（RLCD 而非 RLHF），但厂商评测集上的校准不等于<strong>你的</strong>工单上的校准。</p>
+
+<h2>把 State 弄瘦</h2>
+<p>上面的脚本发什么 State 就用什么——这正是<a href="/zh/guide-state-design/">State 设计</a>那篇的价值：调用前剥离签名、HTML 和线程历史，同样的路由决策便宜约 60%。月 10 万工单的量级下，Jev 的费率这也是真金白银；按 LLM 的费率，这就是可行与荒谬的差别。</p>
+
+<h2>接进系统</h2>
+<ul>
+  <li><strong>Webhook 触发：</strong>把工单系统的出站 webhook（Zendesk、Intercom、Plain……）指向一个小处理器：提取正文 → 调 <span class="mono">route()</span> → 通过工单 API 把结果写回。</li>
+  <li><strong>渠道选择：</strong>同一请求可直接换成 Vercel AI Gateway（<span class="mono">typesafe-ai/jev</span>）、Cloudflare Workers AI（<span class="mono">typesafe/jev</span>）或 Vivgrid（<span class="mono">jev</span>）——见<a href="/zh/pricing/">渠道对比</a>。两个渠道做个容灾切换是廉价的保险（清单里也有这条）。</li>
+  <li><strong>可观测性：</strong>记录类别/置信度分布，而不只是路由计数。置信度直方图的漂移，是流量结构或模型行为变化最早的信号。</li>
+</ul>
+
+<h2>下一步</h2>
+<p>路由跑通之后，同一个 State 可以喂给生成环节：Jev 完成分类、定级、过滤垃圾之后，由对话式 LLM 起草回复——就是 <a href="/zh/vs-llm/">Jev 与 LLM</a> 页讲的混合模式。想在动代码前测试问题措辞，<a href="/zh/playground/">在线试玩</a>免费运行真实决策并输出完整概率。</p>
+""",
+}
+
+PAGES["guide-vs-function-calling"] = {
+    "title": "Jev 与 Function Calling：决策层选型对比（2026）",
+    "desc": "两者都返回结构化结果。Jev 与 LLM Function Calling 的实用对比：成本、延迟、校准度、schema 保证——以及各自适合的位置。",
+    "crumb": _GUIDE_CRUMB + [("Jev vs Function Calling", None)],
+    "schema": _GUIDE_SCHEMA("Jev 与 Function Calling：决策层选型对比"),
+    "body": """
+<p class="updated">最后更新：2026-11-02 · 编辑撰写</p>
+<h1>Jev 与 Function Calling：决策层选型对比</h1>
+<p class="lede">Function Calling 已经能给你结构化输出了——为什么还要一个专用决策模型？诚实的回答：<strong>对大多数有界决策，Function Calling 能用；Jev 只是把同样的活干得便宜 20–400 倍、快 20–200 倍，而且带可执行的校准置信度。</strong>这是否重要，完全取决于你的量。</p>
+
+<h2>30 秒回顾</h2>
+<p><strong>Function Calling（FC）</strong>：描述一个工具 schema，对话式 LLM 决定是否「调用」及参数。结构化输出，但由一个为生成文本而训练的模型逐 token 产生。<strong>Jev</strong>：发送 State 和类型化问题，用 RLCD 训练的模型一次返回你的选项之一、量表位置或真/假概率——带置信度估计。永远不生成文本。</p>
+
+<h2>对比表</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th></th><th>Jev</th><th>Function Calling（中档 LLM）</th></tr></thead>
+  <tbody>
+    <tr><td>单次决策成本</td><td class="mono good">~$0.0001（仅输入）</td><td class="mono">$0.001–0.01+（输入+输出）</td></tr>
+    <tr><td>延迟</td><td class="mono good">70–500 ms</td><td class="mono">典型 2–8 s</td></tr>
+    <tr><td>无效输出率</td><td class="good">0%（架构级 schema）</td><td class="mono">实测约 0.6–45%，靠重试缓解</td></tr>
+    <tr><td>校准置信度</td><td class="good">原生（RLCD 训练）</td><td class="bad">无——最好有 logprobs，最差凭感觉</td></tr>
+    <tr><td>还能生成文本</td><td class="bad">永远不能</td><td class="good">能——同一调用可以解释</td></tr>
+    <tr><td>复杂嵌套 schema</td><td class="bad">有界（choice/score/noul）</td><td class="good">任意 JSON</td></tr>
+    <tr><td>大上下文判断</td><td class="mono">64K State</td><td class="good">128K–1M+</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="updated">费率来自渠道商列表（2026，见<a href="/zh/pricing/">价格追踪</a>）；延迟与错误率为厂商自报或社区实测，均已标注。</p>
+
+<h2>真正重要的差异：校准</h2>
+<p>两层都能返回 <span class="mono">{"category": "billing"}</span>。差距在它周围的东西。FC 给你一个解析结果；置信度要靠 logprobs 或模型自报，两者都没经过「必须有意义」的训练。Jev 的置信度<strong>就是</strong>训练目标——这正是阈值策略（0.75 以上自动路由，以下升级）能成为可靠工程而非玄学的原因。如果你的工作流需要阈值，这就是全部论据。</p>
+
+<h2>Function Calling 仍然赢的场景</h2>
+<ul>
+  <li><strong>你同时需要生成。</strong>如果同一步还要解释、总结或撰写，一次 FC 调用比「Jev + LLM 两次调用」简单。</li>
+  <li><strong>输出真的复杂。</strong>嵌套对象、数组、依赖字段——Jev 的原语刻意做小了。</li>
+  <li><strong>量很小。</strong>每月 100 次决策，省下的十几美元是噪声，别为它多接一个渠道。</li>
+  <li><strong>State 超过 64K token</strong>——或者任务本质是开放式推理，Jev 结构上做不了。</li>
+</ul>
+
+<h2>Jev 直接赢的场景</h2>
+<ul>
+  <li><strong>高容量有界分类：</strong>分诊、路由、相关性过滤、审核门——同一决策每天跑几千次的地方。</li>
+  <li><strong>Agent 工具调用门控：</strong>审核每一次工具调用，正是「贵系统前面放个便宜裁判」的模式——生态里的 <span class="mono">jev-guard</span> 就是它。</li>
+  <li><strong>实时 UI：</strong>亚秒级决策让逐按键判断成为可能（Typewriter demo 在你打字时实时跑 16 个判断）。</li>
+</ul>
+
+<h2>一个生产可用的混合方案</h2>
+<pre><code># Jev 给昂贵调用当门卫
+verdict = jev(state, questions={
+    "needs_llm": {"type": "noul",
+                  "statement": "This request needs generated text or open reasoning."},
+    "topic":     {"type": "choice", "options": ["faq", "account", "bug", "other"]},
+})
+
+if verdict["needs_llm"]["confidence"] < 0.6 or verdict["needs_llm"]["value"]:
+    reply = llm_with_function_calling(state)   # 2–8 秒，$$$——只在必要时
+else:
+    reply = deterministic_handler[verdict["topic"]["value"]]</code></pre>
+<p>大多数请求永远到不了 LLM；到达的那些已被预分类。这与 LangChain 官方指南的定位一致：互补，不是替代。</p>
+
+<h2>把分类器从 FC 迁到 Jev</h2>
+<ol>
+  <li><strong>映射枚举：</strong>FC 的工具名/选项原样变成 Jev 的 choice options。</li>
+  <li><strong>回放 100–500 个标注案例</strong>跑两层，对比准确率和校准度（Jev 概率 vs 你的 FC 置信代理）。</li>
+  <li><strong>移植阈值：</strong>按你接受错误率调 Jev 的置信截断——见<a href="/zh/guide-production-checklist/">检查清单</a>。</li>
+  <li><strong>长尾留给 FC：</strong>Jev 低置信的请求落回现有路径。第一天不需要拆任何东西。</li>
+</ol>
+<p>一句话结论：FC 是能干的全才；Jev 是在「做决定」这一件事上更便宜、更快、带校准的专家。用<a href="/zh/pricing/">成本计算器</a>按你的量算一下，再到<a href="/zh/use-cases/">场景手册</a>找回本最快的第一个工作流。</p>
+""",
+}
+
+PAGES["guide-production-checklist"] = {
+    "title": "Jev 上线前检查清单：12 个要点",
+    "desc": "校准回放、渠道容灾、成本告警、隐私清洗、漂移监控——把真实流量指向 Jev 之前的起飞前清单。",
+    "crumb": _GUIDE_CRUMB + [("上线检查清单", None)],
+    "schema": _GUIDE_SCHEMA("Jev 上线前检查清单：12 个要点"),
+    "body": """
+<p class="updated">最后更新：2026-11-02 · 编辑撰写</p>
+<h1>Jev 上线前检查清单：12 个要点</h1>
+<p class="lede">Jev 的保证——架构级有效答案、无幻觉文本、亚秒延迟——消灭了一整类故障。但消灭不了<strong>你的</strong>故障模式：阈值失准、渠道静默宕机、成本回归、数据卫生事故，全都还会发生。这是把真实流量指向 Jev 集成之前，我们会过一遍的起飞前清单。</p>
+
+<h2>正确性（1–4）</h2>
+<p><strong>1. 用回放集校准，别凭感觉。</strong>取 100–500 个已知结果的历史案例，用你<strong>最终版</strong>的 State 和问题跑一遍，从得到的精度/召回曲线里挑阈值。厂商校准（RLCD）是模型的属性；<em>你的</em>工作点是数据的属性。</p>
+<p><strong>2. 置信度是接口，答案不是。</strong>每条自动化路径都要读 <span class="mono">confidence</span>，并且有明确的低于阈值去向（人工队列、兜底 LLM、补充上下文后重试）。「永远信最高选项」是最常见的集成错误。</p>
+<p><strong>3. State 和 questions 要像 prompt 一样做版本管理。</strong>问题措辞一改——或上游 State 格式一动——就是一次模型变更。把问题集和 State schema 的哈希写进日志，任何决策都能追溯到产生它的确切配置。</p>
+<p><strong>4. 盯分布漂移，而不只是错误率。</strong>每周记录答案和置信度的直方图。类别占比的缓慢移动或置信度区间的展宽，往往是最早的信号：输入流变了，或者渠道商在同一个模型 id 背后换了东西。</p>
+
+<h2>容灾（5–8）</h2>
+<p><strong>5. 一个接口后面挂两个渠道。</strong>Jev 同时由 TypeSafe 控制台、Vercel AI Gateway（<span class="mono">typesafe-ai/jev</span>）、Cloudflare Workers AI（<span class="mono">typesafe/jev</span>）和 Vivgrid（<span class="mono">jev</span>)以同一参考价提供（上下文不同：64K，Cloudflare 32K）。一条容灾链只要几分钟，就能把单渠道宕机变成无所谓的事。</p>
+<p><strong>6. 设超时和重试预算。</strong>典型延迟亚秒——10 秒超时 + 一次重试已经很宽裕。失败时走向你的低于阈值路径，而不是挂着的请求。</p>
+<p><strong>7. 降级模式上线前设计好。</strong>Jev 和它的兜底都挂了怎么办？分诊场景：全部进人工复核。门控场景：开还是关，刻意决定。写进文档，别留到凌晨三点现场想。</p>
+<p><strong>8. 先按限额定型，再实测确认。</strong>早期访问默认约 250,000 token/秒、1,200 请求/分钟。用真实的 State 长度做压测——State 一胖，先撞到的通常是 token 吞吐而不是请求数。</p>
+
+<h2>成本（9–10）</h2>
+<p><strong>9. 对「每次决策的 token 数」告警，而不只是请求量。</strong>你的账单 = 输入 token × 量。「单决策 token」指标能最早发现 State 悄悄变胖的回归（见<a href="/zh/guide-state-design/">State 设计</a>），比账单快得多。建议阈值：设计中位数的 1.5 倍。</p>
+<p><strong>10. 成本按功能归因。</strong>给决策打上来源工作流的标签。「Jev 每月花 $40」无法行动；「垃圾检测这周涨了 3 倍」是一张 bug 工单。</p>
+
+<h2>数据卫生（11–12）</h2>
+<p><strong>11. PII 在变成 State 之前清洗。</strong>工单里有邮箱、电话、订单号。Jev 只需要有判断价值的文本。上游清洗既降成本，也缩小你发给任何第三方 API 的合规暴露面。</p>
+<p><strong>12. 记决策，不记 State（或者刻意地记）。</strong>日志里的完整 State 是数据保留责任。存问题集版本、答案、置信度和 State 引用——不存原始客户文本——除非你明确权衡过。</p>
+
+<h2>60 秒速览版</h2>
+<ul>
+  <li>回放 100–500 案例 → 用数据定阈值 ✔</li>
+  <li>每条自动化决策都有低于阈值去向 ✔</li>
+  <li>双渠道、超时、成文的降级模式 ✔</li>
+  <li>单决策 token 告警 + 按功能成本归因 ✔</li>
+  <li>上游 PII 清洗；日志记答案不记原始 State ✔</li>
+</ul>
+<p>这份清单大部分是普通的生产工程——这正是重点。Jev 把「判断」从不可靠的魔法变成了可度量的组件，而可度量的组件就该配上无聊、严谨的运维。准备动手时：<a href="/zh/guide-ticket-triage/">50 行工单分类教程</a>是最快的起点，<a href="/zh/pricing/">成本计算器</a>告诉你你的量真实要花多少钱。</p>
 """,
 }

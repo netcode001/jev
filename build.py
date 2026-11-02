@@ -55,7 +55,7 @@ LOCALES = {
                          "model by TypeSafe AI. We track pricing, benchmarks, access paths, ecosystem "
                          "projects and news — updated automatically."),
         "footer_cols": [
-            ("Learn", [("What is Jev", "/what-is-jev/"), ("Jev vs LLMs", "/vs-llm/"), ("Use Cases", "/use-cases/"), ("FAQ", "/faq/")]),
+            ("Learn", [("Guides & Tutorials", "/guides/"), ("What is Jev", "/what-is-jev/"), ("Jev vs LLMs", "/vs-llm/"), ("Use Cases", "/use-cases/"), ("FAQ", "/faq/")]),
             ("Data", [("Pricing", "/pricing/"), ("News", "/news/"), ("Ecosystem", "/ecosystem/")]),
             ("Access", [("Get Access", "/get-access/"), ("Playground", "/playground/"), ("TypeSafe AI (official)", "https://typesafe.ai")]),
             ("Site", [("About", "/about/"), ("Contact", "/contact/"), ("Privacy Policy", "/privacy/"), ("Sitemap", "/sitemap.xml")]),
@@ -78,7 +78,7 @@ LOCALES = {
         "footer_about": ("Jev Hub 是关于 TypeSafe AI 旗下 System One 模型 Jev 的独立第三方信息站，"
                          "自动追踪价格、评测数据、获取路径、生态项目与最新动态。"),
         "footer_cols": [
-            ("了解", [("Jev 是什么", "/zh/what-is-jev/"), ("Jev vs 大模型", "/zh/vs-llm/"), ("使用场景", "/zh/use-cases/"), ("常见问题", "/zh/faq/")]),
+            ("了解", [("实战指南", "/zh/guides/"), ("Jev 是什么", "/zh/what-is-jev/"), ("Jev vs 大模型", "/zh/vs-llm/"), ("使用场景", "/zh/use-cases/"), ("常见问题", "/zh/faq/")]),
             ("数据", [("价格对比", "/zh/pricing/"), ("最新动态", "/zh/news/"), ("生态项目", "/zh/ecosystem/")]),
             ("接入", [("获取方式", "/zh/get-access/"), ("在线试玩", "/zh/playground/"), ("TypeSafe AI 官网", "https://typesafe.ai")]),
             ("站点", [("关于", "/zh/about/"), ("联系", "/zh/contact/"), ("隐私政策", "/zh/privacy/"), ("站点地图", "/sitemap.xml")]),
@@ -203,7 +203,7 @@ def render_page(lang, slug, page, all_pages):
       {cols}
     </div>
     <p class="disclaimer">{loc['disclaimer']}</p>
-    <p class="mono" style="margin-top:14px">© 2026 Jev Hub · Data last updated 2026-09-20 · <a href="/sitemap.xml">Sitemap</a></p>
+    <p class="mono" style="margin-top:14px">© 2026 Jev Hub · Data last updated {TODAY} · <a href="/sitemap.xml">Sitemap</a></p>
   </div>
 </footer>
 </body>
