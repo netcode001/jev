@@ -17,8 +17,14 @@ scores, or probabilities with confidence estimates. It never generates text.
   (self-reported figures marked) → https://jev-ai.live/pricing/
 - **Jev vs LLMs** — decision table: when a typed-decision model beats a
   chat model (and when it doesn't) → https://jev-ai.live/vs-llm/
+- **Hands-on Guides** — deep, code-first tutorials written by the editor:
+  - [State design: cut input tokens 60%+](https://jev-ai.live/guide-state-design/)
+  - [Ticket triage in ~50 lines of Python](https://jev-ai.live/guide-ticket-triage/)
+  - [Jev vs function calling](https://jev-ai.live/guide-vs-function-calling/)
+  - [Production checklist: 12 points before launch](https://jev-ai.live/guide-production-checklist/)
+  → hub: https://jev-ai.live/guides/
 - **News timeline** — auto-updated daily from HN, Reddit and official sources
-  → https://jev-ai.live/news/
+  (every item carries an editor's note) → https://jev-ai.live/news/
 
 ## Tech stack
 
