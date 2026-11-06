@@ -1,5 +1,35 @@
 [
   {
+    "date": "2026-11-06",
+    "title": "A Jev that can ask Opus for help gives Opus accuracy at 4x lower cost",
+    "summary": "Hacker News discussion — 18 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://hightouch.com/blog/llm-judges-identity-resolution",
+    "added": "2026-11-06",
+    "comment_en": "Routing hard cases from Jev to Opus could cut inference costs sharply, but the real test is whether Jev's typed decisions reliably flag when it's out of its depth.",
+    "comment_zh": "将 Jev 难以处理的案例转交给 Opus 有可能大幅降低推理成本，但真正的考验在于 Jev 的类型化决策能否可靠地识别出自身能力不足的情况。"
+  },
+  {
+    "date": "2026-11-06",
+    "title": "Show HN: Ru-Jev – an open model that scores caller-supplied options on CPU (MIT)",
+    "summary": "Hacker News discussion — 5 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://huggingface.co/besktech/ru-jev",
+    "added": "2026-11-06",
+    "comment_en": "Ru-Jev's CPU-only scoring of caller-supplied options is a useful escape hatch from API dependency, but with zero comments and five points, there's no evidence yet that its scores match Jev's on real decision tasks.",
+    "comment_zh": "Ru-Jev 在 CPU 上对调用方提供的选项打分，为摆脱 API 依赖提供了有用的替代方案，但零评论、五分的热度意味着尚无证据表明其打分在真实决策任务上与 Jev 一致。"
+  },
+  {
+    "date": "2026-11-06",
+    "title": "Show HN: Jev vs. OpenAI Decision vs. Small Financial World Models: FinBench [video]",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://www.youtube.com/watch?v=UN1LIF01uHQ",
+    "added": "2026-11-06",
+    "comment_en": "A two-point HN thread with zero comments is not evidence of anything, so treat FinBench's Jev-versus-OpenAI decision comparison as a vendor-adjacent benchmark worth reproducing yourself before trusting its conclusions.",
+    "comment_zh": "HN上仅两分、零评论的帖子说明不了任何问题，因此应把FinBench对Jev与OpenAI决策模型的对比视为可能带有厂商倾向的基准，在采信其结论前最好自行复现。"
+  },
+  {
     "date": "2026-10-31",
     "title": "Video deconstructing how Jev works",
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
