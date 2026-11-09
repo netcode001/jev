@@ -1,6 +1,16 @@
 [
   {
     "date": "2026-11-09",
+    "title": "Testing Jev for IAM Access Decisions",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://www.trustle.com/post/jev-least-privilege",
+    "added": "2026-11-09",
+    "comment_en": "With zero comments and a single point, this thread offers no real signal on whether Jev's typed decisions hold up for IAM policy edge cases—test it yourself before trusting it.",
+    "comment_zh": "这个帖子零评论、仅一分，无法说明 Jev 的类型化决策在 IAM 策略边界情况下是否可靠——在信任它之前请自行测试。"
+  },
+  {
+    "date": "2026-11-09",
     "title": "Show HN: Flide: Make Jev-like decision models up to 9.5x faster",
     "summary": "Hacker News discussion — 22 points, 4 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
