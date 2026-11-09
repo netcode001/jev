@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-11-09",
+    "title": "Show HN: Flide: Make Jev-like decision models up to 9.5x faster",
+    "summary": "Hacker News discussion — 22 points, 4 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/OmniJev/Flide",
+    "added": "2026-11-09",
+    "comment_en": "A 9.5x speedup claim for Jev-style decision models is worth testing, but with only 22 points and four comments, independent benchmarks are still missing.",
+    "comment_zh": "针对Jev类决策模型9.5倍加速的说法值得实测，但仅22分和4条评论意味着仍缺独立基准验证。"
+  },
+  {
     "date": "2026-11-06",
     "title": "A Jev that can ask Opus for help gives Opus accuracy at 4x lower cost",
     "summary": "Hacker News discussion — 18 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
