@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-11-10",
+    "title": "Render is adding Anthropic, TypeSafe AI and others to its Subprocessors",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://render.com/security",
+    "added": "2026-11-10",
+    "comment_en": "Render's subprocessor list now includes TypeSafe AI, so Jev users deploying there should check data-residency terms before assuming their typed decisions stay outside third-party handling.",
+    "comment_zh": "Render 的子处理商名单现已纳入 TypeSafe AI，因此在 Render 上部署的 Jev 用户应先核查数据驻留条款，别想当然认为类型化决策不会经过第三方处理。"
+  },
+  {
     "date": "2026-11-09",
     "title": "Testing Jev for IAM Access Decisions",
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
