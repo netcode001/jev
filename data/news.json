@@ -1,6 +1,16 @@
 [
   {
     "date": "2026-11-11",
+    "title": "Show HN: Thread Police eliminates stray replies in Slack channels with Jev",
+    "summary": "Hacker News discussion — 4 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://github.com/seanparkross/slack-thread-police",
+    "added": "2026-11-11",
+    "comment_en": "A four-point, zero-comment HN post is barely a signal, so treat Jev's Slack threading demo as a promising pattern rather than proof the model handles messy real-world channel state.",
+    "comment_zh": "一条只有4分、零评论的HN帖子几乎算不上信号，所以应把Jev的Slack线程演示看作一个有前景的模式，而非该模型能处理混乱真实频道状态的证明。"
+  },
+  {
+    "date": "2026-11-11",
     "title": "Cutting LLM Token Costs with Currents News API and TypeSafe Jev Pre-Filtering",
     "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
     "source": "news.ycombinator.com",
