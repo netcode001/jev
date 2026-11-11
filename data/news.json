@@ -1,5 +1,25 @@
 [
   {
+    "date": "2026-11-11",
+    "title": "Cutting LLM Token Costs with Currents News API and TypeSafe Jev Pre-Filtering",
+    "summary": "Hacker News discussion — 2 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://currentsapi.services/en/blog/cut-llm-token-costs-typesafe-jev-prefiltering",
+    "added": "2026-11-11",
+    "comment_en": "Two points and zero comments is no validation at all, so treat the pre-filtering pattern as a design idea worth testing against your own Jev decision logs, not a proven cost saver.",
+    "comment_zh": "两个赞、零评论根本算不上验证，所以应把预过滤模式当作值得用你自己的 Jev 决策日志去检验的设计思路，而非已被证实的省钱方案。"
+  },
+  {
+    "date": "2026-11-11",
+    "title": "Jack and Jill Cut Candidate Screening Costs by 88% with Jev",
+    "summary": "Hacker News discussion — 2 points, 2 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://typesafe.ai/blog/jack-jill-jev-case-study",
+    "added": "2026-11-11",
+    "comment_en": "An 88% screening-cost cut from a two-point Hacker News thread is a vendor anecdote, not evidence — treat Jev's typed-decision pitch as unproven until independent benchmarks exist.",
+    "comment_zh": "仅凭 Hacker News 上两个赞的帖子宣称筛选成本降低 88%，这只是厂商轶事而非证据——在出现独立基准测试之前，应把 Jev 的类型化决策主张视为未经证实。"
+  },
+  {
     "date": "2026-11-10",
     "title": "Render is adding Anthropic, TypeSafe AI and others to its Subprocessors",
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
