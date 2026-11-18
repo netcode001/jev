@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-11-18",
+    "title": "So Was Jev Useful?",
+    "summary": "Hacker News discussion — 5 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://www.reddit.com/r/LLMDevs/comments/1xyd09i/so_was_jev_actually_useful/",
+    "added": "2026-11-18",
+    "comment_en": "Five points and a single comment is thin evidence for judging Jev's usefulness, so treat any verdict here as anecdote rather than a signal developers should act on.",
+    "comment_zh": "五分和一个评论不足以判断 Jev 是否实用，因此这里的任何结论都只是轶事，而非开发者应当据此行动的信号。"
+  },
+  {
     "date": "2026-11-11",
     "title": "Show HN: Thread Police eliminates stray replies in Slack channels with Jev",
     "summary": "Hacker News discussion — 4 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
