@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-11-23",
+    "title": "Grok Bot Taught My Jev Agent to Play Smash Bros",
+    "summary": "Hacker News discussion — 2 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://ryanperry.io/post/grok-bot-taught-my-jev-agent-to-play-smash-bros",
+    "added": "2026-11-24",
+    "comment_en": "With only 2 points and a single comment, this Smash Bros anecdote offers thin evidence, so developers should treat it as a curiosity rather than a signal about Jev's real-world agent capabilities.",
+    "comment_zh": "这条 Smash Bros 轶事仅有 2 分和一条评论，证据薄弱，开发者应将其视为趣闻，而非 Jev 实际智能体能力的信号。"
+  },
+  {
     "date": "2026-11-18",
     "title": "So Was Jev Useful?",
     "summary": "Hacker News discussion — 5 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
