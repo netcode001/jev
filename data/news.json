@@ -1,5 +1,25 @@
 [
   {
+    "date": "2026-11-25",
+    "title": "Jev is (probably) Qwen3.5-35B-A3B",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://modaic.dev/blog/latency-doesnt-lie",
+    "added": "2026-11-25",
+    "comment_en": "If Jev is really a Qwen3.5-35B-A3B derivative, developers should verify its typed-decision behavior against the base model before trusting any claimed fine-tuning gains.",
+    "comment_zh": "如果 Jev 确实是 Qwen3.5-35B-A3B 的衍生模型，开发者应先将其类型化决策行为与基础模型对比，再判断所谓微调收益是否可信。"
+  },
+  {
+    "date": "2026-11-25",
+    "title": "Prism – exact BigInt Bayes vs. TypeSafe Jev (0/100 wrong, 10 refusals)",
+    "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://donttrustme.ai/assay-013.html",
+    "added": "2026-11-25",
+    "comment_en": "A 0/100 error rate with 10 refusals sounds impressive, but the refusal count is doing quiet work here—developers should check whether those abstentions map to genuinely ambiguous cases or just gaps in Jev's typed-decision coverage.",
+    "comment_zh": "0/100 的错误率加上 10 次拒答听起来很亮眼，但拒答次数在这里悄悄起了作用——开发者应确认这些弃权对应的是真正模糊的案例，还是 Jev 类型化决策覆盖的空白。"
+  },
+  {
     "date": "2026-11-23",
     "title": "Grok Bot Taught My Jev Agent to Play Smash Bros",
     "summary": "Hacker News discussion — 2 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
