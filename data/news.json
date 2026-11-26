@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-11-26",
+    "title": "Treg People API powered by TypeSafeAI",
+    "summary": "Hacker News discussion — 3 points, 1 comments. Community reaction and first-hand usage reports in the thread.",
+    "source": "news.ycombinator.com",
+    "url": "https://treg.to/people-search",
+    "added": "2026-11-26",
+    "comment_en": "With only 3 points and a single comment, this Treg People API launch offers too little signal to judge whether TypeSafe AI's Jev integration is a genuine developer win or just an early experiment.",
+    "comment_zh": "仅有3分和一条评论，这个 Treg People API 的发布信号太弱，难以判断 TypeSafe AI 的 Jev 集成究竟是开发者的真正利好，还是仅仅是一次早期实验。"
+  },
+  {
     "date": "2026-11-25",
     "title": "Jev is (probably) Qwen3.5-35B-A3B",
     "summary": "Hacker News discussion — 1 points, 0 comments. Community reaction and first-hand usage reports in the thread.",
